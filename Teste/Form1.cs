@@ -21,7 +21,7 @@ namespace Teste
             InitializeComponent();
         }
 
-        private async void btnListGames_Click(object sender, EventArgs e)
+        private void btnListGames_Click(object sender, EventArgs e)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace Teste
                     throw new Exception("Ocorreu algum erro!");
                 }
                 
-                dgvGames.DataSource = await Main.getGames(status);
+                dgvListaPartidas.DataSource = Main.pegarPartidas(status);
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -50,7 +50,7 @@ namespace Teste
 
             try
             {
-                Game game = new Game(nome, senha);
+                Partida game = new Partida(nome, senha);
                 MessageBox.Show("Partida Criada");
             }
             catch (Exception ex)
@@ -58,13 +58,11 @@ namespace Teste
                 MessageBox.Show(ex.Message);
             }
             
-
-            
         }
 
         private void btnEntrarPartida_Click(object sender, EventArgs e)
         {
-            int idPartida = Convert.ToInt32(dgvGames.SelectedRows[0].Cells["ID"].Value.ToString());
+            int idPartida = Convert.ToInt32(dgvListaPartidas.SelectedRows[0].Cells["ID"].Value.ToString());
             string nomePlayer = txtNomeJogador.Text;
             string senha = txtSenha.Text;
 
@@ -76,7 +74,6 @@ namespace Teste
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
-
             
         }
     }

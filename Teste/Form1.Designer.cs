@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnListGames = new System.Windows.Forms.Button();
-            this.dgvGames = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnListarPartidas = new System.Windows.Forms.Button();
+            this.dgvListaPartidas = new System.Windows.Forms.DataGridView();
             this.radTodos = new System.Windows.Forms.RadioButton();
             this.radAbertas = new System.Windows.Forms.RadioButton();
             this.radJogando = new System.Windows.Forms.RadioButton();
@@ -51,77 +47,52 @@
             this.btnEntrarPartida = new System.Windows.Forms.Button();
             this.grbEntrarPartida = new System.Windows.Forms.GroupBox();
             this.grbCriarPartida = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGames)).BeginInit();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaPartidas)).BeginInit();
             this.grbStatus.SuspendLayout();
             this.grbEntrarPartida.SuspendLayout();
             this.grbCriarPartida.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnListGames
+            // btnListarPartidas
             // 
-            this.btnListGames.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListGames.Location = new System.Drawing.Point(346, 12);
-            this.btnListGames.Name = "btnListGames";
-            this.btnListGames.Size = new System.Drawing.Size(151, 44);
-            this.btnListGames.TabIndex = 0;
-            this.btnListGames.Text = "Listar";
-            this.btnListGames.UseVisualStyleBackColor = true;
-            this.btnListGames.Click += new System.EventHandler(this.btnListGames_Click);
+            this.btnListarPartidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarPartidas.Location = new System.Drawing.Point(346, 12);
+            this.btnListarPartidas.Name = "btnListarPartidas";
+            this.btnListarPartidas.Size = new System.Drawing.Size(151, 44);
+            this.btnListarPartidas.TabIndex = 0;
+            this.btnListarPartidas.Text = "Listar";
+            this.btnListarPartidas.UseVisualStyleBackColor = true;
+            this.btnListarPartidas.Click += new System.EventHandler(this.btnListGames_Click);
             // 
-            // dgvGames
+            // dgvListaPartidas
             // 
-            this.dgvGames.AllowUserToAddRows = false;
-            this.dgvGames.AllowUserToDeleteRows = false;
-            this.dgvGames.AllowUserToResizeColumns = false;
-            this.dgvGames.AllowUserToResizeRows = false;
-            this.dgvGames.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvGames.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvGames.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.dgvGames.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGames.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvListaPartidas.AllowUserToAddRows = false;
+            this.dgvListaPartidas.AllowUserToDeleteRows = false;
+            this.dgvListaPartidas.AllowUserToResizeColumns = false;
+            this.dgvListaPartidas.AllowUserToResizeRows = false;
+            this.dgvListaPartidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListaPartidas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvListaPartidas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dgvListaPartidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaPartidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.name,
             this.date,
             this.status});
-            this.dgvGames.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dgvGames.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvGames.Location = new System.Drawing.Point(0, 0);
-            this.dgvGames.MultiSelect = false;
-            this.dgvGames.Name = "dgvGames";
-            this.dgvGames.ReadOnly = true;
-            this.dgvGames.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvGames.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGames.Size = new System.Drawing.Size(340, 450);
-            this.dgvGames.TabIndex = 2;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Nome";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "date";
-            this.date.HeaderText = "Data";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            this.date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "status";
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
+            this.dgvListaPartidas.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgvListaPartidas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvListaPartidas.Location = new System.Drawing.Point(0, 0);
+            this.dgvListaPartidas.MultiSelect = false;
+            this.dgvListaPartidas.Name = "dgvListaPartidas";
+            this.dgvListaPartidas.ReadOnly = true;
+            this.dgvListaPartidas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvListaPartidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListaPartidas.Size = new System.Drawing.Size(340, 450);
+            this.dgvListaPartidas.TabIndex = 2;
             // 
             // radTodos
             // 
@@ -298,6 +269,35 @@
             this.grbCriarPartida.TabStop = false;
             this.grbCriarPartida.Text = "Criar uma Partida";
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "nome";
+            this.name.HeaderText = "Nome";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "data";
+            this.date.HeaderText = "Data";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
             // frmLobby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,12 +306,12 @@
             this.Controls.Add(this.grbCriarPartida);
             this.Controls.Add(this.grbEntrarPartida);
             this.Controls.Add(this.grbStatus);
-            this.Controls.Add(this.dgvGames);
-            this.Controls.Add(this.btnListGames);
+            this.Controls.Add(this.dgvListaPartidas);
+            this.Controls.Add(this.btnListarPartidas);
             this.Name = "frmLobby";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGames)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaPartidas)).EndInit();
             this.grbStatus.ResumeLayout(false);
             this.grbStatus.PerformLayout();
             this.grbEntrarPartida.ResumeLayout(false);
@@ -324,12 +324,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnListGames;
-        private System.Windows.Forms.DataGridView dgvGames;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.Button btnListarPartidas;
+        private System.Windows.Forms.DataGridView dgvListaPartidas;
         private System.Windows.Forms.RadioButton radTodos;
         private System.Windows.Forms.RadioButton radAbertas;
         private System.Windows.Forms.RadioButton radJogando;
@@ -347,6 +343,10 @@
         private System.Windows.Forms.Button btnEntrarPartida;
         private System.Windows.Forms.GroupBox grbEntrarPartida;
         private System.Windows.Forms.GroupBox grbCriarPartida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }
 

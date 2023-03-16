@@ -12,26 +12,21 @@ namespace Teste
 
         public Main() { }
 
-        public async Task<List<Game>> getGames(string s)
+        public List<Partida> pegarPartidas(string s)
         {
-            string request = await Task<string>.Factory.StartNew(() =>
+
+            string[] partidasR = Jogo.ListarPartidas(s).Replace("\r", "")
+                .Split(new char[] {'\n'}, StringSplitOptions.RemoveEmptyEntries);
+
+            List<Partida> partidas = new List<Partida>();
+
+            foreach (string partida in partidasR)
             {
-                return Jogo.ListarPartidas(s);
-            });
-
-            List<string> gamesR = request.Replace("\r", "").Split('\n').ToList();
-
-            gamesR.Remove("");
-
-            List<Game> games = new List<Game>();
-
-            foreach (string game in gamesR)
-            {
-                string[] args = game.Split(',');
+                string[] args = partida.Split(',');
 
                 int id = Convert.ToInt32(args[0]);
-                string name = args[1];
-                string date = args[2];
+                string nome = args[1];
+                string data = args[2];
 
                 Status status;
                 switch (args[3])
@@ -49,10 +44,10 @@ namespace Teste
                         throw new Exception("Status inválido");
                 }
 
-                games.Add(new Game(id, name, date, status));
+                partidas.Add(new Partida(id, nome, data, status));
             }
 
-            return games;
+            return partidas;
         }
     }
 }
