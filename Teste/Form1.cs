@@ -19,62 +19,84 @@ namespace Teste
         public frmLobby()
         {
             InitializeComponent();
+            cboFiltros.SelectedIndex = 0;
+            dgvListaPartidas.AutoGenerateColumns = false;
         }
 
         private void btnListGames_Click(object sender, EventArgs e)
         {
             try
             {
-                string status;
+                string status = cboFiltros.Text[0].ToString();
 
-                if (radTodos.Checked) status = "T";
-                else if (radAbertas.Checked) status = "A";
-                else if (radJogando.Checked) status = "J";
-                else if (radEncerradas.Checked) status = "E";
-                else
-                {
-                    throw new Exception("Ocorreu algum erro!");
-                }
-                
-                dgvListaPartidas.DataSource = Main.pegarPartidas(status);
+                Main.pegarPartidas(status);
+
+                dgvListaPartidas.DataSource = Main.partidas;
             } catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnCriarPartida_Click(object sender, EventArgs e)
         {
-            string nome = txtNomePartida.Text;
-            string senha = txtSenhaPartida.Text;
+            string nomePartida = txtNomePartida.Text;
+            string senha = txtSenhaCriar.Text;
+            string nomeJogador = txtNomeJogadorCriar.Text;
+
+
+            if (nomePartida == "" ||  senha == "" || (chkEntrar.Checked && nomeJogador == ""))
+            {
+                MessageBox.Show("Campos vazios!", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             try
             {
-                Partida game = new Partida(nome, senha);
-                MessageBox.Show("Partida Criada");
+                Partida partida = new Partida(nomePartida, senha);
+
+                if (!chkEntrar.Checked)
+                {
+                    MessageBox.Show("Partida Criada!", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Main.partidas.Add(partida);
+                    return;
+                }
+
+                Jogador jogador = new Jogador(nomeJogador);
+                jogador.entrarPartida(partida, senha);
+
+                MessageBox.Show($"Partida Criada!\nID: {jogador.id}\nNome: {jogador.nome}\nSenha: {jogador.senha}\nCor: {jogador.cor}");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
 
         private void btnEntrarPartida_Click(object sender, EventArgs e)
         {
-            int idPartida = Convert.ToInt32(dgvListaPartidas.SelectedRows[0].Cells["ID"].Value.ToString());
-            string nomePlayer = txtNomeJogador.Text;
-            string senha = txtSenha.Text;
+            int indexPartida = dgvListaPartidas.SelectedRows[0].Index;
+            string nomePlayer = txtNomeJogadorEntrar.Text;
+            string senha = txtSenhaEntrar.Text;
 
             try
             {
-                string player = Jogo.EntrarPartida(idPartida, nomePlayer, senha);
-                MessageBox.Show(player);
+                Jogador jogador = new Jogador(nomePlayer);
+                jogador.entrarPartida(Main.partidas[indexPartida], senha);
+
+                MessageBox.Show($"ID: {jogador.id}\nNome: {jogador.nome}\nSenha: {jogador.senha}\nCor: {jogador.cor}");
             }
             catch (Exception ex) {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        private void chkEntrar_CheckedChanged(object sender, EventArgs e)
+        {
+            lblNomeJogadorCriar.Enabled = !lblNomeJogadorCriar.Enabled;
+            txtNomeJogadorCriar.Enabled = !txtNomeJogadorCriar.Enabled;
         }
     }
 }

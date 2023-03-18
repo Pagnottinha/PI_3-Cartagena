@@ -28,48 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLobby));
             this.btnListarPartidas = new System.Windows.Forms.Button();
             this.dgvListaPartidas = new System.Windows.Forms.DataGridView();
-            this.radTodos = new System.Windows.Forms.RadioButton();
-            this.radAbertas = new System.Windows.Forms.RadioButton();
-            this.radJogando = new System.Windows.Forms.RadioButton();
-            this.radEncerradas = new System.Windows.Forms.RadioButton();
-            this.grbStatus = new System.Windows.Forms.GroupBox();
-            this.txtNomePartida = new System.Windows.Forms.TextBox();
-            this.txtSenhaPartida = new System.Windows.Forms.TextBox();
-            this.btnCriarPartida = new System.Windows.Forms.Button();
-            this.lblNomePartida = new System.Windows.Forms.Label();
-            this.lblSenhaPartida = new System.Windows.Forms.Label();
-            this.txtNomeJogador = new System.Windows.Forms.TextBox();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblSenha = new System.Windows.Forms.Label();
-            this.btnEntrarPartida = new System.Windows.Forms.Button();
-            this.grbEntrarPartida = new System.Windows.Forms.GroupBox();
-            this.grbCriarPartida = new System.Windows.Forms.GroupBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNomePartida = new System.Windows.Forms.TextBox();
+            this.txtSenhaCriar = new System.Windows.Forms.TextBox();
+            this.btnCriarPartida = new System.Windows.Forms.Button();
+            this.lblNomePartida = new System.Windows.Forms.Label();
+            this.lblSenhaCriar = new System.Windows.Forms.Label();
+            this.txtNomeJogadorEntrar = new System.Windows.Forms.TextBox();
+            this.txtSenhaEntrar = new System.Windows.Forms.TextBox();
+            this.lblNomeJogadorEntrar = new System.Windows.Forms.Label();
+            this.lblSenhaEntrar = new System.Windows.Forms.Label();
+            this.btnEntrarPartida = new System.Windows.Forms.Button();
+            this.grbEntrarPartida = new System.Windows.Forms.GroupBox();
+            this.grbCriarPartida = new System.Windows.Forms.GroupBox();
+            this.lblNomeJogadorCriar = new System.Windows.Forms.Label();
+            this.txtNomeJogadorCriar = new System.Windows.Forms.TextBox();
+            this.chkEntrar = new System.Windows.Forms.CheckBox();
+            this.cboFiltros = new System.Windows.Forms.ComboBox();
+            this.lblFiltros = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPartidas)).BeginInit();
-            this.grbStatus.SuspendLayout();
             this.grbEntrarPartida.SuspendLayout();
             this.grbCriarPartida.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnListarPartidas
             // 
-            this.btnListarPartidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListarPartidas.Location = new System.Drawing.Point(346, 12);
+            resources.ApplyResources(this.btnListarPartidas, "btnListarPartidas");
+            this.btnListarPartidas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnListarPartidas.Name = "btnListarPartidas";
-            this.btnListarPartidas.Size = new System.Drawing.Size(151, 44);
-            this.btnListarPartidas.TabIndex = 0;
-            this.btnListarPartidas.Text = "Listar";
             this.btnListarPartidas.UseVisualStyleBackColor = true;
             this.btnListarPartidas.Click += new System.EventHandler(this.btnListGames_Click);
             // 
             // dgvListaPartidas
             // 
+            resources.ApplyResources(this.dgvListaPartidas, "dgvListaPartidas");
             this.dgvListaPartidas.AllowUserToAddRows = false;
             this.dgvListaPartidas.AllowUserToDeleteRows = false;
             this.dgvListaPartidas.AllowUserToResizeColumns = false;
@@ -83,210 +81,31 @@
             this.name,
             this.date,
             this.status});
-            this.dgvListaPartidas.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvListaPartidas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvListaPartidas.Location = new System.Drawing.Point(0, 0);
             this.dgvListaPartidas.MultiSelect = false;
             this.dgvListaPartidas.Name = "dgvListaPartidas";
             this.dgvListaPartidas.ReadOnly = true;
             this.dgvListaPartidas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvListaPartidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaPartidas.Size = new System.Drawing.Size(340, 450);
-            this.dgvListaPartidas.TabIndex = 2;
-            // 
-            // radTodos
-            // 
-            this.radTodos.AutoSize = true;
-            this.radTodos.Checked = true;
-            this.radTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTodos.Location = new System.Drawing.Point(19, 30);
-            this.radTodos.Name = "radTodos";
-            this.radTodos.Size = new System.Drawing.Size(71, 24);
-            this.radTodos.TabIndex = 3;
-            this.radTodos.TabStop = true;
-            this.radTodos.Text = "Todos";
-            this.radTodos.UseVisualStyleBackColor = true;
-            // 
-            // radAbertas
-            // 
-            this.radAbertas.AutoSize = true;
-            this.radAbertas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radAbertas.Location = new System.Drawing.Point(19, 60);
-            this.radAbertas.Name = "radAbertas";
-            this.radAbertas.Size = new System.Drawing.Size(83, 24);
-            this.radAbertas.TabIndex = 4;
-            this.radAbertas.Text = "Abertas";
-            this.radAbertas.UseVisualStyleBackColor = true;
-            // 
-            // radJogando
-            // 
-            this.radJogando.AutoSize = true;
-            this.radJogando.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radJogando.Location = new System.Drawing.Point(19, 90);
-            this.radJogando.Name = "radJogando";
-            this.radJogando.Size = new System.Drawing.Size(89, 24);
-            this.radJogando.TabIndex = 5;
-            this.radJogando.Text = "Jogando";
-            this.radJogando.UseVisualStyleBackColor = true;
-            // 
-            // radEncerradas
-            // 
-            this.radEncerradas.AutoSize = true;
-            this.radEncerradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radEncerradas.Location = new System.Drawing.Point(19, 120);
-            this.radEncerradas.Name = "radEncerradas";
-            this.radEncerradas.Size = new System.Drawing.Size(109, 24);
-            this.radEncerradas.TabIndex = 6;
-            this.radEncerradas.Text = "Encerradas";
-            this.radEncerradas.UseVisualStyleBackColor = true;
-            // 
-            // grbStatus
-            // 
-            this.grbStatus.Controls.Add(this.radEncerradas);
-            this.grbStatus.Controls.Add(this.radJogando);
-            this.grbStatus.Controls.Add(this.radAbertas);
-            this.grbStatus.Controls.Add(this.radTodos);
-            this.grbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbStatus.Location = new System.Drawing.Point(346, 62);
-            this.grbStatus.Name = "grbStatus";
-            this.grbStatus.Size = new System.Drawing.Size(151, 157);
-            this.grbStatus.TabIndex = 7;
-            this.grbStatus.TabStop = false;
-            this.grbStatus.Text = "Status Partida";
-            // 
-            // txtNomePartida
-            // 
-            this.txtNomePartida.Location = new System.Drawing.Point(15, 35);
-            this.txtNomePartida.Name = "txtNomePartida";
-            this.txtNomePartida.Size = new System.Drawing.Size(149, 20);
-            this.txtNomePartida.TabIndex = 8;
-            // 
-            // txtSenhaPartida
-            // 
-            this.txtSenhaPartida.Location = new System.Drawing.Point(15, 72);
-            this.txtSenhaPartida.Name = "txtSenhaPartida";
-            this.txtSenhaPartida.Size = new System.Drawing.Size(149, 20);
-            this.txtSenhaPartida.TabIndex = 9;
-            // 
-            // btnCriarPartida
-            // 
-            this.btnCriarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCriarPartida.Location = new System.Drawing.Point(15, 98);
-            this.btnCriarPartida.Name = "btnCriarPartida";
-            this.btnCriarPartida.Size = new System.Drawing.Size(149, 44);
-            this.btnCriarPartida.TabIndex = 10;
-            this.btnCriarPartida.Text = "Criar Partida";
-            this.btnCriarPartida.UseVisualStyleBackColor = true;
-            this.btnCriarPartida.Click += new System.EventHandler(this.btnCriarPartida_Click);
-            // 
-            // lblNomePartida
-            // 
-            this.lblNomePartida.AutoSize = true;
-            this.lblNomePartida.Location = new System.Drawing.Point(13, 19);
-            this.lblNomePartida.Name = "lblNomePartida";
-            this.lblNomePartida.Size = new System.Drawing.Size(71, 13);
-            this.lblNomePartida.TabIndex = 11;
-            this.lblNomePartida.Text = "Nome Partida";
-            // 
-            // lblSenhaPartida
-            // 
-            this.lblSenhaPartida.AutoSize = true;
-            this.lblSenhaPartida.Location = new System.Drawing.Point(13, 58);
-            this.lblSenhaPartida.Name = "lblSenhaPartida";
-            this.lblSenhaPartida.Size = new System.Drawing.Size(38, 13);
-            this.lblSenhaPartida.TabIndex = 12;
-            this.lblSenhaPartida.Text = "Senha";
-            // 
-            // txtNomeJogador
-            // 
-            this.txtNomeJogador.Location = new System.Drawing.Point(13, 32);
-            this.txtNomeJogador.Name = "txtNomeJogador";
-            this.txtNomeJogador.Size = new System.Drawing.Size(149, 20);
-            this.txtNomeJogador.TabIndex = 13;
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(13, 71);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(149, 20);
-            this.txtSenha.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Nome Jogador";
-            // 
-            // lblSenha
-            // 
-            this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(10, 55);
-            this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(38, 13);
-            this.lblSenha.TabIndex = 16;
-            this.lblSenha.Text = "Senha";
-            // 
-            // btnEntrarPartida
-            // 
-            this.btnEntrarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrarPartida.Location = new System.Drawing.Point(13, 106);
-            this.btnEntrarPartida.Name = "btnEntrarPartida";
-            this.btnEntrarPartida.Size = new System.Drawing.Size(149, 44);
-            this.btnEntrarPartida.TabIndex = 17;
-            this.btnEntrarPartida.Text = "Entrar";
-            this.btnEntrarPartida.UseVisualStyleBackColor = true;
-            this.btnEntrarPartida.Click += new System.EventHandler(this.btnEntrarPartida_Click);
-            // 
-            // grbEntrarPartida
-            // 
-            this.grbEntrarPartida.Controls.Add(this.btnEntrarPartida);
-            this.grbEntrarPartida.Controls.Add(this.lblSenha);
-            this.grbEntrarPartida.Controls.Add(this.label1);
-            this.grbEntrarPartida.Controls.Add(this.txtSenha);
-            this.grbEntrarPartida.Controls.Add(this.txtNomeJogador);
-            this.grbEntrarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbEntrarPartida.Location = new System.Drawing.Point(552, 49);
-            this.grbEntrarPartida.Name = "grbEntrarPartida";
-            this.grbEntrarPartida.Size = new System.Drawing.Size(180, 170);
-            this.grbEntrarPartida.TabIndex = 18;
-            this.grbEntrarPartida.TabStop = false;
-            this.grbEntrarPartida.Text = "Entrar na Partida";
-            // 
-            // grbCriarPartida
-            // 
-            this.grbCriarPartida.Controls.Add(this.lblSenhaPartida);
-            this.grbCriarPartida.Controls.Add(this.lblNomePartida);
-            this.grbCriarPartida.Controls.Add(this.btnCriarPartida);
-            this.grbCriarPartida.Controls.Add(this.txtSenhaPartida);
-            this.grbCriarPartida.Controls.Add(this.txtNomePartida);
-            this.grbCriarPartida.Location = new System.Drawing.Point(346, 241);
-            this.grbCriarPartida.Name = "grbCriarPartida";
-            this.grbCriarPartida.Size = new System.Drawing.Size(182, 160);
-            this.grbCriarPartida.TabIndex = 19;
-            this.grbCriarPartida.TabStop = false;
-            this.grbCriarPartida.Text = "Criar uma Partida";
             // 
             // id
             // 
             this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
+            resources.ApplyResources(this.id, "id");
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
             // name
             // 
             this.name.DataPropertyName = "nome";
-            this.name.HeaderText = "Nome";
+            resources.ApplyResources(this.name, "name");
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
             // date
             // 
             this.date.DataPropertyName = "data";
-            this.date.HeaderText = "Data";
+            resources.ApplyResources(this.date, "date");
             this.date.Name = "date";
             this.date.ReadOnly = true;
             this.date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -294,31 +113,146 @@
             // status
             // 
             this.status.DataPropertyName = "status";
-            this.status.HeaderText = "Status";
+            resources.ApplyResources(this.status, "status");
             this.status.Name = "status";
             this.status.ReadOnly = true;
             // 
+            // txtNomePartida
+            // 
+            resources.ApplyResources(this.txtNomePartida, "txtNomePartida");
+            this.txtNomePartida.Name = "txtNomePartida";
+            // 
+            // txtSenhaCriar
+            // 
+            resources.ApplyResources(this.txtSenhaCriar, "txtSenhaCriar");
+            this.txtSenhaCriar.Name = "txtSenhaCriar";
+            // 
+            // btnCriarPartida
+            // 
+            resources.ApplyResources(this.btnCriarPartida, "btnCriarPartida");
+            this.btnCriarPartida.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCriarPartida.Name = "btnCriarPartida";
+            this.btnCriarPartida.UseVisualStyleBackColor = true;
+            this.btnCriarPartida.Click += new System.EventHandler(this.btnCriarPartida_Click);
+            // 
+            // lblNomePartida
+            // 
+            resources.ApplyResources(this.lblNomePartida, "lblNomePartida");
+            this.lblNomePartida.Name = "lblNomePartida";
+            // 
+            // lblSenhaCriar
+            // 
+            resources.ApplyResources(this.lblSenhaCriar, "lblSenhaCriar");
+            this.lblSenhaCriar.Name = "lblSenhaCriar";
+            // 
+            // txtNomeJogadorEntrar
+            // 
+            resources.ApplyResources(this.txtNomeJogadorEntrar, "txtNomeJogadorEntrar");
+            this.txtNomeJogadorEntrar.Name = "txtNomeJogadorEntrar";
+            // 
+            // txtSenhaEntrar
+            // 
+            resources.ApplyResources(this.txtSenhaEntrar, "txtSenhaEntrar");
+            this.txtSenhaEntrar.Name = "txtSenhaEntrar";
+            // 
+            // lblNomeJogadorEntrar
+            // 
+            resources.ApplyResources(this.lblNomeJogadorEntrar, "lblNomeJogadorEntrar");
+            this.lblNomeJogadorEntrar.Name = "lblNomeJogadorEntrar";
+            // 
+            // lblSenhaEntrar
+            // 
+            resources.ApplyResources(this.lblSenhaEntrar, "lblSenhaEntrar");
+            this.lblSenhaEntrar.Name = "lblSenhaEntrar";
+            // 
+            // btnEntrarPartida
+            // 
+            resources.ApplyResources(this.btnEntrarPartida, "btnEntrarPartida");
+            this.btnEntrarPartida.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEntrarPartida.Name = "btnEntrarPartida";
+            this.btnEntrarPartida.UseVisualStyleBackColor = true;
+            this.btnEntrarPartida.Click += new System.EventHandler(this.btnEntrarPartida_Click);
+            // 
+            // grbEntrarPartida
+            // 
+            resources.ApplyResources(this.grbEntrarPartida, "grbEntrarPartida");
+            this.grbEntrarPartida.Controls.Add(this.btnEntrarPartida);
+            this.grbEntrarPartida.Controls.Add(this.lblSenhaEntrar);
+            this.grbEntrarPartida.Controls.Add(this.lblNomeJogadorEntrar);
+            this.grbEntrarPartida.Controls.Add(this.txtSenhaEntrar);
+            this.grbEntrarPartida.Controls.Add(this.txtNomeJogadorEntrar);
+            this.grbEntrarPartida.Name = "grbEntrarPartida";
+            this.grbEntrarPartida.TabStop = false;
+            // 
+            // grbCriarPartida
+            // 
+            resources.ApplyResources(this.grbCriarPartida, "grbCriarPartida");
+            this.grbCriarPartida.Controls.Add(this.lblNomeJogadorCriar);
+            this.grbCriarPartida.Controls.Add(this.txtNomeJogadorCriar);
+            this.grbCriarPartida.Controls.Add(this.chkEntrar);
+            this.grbCriarPartida.Controls.Add(this.lblSenhaCriar);
+            this.grbCriarPartida.Controls.Add(this.lblNomePartida);
+            this.grbCriarPartida.Controls.Add(this.btnCriarPartida);
+            this.grbCriarPartida.Controls.Add(this.txtSenhaCriar);
+            this.grbCriarPartida.Controls.Add(this.txtNomePartida);
+            this.grbCriarPartida.Name = "grbCriarPartida";
+            this.grbCriarPartida.TabStop = false;
+            // 
+            // lblNomeJogadorCriar
+            // 
+            resources.ApplyResources(this.lblNomeJogadorCriar, "lblNomeJogadorCriar");
+            this.lblNomeJogadorCriar.Name = "lblNomeJogadorCriar";
+            // 
+            // txtNomeJogadorCriar
+            // 
+            resources.ApplyResources(this.txtNomeJogadorCriar, "txtNomeJogadorCriar");
+            this.txtNomeJogadorCriar.Name = "txtNomeJogadorCriar";
+            // 
+            // chkEntrar
+            // 
+            resources.ApplyResources(this.chkEntrar, "chkEntrar");
+            this.chkEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkEntrar.Name = "chkEntrar";
+            this.chkEntrar.UseVisualStyleBackColor = true;
+            this.chkEntrar.CheckedChanged += new System.EventHandler(this.chkEntrar_CheckedChanged);
+            // 
+            // cboFiltros
+            // 
+            resources.ApplyResources(this.cboFiltros, "cboFiltros");
+            this.cboFiltros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboFiltros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFiltros.DropDownWidth = 130;
+            this.cboFiltros.FormattingEnabled = true;
+            this.cboFiltros.Items.AddRange(new object[] {
+            resources.GetString("cboFiltros.Items"),
+            resources.GetString("cboFiltros.Items1"),
+            resources.GetString("cboFiltros.Items2"),
+            resources.GetString("cboFiltros.Items3")});
+            this.cboFiltros.Name = "cboFiltros";
+            // 
+            // lblFiltros
+            // 
+            resources.ApplyResources(this.lblFiltros, "lblFiltros");
+            this.lblFiltros.Name = "lblFiltros";
+            // 
             // frmLobby
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblFiltros);
+            this.Controls.Add(this.cboFiltros);
             this.Controls.Add(this.grbCriarPartida);
             this.Controls.Add(this.grbEntrarPartida);
-            this.Controls.Add(this.grbStatus);
             this.Controls.Add(this.dgvListaPartidas);
             this.Controls.Add(this.btnListarPartidas);
             this.Name = "frmLobby";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPartidas)).EndInit();
-            this.grbStatus.ResumeLayout(false);
-            this.grbStatus.PerformLayout();
             this.grbEntrarPartida.ResumeLayout(false);
             this.grbEntrarPartida.PerformLayout();
             this.grbCriarPartida.ResumeLayout(false);
             this.grbCriarPartida.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -326,20 +260,15 @@
 
         private System.Windows.Forms.Button btnListarPartidas;
         private System.Windows.Forms.DataGridView dgvListaPartidas;
-        private System.Windows.Forms.RadioButton radTodos;
-        private System.Windows.Forms.RadioButton radAbertas;
-        private System.Windows.Forms.RadioButton radJogando;
-        private System.Windows.Forms.RadioButton radEncerradas;
-        private System.Windows.Forms.GroupBox grbStatus;
         private System.Windows.Forms.TextBox txtNomePartida;
-        private System.Windows.Forms.TextBox txtSenhaPartida;
+        private System.Windows.Forms.TextBox txtSenhaCriar;
         private System.Windows.Forms.Button btnCriarPartida;
         private System.Windows.Forms.Label lblNomePartida;
-        private System.Windows.Forms.Label lblSenhaPartida;
-        private System.Windows.Forms.TextBox txtNomeJogador;
-        private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblSenha;
+        private System.Windows.Forms.Label lblSenhaCriar;
+        private System.Windows.Forms.TextBox txtNomeJogadorEntrar;
+        private System.Windows.Forms.TextBox txtSenhaEntrar;
+        private System.Windows.Forms.Label lblNomeJogadorEntrar;
+        private System.Windows.Forms.Label lblSenhaEntrar;
         private System.Windows.Forms.Button btnEntrarPartida;
         private System.Windows.Forms.GroupBox grbEntrarPartida;
         private System.Windows.Forms.GroupBox grbCriarPartida;
@@ -347,6 +276,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.ComboBox cboFiltros;
+        private System.Windows.Forms.CheckBox chkEntrar;
+        private System.Windows.Forms.TextBox txtNomeJogadorCriar;
+        private System.Windows.Forms.Label lblNomeJogadorCriar;
+        private System.Windows.Forms.Label lblFiltros;
     }
 }
 

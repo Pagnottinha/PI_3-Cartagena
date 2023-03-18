@@ -1,24 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using CartagenaServer;
 
 namespace Teste
 {
     internal class Main
     {
+        public BindingList<Partida> partidas { get; } = new BindingList<Partida>();
+        public Main() {
+           
+        }
 
-        public Main() { }
-
-        public List<Partida> pegarPartidas(string s)
+        public void pegarPartidas(string s)
         {
-
             string[] partidasR = Jogo.ListarPartidas(s).Replace("\r", "")
                 .Split(new char[] {'\n'}, StringSplitOptions.RemoveEmptyEntries);
 
-            List<Partida> partidas = new List<Partida>();
+            partidas.Clear();
 
             foreach (string partida in partidasR)
             {
@@ -47,7 +50,7 @@ namespace Teste
                 partidas.Add(new Partida(id, nome, data, status));
             }
 
-            return partidas;
+            return;
         }
     }
 }
