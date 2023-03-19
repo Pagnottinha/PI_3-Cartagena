@@ -22,12 +22,17 @@ namespace Teste
             this.cor = cor;
         }
 
-        public Jogador(int id, string nome, string senha, string cor)
+        public Jogador(string nome)
         {
-            this.id = id;
             this.nome = nome;
-            this.senha = senha;
-            this.cor = cor;
+        }
+
+        public void entrarPartida(Partida partida, string senha)
+        {
+            string[] retorno = Jogo.EntrarPartida(partida.id, this.nome, senha).Split(',');
+            this.id = Convert.ToInt32(retorno[0]);
+            this.senha = retorno[1];
+            this.cor = retorno[2];
         }
     }
 }

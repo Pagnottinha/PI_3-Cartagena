@@ -17,8 +17,11 @@ namespace Teste
     {
         public int id { get; set; }
         public string nome { get; set; }
+        public string senha { get; set; }
         public string data { get; set; }
         public Status status { get; set; }
+
+        public List<Jogador> Jogadores { get; set; }
 
         public Partida(int id, string nome, string data, Status status)
         {
@@ -32,6 +35,7 @@ namespace Teste
         {
             this.id = Convert.ToInt32(Jogo.CriarPartida(nome, senha));
             this.nome = nome;
+            this.senha = senha;
             this.data = DateTime.Now.ToString("d");
             this.status = Status.Abertas;
         }
