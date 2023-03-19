@@ -1,6 +1,6 @@
 ﻿namespace Teste
 {
-    partial class frmLobby
+    partial class frmEntrarNaPartida
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -30,6 +30,10 @@
         {
             this.btnListarPartidas = new System.Windows.Forms.Button();
             this.dgvListaPartidas = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.radTodos = new System.Windows.Forms.RadioButton();
             this.radAbertas = new System.Windows.Forms.RadioButton();
             this.radJogando = new System.Windows.Forms.RadioButton();
@@ -47,10 +51,6 @@
             this.btnEntrarPartida = new System.Windows.Forms.Button();
             this.grbEntrarPartida = new System.Windows.Forms.GroupBox();
             this.grbCriarPartida = new System.Windows.Forms.GroupBox();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPartidas)).BeginInit();
             this.grbStatus.SuspendLayout();
             this.grbEntrarPartida.SuspendLayout();
@@ -93,6 +93,35 @@
             this.dgvListaPartidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaPartidas.Size = new System.Drawing.Size(340, 450);
             this.dgvListaPartidas.TabIndex = 2;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "nome";
+            this.name.HeaderText = "Nome";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "data";
+            this.date.HeaderText = "Data";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
             // 
             // radTodos
             // 
@@ -248,7 +277,7 @@
             this.grbEntrarPartida.Controls.Add(this.txtSenha);
             this.grbEntrarPartida.Controls.Add(this.txtNomeJogador);
             this.grbEntrarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbEntrarPartida.Location = new System.Drawing.Point(552, 49);
+            this.grbEntrarPartida.Location = new System.Drawing.Point(562, 12);
             this.grbEntrarPartida.Name = "grbEntrarPartida";
             this.grbEntrarPartida.Size = new System.Drawing.Size(180, 170);
             this.grbEntrarPartida.TabIndex = 18;
@@ -269,36 +298,7 @@
             this.grbCriarPartida.TabStop = false;
             this.grbCriarPartida.Text = "Criar uma Partida";
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "nome";
-            this.name.HeaderText = "Nome";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "data";
-            this.date.HeaderText = "Data";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            this.date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "status";
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
-            // frmLobby
+            // frmEntrarNaPartida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -308,9 +308,9 @@
             this.Controls.Add(this.grbStatus);
             this.Controls.Add(this.dgvListaPartidas);
             this.Controls.Add(this.btnListarPartidas);
-            this.Name = "frmLobby";
+            this.Name = "frmEntrarNaPartida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "Entrar na Partida";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPartidas)).EndInit();
             this.grbStatus.ResumeLayout(false);
             this.grbStatus.PerformLayout();

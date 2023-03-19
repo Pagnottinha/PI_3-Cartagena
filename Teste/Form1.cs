@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace Teste
 {
-    public partial class frmLobby : Form
+    public partial class frmEntrarNaPartida : Form
     {
 
         Main Main = new Main();
-        public frmLobby()
+        public frmEntrarNaPartida()
         {
             InitializeComponent();
         }
@@ -73,8 +73,7 @@ namespace Teste
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
-            }
-            
+            } 
         }
     }
 }
