@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CartagenaServer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,50 @@ namespace Teste
 {
     public partial class frmLobby : Form
     {
-        public frmLobby()
+        private int idPartida;
+        Main Main = new Main();
+
+        public frmLobby(int idPartida, Jogador jogador)
         {
             InitializeComponent();
+            this.idPartida = idPartida;
+            lblDadosJogador.Text = $"ID:  {jogador.id}   -   Nome:  {jogador.nome}   -   Senha:  {jogador.senha}   -   Cor:  {jogador.cor}";
+            dgvListarJogadores.AutoGenerateColumns = false;
         }
 
         private void frmLobby_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnListarJogadores_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Main.pegarJogadores(idPartida);
+
+                dgvListarJogadores.DataSource = Main.jogador;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnIniciarPartida_Click(object sender, EventArgs e)
+        {
+            int idJogador = Convert.ToInt32(txtIdJogador.Text);
+            string senha = txtSenhaJogador.Text;
+
+            try
+            {
+                string teste = Jogo.IniciarPartida(idJogador, senha);
+                MessageBox.Show(teste);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

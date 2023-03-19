@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLobby));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntrarNaPartida));
             this.btnListarPartidas = new System.Windows.Forms.Button();
             this.dgvListaPartidas = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -225,7 +225,7 @@
             this.cboFiltros.FormattingEnabled = true;
             this.cboFiltros.Items.AddRange(new object[] {
             resources.GetString("cboFiltros.Items"),
-            resources.GetString("cboFiltros.Items1"),
+            resources.GetString("cboFiltros.Items1") ,
             resources.GetString("cboFiltros.Items2"),
             resources.GetString("cboFiltros.Items3")});
             this.cboFiltros.Name = "cboFiltros";
@@ -235,7 +235,7 @@
             resources.ApplyResources(this.lblFiltros, "lblFiltros");
             this.lblFiltros.Name = "lblFiltros";
             // 
-            // frmLobby
+            // frmEntrarNaPartida
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -245,7 +245,7 @@
             this.Controls.Add(this.grbEntrarPartida);
             this.Controls.Add(this.dgvListaPartidas);
             this.Controls.Add(this.btnListarPartidas);
-            this.Name = "frmLobby";
+            this.Name = "frmEntrarNaPartida";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPartidas)).EndInit();
             this.grbEntrarPartida.ResumeLayout(false);
             this.grbEntrarPartida.PerformLayout();

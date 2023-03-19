@@ -8,12 +8,18 @@ using System.Threading.Tasks;
 
 namespace Teste
 {
-    internal class Jogador
+    public enum Cartas { 
+    
+    }
+
+    public class Jogador
     {
         public int id {  get; set; }
         public string senha { get; set; }
         public string nome { get; set; }
         public string cor { get; set; }
+
+        public Dictionary<Cartas, int> cartas;
 
         public Jogador(int id, string nome, string cor)
         {

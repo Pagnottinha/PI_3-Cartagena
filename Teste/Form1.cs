@@ -66,6 +66,9 @@ namespace Teste
                 jogador.entrarPartida(partida, senha);
 
                 MessageBox.Show($"Partida Criada!\nID: {jogador.id}\nNome: {jogador.nome}\nSenha: {jogador.senha}\nCor: {jogador.cor}");
+                frmLobby formLobby = new frmLobby(partida.id, jogador);
+                this.Hide();
+                formLobby.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -86,6 +89,9 @@ namespace Teste
                 jogador.entrarPartida(Main.partidas[indexPartida], senha);
 
                 MessageBox.Show($"ID: {jogador.id}\nNome: {jogador.nome}\nSenha: {jogador.senha}\nCor: {jogador.cor}");
+                frmLobby formLobby = new frmLobby(Main.partidas[indexPartida].id, jogador);
+                this.Hide();
+                formLobby.ShowDialog();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);

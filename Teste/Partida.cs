@@ -13,7 +13,7 @@ namespace Teste
         Jogando,
         Enceradas
     }
-    internal class Partida
+    public class Partida
     {
         public int id { get; set; }
         public string nome { get; set; }
@@ -39,7 +39,5 @@ namespace Teste
             this.data = DateTime.Now.ToString("d");
             this.status = Status.Abertas;
         }
-
-
     }
 }

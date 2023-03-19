@@ -12,6 +12,8 @@ namespace Teste
     internal class Main
     {
         public BindingList<Partida> partidas { get; } = new BindingList<Partida>();
+        public BindingList<Jogador> jogador { get; } = new BindingList<Jogador>();
+
         public Main() {
            
         }
@@ -51,6 +53,25 @@ namespace Teste
             }
 
             return;
+        }
+
+        public void pegarJogadores(int idPartida)
+        {
+            string[] pegarJogadores = Jogo.ListarJogadores(idPartida).Replace("\r", "")
+                .Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+            jogador.Clear();
+
+            foreach(string jogadores in pegarJogadores)
+            {
+                string[] args = jogadores.Split(',');
+
+                int id = Convert.ToInt32(args[0]);
+                string nome = args[1];
+                string cor = args[2];
+
+                jogador.Add(new Jogador(id, nome, cor)); 
+            }
         }
     }
 }
