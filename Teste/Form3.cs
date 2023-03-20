@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CartagenaServer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,22 @@ namespace Teste
 {
     public partial class frmJogo : Form
     {
-        public frmJogo()
+        Jogador jogador;
+        public frmJogo(Jogador jogador)
         {
             InitializeComponent();
+            this.jogador = jogador;
+        }
+
+        private void btn_ConsultarMao_Click(object sender, EventArgs e)
+        {
+            jogador.consultarMao();
+
+            foreach (Cartas item in jogador.cartas.Keys)
+            { 
+                ltb_Cartas.Items.Add(item + " " + jogador.cartas[item]);
+            }
+           
         }
     }
 }

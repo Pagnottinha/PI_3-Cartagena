@@ -15,11 +15,13 @@ namespace Teste
     {
         private int idPartida;
         Main Main = new Main();
+        Jogador jogador;
 
         public frmLobby(int idPartida, Jogador jogador)
         {
             InitializeComponent();
             this.idPartida = idPartida;
+            this.jogador = jogador;
             lblDadosJogador.Text = $"ID:  {jogador.id}   -   Nome:  {jogador.nome}   -   Senha:  {jogador.senha}   -   Cor:  {jogador.cor}";
             dgvListarJogadores.AutoGenerateColumns = false;
         }
@@ -51,7 +53,14 @@ namespace Teste
             try
             {
                 string teste = Jogo.IniciarPartida(idJogador, senha);
-                MessageBox.Show(teste);
+                string test = Jogo.ConsultarMao(idJogador, senha);
+
+
+                MessageBox.Show(test);
+
+                frmJogo frmJogo = new frmJogo(jogador);
+                this.Hide();
+                frmJogo.ShowDialog();
             }
             catch (Exception ex)
             {
