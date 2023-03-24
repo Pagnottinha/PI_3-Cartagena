@@ -31,10 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntrarNaPartida));
             this.btnListarPartidas = new System.Windows.Forms.Button();
             this.dgvListaPartidas = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNomePartida = new System.Windows.Forms.TextBox();
             this.txtSenhaCriar = new System.Windows.Forms.TextBox();
             this.btnCriarPartida = new System.Windows.Forms.Button();
@@ -52,6 +48,10 @@
             this.chkEntrar = new System.Windows.Forms.CheckBox();
             this.cboFiltros = new System.Windows.Forms.ComboBox();
             this.lblFiltros = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPartidas)).BeginInit();
             this.grbEntrarPartida.SuspendLayout();
             this.grbCriarPartida.SuspendLayout();
@@ -78,8 +78,8 @@
             this.dgvListaPartidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaPartidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.name,
-            this.date,
+            this.nome,
+            this.data,
             this.status});
             this.dgvListaPartidas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaPartidas.MultiSelect = false;
@@ -87,35 +87,7 @@
             this.dgvListaPartidas.ReadOnly = true;
             this.dgvListaPartidas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvListaPartidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            resources.ApplyResources(this.id, "id");
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "nome";
-            resources.ApplyResources(this.name, "name");
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "data";
-            resources.ApplyResources(this.date, "date");
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            this.date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "status";
-            resources.ApplyResources(this.status, "status");
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
+            this.dgvListaPartidas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListaPartidas_CellFormatting);
             // 
             // txtNomePartida
             // 
@@ -225,7 +197,7 @@
             this.cboFiltros.FormattingEnabled = true;
             this.cboFiltros.Items.AddRange(new object[] {
             resources.GetString("cboFiltros.Items"),
-            resources.GetString("cboFiltros.Items1") ,
+            resources.GetString("cboFiltros.Items1"),
             resources.GetString("cboFiltros.Items2"),
             resources.GetString("cboFiltros.Items3")});
             this.cboFiltros.Name = "cboFiltros";
@@ -234,6 +206,35 @@
             // 
             resources.ApplyResources(this.lblFiltros, "lblFiltros");
             this.lblFiltros.Name = "lblFiltros";
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            resources.ApplyResources(this.id, "id");
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            resources.ApplyResources(this.nome, "nome");
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            // 
+            // data
+            // 
+            this.data.DataPropertyName = "data";
+            resources.ApplyResources(this.data, "data");
+            this.data.Name = "data";
+            this.data.ReadOnly = true;
+            this.data.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            resources.ApplyResources(this.status, "status");
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
             // 
             // frmEntrarNaPartida
             // 
@@ -272,15 +273,15 @@
         private System.Windows.Forms.Button btnEntrarPartida;
         private System.Windows.Forms.GroupBox grbEntrarPartida;
         private System.Windows.Forms.GroupBox grbCriarPartida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.ComboBox cboFiltros;
         private System.Windows.Forms.CheckBox chkEntrar;
         private System.Windows.Forms.TextBox txtNomeJogadorCriar;
         private System.Windows.Forms.Label lblNomeJogadorCriar;
         private System.Windows.Forms.Label lblFiltros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }
 

@@ -104,5 +104,31 @@ namespace Teste
             lblNomeJogadorCriar.Enabled = !lblNomeJogadorCriar.Enabled;
             txtNomeJogadorCriar.Enabled = !txtNomeJogadorCriar.Enabled;
         }
+
+        private void dgvListaPartidas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+            DataGridView dgv = sender as DataGridView;
+
+            if (dgv.Columns[e.ColumnIndex].Name.Equals("status"))
+            {
+                if (e.Value == null) { return; }
+
+                switch ((Status)e.Value)
+                {
+                    case Status.Abertas:
+                        e.CellStyle.BackColor = Color.LightGreen;
+                        break;
+                    case Status.Jogando:
+                        e.CellStyle.BackColor = Color.LightGoldenrodYellow;
+                        break;
+                    case Status.Enceradas: 
+                        e.CellStyle.BackColor = Color.Red;
+                        break;
+                }
+            
+            }
+               
+        }
     }
 }
