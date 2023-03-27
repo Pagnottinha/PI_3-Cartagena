@@ -105,6 +105,9 @@ namespace Teste
 
         private void btn_Historico_Click(object sender, EventArgs e)
         {
+            //string teste = Jogo.ExibirHistorico(idPartida);
+            //MessageBox.Show(teste);
+
             string[] historico = Jogo.ExibirHistorico(idPartida).Replace("\r", "")
                 .Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -115,8 +118,19 @@ namespace Teste
                 int id = Convert.ToInt32(retornoTabuleiro[0]);
                 int numJogada = Convert.ToInt32(retornoTabuleiro[1]);
                 string carta = retornoTabuleiro[2];
-                int posicaoOrigem = Convert.ToInt32(retornoTabuleiro[3]);
-                int posicaoDestino = Convert.ToInt32(retornoTabuleiro[0]);
+                int posicaoOrigem;
+                int posicaoDestino;
+
+                if (retornoTabuleiro[3] != "" && retornoTabuleiro[4] != "")
+                {
+                    posicaoOrigem = Convert.ToInt32(retornoTabuleiro[3]);
+                    posicaoDestino = Convert.ToInt32(retornoTabuleiro[4]);
+                }
+                else
+                {
+                    ltb_HistoricoPartida.Items.Add($"Jogador {id} pulou a vez na jogada {numJogada}");
+                    return;
+                }
 
                 switch (carta)
                 {
