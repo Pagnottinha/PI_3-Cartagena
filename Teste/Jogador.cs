@@ -63,6 +63,8 @@ namespace Teste
             string[] ret = Jogo.ConsultarMao(id, senha).Replace("\r", "")
                 .Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
+            cartas.Clear();
+
             foreach (string item in ret)
             {
                 string[] retornoConsultMao = item.Split(',');
@@ -82,7 +84,24 @@ namespace Teste
 
                 else if(carta == "C") { cartas.Add(Cartas.Chave, qtd); }
             }
+        }
 
+        public void Jogar(string jogar, int posicao, string carta)
+        {
+            string ret;
+
+            if (posicao == -1)
+            {
+                ret = Jogo.Jogar(this.id, this.senha);
+            }
+            else if (jogar == "Mover para frente")
+            {
+                ret = Jogo.Jogar(this.id, this.senha, posicao, carta);
+            }
+            else
+                ret = Jogo.Jogar(this.id, this.senha, posicao);
+
+            System.Windows.Forms.MessageBox.Show(ret);
         }
     }
 }

@@ -58,7 +58,7 @@ namespace Teste
 
                 MessageBox.Show(test);
 
-                frmJogo frmJogo = new frmJogo(jogador);
+                frmJogo frmJogo = new frmJogo(jogador, idPartida);
                 this.Hide();
                 frmJogo.ShowDialog();
             }
@@ -67,5 +67,6 @@ namespace Teste
                 MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

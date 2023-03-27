@@ -27,6 +27,7 @@ namespace Teste
         {
             try
             {
+                
                 string status = cboFiltros.Text[0].ToString();
 
                 Main.pegarPartidas(status);
@@ -107,7 +108,6 @@ namespace Teste
 
         private void dgvListaPartidas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-
             DataGridView dgv = sender as DataGridView;
 
             if (dgv.Columns[e.ColumnIndex].Name.Equals("status"))
