@@ -15,7 +15,7 @@ namespace Teste
     public partial class frmEntrarNaPartida : Form
     {
 
-        Main Main = new Main();
+        public List<Partida> partidas = new List<Partida>();
         public frmEntrarNaPartida()
         {
             InitializeComponent();
@@ -25,14 +25,16 @@ namespace Teste
 
         private void btnListGames_Click(object sender, EventArgs e)
         {
+            JogoService service = new JogoService();
+
             try
             {
                 
                 string status = cboFiltros.Text[0].ToString();
 
-                Main.pegarPartidas(status);
+                partidas = service.pegarPartidas(status);
 
-                dgvListaPartidas.DataSource = Main.partidas;
+                dgvListaPartidas.DataSource = partidas;
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -59,15 +61,14 @@ namespace Teste
                 if (!chkEntrar.Checked)
                 {
                     MessageBox.Show("Partida Criada!", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Main.partidas.Add(partida);
+                    partidas.Add(partida);
                     return;
                 }
 
                 Jogador jogador = new Jogador(nomeJogador);
                 jogador.entrarPartida(partida, senha);
 
-                MessageBox.Show($"Partida Criada!\nID: {jogador.id}\nNome: {jogador.nome}\nSenha: {jogador.senha}\nCor: {jogador.cor}");
-                frmLobby formLobby = new frmLobby(partida.id, jogador);
+                frmLobby formLobby = new frmLobby(partida);
                 this.Hide();
                 formLobby.ShowDialog();
             }
@@ -87,10 +88,9 @@ namespace Teste
             try
             {
                 Jogador jogador = new Jogador(nomePlayer);
-                jogador.entrarPartida(Main.partidas[indexPartida], senha);
+                jogador.entrarPartida(partidas[indexPartida], senha);
 
-                MessageBox.Show($"ID: {jogador.id}\nNome: {jogador.nome}\nSenha: {jogador.senha}\nCor: {jogador.cor}");
-                frmLobby formLobby = new frmLobby(Main.partidas[indexPartida].id, jogador);
+                frmLobby formLobby = new frmLobby(partidas[indexPartida]);
                 this.Hide();
                 formLobby.ShowDialog();
             }
@@ -116,13 +116,13 @@ namespace Teste
 
                 switch ((Status)e.Value)
                 {
-                    case Status.Abertas:
+                    case Status.Aberta:
                         e.CellStyle.BackColor = Color.LightGreen;
                         break;
                     case Status.Jogando:
                         e.CellStyle.BackColor = Color.LightGoldenrodYellow;
                         break;
-                    case Status.Enceradas: 
+                    case Status.Encerada: 
                         e.CellStyle.BackColor = Color.Red;
                         break;
                 }

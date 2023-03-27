@@ -14,25 +14,23 @@ namespace Teste
 {
     public partial class frmJogo : Form
     {
-        Jogador jogador;
-        int idPartida;
-        public frmJogo(Jogador jogador, int idPartida)
+        Partida partida;
+        public frmJogo(Partida partida)
         {
             InitializeComponent();
-            this.jogador = jogador;
-            this.idPartida = idPartida;
+            this.partida = partida;
             cbo_Jogar.SelectedIndex = 0;
         }
 
         private void btn_ConsultarMao_Click(object sender, EventArgs e)
         {
-            jogador.consultarMao();
+            partida.jogador.consultarMao();
 
 
             ltb_Cartas.Items.Clear();
-            foreach (Cartas item in jogador.cartas.Keys)
+            foreach (Cartas item in partida.jogador.cartas.Keys)
             { 
-                ltb_Cartas.Items.Add(item + ": " + jogador.cartas[item]);
+                ltb_Cartas.Items.Add(item + ": " + partida.jogador.cartas[item]);
             }
            
         }
@@ -46,11 +44,11 @@ namespace Teste
                 string cartaSelecionada = txtCartaSelecionada.Text;
 
                 if (opcaoJogar == "Pular vez")
-                    jogador.Jogar(opcaoJogar, -1, cartaSelecionada);
+                    partida.jogador.Jogar(opcaoJogar, -1, cartaSelecionada);
                 else
                 {
                     posicao = Convert.ToInt32(txtPosicaoPirata.Text);
-                    jogador.Jogar(opcaoJogar, posicao, cartaSelecionada);
+                    partida.jogador.Jogar(opcaoJogar, posicao, cartaSelecionada);
                 }                  
             }
             catch(Exception ex)
@@ -61,8 +59,10 @@ namespace Teste
 
         private void btnAtualizarTabuleiro_Click(object sender, EventArgs e)
         {
-            string[] tabuleiro = Jogo.ExibirTabuleiro(idPartida).Replace("\r", "")
+            string[] tabuleiro = Jogo.ExibirTabuleiro(partida.id).Replace("\r", "")
                 .Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+            ltb_Tabuleiro.Items.Clear();
 
             foreach (string item in tabuleiro)
             {
@@ -108,8 +108,10 @@ namespace Teste
             //string teste = Jogo.ExibirHistorico(idPartida);
             //MessageBox.Show(teste);
 
-            string[] historico = Jogo.ExibirHistorico(idPartida).Replace("\r", "")
+            string[] historico = Jogo.ExibirHistorico(partida.id).Replace("\r", "")
                 .Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+            ltb_HistoricoPartida.Items.Clear();
 
             foreach (string item in historico)
             {
@@ -125,38 +127,37 @@ namespace Teste
                 {
                     posicaoOrigem = Convert.ToInt32(retornoTabuleiro[3]);
                     posicaoDestino = Convert.ToInt32(retornoTabuleiro[4]);
+
+                    switch (carta)
+                    {
+                        case "E":
+                            ltb_HistoricoPartida.Items.Add($"O jogador com ID {id} na jogada\n {numJogada} jogou uma carta de Esqueleto\n e foi da posição {posicaoOrigem} para\n a posição {posicaoDestino}");
+                            break;
+                        case "P":
+                            ltb_HistoricoPartida.Items.Add($"O jogador com ID {id} na jogada\n {numJogada} jogou uma carta de Pistola\n e foi da posição {posicaoOrigem} para\n a posição {posicaoDestino}");
+                            break;
+                        case "C":
+                            ltb_HistoricoPartida.Items.Add($"O jogador com ID {id} na jogada\n {numJogada} jogou uma carta de Chave\n e foi da posição {posicaoOrigem} para\n a posição {posicaoDestino}");
+                            break;
+                        case "T":
+                            ltb_HistoricoPartida.Items.Add($"O jogador com ID {id} na jogada\n {numJogada} jogou uma carta de Tricórnio\n e foi da posição {posicaoOrigem} para\n a posição {posicaoDestino}");
+                            break;
+                        case "G":
+                            ltb_HistoricoPartida.Items.Add($"O jogador com ID  {id} na jogada\n {numJogada} jogou uma carta de Garrafa\n e foi da posição  {posicaoOrigem} para\n a posição {posicaoDestino}");
+                            break;
+                        case "F":
+                            ltb_HistoricoPartida.Items.Add($"O jogador com ID {id} na jogada\n {numJogada} jogou uma carta de Faca\n e foi da posição {posicaoOrigem} para\n a posição {posicaoDestino}");
+                            break;
+                        case " ":
+                            ltb_HistoricoPartida.Items.Add($"O jogador com ID {id} na jogada\n {numJogada} voltou da posição {posicaoOrigem}\n para a posição {posicaoDestino}");
+                            break;
+                        default:
+                            throw new Exception("Posição Inválida");
+                    }
                 }
                 else
                 {
                     ltb_HistoricoPartida.Items.Add($"Jogador {id} pulou a vez na jogada {numJogada}");
-                    return;
-                }
-
-                switch (carta)
-                {
-                    case "E":
-                        ltb_HistoricoPartida.Items.Add($"O jogador com ID {id} na jogada\n {numJogada} jogou uma carta de Esqueleto\n e foi da posição {posicaoOrigem} para\n a posição {posicaoDestino}");
-                        break;
-                    case "P":
-                        ltb_HistoricoPartida.Items.Add($"O jogador com ID {id} na jogada\n {numJogada} jogou uma carta de Pistola\n e foi da posição {posicaoOrigem} para\n a posição {posicaoDestino}");
-                        break;
-                    case "C":
-                        ltb_HistoricoPartida.Items.Add($"O jogador com ID {id} na jogada\n {numJogada} jogou uma carta de Chave\n e foi da posição {posicaoOrigem} para\n a posição {posicaoDestino}");
-                        break;
-                    case "T":
-                        ltb_HistoricoPartida.Items.Add($"O jogador com ID {id} na jogada\n {numJogada} jogou uma carta de Tricórnio\n e foi da posição {posicaoOrigem} para\n a posição {posicaoDestino}");
-                        break;
-                    case "G":
-                        ltb_HistoricoPartida.Items.Add($"O jogador com ID  {id} na jogada\n {numJogada} jogou uma carta de Garrafa\n e foi da posição  {posicaoOrigem} para\n a posição {posicaoDestino}");
-                        break;
-                    case "F":
-                        ltb_HistoricoPartida.Items.Add($"O jogador com ID {id} na jogada\n {numJogada} jogou uma carta de Faca\n e foi da posição {posicaoOrigem} para\n a posição {posicaoDestino}");
-                        break;
-                    case " ":
-                        ltb_HistoricoPartida.Items.Add($"O jogador com ID {id} na jogada\n {numJogada} voltou da posição {posicaoOrigem}\n para a posição {posicaoDestino}");
-                        break;
-                    default:
-                        throw new Exception("Posição Inválida");
                 }
             }
 

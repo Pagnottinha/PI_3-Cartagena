@@ -40,50 +40,21 @@ namespace Teste
 
         public void entrarPartida(Partida partida, string senha)
         {
-            string retorno = Jogo.EntrarPartida(partida.id, this.nome, senha);
+            JogoService service = new JogoService();
 
-            if (retorno.StartsWith("ERRO")) { throw new Exception(retorno); }
+            Jogador retorno = service.entrarPartida(partida.id, this.nome, senha);
 
-            else
-            {
-                string[] retornoArray = retorno.Split(',');
+            this.id = retorno.id;
+            this.cor = retorno.cor;
+            this.senha = retorno.senha;
 
-                this.id = Convert.ToInt32(retornoArray[0]);
-                this.senha = retornoArray[1];
-                this.cor = retornoArray[2];
-
-                partida.Jogadores = new List<Jogador>();
-                
-                partida.Jogadores.Add(this);
-            }
-            
+            partida.jogador = this;
+            partida.senha = senha;
         }
         public void consultarMao()
         {
-            string[] ret = Jogo.ConsultarMao(id, senha).Replace("\r", "")
-                .Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
-
-            cartas.Clear();
-
-            foreach (string item in ret)
-            {
-                string[] retornoConsultMao = item.Split(',');
-
-                string carta = retornoConsultMao[0];
-                int qtd = Convert.ToInt32(retornoConsultMao[1]);
-
-                if (carta == "E") { cartas.Add(Cartas.Esqueleto, qtd); }
-
-                else if (carta == "T") { cartas.Add(Cartas.Tricornio, qtd); }
-
-                else if (carta == "G") { cartas.Add(Cartas.Garrafa, qtd); }
-
-                else if (carta == "F") { cartas.Add(Cartas.Faca, qtd); }
-
-                else if (carta == "P") { cartas.Add(Cartas.Pistola, qtd); }
-
-                else if(carta == "C") { cartas.Add(Cartas.Chave, qtd); }
-            }
+            JogoService service = new JogoService();
+            this.cartas = service.consultarMao(this.id, this.senha);
         }
 
         public void Jogar(string jogar, int posicao, string carta)

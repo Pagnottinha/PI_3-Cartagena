@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Teste.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CartagenaServer">
       <HintPath>..\CartagenaServer.dll</HintPath>
@@ -69,7 +72,7 @@
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
     <Compile Include="Partida.cs" />
-    <Compile Include="Main.cs" />
+    <Compile Include="JogoService.cs" />
     <Compile Include="Jogador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -13,31 +13,22 @@ namespace Teste
 {
     public partial class frmLobby : Form
     {
-        private int idPartida;
-        Main Main = new Main();
-        Jogador jogador;
+        Partida partida;
 
-        public frmLobby(int idPartida, Jogador jogador)
+        public frmLobby(Partida partida)
         {
             InitializeComponent();
-            this.idPartida = idPartida;
-            this.jogador = jogador;
-            lblDadosJogador.Text = $"ID:  {jogador.id}   -   Nome:  {jogador.nome}   -   Senha:  {jogador.senha}   -   Cor:  {jogador.cor}";
+            this.partida = partida;
             dgvListarJogadores.AutoGenerateColumns = false;
-        }
-
-        private void frmLobby_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnListarJogadores_Click(object sender, EventArgs e)
         {
             try
             {
-                Main.pegarJogadores(idPartida);
+                partida.listarJogadores();
 
-                dgvListarJogadores.DataSource = Main.jogador;
+                dgvListarJogadores.DataSource = partida.Jogadores;
             }
             catch (Exception ex)
             {
@@ -47,26 +38,29 @@ namespace Teste
 
         private void btnIniciarPartida_Click(object sender, EventArgs e)
         {
-            int idJogador = Convert.ToInt32(txtIdJogador.Text);
-            string senha = txtSenhaJogador.Text;
+
+            frmJogo frmJogo = new frmJogo(partida);
 
             try
             {
-                string teste = Jogo.IniciarPartida(idJogador, senha);
-                string test = Jogo.ConsultarMao(idJogador, senha);
+                Jogador jogador = partida.jogador;
 
+                JogoService service = new JogoService();
 
-                MessageBox.Show(test);
-
-                frmJogo frmJogo = new frmJogo(jogador, idPartida);
+                partida.vez = service.iniciarPartida(jogador.id, jogador.senha);
+                
                 this.Hide();
                 frmJogo.ShowDialog();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex.Message == "ERRO:Partida não está aberta")
+                {
+                    this.Hide();
+                    frmJogo.ShowDialog();
+                }
             }
         }
-
     }
 }
