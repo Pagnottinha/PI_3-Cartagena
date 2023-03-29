@@ -47,7 +47,7 @@
             // 
             this.ltb_Cartas.FormattingEnabled = true;
             this.ltb_Cartas.Location = new System.Drawing.Point(560, 12);
-            this.ltb_Cartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ltb_Cartas.Margin = new System.Windows.Forms.Padding(2);
             this.ltb_Cartas.Name = "ltb_Cartas";
             this.ltb_Cartas.Size = new System.Drawing.Size(192, 225);
             this.ltb_Cartas.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             this.btn_ConsultarMao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ConsultarMao.Location = new System.Drawing.Point(606, 241);
-            this.btn_ConsultarMao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_ConsultarMao.Margin = new System.Windows.Forms.Padding(2);
             this.btn_ConsultarMao.Name = "btn_ConsultarMao";
             this.btn_ConsultarMao.Size = new System.Drawing.Size(112, 34);
             this.btn_ConsultarMao.TabIndex = 1;
@@ -178,6 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(763, 450);
             this.Controls.Add(this.txtCartaSelecionada);
             this.Controls.Add(this.lblJogarCarta);
@@ -192,6 +193,7 @@
             this.Controls.Add(this.cbo_Jogar);
             this.Controls.Add(this.btn_ConsultarMao);
             this.Controls.Add(this.ltb_Cartas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmJogo";
             this.Text = "Jogo";
             this.ResumeLayout(false);

@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntrarNaPartida));
             this.btnListarPartidas = new System.Windows.Forms.Button();
             this.dgvListaPartidas = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNomePartida = new System.Windows.Forms.TextBox();
             this.txtSenhaCriar = new System.Windows.Forms.TextBox();
             this.btnCriarPartida = new System.Windows.Forms.Button();
@@ -48,10 +52,6 @@
             this.chkEntrar = new System.Windows.Forms.CheckBox();
             this.cboFiltros = new System.Windows.Forms.ComboBox();
             this.lblFiltros = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPartidas)).BeginInit();
             this.grbEntrarPartida.SuspendLayout();
             this.grbCriarPartida.SuspendLayout();
@@ -88,6 +88,35 @@
             this.dgvListaPartidas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvListaPartidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaPartidas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListaPartidas_CellFormatting);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            resources.ApplyResources(this.id, "id");
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            resources.ApplyResources(this.nome, "nome");
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            // 
+            // data
+            // 
+            this.data.DataPropertyName = "data";
+            resources.ApplyResources(this.data, "data");
+            this.data.Name = "data";
+            this.data.ReadOnly = true;
+            this.data.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            resources.ApplyResources(this.status, "status");
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
             // 
             // txtNomePartida
             // 
@@ -207,45 +236,18 @@
             resources.ApplyResources(this.lblFiltros, "lblFiltros");
             this.lblFiltros.Name = "lblFiltros";
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            resources.ApplyResources(this.id, "id");
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // nome
-            // 
-            this.nome.DataPropertyName = "nome";
-            resources.ApplyResources(this.nome, "nome");
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            // 
-            // data
-            // 
-            this.data.DataPropertyName = "data";
-            resources.ApplyResources(this.data, "data");
-            this.data.Name = "data";
-            this.data.ReadOnly = true;
-            this.data.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "status";
-            resources.ApplyResources(this.status, "status");
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
             // frmEntrarNaPartida
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PeachPuff;
             this.Controls.Add(this.lblFiltros);
             this.Controls.Add(this.cboFiltros);
             this.Controls.Add(this.grbCriarPartida);
             this.Controls.Add(this.grbEntrarPartida);
             this.Controls.Add(this.dgvListaPartidas);
             this.Controls.Add(this.btnListarPartidas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmEntrarNaPartida";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPartidas)).EndInit();
             this.grbEntrarPartida.ResumeLayout(false);

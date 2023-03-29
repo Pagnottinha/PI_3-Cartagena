@@ -84,9 +84,9 @@
             // btnIniciarPartida
             // 
             this.btnIniciarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciarPartida.Location = new System.Drawing.Point(483, 160);
+            this.btnIniciarPartida.Location = new System.Drawing.Point(444, 107);
             this.btnIniciarPartida.Name = "btnIniciarPartida";
-            this.btnIniciarPartida.Size = new System.Drawing.Size(157, 48);
+            this.btnIniciarPartida.Size = new System.Drawing.Size(310, 176);
             this.btnIniciarPartida.TabIndex = 4;
             this.btnIniciarPartida.Text = "Iniciar Partida";
             this.btnIniciarPartida.UseVisualStyleBackColor = true;
@@ -96,10 +96,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnIniciarPartida);
             this.Controls.Add(this.dgvListarJogadores);
             this.Controls.Add(this.btnListarJogadores);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmLobby";
             this.Text = "Form Lobby";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarJogadores)).EndInit();

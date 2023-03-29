@@ -170,6 +170,9 @@
   <data name="dgvListaPartidas.Size" type="System.Drawing.Size, System.Drawing">
     <value>340, 450</value>
   </data>
+  <data name="lblFiltros.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 16</value>
+  </data>
   <data name="&gt;&gt;dgvListaPartidas.Name" xml:space="preserve">
     <value>dgvListaPartidas</value>
   </data>
@@ -182,11 +185,11 @@
   <data name="&gt;&gt;lblNomePartida.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="lblSenhaEntrar.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="grbCriarPartida.Location" type="System.Drawing.Point, System.Drawing">
     <value>365, 115</value>
+  </data>
+  <data name="lblFiltros.Location" type="System.Drawing.Point, System.Drawing">
+    <value>519, 12</value>
   </data>
   <data name="&gt;&gt;btnCriarPartida.Name" xml:space="preserve">
     <value>btnCriarPartida</value>
@@ -215,23 +218,17 @@
   <data name="&gt;&gt;txtSenhaCriar.Parent" xml:space="preserve">
     <value>grbCriarPartida</value>
   </data>
-  <data name="lblFiltros.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 16</value>
+  <data name="txtSenhaCriar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 20</value>
   </data>
   <data name="&gt;&gt;date.Name" xml:space="preserve">
     <value>date</value>
   </data>
-  <data name="btnListarPartidas.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="chkEntrar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 17</value>
   </data>
   <data name="txtNomeJogadorCriar.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 143</value>
-  </data>
-  <data name="&gt;&gt;grbEntrarPartida.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtNomePartida.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 20</value>
   </data>
   <data name="grbEntrarPartida.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -266,7 +263,7 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmEntrarNaPartida</value>
   </data>
-  <data name="lblNomePartida.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblSenhaEntrar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="txtNomeJogadorEntrar.TabIndex" type="System.Int32, mscorlib">
@@ -274,9 +271,6 @@
   </data>
   <data name="&gt;&gt;name.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtNomePartida.Parent" xml:space="preserve">
-    <value>grbCriarPartida</value>
   </data>
   <data name="txtNomeJogadorEntrar.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 20</value>
@@ -288,8 +282,8 @@
   <data name="dgvListaPartidas.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
   </data>
-  <data name="&gt;&gt;btnEntrarPartida.Name" xml:space="preserve">
-    <value>btnEntrarPartida</value>
+  <data name="nome.HeaderText" xml:space="preserve">
+    <value>Nome</value>
   </data>
   <data name="&gt;&gt;lblNomeJogadorEntrar.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -303,11 +297,8 @@
   <data name="btnEntrarPartida.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="txtNomeJogadorCriar.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;btnEntrarPartida.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnListarPartidas.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblNomeJogadorCriar.Text" xml:space="preserve">
     <value>Nome Jogador</value>
@@ -339,14 +330,14 @@
   <data name="&gt;&gt;txtNomePartida.Name" xml:space="preserve">
     <value>txtNomePartida</value>
   </data>
-  <data name="&gt;&gt;grbEntrarPartida.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;btnEntrarPartida.Name" xml:space="preserve">
+    <value>btnEntrarPartida</value>
   </data>
   <data name="txtNomeJogadorCriar.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="chkEntrar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 17</value>
+  <data name="txtNomePartida.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 20</value>
   </data>
   <data name="status.HeaderText" xml:space="preserve">
     <value>Status</value>
@@ -357,11 +348,17 @@
   <data name="dgvListaPartidas.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="&gt;&gt;dgvListaPartidas.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="chkEntrar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cboFiltros.Location" type="System.Drawing.Point, System.Drawing">
     <value>522, 28</value>
+  </data>
+  <data name="txtNomeJogadorCriar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;status.Name" xml:space="preserve">
     <value>status</value>
@@ -399,6 +396,12 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
+  <data name="date.HeaderText" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="&gt;&gt;btnListarPartidas.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Main</value>
   </data>
@@ -414,6 +417,9 @@
   <data name="txtNomePartida.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="lblFiltros.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;lblNomeJogadorCriar.Parent" xml:space="preserve">
     <value>grbCriarPartida</value>
   </data>
@@ -427,9 +433,6 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;grbCriarPartida.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="dgvListaPartidas.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="&gt;&gt;dgvListaPartidas.Type" xml:space="preserve">
@@ -456,8 +459,8 @@
   <data name="&gt;&gt;chkEntrar.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;btnListarPartidas.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;grbEntrarPartida.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="txtSenhaEntrar.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 20</value>
@@ -489,8 +492,14 @@
   <data name="grbCriarPartida.Text" xml:space="preserve">
     <value>Criar uma Partida</value>
   </data>
+  <data name="&gt;&gt;chkEntrar.Name" xml:space="preserve">
+    <value>chkEntrar</value>
+  </data>
   <data name="&gt;&gt;txtSenhaCriar.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblNomePartida.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;name.Name" xml:space="preserve">
     <value>name</value>
@@ -498,8 +507,8 @@
   <data name="btnCriarPartida.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 44</value>
   </data>
-  <data name="txtSenhaCriar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 20</value>
+  <data name="lblNomePartida.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 13</value>
   </data>
   <data name="lblNomeJogadorEntrar.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -522,20 +531,20 @@
   <data name="&gt;&gt;btnEntrarPartida.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblNomeJogadorEntrar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 13</value>
-  </data>
   <data name="&gt;&gt;txtNomePartida.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblNomeJogadorCriar.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblSenhaCriar.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
   <data name="&gt;&gt;lblSenhaCriar.Name" xml:space="preserve">
     <value>lblSenhaCriar</value>
   </data>
   <data name="btnListarPartidas.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 44</value>
-  </data>
-  <data name="btnListarPartidas.Text" xml:space="preserve">
-    <value>Listar</value>
   </data>
   <data name="data.HeaderText" xml:space="preserve">
     <value>Data</value>
@@ -558,17 +567,17 @@
   <data name="chkEntrar.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 107</value>
   </data>
-  <data name="lblNomePartida.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
   <data name="&gt;&gt;txtSenhaEntrar.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblSenhaEntrar.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;txtSenhaEntrar.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvListaPartidas.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;txtNomePartida.Parent" xml:space="preserve">
+    <value>grbCriarPartida</value>
   </data>
   <data name="btnEntrarPartida.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 129</value>
@@ -582,14 +591,11 @@
   <data name="lblSenhaCriar.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
   </data>
-  <data name="nome.HeaderText" xml:space="preserve">
-    <value>Nome</value>
+  <data name="cboFiltros.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="&gt;&gt;txtSenhaEntrar.Name" xml:space="preserve">
     <value>txtSenhaEntrar</value>
-  </data>
-  <data name="lblNomePartida.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 13</value>
   </data>
   <data name="cboFiltros.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -600,11 +606,11 @@
   <data name="cboFiltros.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 28</value>
   </data>
-  <data name="cboFiltros.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+  <data name="dgvListaPartidas.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="date.HeaderText" xml:space="preserve">
-    <value>Data</value>
+  <data name="lblNomeJogadorEntrar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 13</value>
   </data>
   <data name="&gt;&gt;lblNomeJogadorEntrar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -624,17 +630,14 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblSenhaEntrar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
-  </data>
   <data name="&gt;&gt;dgvListaPartidas.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="lblFiltros.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;grbEntrarPartida.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="lblFiltros.Location" type="System.Drawing.Point, System.Drawing">
-    <value>519, 12</value>
+  <data name="&gt;&gt;btnEntrarPartida.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtNomePartida.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -642,8 +645,8 @@
   <data name="&gt;&gt;lblNomeJogadorCriar.Name" xml:space="preserve">
     <value>lblNomeJogadorCriar</value>
   </data>
-  <data name="lblNomeJogadorCriar.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+  <data name="btnListarPartidas.Text" xml:space="preserve">
+    <value>Listar</value>
   </data>
   <data name="lblNomeJogadorEntrar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -651,20 +654,17 @@
   <data name="grbEntrarPartida.Location" type="System.Drawing.Point, System.Drawing">
     <value>596, 134</value>
   </data>
-  <data name="lblSenhaCriar.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="lblNomePartida.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="&gt;&gt;lblSenhaCriar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblNomeJogadorCriar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 13</value>
-  </data>
   <data name="txtSenhaCriar.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 81</value>
   </data>
-  <data name="&gt;&gt;lblSenhaEntrar.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="lblNomeJogadorCriar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 13</value>
   </data>
   <data name="lblFiltros.Text" xml:space="preserve">
     <value>Status</value>
@@ -678,8 +678,8 @@
   <data name="&gt;&gt;btnCriarPartida.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;chkEntrar.Name" xml:space="preserve">
-    <value>chkEntrar</value>
+  <data name="lblSenhaEntrar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
   </data>
   <data name="&gt;&gt;lblFiltros.ZOrder" xml:space="preserve">
     <value>0</value>
