@@ -99,17 +99,34 @@ namespace Teste
                 string carta = retornoConsultMao[0];
                 int qtd = Convert.ToInt32(retornoConsultMao[1]);
 
-                if (carta == "E") { cartas.Add(Cartas.Esqueleto, qtd); }
+                switch (carta)
+                {
+                    case "E":
+                        cartas.Add(Cartas.Esqueleto, qtd);
+                        break;
+                    
+                    case "T":
+                        cartas.Add(Cartas.Tricornio, qtd);
+                        break;
 
-                else if (carta == "T") { cartas.Add(Cartas.Tricornio, qtd); }
+                    case "G":
+                        cartas.Add(Cartas.Garrafa, qtd);
+                        break;
 
-                else if (carta == "G") { cartas.Add(Cartas.Garrafa, qtd); }
+                    case "F":
+                        cartas.Add(Cartas.Faca, qtd);
+                        break;
 
-                else if (carta == "F") { cartas.Add(Cartas.Faca, qtd); }
+                    case "P":
+                        cartas.Add(Cartas.Pistola, qtd);
+                        break;
 
-                else if (carta == "P") { cartas.Add(Cartas.Pistola, qtd); }
+                    case "C":
+                        cartas.Add(Cartas.Chave, qtd);
+                        break;
 
-                else if (carta == "C") { cartas.Add(Cartas.Chave, qtd); }
+                }
+
             }
 
             return cartas;
