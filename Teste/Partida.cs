@@ -24,6 +24,8 @@ namespace Teste
         public Jogador jogador { get; set; }
         public int vez { get; set; }
 
+        public Dictionary<int, Cartas> tabuleiro;
+
         public Partida(int id, string nome, string data, Status status)
         {
             this.id = id;
@@ -50,6 +52,11 @@ namespace Teste
             JogoService service = new JogoService();
 
             Jogadores = service.pegarJogadores(this.id);
+        }
+
+        public void listarTabuleiro()
+        {
+            tabuleiro = new JogoService().pegarTabuleiro(this.id);
         }
     }
 }

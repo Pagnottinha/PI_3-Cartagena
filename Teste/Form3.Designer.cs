@@ -36,7 +36,6 @@
             this.btn_Historico = new System.Windows.Forms.Button();
             this.btn_JogarPirata = new System.Windows.Forms.Button();
             this.ltb_Tabuleiro = new System.Windows.Forms.ListBox();
-            this.btnAtualizarTabuleiro = new System.Windows.Forms.Button();
             this.txtPosicaoPirata = new System.Windows.Forms.TextBox();
             this.lblPosicaoPirata = new System.Windows.Forms.Label();
             this.lblJogarCarta = new System.Windows.Forms.Label();
@@ -123,21 +122,10 @@
             // ltb_Tabuleiro
             // 
             this.ltb_Tabuleiro.FormattingEnabled = true;
-            this.ltb_Tabuleiro.Location = new System.Drawing.Point(255, 263);
+            this.ltb_Tabuleiro.Location = new System.Drawing.Point(255, 277);
             this.ltb_Tabuleiro.Name = "ltb_Tabuleiro";
             this.ltb_Tabuleiro.Size = new System.Drawing.Size(266, 134);
             this.ltb_Tabuleiro.TabIndex = 7;
-            // 
-            // btnAtualizarTabuleiro
-            // 
-            this.btnAtualizarTabuleiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizarTabuleiro.Location = new System.Drawing.Point(315, 403);
-            this.btnAtualizarTabuleiro.Name = "btnAtualizarTabuleiro";
-            this.btnAtualizarTabuleiro.Size = new System.Drawing.Size(131, 35);
-            this.btnAtualizarTabuleiro.TabIndex = 8;
-            this.btnAtualizarTabuleiro.Text = "Atualizar Tabuleiro";
-            this.btnAtualizarTabuleiro.UseVisualStyleBackColor = true;
-            this.btnAtualizarTabuleiro.Click += new System.EventHandler(this.btnAtualizarTabuleiro_Click);
             // 
             // txtPosicaoPirata
             // 
@@ -184,7 +172,6 @@
             this.Controls.Add(this.lblJogarCarta);
             this.Controls.Add(this.lblPosicaoPirata);
             this.Controls.Add(this.txtPosicaoPirata);
-            this.Controls.Add(this.btnAtualizarTabuleiro);
             this.Controls.Add(this.ltb_Tabuleiro);
             this.Controls.Add(this.btn_JogarPirata);
             this.Controls.Add(this.btn_Historico);
@@ -211,7 +198,6 @@
         private System.Windows.Forms.Button btn_Historico;
         private System.Windows.Forms.Button btn_JogarPirata;
         private System.Windows.Forms.ListBox ltb_Tabuleiro;
-        private System.Windows.Forms.Button btnAtualizarTabuleiro;
         private System.Windows.Forms.TextBox txtPosicaoPirata;
         private System.Windows.Forms.Label lblPosicaoPirata;
         private System.Windows.Forms.Label lblJogarCarta;

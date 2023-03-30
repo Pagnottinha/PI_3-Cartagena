@@ -39,7 +39,7 @@ namespace Teste
         private void btnIniciarPartida_Click(object sender, EventArgs e)
         {
 
-            frmJogo frmJogo = new frmJogo(partida);
+            frmJogo frmJogo;
 
             try
             {
@@ -47,18 +47,26 @@ namespace Teste
 
                 JogoService service = new JogoService();
 
+
+
                 partida.vez = service.iniciarPartida(jogador.id, jogador.senha);
-                
+
+                frmJogo = new frmJogo(partida);
+
                 this.Hide();
                 frmJogo.ShowDialog();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (ex.Message == "ERRO:Partida não está aberta")
                 {
+                    frmJogo = new frmJogo(partida);
                     this.Hide();
                     frmJogo.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

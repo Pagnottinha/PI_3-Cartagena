@@ -163,6 +163,51 @@ namespace Teste
                     throw new Exception("Status desconhecido!");
             }
         }
+
+        public Dictionary<int, Cartas> pegarTabuleiro(int idPartida)
+        {
+            string[] retorno = separar(Jogo.ExibirTabuleiro(idPartida), false);
+
+            Dictionary<int, Cartas> tabuleiro = new Dictionary<int, Cartas>();
+
+            foreach (string item in retorno)
+            {
+                string[] retornoTabuleiro = item.Split(',');
+
+                int posicao = Convert.ToInt32(retornoTabuleiro[0]);
+
+                string carta = retornoTabuleiro[1];
+
+                switch (carta)
+                {
+                    case "E":
+                        tabuleiro.Add(posicao, Cartas.Esqueleto);
+                        break;
+                    case "P":
+                        tabuleiro.Add(posicao, Cartas.Pistola);
+                        break;
+                    case "C":
+                        tabuleiro.Add(posicao, Cartas.Chave);
+                        break;
+                    case "T":
+                        tabuleiro.Add(posicao, Cartas.Tricornio);
+                        break;
+                    case "G":
+                        tabuleiro.Add(posicao, Cartas.Garrafa);
+                        break;
+                    case "F":
+                        tabuleiro.Add(posicao, Cartas.Faca);
+                        break;
+                    case " ":
+                        break;
+                    default:
+                        throw new Exception("Posição Inválida");
+                }
+
+            }
+
+            return tabuleiro;
+        }
     }
 
 }
