@@ -136,8 +136,7 @@ namespace Teste
         {
             string[] retorno = separar(Jogo.EntrarPartida(partidaId, nomePlayer, senhaPartida), true);
 
-            Jogador jogador = new Jogador(Convert.ToInt32(retorno[0]), nomePlayer, retorno[2]);
-            jogador.senha = retorno[1];
+            Jogador jogador = new Jogador(Convert.ToInt32(retorno[0]), retorno[1], nomePlayer, retorno[2]);
 
             return jogador;
         }

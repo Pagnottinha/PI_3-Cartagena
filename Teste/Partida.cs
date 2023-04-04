@@ -14,12 +14,12 @@ namespace Teste
     }
     public class Partida
     {
-        public int id { get; set; }
-        public string nome { get; set; }
+        public int id { get; }
+        public string nome { get; }
         public string senha { get; set; }
-        public string data { get; set; }
-        public Status status { get; set; }
-        public List<Jogador> Jogadores { get; set; }
+        public string data { get; }
+        public Status status { get; }
+        public List<Jogador> Jogadores { get; private set; }
 
         public Jogador jogador { get; set; }
         public int vez { get; set; }

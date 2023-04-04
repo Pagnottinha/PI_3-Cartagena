@@ -19,12 +19,12 @@ namespace Teste
 
     public class Jogador
     {
-        public int id {  get; set; }
-        public string senha { get; set; }
-        public string nome { get; set; }
-        public string cor { get; set; }
+        public int id {  get; private set; }
+        public string senha { get; private set; }
+        public string nome { get; private set; }
+        public string cor { get; private set; }
 
-        public Dictionary<Cartas, int> cartas = new Dictionary<Cartas, int>();
+        public Dictionary<Cartas, int> cartas { get; private set; }
 
         public Jogador(int id, string nome, string cor)
         {
@@ -36,6 +36,14 @@ namespace Teste
         public Jogador(string nome)
         {
             this.nome = nome;
+        }
+
+        public Jogador(int id, string senha, string nome, string cor)
+        {
+            this.id = id;
+            this.senha = senha;
+            this.nome = nome;
+            this.cor = cor;
         }
 
         public void entrarPartida(Partida partida, string senha)
