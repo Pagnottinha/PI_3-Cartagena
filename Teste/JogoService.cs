@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CartagenaServer;
+using static System.Windows.Forms.LinkLabel;
 
 namespace Teste
 {
@@ -163,11 +164,15 @@ namespace Teste
             }
         }
 
-        public Dictionary<int, Cartas> pegarTabuleiro(int idPartida)
+        public Dictionary<int, Casa> pegarTabuleiro(int idPartida, Panel pnlTabuleiro)
         {
             string[] retorno = separar(Jogo.ExibirTabuleiro(idPartida), false);
 
-            Dictionary<int, Cartas> tabuleiro = new Dictionary<int, Cartas>();
+            Dictionary<int, Casa> tabuleiro = new Dictionary<int, Casa>();
+
+            int coluna = 0;
+            int linha = 1;
+            int sentido = 1;
 
             foreach (string item in retorno)
             {
@@ -180,27 +185,40 @@ namespace Teste
                 switch (carta)
                 {
                     case "E":
-                        tabuleiro.Add(posicao, Cartas.Esqueleto);
+                        tabuleiro.Add(posicao, new Casa(Cartas.Esqueleto, linha, coluna, pnlTabuleiro));
                         break;
                     case "P":
-                        tabuleiro.Add(posicao, Cartas.Pistola);
+                        tabuleiro.Add(posicao, new Casa(Cartas.Pistola, linha, coluna, pnlTabuleiro));
                         break;
                     case "C":
-                        tabuleiro.Add(posicao, Cartas.Chave);
+                        tabuleiro.Add(posicao, new Casa(Cartas.Chave, linha, coluna, pnlTabuleiro));
                         break;
                     case "T":
-                        tabuleiro.Add(posicao, Cartas.Tricornio);
+                        tabuleiro.Add(posicao, new Casa(Cartas.Tricornio, linha, coluna, pnlTabuleiro));
                         break;
                     case "G":
-                        tabuleiro.Add(posicao, Cartas.Garrafa);
+                        tabuleiro.Add(posicao, new Casa(Cartas.Garrafa, linha, coluna, pnlTabuleiro));
                         break;
                     case "F":
-                        tabuleiro.Add(posicao, Cartas.Faca);
+                        tabuleiro.Add(posicao, new Casa(Cartas.Faca, linha, coluna, pnlTabuleiro));
                         break;
                     case " ":
                         break;
                     default:
                         throw new Exception("Posição Inválida");
+                }
+
+                if (carta != " ")
+                {
+                    if ((sentido == 1 && coluna < 6) || (sentido == -1 && coluna > 0))
+                    {
+                        coluna += 1 * sentido;
+                    }
+                    else
+                    {
+                        linha++;
+                        sentido *= -1;
+                    }
                 }
 
             }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using CartagenaServer;
 
 namespace Teste
@@ -24,7 +25,7 @@ namespace Teste
         public Jogador jogador { get; set; }
         public int vez { get; set; }
 
-        public Dictionary<int, Cartas> tabuleiro;
+        public Dictionary<int, Casa> tabuleiro { get; private set; }
 
         public Partida(int id, string nome, string data, Status status)
         {
@@ -54,9 +55,9 @@ namespace Teste
             Jogadores = service.pegarJogadores(this.id);
         }
 
-        public void listarTabuleiro()
+        public void listarTabuleiro(Panel pnlTabuleiro)
         {
-            tabuleiro = new JogoService().pegarTabuleiro(this.id);
+            tabuleiro = new JogoService().pegarTabuleiro(this.id, pnlTabuleiro);
         }
     }
 }

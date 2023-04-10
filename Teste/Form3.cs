@@ -20,8 +20,8 @@ namespace Teste
             InitializeComponent();
             this.partida = partida;
             cbo_Jogar.SelectedIndex = 0;
-            partida.listarTabuleiro();
-            ltb_Tabuleiro.DataSource = partida.tabuleiro.ToList(); 
+
+            tabuleiro.mostrarCasas(partida);
         }
 
         private void btn_ConsultarMao_Click(object sender, EventArgs e)
