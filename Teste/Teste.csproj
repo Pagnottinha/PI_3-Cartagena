@@ -72,9 +72,12 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Historico.cs" />
     <Compile Include="Partida.cs" />
     <Compile Include="JogoService.cs" />
     <Compile Include="Jogador.cs" />
+    <Compile Include="PartidaAbertaException.cs" />
+    <Compile Include="Peao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tabuleiro.cs">
@@ -141,6 +144,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="sprites\Tricornio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sprites\modelPeao.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

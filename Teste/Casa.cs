@@ -23,13 +23,15 @@ namespace Teste
 
         public Panel panel { get; }
         public Cartas carta { get; }
-        public int qntPeoes { get; set; }
-
+        public List<Peao> peoes { get; set; }
+        public int linha { get; private set; }
         int parede = 35;
         public Casa(Cartas carta, int linha, int coluna, Panel tabuleiro)
         {
             this.carta = carta;
-            qntPeoes = 0;
+            this.linha = linha;
+            this.peoes = new List<Peao>(3);
+
             this.panel = new Panel();
             panel.Anchor = AnchorStyles.None;
 
@@ -37,8 +39,14 @@ namespace Teste
 
             panel.Size = panel.BackgroundImage.Size;
 
-            panel.Left = tabuleiro.Left + coluna * 92 + 80 - panel.Width / 2;
+            panel.Left = tabuleiro.Left + coluna * 87 + 95 - panel.Width / 2;
             panel.Top = tabuleiro.Height + tabuleiro.Top - linha * panel.Height - parede * (2 * linha - 1);
+        }
+
+        public Casa(int linha)
+        {
+            this.peoes = new List<Peao>(3);
+            this.linha = linha;
         }
     }
 }

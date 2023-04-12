@@ -22,19 +22,23 @@ namespace Teste
             cbo_Jogar.SelectedIndex = 0;
 
             tabuleiro.mostrarCasas(partida);
+
+            foreach (Jogador jogador in partida.Jogadores)
+            {
+                jogador.iniciarPeoes(partida.tabuleiro);
+            }
         }
 
         private void btn_ConsultarMao_Click(object sender, EventArgs e)
         {
-            partida.jogador.consultarMao();
-
-
-            ltb_Cartas.Items.Clear();
-            foreach (Cartas item in partida.jogador.cartas.Keys)
-            { 
-                ltb_Cartas.Items.Add(item + ": " + partida.jogador.cartas[item]);
+            try
+            {
+                ltb_Cartas.DataSource = partida.jogador.cartas.ToList();
             }
-           
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_JogarPirata_Click(object sender, EventArgs e)
@@ -42,16 +46,25 @@ namespace Teste
             try
             {
                 string opcaoJogar = cbo_Jogar.Text;
-                int posicao;
+                int posicao = Convert.ToInt32(txtPosicaoPirata.Text);
                 string cartaSelecionada = txtCartaSelecionada.Text;
 
                 if (opcaoJogar == "Pular vez")
-                    partida.jogador.Jogar(opcaoJogar, -1, cartaSelecionada);
+                    partida.jogador.Jogar();
+                else if (opcaoJogar == "Mover para frente")
+                {
+                    partida.pegarHistorico();
+                    posicao = Convert.ToInt32(txtPosicaoPirata.Text);
+                    partida.jogador.Jogar(posicao, cartaSelecionada, partida.tabuleiro);
+                }
                 else
                 {
+                    partida.pegarHistorico();
                     posicao = Convert.ToInt32(txtPosicaoPirata.Text);
-                    partida.jogador.Jogar(opcaoJogar, posicao, cartaSelecionada);
-                }                  
+                    partida.jogador.Jogar(posicao, partida.tabuleiro);
+                }
+
+                tabuleiro.atualizarPeoes();
             }
             catch(Exception ex)
             {
@@ -61,68 +74,17 @@ namespace Teste
 
         private void btn_Historico_Click(object sender, EventArgs e)
         {
-            //string teste = Jogo.ExibirHistorico(idPartida);
-            //MessageBox.Show(teste);
-
-            string[] historico = Jogo.ExibirHistorico(partida.id).Replace("\r", "")
-                .Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
-
-            ltb_HistoricoPartida.Items.Clear();
-
-            foreach (string item in historico)
+            try
             {
-                string[] retornoTabuleiro = item.Split(',');
+                partida.pegarHistorico();
+                ltb_HistoricoPartida.DataSource = partida.historicos.ToList();
 
-                int id = Convert.ToInt32(retornoTabuleiro[0]);
-                int numJogada = Convert.ToInt32(retornoTabuleiro[1]);
-                string carta = retornoTabuleiro[2];
-                int posicaoOrigem;
-                int posicaoDestino;
-
-                if (retornoTabuleiro[3] != "" && retornoTabuleiro[4] != "")
-                {
-                    posicaoOrigem = Convert.ToInt32(retornoTabuleiro[3]);
-                    posicaoDestino = Convert.ToInt32(retornoTabuleiro[4]);
-                    try
-                    {
-                        switch (carta)
-                        {
-                            case "E":
-                                ltb_HistoricoPartida.Items.Add($"{id} ({numJogada}) -> Esqueleto | {posicaoOrigem} -> {posicaoDestino}");
-                                break;
-                            case "P":
-                                ltb_HistoricoPartida.Items.Add($"{id} ({numJogada}) -> Pistola | {posicaoOrigem} -> {posicaoDestino}");
-                                break;
-                            case "C":
-                                ltb_HistoricoPartida.Items.Add($"{id} ({numJogada}) -> Chave | {posicaoOrigem} -> {posicaoDestino}");
-                                break;
-                            case "T":
-                                ltb_HistoricoPartida.Items.Add($"{id} ({numJogada}) -> Tricornio | {posicaoOrigem} -> {posicaoDestino}");
-                                break;
-                            case "G":
-                                ltb_HistoricoPartida.Items.Add($"{id} ({numJogada}) -> Garrafa | {posicaoOrigem} -> {posicaoDestino}");
-                                break;
-                            case "F":
-                                ltb_HistoricoPartida.Items.Add($"{id} ({numJogada}) -> Faca | {posicaoOrigem} -> {posicaoDestino}");
-                                break;
-                            case "":
-                                ltb_HistoricoPartida.Items.Add($"{id} ({numJogada}) voltou | {posicaoOrigem} -> {posicaoDestino}");
-                                break;
-                            default:
-                                throw new Exception("Posição Inválida");
-                        }
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    ltb_HistoricoPartida.Items.Add($"Jogador {id} ({numJogada}) pulou");
-                }
+                tabuleiro.atualizarPeoes();
             }
-
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cbo_Jogar_SelectedIndexChanged(object sender, EventArgs e)
@@ -141,6 +103,20 @@ namespace Teste
                 txtCartaSelecionada.Enabled = true;
                 txtPosicaoPirata.Enabled = true;
             }
+        }
+
+        private void btnVez_Click(object sender, EventArgs e)
+        {
+            partida.verificarVez();
+
+            foreach(Jogador jogador in partida.Jogadores)
+            {
+                if (jogador.id == partida.vez)
+                {
+                    lblVez.Text = $"Vez de {jogador}";
+                }
+            }
+
         }
     }
 }

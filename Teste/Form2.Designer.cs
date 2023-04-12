@@ -112,8 +112,6 @@
         #endregion
         private System.Windows.Forms.Button btnListarJogadores;
         private System.Windows.Forms.DataGridView dgvListarJogadores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Jogador;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome_Jogador;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Jogador;

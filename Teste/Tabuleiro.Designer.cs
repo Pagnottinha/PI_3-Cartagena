@@ -33,6 +33,7 @@
             // 
             // pnlTabuleiro
             // 
+            this.pnlTabuleiro.AutoSize = true;
             this.pnlTabuleiro.BackgroundImage = global::Teste.Properties.Resources.Tabuleiro;
             this.pnlTabuleiro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTabuleiro.Location = new System.Drawing.Point(0, 0);
@@ -49,6 +50,7 @@
             this.Name = "Tabuleiro";
             this.Size = new System.Drawing.Size(720, 722);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -103,6 +103,16 @@ namespace Teste.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap modelPeao {
+            get {
+                object obj = ResourceManager.GetObject("modelPeao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pistola {
             get {
                 object obj = ResourceManager.GetObject("Pistola", resourceCulture);

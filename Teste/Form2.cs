@@ -43,13 +43,7 @@ namespace Teste
 
             try
             {
-                Jogador jogador = partida.jogador;
-
-                JogoService service = new JogoService();
-
-
-
-                partida.vez = service.iniciarPartida(jogador.id, jogador.senha);
+                partida.comecarPartida();
 
                 frmJogo = new frmJogo(partida);
 
@@ -58,16 +52,7 @@ namespace Teste
             }
             catch (Exception ex)
             {
-                if (ex.Message == "ERRO:Partida não está aberta")
-                {
-                    frmJogo = new frmJogo(partida);
-                    this.Hide();
-                    frmJogo.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error); 
             }
         }
     }

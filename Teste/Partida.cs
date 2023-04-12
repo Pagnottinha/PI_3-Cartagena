@@ -25,6 +25,8 @@ namespace Teste
         public Jogador jogador { get; set; }
         public int vez { get; set; }
 
+        public List<Historico> historicos { get; private set; }
+
         public Dictionary<int, Casa> tabuleiro { get; private set; }
 
         public Partida(int id, string nome, string data, Status status)
@@ -55,9 +57,76 @@ namespace Teste
             Jogadores = service.pegarJogadores(this.id);
         }
 
+        public void comecarPartida()
+        {
+            JogoService service = new JogoService();
+
+            try
+            {
+                this.vez = service.iniciarPartida(jogador.id, jogador.senha);
+            }
+            catch (PartidaAbertaException)
+            {
+
+            }
+            finally
+            {
+
+                for (int i = 0; i < Jogadores.Count; i++)
+                {
+                    if (Jogadores[i].id == jogador.id)
+                    {
+                        Jogadores[i] = jogador;
+                    }
+                }
+
+                this.historicos = new List<Historico>();
+            }
+         
+        }
+
         public void listarTabuleiro(Panel pnlTabuleiro)
         {
             tabuleiro = new JogoService().pegarTabuleiro(this.id, pnlTabuleiro);
+        }
+
+        public void pegarHistorico()
+        {
+
+            List<Historico> novoHistorico = new JogoService().pegarHistorico(this.id, this.historicos.Count);
+
+            foreach(Historico historico in novoHistorico)
+            {
+
+                if (historico.tipo != TiposHistorico.Pular && historico.idJogador != jogador.id)
+                {
+                    Jogador jogadorHistorico = null;
+
+                    Jogadores.ForEach((jogador) =>
+                    {
+                        if (jogador.id == historico.idJogador)
+                        {
+                            jogadorHistorico = jogador;
+                        }
+                    });
+
+                    if (jogadorHistorico == null)
+                        throw new Exception("Ocorreu um erro ao tentar pegar o jogador através do histórico.");
+
+                    Peao peaoMover = tabuleiro[historico.origem].peoes.Find(peao => peao.jogador == jogadorHistorico);
+
+                    tabuleiro[historico.origem].peoes.Remove(peaoMover);
+
+                    tabuleiro[historico.destino].peoes.Add(peaoMover);
+                }
+
+                historicos.Add(historico);
+            }
+        }
+
+        public void verificarVez()
+        {
+            vez = new JogoService().verificarVez(id);
         }
     }
 }

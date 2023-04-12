@@ -40,6 +40,8 @@
             this.lblJogarCarta = new System.Windows.Forms.Label();
             this.txtCartaSelecionada = new System.Windows.Forms.TextBox();
             this.tabuleiro = new Teste.Tabuleiro();
+            this.btnVez = new System.Windows.Forms.Button();
+            this.lblVez = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ltb_Cartas
@@ -162,12 +164,34 @@
             this.tabuleiro.Size = new System.Drawing.Size(720, 722);
             this.tabuleiro.TabIndex = 13;
             // 
+            // btnVez
+            // 
+            this.btnVez.Location = new System.Drawing.Point(248, 515);
+            this.btnVez.Name = "btnVez";
+            this.btnVez.Size = new System.Drawing.Size(131, 58);
+            this.btnVez.TabIndex = 14;
+            this.btnVez.Text = "TESTAR ";
+            this.btnVez.UseVisualStyleBackColor = true;
+            this.btnVez.Click += new System.EventHandler(this.btnVez_Click);
+            // 
+            // lblVez
+            // 
+            this.lblVez.AutoEllipsis = true;
+            this.lblVez.AutoSize = true;
+            this.lblVez.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVez.Location = new System.Drawing.Point(210, 12);
+            this.lblVez.Name = "lblVez";
+            this.lblVez.Size = new System.Drawing.Size(0, 25);
+            this.lblVez.TabIndex = 15;
+            // 
             // frmJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(1174, 747);
+            this.Controls.Add(this.lblVez);
+            this.Controls.Add(this.btnVez);
             this.Controls.Add(this.tabuleiro);
             this.Controls.Add(this.txtCartaSelecionada);
             this.Controls.Add(this.lblJogarCarta);
@@ -202,5 +226,7 @@
         private System.Windows.Forms.Label lblJogarCarta;
         private System.Windows.Forms.TextBox txtCartaSelecionada;
         private Tabuleiro tabuleiro;
+        private System.Windows.Forms.Button btnVez;
+        private System.Windows.Forms.Label lblVez;
     }
 }
