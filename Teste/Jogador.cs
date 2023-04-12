@@ -156,7 +156,7 @@ namespace Teste
 
             Casa casa = null;
 
-            for (int i = posicao - 1; i > 0; i--)
+            for (int i = posicao - 1; i > 0 && casa == null; i--)
             {
                 if (tabuleiro[i].peoes.Count > 0 && tabuleiro[i].peoes.Count < 3)
                 {
