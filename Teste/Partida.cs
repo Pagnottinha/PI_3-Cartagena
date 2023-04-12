@@ -11,7 +11,7 @@ namespace Teste
     public enum Status {
         Aberta,
         Jogando,
-        Encerada
+        Encerrada
     }
     public class Partida
     {

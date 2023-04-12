@@ -64,7 +64,7 @@ namespace Teste
                         status = Status.Jogando;
                         break;
                     case "E":
-                        status = Status.Encerada;
+                        status = Status.Encerrada;
                         break;
                     default:
                         throw new Exception("Status inválido");
