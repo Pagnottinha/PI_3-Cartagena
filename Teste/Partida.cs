@@ -63,11 +63,12 @@ namespace Teste
 
             try
             {
+                this.listarJogadores();
                 this.vez = service.iniciarPartida(jogador.id, jogador.senha);
             }
             catch (PartidaAbertaException)
             {
-
+                this.verificarVez();
             }
             finally
             {
@@ -81,6 +82,8 @@ namespace Teste
                 }
 
                 this.historicos = new List<Historico>();
+
+                jogador.consultarMao();
             }
          
         }

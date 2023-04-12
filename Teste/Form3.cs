@@ -27,6 +27,9 @@ namespace Teste
             {
                 jogador.iniciarPeoes(partida.tabuleiro);
             }
+
+            ltb_Cartas.DataSource = partida.jogador.cartas.ToList();
+            
         }
 
         private void btn_ConsultarMao_Click(object sender, EventArgs e)
