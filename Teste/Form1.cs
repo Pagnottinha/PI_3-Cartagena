@@ -122,7 +122,7 @@ namespace Teste
                     case Status.Jogando:
                         e.CellStyle.BackColor = Color.LightGoldenrodYellow;
                         break;
-                    case Status.Encerada: 
+                    case Status.Encerrada: 
                         e.CellStyle.BackColor = Color.Red;
                         break;
                 }
