@@ -96,8 +96,6 @@ namespace Teste
                 throw new Exception("Não tem peão seu na casa");
             }
 
-            tabuleiro[posicao].peoes.Remove(peaoMover);
-
             Casa casa = null;
 
             Cartas destino;
@@ -135,6 +133,7 @@ namespace Teste
 
             if (casa == null) casa = tabuleiro[tabuleiro.Count - 1];
 
+            tabuleiro[posicao].peoes.Remove(peaoMover);
             casa.peoes.Add(peaoMover);
 
             Jogo.Jogar(this.id, this.senha, posicao, carta);
@@ -152,8 +151,6 @@ namespace Teste
                 throw new Exception("Não tem peão seu na casa");
             }
 
-            tabuleiro[posicao].peoes.Remove(peaoMover);
-
             Casa casa = null;
 
             for (int i = posicao - 1; i > 0 && casa == null; i--)
@@ -169,6 +166,7 @@ namespace Teste
                 throw new Exception("Não tem para onde o peão voltar");
             }
 
+            tabuleiro[posicao].peoes.Remove(peaoMover);
             casa.peoes.Add(peaoMover);
 
             Jogo.Jogar(this.id, this.senha, posicao);

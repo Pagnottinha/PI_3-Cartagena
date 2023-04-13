@@ -23,7 +23,7 @@ namespace Teste
         public List<Jogador> Jogadores { get; private set; }
 
         public Jogador jogador { get; set; }
-        public int vez { get; set; }
+        public Jogador vez { get; set; }
 
         public List<Historico> historicos { get; private set; }
 
@@ -64,7 +64,8 @@ namespace Teste
             try
             {
                 this.listarJogadores();
-                this.vez = service.iniciarPartida(jogador.id, jogador.senha);
+                int idJogadorVez = service.iniciarPartida(jogador.id, jogador.senha);
+                this.vez = Jogadores.Find(jogador => jogador.id == idJogadorVez);
             }
             catch (PartidaAbertaException)
             {
@@ -129,7 +130,8 @@ namespace Teste
 
         public void verificarVez()
         {
-            vez = new JogoService().verificarVez(id);
+            int idJogadorVez = new JogoService().verificarVez(id);
+            this.vez = this.Jogadores.Find(jogador => jogador.id == idJogadorVez);
         }
     }
 }

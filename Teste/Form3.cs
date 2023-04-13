@@ -29,7 +29,8 @@ namespace Teste
             }
 
             ltb_Cartas.DataSource = partida.jogador.cartas.ToList();
-            
+
+            lblVez.Text = $"Vez de {partida.vez}";
         }
 
         private void btn_ConsultarMao_Click(object sender, EventArgs e)
@@ -112,13 +113,7 @@ namespace Teste
         {
             partida.verificarVez();
 
-            foreach(Jogador jogador in partida.Jogadores)
-            {
-                if (jogador.id == partida.vez)
-                {
-                    lblVez.Text = $"Vez de {jogador}";
-                }
-            }
+            lblVez.Text = $"Vez de {partida.vez}";
 
         }
     }
