@@ -123,6 +123,8 @@ namespace Teste
                     return Color.White;
                 case "Rosa":
                     return Color.Pink;
+                case "Marrom":
+                    return Color.Brown;
                 default:
                     throw new Exception($"Cor {cor} desconhecida!");
             }

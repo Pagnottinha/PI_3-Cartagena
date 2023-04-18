@@ -1,5 +1,4 @@
-﻿using CartagenaServer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,11 +10,10 @@ using System.Windows.Forms;
 
 namespace Teste
 {
-    public partial class frmLobby : Form
+    public partial class Lobby : UserControl
     {
         Partida partida;
-
-        public frmLobby(Partida partida)
+        public Lobby(Partida partida)
         {
             InitializeComponent();
             this.partida = partida;
@@ -39,20 +37,16 @@ namespace Teste
         private void btnIniciarPartida_Click(object sender, EventArgs e)
         {
 
-            frmJogo frmJogo;
-
             try
             {
                 partida.comecarPartida();
 
-                frmJogo = new frmJogo(partida);
-
-                this.Hide();
-                frmJogo.ShowDialog();
+                Parent.Controls.Add(new PartidaForm(partida));
+                Parent.Controls.Remove(this);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

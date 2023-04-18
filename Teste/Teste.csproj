@@ -60,19 +60,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </Compile>
     <Compile Include="Historico.cs" />
+    <Compile Include="PartidaForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PartidaForm.Designer.cs">
+      <DependentUpon>PartidaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lobby.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lobby.Designer.cs">
+      <DependentUpon>Lobby.cs</DependentUpon>
+    </Compile>
     <Compile Include="Partida.cs" />
     <Compile Include="JogoService.cs" />
     <Compile Include="Jogador.cs" />
@@ -86,17 +86,23 @@
     <Compile Include="Tabuleiro.Designer.cs">
       <DependentUpon>Tabuleiro.cs</DependentUpon>
     </Compile>
+    <Compile Include="TelaInicial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TelaInicial.Designer.cs">
+      <DependentUpon>TelaInicial.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.pt-BR.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="PartidaForm.resx">
+      <DependentUpon>PartidaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="Lobby.resx">
+      <DependentUpon>Lobby.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -110,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="Tabuleiro.resx">
       <DependentUpon>Tabuleiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaInicial.resx">
+      <DependentUpon>TelaInicial.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

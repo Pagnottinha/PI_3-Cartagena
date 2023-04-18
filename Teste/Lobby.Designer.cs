@@ -1,16 +1,16 @@
 ﻿namespace Teste
 {
-    partial class frmLobby
+    partial class Lobby
     {
-        /// <summary>
-        /// Required designer variable.
+        /// <summary> 
+        /// Variável de designer necessária.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
+        /// <summary> 
+        /// Limpar os recursos que estão sendo usados.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,33 +20,33 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código gerado pelo Designer de Componentes
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// <summary> 
+        /// Método necessário para suporte ao Designer - não modifique 
+        /// o conteúdo deste método com o editor de código.
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnListarJogadores = new System.Windows.Forms.Button();
+            this.btnIniciarPartida = new System.Windows.Forms.Button();
             this.dgvListarJogadores = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Jogador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnIniciarPartida = new System.Windows.Forms.Button();
+            this.btnListarJogadores = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarJogadores)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnListarJogadores
+            // btnIniciarPartida
             // 
-            this.btnListarJogadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListarJogadores.Location = new System.Drawing.Point(119, 326);
-            this.btnListarJogadores.Name = "btnListarJogadores";
-            this.btnListarJogadores.Size = new System.Drawing.Size(144, 40);
-            this.btnListarJogadores.TabIndex = 1;
-            this.btnListarJogadores.Text = "Listar Jogadores";
-            this.btnListarJogadores.UseVisualStyleBackColor = true;
-            this.btnListarJogadores.Click += new System.EventHandler(this.btnListarJogadores_Click);
+            this.btnIniciarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciarPartida.Location = new System.Drawing.Point(445, 55);
+            this.btnIniciarPartida.Name = "btnIniciarPartida";
+            this.btnIniciarPartida.Size = new System.Drawing.Size(310, 176);
+            this.btnIniciarPartida.TabIndex = 7;
+            this.btnIniciarPartida.Text = "Iniciar Partida";
+            this.btnIniciarPartida.UseVisualStyleBackColor = true;
+            this.btnIniciarPartida.Click += new System.EventHandler(this.btnIniciarPartida_Click);
             // 
             // dgvListarJogadores
             // 
@@ -57,11 +57,11 @@
             this.ID,
             this.Jogador,
             this.Cor});
-            this.dgvListarJogadores.Location = new System.Drawing.Point(12, 61);
+            this.dgvListarJogadores.Location = new System.Drawing.Point(13, 9);
             this.dgvListarJogadores.Name = "dgvListarJogadores";
             this.dgvListarJogadores.ReadOnly = true;
             this.dgvListarJogadores.Size = new System.Drawing.Size(345, 248);
-            this.dgvListarJogadores.TabIndex = 2;
+            this.dgvListarJogadores.TabIndex = 6;
             // 
             // ID
             // 
@@ -81,40 +81,40 @@
             this.Cor.Name = "Cor";
             this.Cor.ReadOnly = true;
             // 
-            // btnIniciarPartida
+            // btnListarJogadores
             // 
-            this.btnIniciarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciarPartida.Location = new System.Drawing.Point(444, 107);
-            this.btnIniciarPartida.Name = "btnIniciarPartida";
-            this.btnIniciarPartida.Size = new System.Drawing.Size(310, 176);
-            this.btnIniciarPartida.TabIndex = 4;
-            this.btnIniciarPartida.Text = "Iniciar Partida";
-            this.btnIniciarPartida.UseVisualStyleBackColor = true;
-            this.btnIniciarPartida.Click += new System.EventHandler(this.btnIniciarPartida_Click);
+            this.btnListarJogadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarJogadores.Location = new System.Drawing.Point(120, 274);
+            this.btnListarJogadores.Name = "btnListarJogadores";
+            this.btnListarJogadores.Size = new System.Drawing.Size(144, 40);
+            this.btnListarJogadores.TabIndex = 5;
+            this.btnListarJogadores.Text = "Listar Jogadores";
+            this.btnListarJogadores.UseVisualStyleBackColor = true;
+            this.btnListarJogadores.Click += new System.EventHandler(this.btnListarJogadores_Click);
             // 
-            // frmLobby
+            // Lobby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PeachPuff;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.btnIniciarPartida);
             this.Controls.Add(this.dgvListarJogadores);
             this.Controls.Add(this.btnListarJogadores);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmLobby";
-            this.Text = "Form Lobby";
+            this.Name = "Lobby";
+            this.Size = new System.Drawing.Size(769, 324);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarJogadores)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnListarJogadores;
+
+        private System.Windows.Forms.Button btnIniciarPartida;
         private System.Windows.Forms.DataGridView dgvListarJogadores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Jogador;
-        private System.Windows.Forms.Button btnIniciarPartida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cor;
+        private System.Windows.Forms.Button btnListarJogadores;
     }
 }

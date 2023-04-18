@@ -1,5 +1,4 @@
-﻿using CartagenaServer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,16 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Teste
 {
-    public partial class frmJogo : Form
+    public partial class PartidaForm : UserControl
     {
         Partida partida;
-        public frmJogo(Partida partida)
+        public PartidaForm(Partida partida)
         {
             InitializeComponent();
+
             this.partida = partida;
             cbo_Jogar.SelectedIndex = 0;
 
@@ -70,7 +69,7 @@ namespace Teste
 
                 tabuleiro.atualizarPeoes();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -85,7 +84,7 @@ namespace Teste
 
                 tabuleiro.atualizarPeoes();
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -93,11 +92,11 @@ namespace Teste
 
         private void cbo_Jogar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbo_Jogar.SelectedIndex == 1)
+            if (cbo_Jogar.SelectedIndex == 1)
             {
                 txtCartaSelecionada.Enabled = false;
             }
-            else if(cbo_Jogar.SelectedIndex == 2)
+            else if (cbo_Jogar.SelectedIndex == 2)
             {
                 txtCartaSelecionada.Enabled = false;
                 txtPosicaoPirata.Enabled = false;
@@ -114,7 +113,6 @@ namespace Teste
             partida.verificarVez();
 
             lblVez.Text = $"Vez de {partida.vez}";
-
         }
     }
 }
