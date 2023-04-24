@@ -146,7 +146,11 @@ namespace Teste
                 }
             }
 
-            if (casa == null) casa = tabuleiro[tabuleiro.Count - 1];
+            if (casa == null)
+            {
+                casa = tabuleiro[tabuleiro.Count - 1];
+                peaoMover.posicao = tabuleiro.Count - 1;
+            }
 
             tabuleiro[posicao].peoes.Remove(peaoMover);
             casa.peoes.Add(peaoMover);
