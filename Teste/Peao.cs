@@ -15,6 +15,8 @@ namespace Teste
         public Panel panel { get; private set; }
 
         public Jogador jogador { get; private set; }
+
+        public int posicao { get; set; }
         public Peao(Jogador jogador)
         {
             this.jogador = jogador;
@@ -22,6 +24,7 @@ namespace Teste
             panel.BackgroundImage = molde;
             panel.BackColor = jogador.cor;
             panel.Size = panel.BackgroundImage.Size;
+            posicao = 0;
         }
     }
 }

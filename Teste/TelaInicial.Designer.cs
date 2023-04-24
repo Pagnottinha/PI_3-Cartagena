@@ -265,7 +265,7 @@
             this.dgvListaPartidas.ReadOnly = true;
             this.dgvListaPartidas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvListaPartidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaPartidas.Size = new System.Drawing.Size(340, 388);
+            this.dgvListaPartidas.Size = new System.Drawing.Size(340, 446);
             this.dgvListaPartidas.TabIndex = 22;
             this.dgvListaPartidas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListaPartidas_CellFormatting);
             // 
@@ -324,7 +324,7 @@
             this.Controls.Add(this.dgvListaPartidas);
             this.Controls.Add(this.btnListarPartidas);
             this.Name = "TelaInicial";
-            this.Size = new System.Drawing.Size(791, 388);
+            this.Size = new System.Drawing.Size(791, 446);
             this.grbCriarPartida.ResumeLayout(false);
             this.grbCriarPartida.PerformLayout();
             this.grbEntrarPartida.ResumeLayout(false);

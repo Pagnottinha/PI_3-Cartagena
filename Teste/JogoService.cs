@@ -191,7 +191,7 @@ namespace Teste
 
             Dictionary<int, Casa> tabuleiro = new Dictionary<int, Casa>();
 
-            int coluna = 0;
+            int coluna = 1;
             int linha = 1;
             int sentido = 1;
 

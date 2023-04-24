@@ -104,20 +104,14 @@ namespace Teste
 
                 if (historico.tipo != TiposHistorico.Pular && historico.idJogador != jogador.id)
                 {
-                    Jogador jogadorHistorico = null;
-
-                    Jogadores.ForEach((jogador) =>
-                    {
-                        if (jogador.id == historico.idJogador)
-                        {
-                            jogadorHistorico = jogador;
-                        }
-                    });
+                    Jogador jogadorHistorico = Jogadores.Find(jogador => jogador.id == historico.idJogador);
 
                     if (jogadorHistorico == null)
                         throw new Exception("Ocorreu um erro ao tentar pegar o jogador através do histórico.");
 
                     Peao peaoMover = tabuleiro[historico.origem].peoes.Find(peao => peao.jogador == jogadorHistorico);
+
+                    peaoMover.posicao = historico.destino;
 
                     tabuleiro[historico.origem].peoes.Remove(peaoMover);
 

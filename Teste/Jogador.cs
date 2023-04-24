@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Teste
 {
@@ -89,7 +90,45 @@ namespace Teste
         // Mover para frente
         public void Jogar(int posicao, string carta, Dictionary<int, Casa> tabuleiro)
         {
-            Peao peaoMover = verificarPeaoCasa(tabuleiro, posicao);
+            string retorno = Jogo.Jogar(this.id, this.senha, posicao, carta);
+
+            if (retorno.StartsWith("ERRO"))
+            {
+                System.Windows.Forms.MessageBox.Show(retorno);
+                return;
+            }
+
+            Cartas cartaEscolhida;
+            switch (carta)
+            {
+                case "E":
+                    cartaEscolhida = Cartas.Esqueleto;
+                    break;
+                case "T":
+                    cartaEscolhida = Cartas.Tricornio;
+                    break;
+                case "G":
+                    cartaEscolhida = Cartas.Garrafa;
+                    break;
+                case "F":
+                    cartaEscolhida = Cartas.Faca;
+                    break;
+                case "P":
+                    cartaEscolhida = Cartas.Pistola;
+                    break;
+                case "C":
+                    cartaEscolhida = Cartas.Chave;
+                    break;
+                default:
+                    throw new Exception("Carta inválida!");
+            }
+
+            if (cartas[cartaEscolhida] == 0)
+            {
+                System.Windows.Forms.MessageBox.Show("Não tem a carta!");
+            }
+
+            Peao peaoMover = tabuleiro[posicao].peoes.Find(peao => peao.jogador == this);
 
             if (peaoMover == null)
             {
@@ -98,36 +137,12 @@ namespace Teste
 
             Casa casa = null;
 
-            Cartas destino;
-            switch (carta)
-            {
-                case "E":
-                    destino = Cartas.Esqueleto;
-                    break;
-                case "T":
-                    destino = Cartas.Tricornio;
-                    break;
-                case "G":
-                    destino = Cartas.Garrafa;
-                    break;
-                case "F":
-                    destino = Cartas.Faca;
-                    break;
-                case "P":
-                    destino = Cartas.Pistola;
-                    break;
-                case "C":
-                    destino = Cartas.Chave;
-                    break;
-                default:
-                    throw new Exception("Carta inválida!");
-            }
-
             for (int i = posicao + 1; i < tabuleiro.Count && casa == null; i++)
             {
-                if (tabuleiro[i].carta == destino && tabuleiro[i].peoes.Count == 0)
+                if (tabuleiro[i].carta == cartaEscolhida && tabuleiro[i].peoes.Count == 0)
                 {
                     casa = tabuleiro[i];
+                    peaoMover.posicao = i;
                 }
             }
 
@@ -136,15 +151,21 @@ namespace Teste
             tabuleiro[posicao].peoes.Remove(peaoMover);
             casa.peoes.Add(peaoMover);
 
-            Jogo.Jogar(this.id, this.senha, posicao, carta);
-
             consultarMao();
         }
 
         // Voltar
         public void Jogar(int posicao, Dictionary<int, Casa> tabuleiro)
         {
-            Peao peaoMover = verificarPeaoCasa(tabuleiro, posicao);
+            string retorno = Jogo.Jogar(this.id, this.senha, posicao);
+
+            if (retorno.StartsWith("ERRO"))
+            {
+                System.Windows.Forms.MessageBox.Show(retorno);
+                return;
+            }
+
+            Peao peaoMover = tabuleiro[posicao].peoes.Find(peao => peao.jogador == this);
 
             if (peaoMover == null)
             {
@@ -158,6 +179,7 @@ namespace Teste
                 if (tabuleiro[i].peoes.Count > 0 && tabuleiro[i].peoes.Count < 3)
                 {
                     casa = tabuleiro[i];
+                    peaoMover.posicao = i;
                 }
             }
 
@@ -169,24 +191,7 @@ namespace Teste
             tabuleiro[posicao].peoes.Remove(peaoMover);
             casa.peoes.Add(peaoMover);
 
-            Jogo.Jogar(this.id, this.senha, posicao);
-
             consultarMao();
-        }
-
-        Peao verificarPeaoCasa(Dictionary<int, Casa> tabuleiro, int posicao)
-        {
-            Peao peaoMover = null;
-
-            foreach(Peao peao in tabuleiro[posicao].peoes)
-            {
-                if (peao.jogador == this)
-                {
-                    peaoMover = peao;
-                }
-            }
-
-            return peaoMover;
         }
 
         public override string ToString()

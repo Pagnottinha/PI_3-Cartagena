@@ -17,15 +17,12 @@ namespace Teste
         {
             InitializeComponent();
 
+            BackColor = Color.FromArgb(167, 149, 94);
+
             this.partida = partida;
             cbo_Jogar.SelectedIndex = 0;
 
             tabuleiro.mostrarCasas(partida);
-
-            foreach (Jogador jogador in partida.Jogadores)
-            {
-                jogador.iniciarPeoes(partida.tabuleiro);
-            }
 
             ltb_Cartas.DataSource = partida.jogador.cartas.ToList();
 
@@ -92,20 +89,7 @@ namespace Teste
 
         private void cbo_Jogar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbo_Jogar.SelectedIndex == 1)
-            {
-                txtCartaSelecionada.Enabled = false;
-            }
-            else if (cbo_Jogar.SelectedIndex == 2)
-            {
-                txtCartaSelecionada.Enabled = false;
-                txtPosicaoPirata.Enabled = false;
-            }
-            else
-            {
-                txtCartaSelecionada.Enabled = true;
-                txtPosicaoPirata.Enabled = true;
-            }
+
         }
 
         private void btnVez_Click(object sender, EventArgs e)

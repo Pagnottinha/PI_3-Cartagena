@@ -30,7 +30,6 @@
         {
             this.lblVez = new System.Windows.Forms.Label();
             this.btnVez = new System.Windows.Forms.Button();
-            this.tabuleiro = new Teste.Tabuleiro();
             this.txtCartaSelecionada = new System.Windows.Forms.TextBox();
             this.lblJogarCarta = new System.Windows.Forms.Label();
             this.lblPosicaoPirata = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.cbo_Jogar = new System.Windows.Forms.ComboBox();
             this.btn_ConsultarMao = new System.Windows.Forms.Button();
             this.ltb_Cartas = new System.Windows.Forms.ListBox();
+            this.tabuleiro = new Teste.Tabuleiro();
             this.SuspendLayout();
             // 
             // lblVez
@@ -63,14 +63,6 @@
             this.btnVez.Text = "TESTAR ";
             this.btnVez.UseVisualStyleBackColor = true;
             this.btnVez.Click += new System.EventHandler(this.btnVez_Click);
-            // 
-            // tabuleiro
-            // 
-            this.tabuleiro.BackColor = System.Drawing.Color.Transparent;
-            this.tabuleiro.Location = new System.Drawing.Point(441, 46);
-            this.tabuleiro.Name = "tabuleiro";
-            this.tabuleiro.Size = new System.Drawing.Size(720, 722);
-            this.tabuleiro.TabIndex = 27;
             // 
             // txtCartaSelecionada
             // 
@@ -161,7 +153,7 @@
             this.cbo_Jogar.Name = "cbo_Jogar";
             this.cbo_Jogar.Size = new System.Drawing.Size(201, 28);
             this.cbo_Jogar.TabIndex = 18;
-            this.cbo_Jogar.Click += new System.EventHandler(this.cbo_Jogar_SelectedIndexChanged);
+            this.cbo_Jogar.SelectedIndexChanged += new System.EventHandler(this.cbo_Jogar_SelectedIndexChanged);
             // 
             // btn_ConsultarMao
             // 
@@ -184,10 +176,19 @@
             this.ltb_Cartas.Size = new System.Drawing.Size(192, 225);
             this.ltb_Cartas.TabIndex = 16;
             // 
-            // Jogo
+            // tabuleiro
+            // 
+            this.tabuleiro.BackColor = System.Drawing.Color.Transparent;
+            this.tabuleiro.Location = new System.Drawing.Point(441, 46);
+            this.tabuleiro.Name = "tabuleiro";
+            this.tabuleiro.Size = new System.Drawing.Size(720, 722);
+            this.tabuleiro.TabIndex = 27;
+            // 
+            // PartidaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.lblVez);
             this.Controls.Add(this.btnVez);
             this.Controls.Add(this.tabuleiro);
@@ -202,7 +203,7 @@
             this.Controls.Add(this.cbo_Jogar);
             this.Controls.Add(this.btn_ConsultarMao);
             this.Controls.Add(this.ltb_Cartas);
-            this.Name = "Jogo";
+            this.Name = "PartidaForm";
             this.Size = new System.Drawing.Size(1172, 784);
             this.ResumeLayout(false);
             this.PerformLayout();

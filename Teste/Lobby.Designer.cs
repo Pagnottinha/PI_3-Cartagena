@@ -102,7 +102,7 @@
             this.Controls.Add(this.dgvListarJogadores);
             this.Controls.Add(this.btnListarJogadores);
             this.Name = "Lobby";
-            this.Size = new System.Drawing.Size(769, 324);
+            this.Size = new System.Drawing.Size(794, 347);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarJogadores)).EndInit();
             this.ResumeLayout(false);
 
