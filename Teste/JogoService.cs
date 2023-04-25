@@ -15,34 +15,34 @@ namespace Teste
     {
         public JogoService() { }
 
-        private string[] separar(string retorno, bool separarVirgulas)
+        private (string[], bool) separar(string retorno, bool separarVirgulas)
         {
             if (retorno.StartsWith("ERRO"))
             {
-                switch(retorno)
-                {
-                    case "ERRO:Partida não está aberta":
-                        throw new PartidaAbertaException();
-                    default:
-                        throw new Exception(retorno);
-                }
+                return (new string[] { retorno }, true);
             }
 
             string[] array;
             
-            array = retorno.Replace("\r", "").Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            array = retorno.Replace("\r", "")
+                .Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
             
             if (separarVirgulas)
             {
-                return array[0].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                return (array[0].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries), false);
             }
 
-            return array;
+            return (array, false);
         }
 
-        public List<Partida> pegarPartidas(string s)
+        public (List<Partida>, string) pegarPartidas(string s)
         {
-            string[] retorno = separar(Jogo.ListarPartidas(s), false);
+            (string[] retorno, bool erro) = separar(Jogo.ListarPartidas(s), false);
+
+            if (erro)
+            {
+                return (null, retorno[0]);
+            }
 
             List<Partida> partidas = new List<Partida>();
 
@@ -73,12 +73,17 @@ namespace Teste
                 partidas.Add(new Partida(id, nome, data, status));
             }
 
-            return partidas;
+            return (partidas, null);
         }
 
-        public List<Jogador> pegarJogadores(int idPartida)
+        public (List<Jogador>, string) pegarJogadores(int idPartida)
         {
-            string[] pegarJogadores = separar(Jogo.ListarJogadores(idPartida), false);
+            (string[] pegarJogadores, bool erro) = separar(Jogo.ListarJogadores(idPartida), false);
+
+            if (erro)
+            {
+                return (null, pegarJogadores[0]);
+            }
 
             List<Jogador> partida = new List<Jogador>();
 
@@ -93,16 +98,21 @@ namespace Teste
                 partida.Add(new Jogador(id, nome, tratarCor(cor))); 
             }
 
-            return partida;
+            return (partida, null);
         }
 
-        public Jogador entrarPartida(int partidaId, string nomePlayer, string senhaPartida)
+        public (Jogador, string) entrarPartida(int partidaId, string nomePlayer, string senhaPartida)
         {
-            string[] retorno = separar(Jogo.EntrarPartida(partidaId, nomePlayer, senhaPartida), true);
+            (string[] retorno, bool erro) = separar(Jogo.EntrarPartida(partidaId, nomePlayer, senhaPartida), true);
+
+            if (erro)
+            {
+                return (null, retorno[0]);
+            }
 
             Jogador jogador = new Jogador(Convert.ToInt32(retorno[0]), retorno[1], nomePlayer, tratarCor(retorno[2]));
 
-            return jogador;
+            return (jogador, null);
         }
 
         Color tratarCor(string cor)
@@ -130,9 +140,14 @@ namespace Teste
             }
         }
 
-        public Dictionary<Cartas, int> consultarMao(int idJogador, string senhaJogador)
+        public (Dictionary<Cartas, int>, string) consultarMao(int idJogador, string senhaJogador)
         {
-            string[] ret = separar(Jogo.ConsultarMao(idJogador, senhaJogador), false);
+            (string[] ret, bool erro) = separar(Jogo.ConsultarMao(idJogador, senhaJogador), false);
+
+            if (erro)
+            {
+                return (null, ret[0]);
+            }
 
             Dictionary<Cartas, int> cartas = new Dictionary<Cartas, int>();
 
@@ -147,7 +162,7 @@ namespace Teste
 
             }
 
-            return cartas;
+            return (cartas, null);
         }
 
         Cartas tratarCarta(string carta)
@@ -180,14 +195,26 @@ namespace Teste
 
             return cartaRetorno;
         }
-        public int iniciarPartida(int idJogador, string senhaJogador)
+        public (int, string) iniciarPartida(int idJogador, string senhaJogador)
         {
-            return Convert.ToInt32(separar(Jogo.IniciarPartida(idJogador, senhaJogador), false)[0]);
+            (string[] retorno, bool erro) = separar(Jogo.IniciarPartida(idJogador, senhaJogador), false);
+
+            if (erro)
+            {
+                return (-1, retorno[0]);
+            }
+
+            return (Convert.ToInt32(retorno[0]), null);
         }
 
-        public Dictionary<int, Casa> pegarTabuleiro(int idPartida, Panel pnlTabuleiro)
+        public (Dictionary<int, Casa>, string) pegarTabuleiro(int idPartida, Panel pnlTabuleiro)
         {
-            string[] retorno = separar(Jogo.ExibirTabuleiro(idPartida), false);
+            (string[] retorno, bool erro) = separar(Jogo.ExibirTabuleiro(idPartida), false);
+
+            if (erro)
+            {
+                return (null, retorno[0]);
+            }
 
             Dictionary<int, Casa> tabuleiro = new Dictionary<int, Casa>();
 
@@ -245,14 +272,19 @@ namespace Teste
 
             }
 
-            return tabuleiro;
+            return (tabuleiro, null);
         }
 
-        public List<Historico> pegarHistorico(int idPartida, int inicio)
+        public (List<Historico>, string) pegarHistorico(int idPartida, int inicio)
         {
             List<Historico> historicos = new List<Historico> ();
 
-            string[] retorno = separar(Jogo.ExibirHistorico(idPartida), false);
+            (string[] retorno, bool erro) = separar(Jogo.ExibirHistorico(idPartida), false);
+
+            if (erro)
+            {
+                return (null, retorno[0]);
+            }
 
             for(int i = inicio; i < retorno.Length; i++)
             {
@@ -288,14 +320,19 @@ namespace Teste
                 historicos.Add(historico);
             }
 
-            return historicos;
+            return (historicos, null);
         }
 
-        public int verificarVez(int idPartida)
+        public (int, string) verificarVez(int idPartida)
         {
-            string[] retorno = separar(Jogo.VerificarVez(idPartida), false);
+            (string[] retorno, bool erro) = separar(Jogo.VerificarVez(idPartida), false);
 
-            return Convert.ToInt32(retorno[0].Split(',')[1]);
+            if (erro)
+            {
+                return (-1, retorno[0]);
+            }
+
+            return (Convert.ToInt32(retorno[0].Split(',')[1]), null);
         }
     }
 }

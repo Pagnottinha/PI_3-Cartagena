@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Teste
@@ -53,7 +54,13 @@ namespace Teste
         {
             JogoService service = new JogoService();
 
-            Jogador retorno = service.entrarPartida(partida.id, this.nome, senha);
+            (Jogador retorno, string msgErro) = service.entrarPartida(partida.id, this.nome, senha);
+
+            if (msgErro != null)
+            {
+                MessageBox.Show(msgErro, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             this.id = retorno.id;
             this.cor = retorno.cor;
@@ -78,7 +85,16 @@ namespace Teste
         public void consultarMao()
         {
             JogoService service = new JogoService();
-            this.cartas = service.consultarMao(this.id, this.senha);
+
+            (Dictionary<Cartas, int> cartas, string msgErro) = service.consultarMao(this.id, this.senha);
+
+            if (msgErro != null)
+            {
+                MessageBox.Show(msgErro, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            this.cartas = cartas;
         }
 
         // Pular vez

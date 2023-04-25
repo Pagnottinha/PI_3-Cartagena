@@ -29,9 +29,16 @@ namespace Teste
 
                 string status = cboFiltros.Text[0].ToString();
 
-                partidas = service.pegarPartidas(status);
+                (List <Partida> partidasRetorno, string msgErro)  = service.pegarPartidas(status);
 
-                dgvListaPartidas.DataSource = partidas;
+                if (msgErro != null )
+                {
+                    MessageBox.Show(msgErro, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                dgvListaPartidas.DataSource = partidasRetorno;
+                partidas = partidasRetorno;
             }
             catch (Exception ex)
             {

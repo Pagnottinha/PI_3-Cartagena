@@ -54,50 +54,76 @@ namespace Teste
         {
             JogoService service = new JogoService();
 
-            Jogadores = service.pegarJogadores(this.id);
+            (List<Jogador> Jogadores, string msgErro) = service.pegarJogadores(this.id);
+
+            if (msgErro != null)
+            {
+                MessageBox.Show(msgErro, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            this.Jogadores = Jogadores;
         }
 
         public void comecarPartida()
         {
             JogoService service = new JogoService();
 
-            try
-            {
-                this.listarJogadores();
-                int idJogadorVez = service.iniciarPartida(jogador.id, jogador.senha);
-                this.vez = Jogadores.Find(jogador => jogador.id == idJogadorVez);
-            }
-            catch (PartidaAbertaException)
+
+            this.listarJogadores();
+
+            (int idJogadorVez, string msgErro) = service.iniciarPartida(jogador.id, jogador.senha);
+
+            if (msgErro == "ERRO:Partida não está aberta")
             {
                 this.verificarVez();
             }
-            finally
+            else if (msgErro != null)
             {
-
-                for (int i = 0; i < Jogadores.Count; i++)
-                {
-                    if (Jogadores[i].id == jogador.id)
-                    {
-                        Jogadores[i] = jogador;
-                    }
-                }
-
-                this.historicos = new List<Historico>();
-
-                jogador.consultarMao();
+                MessageBox.Show(msgErro, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-         
+            else
+            {
+                this.vez = Jogadores.Find(jogador => jogador.id == idJogadorVez);
+            }
+            
+            for (int i = 0; i < Jogadores.Count; i++)
+            {
+                if (Jogadores[i].id == jogador.id)
+                {
+                    Jogadores[i] = jogador;
+                }
+            }
+
+            this.historicos = new List<Historico>();
+
+            jogador.consultarMao();
         }
 
         public void listarTabuleiro(Panel pnlTabuleiro)
         {
-            tabuleiro = new JogoService().pegarTabuleiro(this.id, pnlTabuleiro);
+            (Dictionary<int, Casa> tabuleiro, string msgErro) = new JogoService().pegarTabuleiro(this.id, pnlTabuleiro);
+
+            if (msgErro != null)
+            {
+                MessageBox.Show(msgErro, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            this.tabuleiro = tabuleiro;
         }
 
         public void pegarHistorico()
         {
 
-            List<Historico> novoHistorico = new JogoService().pegarHistorico(this.id, this.historicos.Count);
+            (List<Historico> novoHistorico, string msgErro) = new JogoService().pegarHistorico(this.id, this.historicos.Count);
+
+            if (msgErro != null)
+            {
+                MessageBox.Show(msgErro, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             foreach(Historico historico in novoHistorico)
             {
@@ -124,7 +150,14 @@ namespace Teste
 
         public void verificarVez()
         {
-            int idJogadorVez = new JogoService().verificarVez(id);
+            (int idJogadorVez, string msgErro) = new JogoService().verificarVez(id);
+
+            if (msgErro != null)
+            {
+                MessageBox.Show(msgErro, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             this.vez = this.Jogadores.Find(jogador => jogador.id == idJogadorVez);
         }
     }
