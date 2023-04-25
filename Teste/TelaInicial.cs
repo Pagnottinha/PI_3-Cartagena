@@ -24,26 +24,18 @@ namespace Teste
         {
             JogoService service = new JogoService();
 
-            try
+            string status = cboFiltros.Text[0].ToString();
+
+            (List <Partida> partidasRetorno, string msgErro)  = service.pegarPartidas(status);
+
+            if (msgErro != null )
             {
-
-                string status = cboFiltros.Text[0].ToString();
-
-                (List <Partida> partidasRetorno, string msgErro)  = service.pegarPartidas(status);
-
-                if (msgErro != null )
-                {
-                    MessageBox.Show(msgErro, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                dgvListaPartidas.DataSource = partidasRetorno;
-                partidas = partidasRetorno;
+                MessageBox.Show(msgErro, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            dgvListaPartidas.DataSource = partidasRetorno;
+            partidas = partidasRetorno;
         }
 
         private void btnCriarPartida_Click(object sender, EventArgs e)
@@ -59,26 +51,19 @@ namespace Teste
                 return;
             }
 
-            try
+            Partida partida = new Partida(nomePartida, senha);
+
+            if (!chkEntrar.Checked)
             {
-                Partida partida = new Partida(nomePartida, senha);
-
-                if (!chkEntrar.Checked)
-                {
-                    MessageBox.Show("Partida Criada!", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    partidas.Add(partida);
-                    return;
-                }
-
-                Jogador jogador = new Jogador(nomeJogador);
-                jogador.entrarPartida(partida, senha);
-
-                abrirLobby(partida);
+                MessageBox.Show("Partida Criada!", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                partidas.Add(partida);
+                return;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            Jogador jogador = new Jogador(nomeJogador);
+            jogador.entrarPartida(partida, senha);
+
+            abrirLobby(partida);
 
         }
 
@@ -88,17 +73,11 @@ namespace Teste
             string nomePlayer = txtNomeJogadorEntrar.Text;
             string senha = txtSenhaEntrar.Text;
 
-            try
+            Jogador jogador = new Jogador(nomePlayer);
+            if(jogador.entrarPartida(partidas[indexPartida], senha))
             {
-                Jogador jogador = new Jogador(nomePlayer);
-                jogador.entrarPartida(partidas[indexPartida], senha);
-
                 abrirLobby(partidas[indexPartida]);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            };
 
         }
 

@@ -41,7 +41,11 @@ namespace Teste
         {
             string retorno = Jogo.CriarPartida(nome, senha);
 
-            if (retorno.StartsWith("ERRO")) throw new Exception(retorno);
+            if (retorno.StartsWith("ERRO"))
+            {
+                MessageBox.Show(retorno, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            };
 
             this.id = Convert.ToInt32(retorno);
             this.nome = nome;
@@ -65,7 +69,7 @@ namespace Teste
             this.Jogadores = Jogadores;
         }
 
-        public void comecarPartida()
+        public bool comecarPartida()
         {
             JogoService service = new JogoService();
 
@@ -81,7 +85,7 @@ namespace Teste
             else if (msgErro != null)
             {
                 MessageBox.Show(msgErro, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
             else
             {
@@ -99,6 +103,8 @@ namespace Teste
             this.historicos = new List<Historico>();
 
             jogador.consultarMao();
+
+            return true;
         }
 
         public void listarTabuleiro(Panel pnlTabuleiro)

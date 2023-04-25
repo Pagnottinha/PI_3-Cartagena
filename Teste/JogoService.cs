@@ -149,7 +149,15 @@ namespace Teste
                 return (null, ret[0]);
             }
 
-            Dictionary<Cartas, int> cartas = new Dictionary<Cartas, int>();
+            Dictionary<Cartas, int> cartas = new Dictionary<Cartas, int>(6)
+            {
+                { Cartas.Esqueleto, 0 },
+                { Cartas.Garrafa, 0 },
+                { Cartas.Pistola, 0 },
+                { Cartas.Faca, 0 },
+                { Cartas.Chave, 0 },
+                { Cartas.Tricornio, 0 }
+            };
 
             foreach (string item in ret)
             {
@@ -158,8 +166,7 @@ namespace Teste
                 string carta = retornoConsultMao[0];
                 int qtd = Convert.ToInt32(retornoConsultMao[1]);
 
-                cartas.Add(tratarCarta(carta), qtd);
-
+                cartas[tratarCarta(carta)] = qtd;
             }
 
             return (cartas, null);

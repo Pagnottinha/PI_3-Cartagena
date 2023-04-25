@@ -22,31 +22,16 @@ namespace Teste
 
         private void btnListarJogadores_Click(object sender, EventArgs e)
         {
-            try
-            {
-                partida.listarJogadores();
-
-                dgvListarJogadores.DataSource = partida.Jogadores;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            partida.listarJogadores();
+            dgvListarJogadores.DataSource = partida.Jogadores;
         }
 
         private void btnIniciarPartida_Click(object sender, EventArgs e)
         {
-
-            try
+            if(partida.comecarPartida())
             {
-                partida.comecarPartida();
-
                 Parent.Controls.Add(new PartidaForm(partida));
                 Parent.Controls.Remove(this);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

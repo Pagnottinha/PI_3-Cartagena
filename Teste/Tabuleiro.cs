@@ -111,7 +111,7 @@ namespace Teste
                         {
 
                             int distanciaHeight = (pnlBarco.Height - peao.panel.Height * partida.Jogadores.Count) / (partida.Jogadores.Count + 1);
-                            peao.panel.Top = pnlBarco.Top + distanciaHeight * i + peao.panel.Height * (i - 1);
+                            peao.panel.Top = pnlBarco.Top + distanciaHeight * (i + 1) + peao.panel.Height * i;
 
                             int distanciaWidth = (pnlBarco.Width - peao.panel.Width * 6) / 7;
                             peao.panel.Left = pnlBarco.Left + distanciaWidth * numPeoes + peao.panel.Width * (numPeoes - 1);

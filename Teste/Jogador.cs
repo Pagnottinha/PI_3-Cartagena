@@ -50,7 +50,7 @@ namespace Teste
             this.cor = cor;
         }
 
-        public void entrarPartida(Partida partida, string senha)
+        public bool entrarPartida(Partida partida, string senha)
         {
             JogoService service = new JogoService();
 
@@ -59,7 +59,7 @@ namespace Teste
             if (msgErro != null)
             {
                 MessageBox.Show(msgErro, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
             this.id = retorno.id;
@@ -68,6 +68,7 @@ namespace Teste
 
             partida.jogador = this;
             partida.senha = senha;
+            return true;
         }
 
         public void iniciarPeoes(Dictionary<int, Casa> tabuleiro)
@@ -106,11 +107,13 @@ namespace Teste
         // Mover para frente
         public void Jogar(int posicao, string carta, Dictionary<int, Casa> tabuleiro)
         {
+            consultarMao();
+
             string retorno = Jogo.Jogar(this.id, this.senha, posicao, carta);
 
             if (retorno.StartsWith("ERRO"))
             {
-                System.Windows.Forms.MessageBox.Show(retorno);
+                MessageBox.Show(retorno);
                 return;
             }
 
@@ -136,19 +139,24 @@ namespace Teste
                     cartaEscolhida = Cartas.Chave;
                     break;
                 default:
-                    throw new Exception("Carta inválida!");
+                    MessageBox.Show("CArta inválida");
+                    return;
             }
 
             if (cartas[cartaEscolhida] == 0)
             {
-                System.Windows.Forms.MessageBox.Show("Não tem a carta!");
+                MessageBox.Show("Não tem a carta!");
+                return;
             }
+
+            cartas[cartaEscolhida]--;
 
             Peao peaoMover = tabuleiro[posicao].peoes.Find(peao => peao.jogador == this);
 
             if (peaoMover == null)
             {
-                throw new Exception("Não tem peão seu na casa");
+                MessageBox.Show("Não tem peão seu na casa");
+                return;
             }
 
             Casa casa = null;
@@ -170,8 +178,6 @@ namespace Teste
 
             tabuleiro[posicao].peoes.Remove(peaoMover);
             casa.peoes.Add(peaoMover);
-
-            consultarMao();
         }
 
         // Voltar
@@ -181,7 +187,7 @@ namespace Teste
 
             if (retorno.StartsWith("ERRO"))
             {
-                System.Windows.Forms.MessageBox.Show(retorno);
+                MessageBox.Show(retorno);
                 return;
             }
 
@@ -189,7 +195,8 @@ namespace Teste
 
             if (peaoMover == null)
             {
-                throw new Exception("Não tem peão seu na casa");
+                MessageBox.Show("Não tem peão seu na casa");
+                return;
             }
 
             Casa casa = null;
@@ -205,7 +212,8 @@ namespace Teste
 
             if (casa == null)
             {
-                throw new Exception("Não tem para onde o peão voltar");
+                MessageBox.Show("Não tem para onde o peão voltar");
+                return;
             }
 
             tabuleiro[posicao].peoes.Remove(peaoMover);
@@ -216,7 +224,7 @@ namespace Teste
 
         public override string ToString()
         {
-            return $"{nome} ({id} - {cor})";
+            return $"{nome} ({id} - {cor.Name})";
         }
     }
 }

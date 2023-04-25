@@ -31,72 +31,74 @@ namespace Teste
 
         private void btn_ConsultarMao_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ltb_Cartas.DataSource = partida.jogador.cartas.ToList();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            ltb_Cartas.DataSource = partida.jogador.cartas.ToList();
         }
 
         private void btn_JogarPirata_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string opcaoJogar = cbo_Jogar.Text;
-                int posicao = Convert.ToInt32(txtPosicaoPirata.Text);
-                string cartaSelecionada = txtCartaSelecionada.Text;
+            string opcaoJogar = cbo_Jogar.Text;
+            int posicao = Convert.ToInt32(txtPosicaoPirata.Text);
+            string cartaSelecionada = txtCartaSelecionada.Text;
 
-                if (opcaoJogar == "Pular vez")
-                    partida.jogador.Jogar();
-                else if (opcaoJogar == "Mover para frente")
-                {
-                    partida.pegarHistorico();
-                    posicao = Convert.ToInt32(txtPosicaoPirata.Text);
-                    partida.jogador.Jogar(posicao, cartaSelecionada, partida.tabuleiro);
-                }
-                else
-                {
-                    partida.pegarHistorico();
-                    posicao = Convert.ToInt32(txtPosicaoPirata.Text);
-                    partida.jogador.Jogar(posicao, partida.tabuleiro);
-                }
-
-                tabuleiro.atualizarPeoes();
-            }
-            catch (Exception ex)
+            if (opcaoJogar == "Pular vez")
+                partida.jogador.Jogar();
+            else if (opcaoJogar == "Mover para frente")
             {
-                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                partida.pegarHistorico();
+                posicao = Convert.ToInt32(txtPosicaoPirata.Text);
+                partida.jogador.Jogar(posicao, cartaSelecionada, partida.tabuleiro);
             }
+            else
+            {
+                partida.pegarHistorico();
+                posicao = Convert.ToInt32(txtPosicaoPirata.Text);
+                partida.jogador.Jogar(posicao, partida.tabuleiro);
+            }
+
+            tabuleiro.atualizarPeoes();
         }
 
         private void btn_Historico_Click(object sender, EventArgs e)
         {
-            try
-            {
-                partida.pegarHistorico();
-                ltb_HistoricoPartida.DataSource = partida.historicos.ToList();
+            partida.pegarHistorico();
+            ltb_HistoricoPartida.DataSource = partida.historicos.ToList();
 
-                tabuleiro.atualizarPeoes();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            tabuleiro.atualizarPeoes();
         }
 
         private void cbo_Jogar_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (cbo_Jogar.SelectedIndex == 1)
+            {
+                txtPosicaoPirata.Enabled = true;
+                txtCartaSelecionada.Enabled = false;
+            }
+            else if (cbo_Jogar.SelectedIndex == 2)
+            {
+                txtCartaSelecionada.Enabled = false;
+                txtPosicaoPirata.Enabled = false;
+            }
+            else
+            {
+                txtCartaSelecionada.Enabled = true;
+                txtPosicaoPirata.Enabled = true;
+            }
         }
 
-        private void btnVez_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
             partida.verificarVez();
 
             lblVez.Text = $"Vez de {partida.vez}";
+
+            if (partida.vez == partida.jogador)
+            {
+                btn_JogarPirata.Enabled = true;
+            }
+            else
+            {
+                btn_JogarPirata.Enabled = false;
+            }
         }
     }
 }
