@@ -19,7 +19,7 @@ namespace Teste
         public string nome { get; }
         public string senha { get; set; }
         public string data { get; }
-        public Status status { get; }
+        public Status status { get; private set; }
         public List<Jogador> Jogadores { get; private set; }
 
         public Jogador jogador { get; set; }
@@ -73,6 +73,7 @@ namespace Teste
         {
             JogoService service = new JogoService();
 
+            this.status = Status.Jogando;
 
             this.listarJogadores();
 
@@ -89,7 +90,7 @@ namespace Teste
             }
             else
             {
-                this.vez = new Vez(Status.Jogando, idJogadorVez, 1);
+                this.vez = new Vez(status, idJogadorVez, 1);
             }
             
             for (int i = 0; i < Jogadores.Count; i++)
@@ -162,6 +163,11 @@ namespace Teste
             {
                 MessageBox.Show(msgErro, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+
+            if (vez.status == Status.Encerrada)
+            {
+                this.status = Status.Encerrada;
             }
 
             this.vez = retornoVez;

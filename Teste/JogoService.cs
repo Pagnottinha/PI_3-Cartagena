@@ -346,7 +346,7 @@ namespace Teste
                 case "J":
                     return (new Vez(Status.Jogando, Convert.ToInt32(stringVez[1]), Convert.ToInt32(stringVez[2])), null);
                 case "E":
-                    return (new Vez(Status.Jogando, Convert.ToInt32(stringVez[1]), Convert.ToInt32(stringVez[2])), null);
+                    return (new Vez(Status.Encerrada, Convert.ToInt32(stringVez[1]), Convert.ToInt32(stringVez[2])), null);
                 default:
                     return (null, "Erro ao adicionar o Status");
             }

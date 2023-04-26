@@ -37,7 +37,6 @@ namespace Teste
         private void btn_JogarPirata_Click(object sender, EventArgs e)
         {
             string opcaoJogar = cbo_Jogar.Text;
-            int posicao = Convert.ToInt32(txtPosicaoPirata.Text);
             string cartaSelecionada = txtCartaSelecionada.Text;
 
             if (opcaoJogar == "Pular vez")
@@ -45,13 +44,13 @@ namespace Teste
             else if (opcaoJogar == "Mover para frente")
             {
                 partida.pegarHistorico();
-                posicao = Convert.ToInt32(txtPosicaoPirata.Text);
+                int posicao = Convert.ToInt32(txtPosicaoPirata.Text);
                 partida.jogador.Jogar(posicao, cartaSelecionada, partida.tabuleiro);
             }
             else
             {
                 partida.pegarHistorico();
-                posicao = Convert.ToInt32(txtPosicaoPirata.Text);
+                int posicao = Convert.ToInt32(txtPosicaoPirata.Text);
                 partida.jogador.Jogar(posicao, partida.tabuleiro);
             }
 
@@ -85,13 +84,15 @@ namespace Teste
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void tmrVerificarVez_Tick(object sender, EventArgs e)
         {
             partida.verificarVez();
 
-            if (partida.vez.status == Status.Encerrada)
+            if (partida.status == Status.Encerrada)
             {
                 partida.pegarHistorico();
+                tabuleiro.atualizarPeoes();
+
                 int idVencedor = partida.historicos[partida.historicos.Count - 1].idJogador;
 
                 Jogador vencedor = partida.Jogadores.Find(j => j.id == idVencedor);

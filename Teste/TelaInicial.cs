@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CartagenaServer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +29,7 @@ namespace Teste
 
             (List <Partida> partidasRetorno, string msgErro)  = service.pegarPartidas(status);
 
-            if (msgErro != null )
+            if (msgErro != null)
             {
                 MessageBox.Show(msgErro, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
