@@ -26,7 +26,7 @@ namespace Teste
 
             ltb_Cartas.DataSource = partida.jogador.cartas.ToList();
 
-            lblVez.Text = $"Vez de {partida.vez}";
+            lblVez.Text = $"Vez de {partida.stringVez()}";
         }
 
         private void btn_ConsultarMao_Click(object sender, EventArgs e)
@@ -89,9 +89,20 @@ namespace Teste
         {
             partida.verificarVez();
 
-            lblVez.Text = $"Vez de {partida.vez}";
+            if (partida.vez.status == Status.Encerrada)
+            {
+                partida.pegarHistorico();
+                int idVencedor = partida.historicos[partida.historicos.Count - 1].idJogador;
 
-            if (partida.vez == partida.jogador)
+                Jogador vencedor = partida.Jogadores.Find(j => j.id == idVencedor);
+
+                lblVez.Text = $"Partida Finalizada - {vencedor}";
+                return;
+            }
+
+            lblVez.Text = $"Vez de {partida.stringVez()}";
+
+            if (partida.vez.idJogador == partida.jogador.id)
             {
                 btn_JogarPirata.Enabled = true;
             }

@@ -76,7 +76,6 @@
     <Compile Include="Partida.cs" />
     <Compile Include="JogoService.cs" />
     <Compile Include="Jogador.cs" />
-    <Compile Include="PartidaAbertaException.cs" />
     <Compile Include="Peao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +91,7 @@
     <Compile Include="TelaInicial.Designer.cs">
       <DependentUpon>TelaInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vez.cs" />
     <EmbeddedResource Include="Form1.pt-BR.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

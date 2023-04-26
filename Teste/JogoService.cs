@@ -330,16 +330,26 @@ namespace Teste
             return (historicos, null);
         }
 
-        public (int, string) verificarVez(int idPartida)
+        public (Vez, string) verificarVez(int idPartida)
         {
             (string[] retorno, bool erro) = separar(Jogo.VerificarVez(idPartida), false);
 
             if (erro)
             {
-                return (-1, retorno[0]);
+                return (null, retorno[0]);
             }
 
-            return (Convert.ToInt32(retorno[0].Split(',')[1]), null);
+            string[] stringVez = retorno[0].Split(',');
+
+            switch(stringVez[0])
+            {
+                case "J":
+                    return (new Vez(Status.Jogando, Convert.ToInt32(stringVez[1]), Convert.ToInt32(stringVez[2])), null);
+                case "E":
+                    return (new Vez(Status.Jogando, Convert.ToInt32(stringVez[1]), Convert.ToInt32(stringVez[2])), null);
+                default:
+                    return (null, "Erro ao adicionar o Status");
+            }
         }
     }
 }

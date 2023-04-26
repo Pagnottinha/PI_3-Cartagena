@@ -23,7 +23,7 @@ namespace Teste
         public List<Jogador> Jogadores { get; private set; }
 
         public Jogador jogador { get; set; }
-        public Jogador vez { get; set; }
+        public Vez vez { get; set; }
 
         public List<Historico> historicos { get; private set; }
 
@@ -89,7 +89,7 @@ namespace Teste
             }
             else
             {
-                this.vez = Jogadores.Find(jogador => jogador.id == idJogadorVez);
+                this.vez = new Vez(Status.Jogando, idJogadorVez, 1);
             }
             
             for (int i = 0; i < Jogadores.Count; i++)
@@ -156,7 +156,7 @@ namespace Teste
 
         public void verificarVez()
         {
-            (int idJogadorVez, string msgErro) = new JogoService().verificarVez(id);
+            (Vez retornoVez, string msgErro) = new JogoService().verificarVez(id);
 
             if (msgErro != null)
             {
@@ -164,7 +164,19 @@ namespace Teste
                 return;
             }
 
-            this.vez = this.Jogadores.Find(jogador => jogador.id == idJogadorVez);
+            this.vez = retornoVez;
+        }
+
+        public string stringVez()
+        {
+            string vez = this.vez.ToString();
+            string strIdJogadorVez = vez.Substring(0, vez.IndexOf(" "));
+
+            int idJogadorVez = Convert.ToInt32(strIdJogadorVez);
+
+            Jogador jogador = Jogadores.Find(j => j.id == idJogadorVez);
+
+            return vez.Replace(strIdJogadorVez, jogador.ToString());
         }
     }
 }
