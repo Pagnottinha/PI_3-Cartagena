@@ -27,6 +27,8 @@ namespace Teste
             ltb_Cartas.DataSource = partida.jogador.cartas.ToList();
 
             lblVez.Text = $"Vez de {partida.stringVez()}";
+
+            tmrVerificarVez.Enabled = true;
         }
 
         private void btn_ConsultarMao_Click(object sender, EventArgs e)

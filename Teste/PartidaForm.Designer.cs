@@ -177,7 +177,6 @@
             // 
             // tmrVerificarVez
             // 
-            this.tmrVerificarVez.Enabled = true;
             this.tmrVerificarVez.Interval = 3000;
             this.tmrVerificarVez.Tick += new System.EventHandler(this.tmrVerificarVez_Tick);
             // 
