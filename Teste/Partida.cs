@@ -165,7 +165,7 @@ namespace Teste
                 return;
             }
 
-            if (vez.status == Status.Encerrada)
+            if (retornoVez.status == Status.Encerrada)
             {
                 this.status = Status.Encerrada;
             }
