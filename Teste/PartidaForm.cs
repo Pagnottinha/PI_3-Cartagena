@@ -133,6 +133,8 @@ namespace Teste
                 Jogador vencedor = partida.Jogadores.Find(j => j.id == idVencedor);
 
                 lblVez.Text = $"Partida Finalizada - {vencedor}";
+
+                tmrVerificarVez.Enabled = false;
                 return;
             }
 
