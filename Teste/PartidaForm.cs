@@ -77,7 +77,9 @@ namespace Teste
                     consultarMao();
                 }
                 else
-                    throw new Exception("Nenhuma carta foi selecionada!!!");
+                {
+                    MessageBox.Show("Nenhuma carta selecionada!");
+                }
             }
             else
             {
