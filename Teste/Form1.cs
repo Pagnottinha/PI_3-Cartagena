@@ -17,7 +17,7 @@ namespace Teste
         public frmEntrarNaPartida()
         {
             InitializeComponent();
-            Controls.Add(new TelaInicial());
+            Controls.Add(new TelaJogarInicio());
         }
     }
 }

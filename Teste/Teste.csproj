@@ -91,6 +91,12 @@
     <Compile Include="TelaInicial.Designer.cs">
       <DependentUpon>TelaInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="TelaJogarInicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TelaJogarInicio.Designer.cs">
+      <DependentUpon>TelaJogarInicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vez.cs" />
     <EmbeddedResource Include="Form1.pt-BR.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaJogarInicio.resx">
+      <DependentUpon>TelaJogarInicio.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -156,6 +165,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="sprites\modelPeao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sprites\Botao.png" />
+    <Content Include="sprites\BotaoHover.png" />
+    <Content Include="sprites\BotaoJogar.png" />
+    <Content Include="sprites\BotaoJogarHover.png" />
+    <Content Include="sprites\Cartas\CartaChave.png" />
+    <Content Include="sprites\Cartas\CartaChaveSelecionada.png" />
+    <Content Include="sprites\Cartas\CartaEsqueleto.png" />
+    <Content Include="sprites\Cartas\CartaEsqueletoSelecionada.png" />
+    <Content Include="sprites\Cartas\CartaFaca.png" />
+    <Content Include="sprites\Cartas\CartaFacaSelecionada.png" />
+    <Content Include="sprites\Cartas\CartaGarrafa.png" />
+    <Content Include="sprites\Cartas\CartaGarrafaSelecionada.png" />
+    <Content Include="sprites\Cartas\CartaPistola.png" />
+    <Content Include="sprites\Cartas\CartaPistolaSelecionada.png" />
+    <Content Include="sprites\Cartas\CartasCartagena.png" />
+    <Content Include="sprites\Cartas\CartaTricornio.png" />
+    <Content Include="sprites\Cartas\CartaTricornioSelecionada.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
