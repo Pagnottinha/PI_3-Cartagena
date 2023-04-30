@@ -164,9 +164,6 @@
     <None Include="sprites\Tricornio.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="sprites\modelPeao.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="sprites\Botao.png" />
     <Content Include="sprites\BotaoHover.png" />
     <Content Include="sprites\BotaoJogar.png" />
