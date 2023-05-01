@@ -30,6 +30,7 @@
         {
             this.pnlTabuleiro = new System.Windows.Forms.Panel();
             this.pnlBarco = new System.Windows.Forms.Panel();
+            this.pnlInicio = new System.Windows.Forms.Panel();
             this.pnlTabuleiro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -38,6 +39,7 @@
             this.pnlTabuleiro.AutoSize = true;
             this.pnlTabuleiro.BackgroundImage = global::Teste.Properties.Resources.Tabuleiro;
             this.pnlTabuleiro.Controls.Add(this.pnlBarco);
+            this.pnlTabuleiro.Controls.Add(this.pnlInicio);
             this.pnlTabuleiro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTabuleiro.Location = new System.Drawing.Point(0, 0);
             this.pnlTabuleiro.Name = "pnlTabuleiro";
@@ -50,6 +52,14 @@
             this.pnlBarco.Name = "pnlBarco";
             this.pnlBarco.Size = new System.Drawing.Size(135, 64);
             this.pnlBarco.TabIndex = 1;
+            // 
+            // pnlInicio
+            // 
+            this.pnlInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlInicio.Location = new System.Drawing.Point(0, 601);
+            this.pnlInicio.Name = "pnlInicio";
+            this.pnlInicio.Size = new System.Drawing.Size(129, 121);
+            this.pnlInicio.TabIndex = 0;
             // 
             // Tabuleiro
             // 
@@ -69,5 +79,6 @@
 
         private System.Windows.Forms.Panel pnlTabuleiro;
         private System.Windows.Forms.Panel pnlBarco;
+        private System.Windows.Forms.Panel pnlInicio;
     }
 }
