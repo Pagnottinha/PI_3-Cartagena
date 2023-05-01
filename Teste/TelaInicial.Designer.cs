@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaInicial));
             this.lblFiltros = new System.Windows.Forms.Label();
             this.cboFiltros = new System.Windows.Forms.ComboBox();
             this.grbCriarPartida = new System.Windows.Forms.GroupBox();
@@ -61,7 +62,7 @@
             this.lblFiltros.AutoSize = true;
             this.lblFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.lblFiltros.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblFiltros.Location = new System.Drawing.Point(500, 12);
+            this.lblFiltros.Location = new System.Drawing.Point(605, 92);
             this.lblFiltros.Name = "lblFiltros";
             this.lblFiltros.Size = new System.Drawing.Size(44, 16);
             this.lblFiltros.TabIndex = 25;
@@ -79,13 +80,14 @@
             "Abertas",
             "Jogando",
             "Encerradas"});
-            this.cboFiltros.Location = new System.Drawing.Point(503, 28);
+            this.cboFiltros.Location = new System.Drawing.Point(608, 111);
             this.cboFiltros.Name = "cboFiltros";
             this.cboFiltros.Size = new System.Drawing.Size(129, 28);
             this.cboFiltros.TabIndex = 26;
             // 
             // grbCriarPartida
             // 
+            this.grbCriarPartida.BackColor = System.Drawing.Color.Transparent;
             this.grbCriarPartida.Controls.Add(this.lblNomeJogadorCriar);
             this.grbCriarPartida.Controls.Add(this.txtNomeJogadorCriar);
             this.grbCriarPartida.Controls.Add(this.chkEntrar);
@@ -94,7 +96,7 @@
             this.grbCriarPartida.Controls.Add(this.btnCriarPartida);
             this.grbCriarPartida.Controls.Add(this.txtSenhaCriar);
             this.grbCriarPartida.Controls.Add(this.txtNomePartida);
-            this.grbCriarPartida.Location = new System.Drawing.Point(346, 117);
+            this.grbCriarPartida.Location = new System.Drawing.Point(453, 169);
             this.grbCriarPartida.Name = "grbCriarPartida";
             this.grbCriarPartida.Size = new System.Drawing.Size(207, 237);
             this.grbCriarPartida.TabIndex = 24;
@@ -114,6 +116,7 @@
             // 
             // txtNomeJogadorCriar
             // 
+            this.txtNomeJogadorCriar.BackColor = System.Drawing.SystemColors.Window;
             this.txtNomeJogadorCriar.Enabled = false;
             this.txtNomeJogadorCriar.Location = new System.Drawing.Point(15, 143);
             this.txtNomeJogadorCriar.Name = "txtNomeJogadorCriar";
@@ -156,6 +159,7 @@
             // btnCriarPartida
             // 
             this.btnCriarPartida.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCriarPartida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCriarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnCriarPartida.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnCriarPartida.Location = new System.Drawing.Point(15, 179);
@@ -188,7 +192,7 @@
             this.grbEntrarPartida.Controls.Add(this.txtSenhaEntrar);
             this.grbEntrarPartida.Controls.Add(this.txtNomeJogadorEntrar);
             this.grbEntrarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.grbEntrarPartida.Location = new System.Drawing.Point(569, 139);
+            this.grbEntrarPartida.Location = new System.Drawing.Point(680, 188);
             this.grbEntrarPartida.Name = "grbEntrarPartida";
             this.grbEntrarPartida.Size = new System.Drawing.Size(192, 188);
             this.grbEntrarPartida.TabIndex = 23;
@@ -198,6 +202,7 @@
             // btnEntrarPartida
             // 
             this.btnEntrarPartida.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEntrarPartida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnEntrarPartida.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnEntrarPartida.Location = new System.Drawing.Point(13, 129);
@@ -248,8 +253,10 @@
             this.dgvListaPartidas.AllowUserToDeleteRows = false;
             this.dgvListaPartidas.AllowUserToResizeColumns = false;
             this.dgvListaPartidas.AllowUserToResizeRows = false;
+            this.dgvListaPartidas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvListaPartidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaPartidas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvListaPartidas.BackgroundColor = System.Drawing.Color.DarkGray;
             this.dgvListaPartidas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgvListaPartidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaPartidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -257,15 +264,14 @@
             this.nome,
             this.data,
             this.status});
-            this.dgvListaPartidas.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvListaPartidas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvListaPartidas.Location = new System.Drawing.Point(0, 0);
+            this.dgvListaPartidas.Location = new System.Drawing.Point(100, 78);
             this.dgvListaPartidas.MultiSelect = false;
             this.dgvListaPartidas.Name = "dgvListaPartidas";
             this.dgvListaPartidas.ReadOnly = true;
             this.dgvListaPartidas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvListaPartidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaPartidas.Size = new System.Drawing.Size(340, 446);
+            this.dgvListaPartidas.Size = new System.Drawing.Size(329, 388);
             this.dgvListaPartidas.TabIndex = 22;
             this.dgvListaPartidas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListaPartidas_CellFormatting);
             // 
@@ -301,9 +307,10 @@
             // btnListarPartidas
             // 
             this.btnListarPartidas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnListarPartidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListarPartidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnListarPartidas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnListarPartidas.Location = new System.Drawing.Point(346, 12);
+            this.btnListarPartidas.Location = new System.Drawing.Point(444, 95);
             this.btnListarPartidas.Name = "btnListarPartidas";
             this.btnListarPartidas.Size = new System.Drawing.Size(151, 44);
             this.btnListarPartidas.TabIndex = 21;
@@ -316,15 +323,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.lblFiltros);
             this.Controls.Add(this.cboFiltros);
             this.Controls.Add(this.grbCriarPartida);
             this.Controls.Add(this.grbEntrarPartida);
             this.Controls.Add(this.dgvListaPartidas);
             this.Controls.Add(this.btnListarPartidas);
+            this.DoubleBuffered = true;
             this.Name = "TelaInicial";
-            this.Size = new System.Drawing.Size(791, 446);
+            this.Size = new System.Drawing.Size(985, 573);
             this.grbCriarPartida.ResumeLayout(false);
             this.grbCriarPartida.PerformLayout();
             this.grbEntrarPartida.ResumeLayout(false);

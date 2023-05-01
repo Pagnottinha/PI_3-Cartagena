@@ -59,6 +59,25 @@ namespace Teste
             }
         }
 
+        public bool qtdCartas()
+        {
+            string nomeLabel = $"lblQtd{nameCartaSelecionado}";
+
+            Label label = (Label)Controls.Find(nomeLabel, true).FirstOrDefault();
+            
+            if(label != null)
+            {
+                int qtdCartas = Convert.ToInt32(label.Text);
+
+                if (qtdCartas > 0)
+                    return true;
+                else
+                    return false;
+            }
+            else 
+                return false;
+        }
+
         private void btn_JogarPirata_Click(object sender, EventArgs e)
         {
             string opcaoJogar = cbo_Jogar.Text;
@@ -72,9 +91,16 @@ namespace Teste
 
                 if (nameCartaSelecionado != null)
                 {
-                    partida.jogador.Jogar(posicao, nameCartaSelecionado.Substring(0, 1), partida.tabuleiro);
-                    mudarLayerCarta();
-                    consultarMao();
+                    if(qtdCartas())
+                    {
+                        partida.jogador.Jogar(posicao, nameCartaSelecionado.Substring(0, 1), partida.tabuleiro);
+                        mudarLayerCarta();
+                        consultarMao();
+                    }
+                    else
+                        MessageBox.Show($"Não foi possível jogar a carta {nameCartaSelecionado}" +
+                            $" pois não existem cartas para serem jogadas", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
                 else
                     throw new Exception("Nenhuma carta foi selecionada!!!");
@@ -103,16 +129,13 @@ namespace Teste
             if (cbo_Jogar.SelectedIndex == 1)
             {
                 txtPosicaoPirata.Enabled = true;
-                txtCartaSelecionada.Enabled = false;
             }
             else if (cbo_Jogar.SelectedIndex == 2)
             {
-                txtCartaSelecionada.Enabled = false;
                 txtPosicaoPirata.Enabled = false;
             }
             else
             {
-                txtCartaSelecionada.Enabled = true;
                 txtPosicaoPirata.Enabled = true;
             }
         }
@@ -229,8 +252,6 @@ namespace Teste
             outraCartaClicada = false;
             nameCartaSelecionado = panel.Name.Substring(3);
             onMouseEnter(sender, e);
-
-            txtCartaSelecionada.Text = nameCartaSelecionado.Substring(0, 1);
         }
 
         public void mudarLayerCarta()
