@@ -51,8 +51,8 @@
             this.pnlGarrafa = new System.Windows.Forms.Panel();
             this.pnlPistola = new System.Windows.Forms.Panel();
             this.pnlTricornio = new System.Windows.Forms.Panel();
-            this.tabuleiro = new Teste.Tabuleiro();
             this.pnlEstanteCartas = new System.Windows.Forms.Panel();
+            this.tabuleiro = new Teste.Tabuleiro();
             this.pnlChave.SuspendLayout();
             this.pnlFaca.SuspendLayout();
             this.pnlEsqueleto.SuspendLayout();
@@ -67,7 +67,7 @@
             this.lblVez.AutoEllipsis = true;
             this.lblVez.AutoSize = true;
             this.lblVez.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVez.Location = new System.Drawing.Point(209, 45);
+            this.lblVez.Location = new System.Drawing.Point(79, 26);
             this.lblVez.Name = "lblVez";
             this.lblVez.Size = new System.Drawing.Size(0, 25);
             this.lblVez.TabIndex = 29;
@@ -76,7 +76,7 @@
             // 
             this.lblPosicaoPirata.AutoSize = true;
             this.lblPosicaoPirata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosicaoPirata.Location = new System.Drawing.Point(279, 170);
+            this.lblPosicaoPirata.Location = new System.Drawing.Point(256, 191);
             this.lblPosicaoPirata.Name = "lblPosicaoPirata";
             this.lblPosicaoPirata.Size = new System.Drawing.Size(105, 15);
             this.lblPosicaoPirata.TabIndex = 24;
@@ -85,7 +85,7 @@
             // txtPosicaoPirata
             // 
             this.txtPosicaoPirata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPosicaoPirata.Location = new System.Drawing.Point(281, 197);
+            this.txtPosicaoPirata.Location = new System.Drawing.Point(258, 218);
             this.txtPosicaoPirata.Name = "txtPosicaoPirata";
             this.txtPosicaoPirata.Size = new System.Drawing.Size(201, 22);
             this.txtPosicaoPirata.TabIndex = 23;
@@ -93,7 +93,7 @@
             // btn_JogarPirata
             // 
             this.btn_JogarPirata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_JogarPirata.Location = new System.Drawing.Point(314, 238);
+            this.btn_JogarPirata.Location = new System.Drawing.Point(291, 259);
             this.btn_JogarPirata.Name = "btn_JogarPirata";
             this.btn_JogarPirata.Size = new System.Drawing.Size(131, 37);
             this.btn_JogarPirata.TabIndex = 22;
@@ -104,7 +104,7 @@
             // btn_Historico
             // 
             this.btn_Historico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Historico.Location = new System.Drawing.Point(51, 291);
+            this.btn_Historico.Location = new System.Drawing.Point(44, 317);
             this.btn_Historico.Name = "btn_Historico";
             this.btn_Historico.Size = new System.Drawing.Size(139, 35);
             this.btn_Historico.TabIndex = 21;
@@ -116,16 +116,16 @@
             // 
             this.ltb_HistoricoPartida.FormattingEnabled = true;
             this.ltb_HistoricoPartida.HorizontalScrollbar = true;
-            this.ltb_HistoricoPartida.Location = new System.Drawing.Point(24, 60);
+            this.ltb_HistoricoPartida.Location = new System.Drawing.Point(24, 73);
             this.ltb_HistoricoPartida.Name = "ltb_HistoricoPartida";
-            this.ltb_HistoricoPartida.Size = new System.Drawing.Size(185, 225);
+            this.ltb_HistoricoPartida.Size = new System.Drawing.Size(185, 238);
             this.ltb_HistoricoPartida.TabIndex = 20;
             // 
             // lbl_Jogo
             // 
             this.lbl_Jogo.AutoSize = true;
             this.lbl_Jogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Jogo.Location = new System.Drawing.Point(278, 98);
+            this.lbl_Jogo.Location = new System.Drawing.Point(255, 119);
             this.lbl_Jogo.Name = "lbl_Jogo";
             this.lbl_Jogo.Size = new System.Drawing.Size(204, 20);
             this.lbl_Jogo.TabIndex = 19;
@@ -140,7 +140,7 @@
             "Mover para frente",
             "Mover para trás",
             "Pular vez"});
-            this.cbo_Jogar.Location = new System.Drawing.Point(282, 131);
+            this.cbo_Jogar.Location = new System.Drawing.Point(259, 152);
             this.cbo_Jogar.Name = "cbo_Jogar";
             this.cbo_Jogar.Size = new System.Drawing.Size(201, 28);
             this.cbo_Jogar.TabIndex = 18;
@@ -301,16 +301,6 @@
             this.pnlTricornio.MouseEnter += new System.EventHandler(this.onMouseEnter);
             this.pnlTricornio.MouseLeave += new System.EventHandler(this.onMouseExit);
             // 
-            // tabuleiro
-            // 
-            this.tabuleiro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabuleiro.BackColor = System.Drawing.Color.Transparent;
-            this.tabuleiro.Location = new System.Drawing.Point(557, 46);
-            this.tabuleiro.Name = "tabuleiro";
-            this.tabuleiro.Size = new System.Drawing.Size(720, 722);
-            this.tabuleiro.TabIndex = 27;
-            // 
             // pnlEstanteCartas
             // 
             this.pnlEstanteCartas.BackColor = System.Drawing.Color.Transparent;
@@ -326,6 +316,16 @@
             this.pnlEstanteCartas.Name = "pnlEstanteCartas";
             this.pnlEstanteCartas.Size = new System.Drawing.Size(514, 357);
             this.pnlEstanteCartas.TabIndex = 43;
+            // 
+            // tabuleiro
+            // 
+            this.tabuleiro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabuleiro.BackColor = System.Drawing.Color.Transparent;
+            this.tabuleiro.Location = new System.Drawing.Point(557, 46);
+            this.tabuleiro.Name = "tabuleiro";
+            this.tabuleiro.Size = new System.Drawing.Size(720, 722);
+            this.tabuleiro.TabIndex = 27;
             // 
             // PartidaForm
             // 

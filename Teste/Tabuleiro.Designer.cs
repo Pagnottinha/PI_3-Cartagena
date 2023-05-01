@@ -37,7 +37,9 @@
             // pnlTabuleiro
             // 
             this.pnlTabuleiro.AutoSize = true;
+            this.pnlTabuleiro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(149)))), ((int)(((byte)(94)))));
             this.pnlTabuleiro.BackgroundImage = global::Teste.Properties.Resources.Tabuleiro;
+            this.pnlTabuleiro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlTabuleiro.Controls.Add(this.pnlBarco);
             this.pnlTabuleiro.Controls.Add(this.pnlInicio);
             this.pnlTabuleiro.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -48,6 +50,7 @@
             // 
             // pnlBarco
             // 
+            this.pnlBarco.BackColor = System.Drawing.Color.Transparent;
             this.pnlBarco.Location = new System.Drawing.Point(275, 29);
             this.pnlBarco.Name = "pnlBarco";
             this.pnlBarco.Size = new System.Drawing.Size(135, 64);

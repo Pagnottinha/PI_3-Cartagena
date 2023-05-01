@@ -41,7 +41,6 @@
             // btnIniciarPartida
             // 
             this.btnIniciarPartida.BackColor = System.Drawing.Color.Transparent;
-            this.btnIniciarPartida.FlatAppearance.BorderSize = 2;
             this.btnIniciarPartida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarPartida.Location = new System.Drawing.Point(519, 186);
@@ -88,7 +87,6 @@
             // btnListarJogadores
             // 
             this.btnListarJogadores.BackColor = System.Drawing.Color.Transparent;
-            this.btnListarJogadores.FlatAppearance.BorderSize = 2;
             this.btnListarJogadores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListarJogadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarJogadores.Location = new System.Drawing.Point(217, 402);

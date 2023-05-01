@@ -21,7 +21,6 @@ namespace Teste
             InitializeComponent();
 
             BackColor = Color.FromArgb(167, 149, 94);
-
             this.partida = partida;
             cbo_Jogar.SelectedIndex = 0;
             nameCartaSelecionado = null;
@@ -35,7 +34,7 @@ namespace Teste
             }
 
             lblVez.Text = $"Vez de {partida.stringVez()}";
-
+ 
             tmrVerificarVez.Enabled = true;
         }
 
