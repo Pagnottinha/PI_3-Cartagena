@@ -20,7 +20,8 @@ namespace Teste
         {
             InitializeComponent();
 
-            BackColor = Color.FromArgb(167, 149, 94);
+            //BackColor = Color.FromArgb(167, 149, 94);
+
             this.partida = partida;
             cbo_Jogar.SelectedIndex = 0;
             nameCartaSelecionado = null;
@@ -102,7 +103,9 @@ namespace Teste
 
                 }
                 else
-                    throw new Exception("Nenhuma carta foi selecionada!!!");
+                {
+                    MessageBox.Show("Nenhuma carta selecionada!");
+                }
             }
             else
             {
@@ -153,6 +156,8 @@ namespace Teste
                 Jogador vencedor = partida.Jogadores.Find(j => j.id == idVencedor);
 
                 lblVez.Text = $"Partida Finalizada - {vencedor}";
+
+                tmrVerificarVez.Enabled = false;
                 return;
             }
 
