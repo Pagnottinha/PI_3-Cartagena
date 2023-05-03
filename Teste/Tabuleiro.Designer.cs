@@ -45,7 +45,7 @@
             this.pnlTabuleiro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTabuleiro.Location = new System.Drawing.Point(0, 0);
             this.pnlTabuleiro.Name = "pnlTabuleiro";
-            this.pnlTabuleiro.Size = new System.Drawing.Size(720, 722);
+            this.pnlTabuleiro.Size = new System.Drawing.Size(720, 720);
             this.pnlTabuleiro.TabIndex = 0;
             // 
             // pnlBarco
@@ -59,9 +59,9 @@
             // pnlInicio
             // 
             this.pnlInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlInicio.Location = new System.Drawing.Point(0, 601);
+            this.pnlInicio.Location = new System.Drawing.Point(0, 600);
             this.pnlInicio.Name = "pnlInicio";
-            this.pnlInicio.Size = new System.Drawing.Size(129, 121);
+            this.pnlInicio.Size = new System.Drawing.Size(127, 120);
             this.pnlInicio.TabIndex = 0;
             // 
             // Tabuleiro
@@ -71,7 +71,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pnlTabuleiro);
             this.Name = "Tabuleiro";
-            this.Size = new System.Drawing.Size(720, 722);
+            this.Size = new System.Drawing.Size(720, 720);
             this.pnlTabuleiro.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

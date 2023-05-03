@@ -41,6 +41,8 @@ namespace Teste
 
             panel.Left = tabuleiro.Left + coluna * 87 + 95 - panel.Width / 2;
             panel.Top = tabuleiro.Height + tabuleiro.Top - linha * panel.Height - parede * (2 * linha - 1);
+
+            tabuleiro.Controls.Add(panel);
         }
 
         public Casa(int linha)
