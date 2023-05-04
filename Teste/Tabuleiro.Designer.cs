@@ -37,7 +37,7 @@
             // pnlTabuleiro
             // 
             this.pnlTabuleiro.AutoSize = true;
-            this.pnlTabuleiro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(149)))), ((int)(((byte)(94)))));
+            this.pnlTabuleiro.BackColor = System.Drawing.Color.Transparent;
             this.pnlTabuleiro.BackgroundImage = global::Teste.Properties.Resources.Tabuleiro;
             this.pnlTabuleiro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlTabuleiro.Controls.Add(this.pnlBarco);
