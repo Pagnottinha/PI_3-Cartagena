@@ -10,11 +10,13 @@ namespace Teste
     {
         protected Dictionary<int, Casa> tabuleiro;
         protected Jogador Jogador;
+        protected int numeroJogada;
 
         public Estrategia(Dictionary<int, Casa> tabuleiro, Jogador Jogador)
         {
             this.tabuleiro = tabuleiro;
             this.Jogador = Jogador;
+            numeroJogada = 0;
         }
 
         public abstract void jogadaAutomatica();
