@@ -14,6 +14,7 @@ namespace Teste
     public partial class PartidaForm : UserControl
     {
         Partida partida;
+        Estrategia estrategia;
         string nameCartaSelecionado;
         bool outraCartaClicada;
         public PartidaForm(Partida partida)
@@ -37,6 +38,8 @@ namespace Teste
             lblVez.Text = $"Vez de {partida.stringVez()}";
  
             tmrVerificarVez.Enabled = true;
+
+            estrategia = new EstrategiaInicial(partida.tabuleiro, partida.jogador);
         }
 
         private void consultarMao()
@@ -166,11 +169,13 @@ namespace Teste
             if (partida.vez.idJogador == partida.jogador.id)
             {
                 btn_JogarPirata.Enabled = true;
+                btnJogadaAutomatica.Enabled = true;
                 lblVez.Text = $"Vez de {partida.stringVez()} - SUA VEZ";
             }
             else
             {
                 btn_JogarPirata.Enabled = false;
+                btnJogadaAutomatica.Enabled = false;
             }
         }
 
@@ -266,6 +271,13 @@ namespace Teste
             onMouseExit(panel, e);
             nameCartaSelecionado = null;
             outraCartaClicada = false;
+        }
+
+        private void btnJogadaAutomatica_Click(object sender, EventArgs e)
+        {
+            estrategia.jogadaAutomatica();
+            // mudarLayerCarta(); erro ao mudar
+            tabuleiro.atualizarPeoes();
         }
     }
 }

@@ -52,6 +52,7 @@
             this.pnlPistola = new System.Windows.Forms.Panel();
             this.pnlTricornio = new System.Windows.Forms.Panel();
             this.pnlEstanteCartas = new System.Windows.Forms.Panel();
+            this.btnJogadaAutomatica = new System.Windows.Forms.Button();
             this.tabuleiro = new Teste.Tabuleiro();
             this.pnlChave.SuspendLayout();
             this.pnlFaca.SuspendLayout();
@@ -317,6 +318,16 @@
             this.pnlEstanteCartas.Size = new System.Drawing.Size(514, 357);
             this.pnlEstanteCartas.TabIndex = 43;
             // 
+            // btnJogadaAutomatica
+            // 
+            this.btnJogadaAutomatica.Location = new System.Drawing.Point(291, 302);
+            this.btnJogadaAutomatica.Name = "btnJogadaAutomatica";
+            this.btnJogadaAutomatica.Size = new System.Drawing.Size(131, 43);
+            this.btnJogadaAutomatica.TabIndex = 44;
+            this.btnJogadaAutomatica.Text = "Jogar Automatico";
+            this.btnJogadaAutomatica.UseVisualStyleBackColor = true;
+            this.btnJogadaAutomatica.Click += new System.EventHandler(this.btnJogadaAutomatica_Click);
+            // 
             // tabuleiro
             // 
             this.tabuleiro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -332,6 +343,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.btnJogadaAutomatica);
             this.Controls.Add(this.pnlEstanteCartas);
             this.Controls.Add(this.lblVez);
             this.Controls.Add(this.tabuleiro);
@@ -387,5 +399,6 @@
         private System.Windows.Forms.Panel pnlPistola;
         private System.Windows.Forms.Panel pnlTricornio;
         private System.Windows.Forms.Panel pnlEstanteCartas;
+        private System.Windows.Forms.Button btnJogadaAutomatica;
     }
 }
