@@ -41,10 +41,6 @@ namespace Teste
                         Jogador.Jogar();
                         numeroJogada++;
                     }
-
-                    numeroJogada = 0;
-
-                    return;
                 }
 
                 foreach ((int posicao, Cartas carta) in jogadas)

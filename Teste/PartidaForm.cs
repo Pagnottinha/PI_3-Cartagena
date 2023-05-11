@@ -275,8 +275,9 @@ namespace Teste
 
         private void btnJogadaAutomatica_Click(object sender, EventArgs e)
         {
+            partida.pegarHistorico();
             estrategia.jogadaAutomatica();
-            // mudarLayerCarta(); erro ao mudar
+            consultarMao();
             tabuleiro.atualizarPeoes();
         }
     }
