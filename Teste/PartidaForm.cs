@@ -38,8 +38,6 @@ namespace Teste
             lblVez.Text = $"Vez de {partida.stringVez()}";
  
             tmrVerificarVez.Enabled = true;
-
-            estrategia = Estrategia.comecarEstrategia(partida.tabuleiro, partida.jogador);
         }
 
         private void consultarMao()
@@ -172,11 +170,13 @@ namespace Teste
                 btnJogadaAutomatica.Enabled = true;
                 lblVez.Text = $"Vez de {partida.stringVez()} - SUA VEZ";
 
+                /*
                 partida.pegarHistorico();
                 estrategia = Estrategia.comecarEstrategia(partida.tabuleiro, partida.jogador);
                 estrategia.jogadaAutomatica();
                 consultarMao();
                 tabuleiro.atualizarPeoes();
+                */
             }
             else
             {

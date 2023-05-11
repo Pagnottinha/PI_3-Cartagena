@@ -39,7 +39,7 @@ namespace Teste
 
                 List<KeyValuePair<Cartas, int>> movimentacaoList = movimentacao.ToList();
 
-                for (int j = movimentacao.Count - 1; j > 0 && continua; j--)
+                for (int j = movimentacao.Count - 1; j >= 0 && continua; j--)
                 {
                     Cartas carta = movimentacaoList[j].Key;
 
