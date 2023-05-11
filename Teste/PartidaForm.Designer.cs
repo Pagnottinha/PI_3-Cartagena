@@ -149,7 +149,7 @@
             // 
             // tmrVerificarVez
             // 
-            this.tmrVerificarVez.Interval = 5000;
+            this.tmrVerificarVez.Interval = 7000;
             this.tmrVerificarVez.Tick += new System.EventHandler(this.tmrVerificarVez_Tick);
             // 
             // lblQtdTricornio

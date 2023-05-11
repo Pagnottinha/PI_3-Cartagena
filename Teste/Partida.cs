@@ -147,7 +147,6 @@ namespace Teste
                     peaoMover.posicao = historico.destino;
 
                     tabuleiro[historico.origem].peoes.Remove(peaoMover);
-
                     tabuleiro[historico.destino].peoes.Add(peaoMover);
                 }
 

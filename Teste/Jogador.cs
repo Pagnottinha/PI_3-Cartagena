@@ -107,8 +107,6 @@ namespace Teste
         // Mover para frente
         public void Jogar(int posicao, string carta, Dictionary<int, Casa> tabuleiro)
         {
-            consultarMao();
-
             string retorno = Jogo.Jogar(this.id, this.senha, posicao, carta);
 
             if (retorno.StartsWith("ERRO"))
@@ -143,21 +141,9 @@ namespace Teste
                     return;
             }
 
-            if (cartas[cartaEscolhida] == 0)
-            {
-                MessageBox.Show("Não tem a carta!");
-                return;
-            }
-
             cartas[cartaEscolhida]--;
 
             Peao peaoMover = tabuleiro[posicao].peoes.Find(peao => peao.jogador == this);
-
-            if (peaoMover == null)
-            {
-                MessageBox.Show("Não tem peão seu na casa");
-                return;
-            }
 
             Casa casa = null;
 
@@ -193,12 +179,6 @@ namespace Teste
 
             Peao peaoMover = tabuleiro[posicao].peoes.Find(peao => peao.jogador == this);
 
-            if (peaoMover == null)
-            {
-                MessageBox.Show("Não tem peão seu na casa");
-                return;
-            }
-
             Casa casa = null;
 
             for (int i = posicao - 1; i > 0 && casa == null; i--)
@@ -208,12 +188,6 @@ namespace Teste
                     casa = tabuleiro[i];
                     peaoMover.posicao = i;
                 }
-            }
-
-            if (casa == null)
-            {
-                MessageBox.Show("Não tem para onde o peão voltar");
-                return;
             }
 
             tabuleiro[posicao].peoes.Remove(peaoMover);

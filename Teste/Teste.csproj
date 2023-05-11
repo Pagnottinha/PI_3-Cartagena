@@ -55,6 +55,8 @@
   <ItemGroup>
     <Compile Include="Casa.cs" />
     <Compile Include="Estrategia.cs" />
+    <Compile Include="EstrategiaDefensiva .cs" />
+    <Compile Include="EstrategiaAgressiva.cs" />
     <Compile Include="EstrategiaInicial.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

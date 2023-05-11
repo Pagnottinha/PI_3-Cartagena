@@ -16,8 +16,10 @@ namespace Teste
         {
             while(numeroJogada < 3)
             {
-                foreach (Peao peao in Jogador.peoes)
+                for (int i = 0; i < Jogador.peoes.Count && numeroJogada < 3; i++)
                 {
+                    Peao peao = Jogador.peoes[i];
+          
                     if (voltarComprarDuas(peao.posicao))
                     {
                         Jogador.Jogar(peao.posicao, tabuleiro);
@@ -36,40 +38,30 @@ namespace Teste
 
                 if (jogadas.Count == 0)
                 {
-                    while (numeroJogada < 3)
+                    if (tabuleiro[0].peoes.Find(peao => peao.jogador == Jogador) == null)
                     {
-                        Jogador.Jogar();
-                        numeroJogada++;
+                        int qntCartas = numeroCartas();
+
+                        if (qntCartas > 12)
+                        {
+                            estrategia = new EstrategiaAgressiva(tabuleiro, Jogador, numeroJogada);
+                        }
+                        else
+                        {
+                            estrategia = new EstrategiaDefensiva(tabuleiro, Jogador, numeroJogada);
+                        }
+
+                        estrategia.jogadaAutomatica();
+                        return;
                     }
+
+                    pularTurnos();
                 }
 
                 foreach ((int posicao, Cartas carta) in jogadas)
                 {
-                    string c = "";
 
-                    switch (carta)
-                    {
-                        case Cartas.Esqueleto:
-                            c = "E";
-                            break;
-                        case Cartas.Faca:
-                            c = "F";
-                            break;
-                        case Cartas.Garrafa:
-                            c = "G";
-                            break;
-                        case Cartas.Tricornio:
-                            c = "T";
-                            break;
-                        case Cartas.Chave:
-                            c = "C";
-                            break;
-                        case Cartas.Pistola:
-                            c = "P";
-                            break;
-                    }
-
-                    Jogador.Jogar(posicao, c, tabuleiro);
+                    Jogador.Jogar(posicao, cartaPraString(carta), tabuleiro);
                     numeroJogada++;
                 }
             }
@@ -86,8 +78,6 @@ namespace Teste
             {
                 return posicaoParaJogar;
             }
-
-            // Jogador.peoes.Sort((Peao p1, Peao p2) => p1.posicao >= p2.posicao ? 1 : -1);
 
             Dictionary<Cartas, int> movimentacao = paraOndeVai(0);
 
@@ -182,106 +172,6 @@ namespace Teste
             }
 
             return posicaoParaJogar;
-        }
-
-        Dictionary<Cartas, int> paraOndeVai(int posicaoPeao)
-        {
-            Dictionary<Cartas, int> posicoes = new Dictionary<Cartas, int>();
-
-            for (int i = posicaoPeao; i < 37 && posicoes.Count < 6; i++)
-            {
-                Casa casa = tabuleiro[i];
-
-                if (casa.peoes.Count == 0 && !posicoes.ContainsKey(casa.carta))
-                {
-                    posicoes.Add(casa.carta, i);
-                }
-            }
-
-            if (posicoes.Count < 6)
-            {
-                List<Cartas> cartas = new List<Cartas>()
-                {
-                    Cartas.Esqueleto,
-                    Cartas.Faca,
-                    Cartas.Garrafa,
-                    Cartas.Tricornio,
-                    Cartas.Pistola,
-                    Cartas.Chave
-                };
-
-                foreach(Cartas carta in cartas)
-                {
-                    if (!posicoes.ContainsKey(carta))
-                    {
-                        posicoes.Add(carta, 37);
-                    }
-                }
-            }
-
-            return posicoes;
-        }
-
-        bool voltarComprarDuas(int posicaoPeao)
-        {
-            for (int i = posicaoPeao - 1; i > 0; i--)
-            {
-                int qntPeoes = tabuleiro[i].peoes.Count;
-
-                if (qntPeoes == 1)
-                {
-                    if (numeroJogada <= 1)
-                    {
-                        return deveVoltar(posicaoPeao);
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else if (qntPeoes == 2)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        Peao peaoProximo(int posicaoPeao)
-        {
-            for (int i = posicaoPeao + 1; i < 37; i++)
-            {
-                Casa casa = tabuleiro[i];
-                Peao peaoProximo = casa.peoes.Find(p => p.jogador == Jogador);
-
-                if (peaoProximo != null)
-                {
-                    return peaoProximo;
-                }
-            }
-
-            return null;
-        }
-
-        bool deveVoltar(int posicaoPeao)
-        {
-            for (int i = posicaoPeao + 1; i < 37; i++)
-            {
-                Casa casa = tabuleiro[i];
-                Peao peaoProximo = casa.peoes.Find(p => p.jogador == Jogador);
-
-                if (casa.peoes.Count > 0 && peaoProximo == null)
-                {
-                    return false;
-                }
-                else if (peaoProximo != null)
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
     }
 }
