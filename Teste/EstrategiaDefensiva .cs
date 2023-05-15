@@ -19,6 +19,33 @@ namespace Teste
 
             Jogador.peoes.Sort((Peao peao1, Peao peao2) => peao1.posicao > peao2.posicao ? 1 : -1);
 
+            Dictionary<Cartas, int> movimentacaoUltimo = paraOndeVai(Jogador.peoes[0].posicao);
+
+            foreach (KeyValuePair<Cartas, int> valuePair in movimentacaoUltimo)
+            {
+                if (valuePair.Value > 30)
+                {
+                    int peoesAntes = 0;
+
+                    foreach (Peao p in Jogador.peoes)
+                    {
+                        if (valuePair.Value > p.posicao)
+                        {
+                            peoesAntes++;
+                        }
+                    }
+
+                    int qntCartas = Jogador.cartas[valuePair.Key];
+
+                    if (qntCartas >= peoesAntes)
+                    {
+                        estrategia = new EstrategiaAgressiva(tabuleiro, Jogador, numeroJogada);
+                        estrategia.jogadaAutomatica();
+                        return;
+                    }
+                }
+            }
+
             for (int i = 0; i < Jogador.peoes.Count && numeroJogada <= 1; i++)
             {
                 Peao peao = Jogador.peoes[i];
@@ -43,7 +70,7 @@ namespace Teste
 
                     int posicao = movimentacao[carta];
 
-                    if (voltarComprarDuasExcluirPeao(posicao, peao))
+                    if (voltarComprarDuas(posicao, peao))
                     {
                         Jogador.Jogar(peao.posicao, cartaPraString(carta), tabuleiro);
                         Jogador.Jogar(posicao, tabuleiro);
@@ -86,7 +113,7 @@ namespace Teste
             numeroJogada = 0;
         }
 
-        bool voltarComprarDuasExcluirPeao(int posicaoPeao, Peao peao)
+        protected int voltaPraOnde(int posicaoPeao, Peao peao)
         {
             for (int i = posicaoPeao - 1; i > 0; i--)
             {
@@ -97,22 +124,47 @@ namespace Teste
                     qntPeoes--;
                 }
 
-                if (qntPeoes == 1)
+                if (qntPeoes > 0 && qntPeoes < 3)
                 {
-                    if (numeroJogada <= 1)
-                    {
-                        return deveVoltar(posicaoPeao);
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else if (qntPeoes == 2)
-                {
-                    return true;
+                    return i;
                 }
             }
+
+            return 0;
+        }
+
+        bool voltarComprarDuas(int posicaoPeao, Peao peao)
+        {
+            int ondeVolta = voltaPraOnde(posicaoPeao, peao);
+
+            if (ondeVolta == 0)
+            {
+                return false;
+            }
+
+            int qntPeoes = tabuleiro[ondeVolta].peoes.Count;
+
+            if(ondeVolta == peao.posicao)
+            {
+                qntPeoes--;
+            }
+
+            if (qntPeoes == 1)
+            {
+                if (numeroJogada <= 1)
+                {
+                    return deveVoltar(posicaoPeao);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (qntPeoes == 2)
+            {
+                return true;
+            }
+
 
             return false;
         }

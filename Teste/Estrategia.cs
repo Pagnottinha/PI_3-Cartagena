@@ -86,28 +86,48 @@ namespace Teste
             return posicoes;
         }
 
-        protected bool voltarComprarDuas(int posicaoPeao)
+        protected int voltaPraOnde(int posicaoPeao)
         {
             for (int i = posicaoPeao - 1; i > 0; i--)
             {
                 int qntPeoes = tabuleiro[i].peoes.Count;
 
-                if (qntPeoes == 1)
+                if (qntPeoes > 0 && qntPeoes < 3)
                 {
-                    if (numeroJogada <= 1)
-                    {
-                        return deveVoltar(posicaoPeao);
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else if (qntPeoes == 2)
-                {
-                    return true;
+                    return i;
                 }
             }
+
+            return 0;
+        }
+
+        protected bool voltarComprarDuas(int posicaoPeao)
+        {
+            int ondeVolta = voltaPraOnde(posicaoPeao);
+
+            if (ondeVolta == 0)
+            {
+                return false;
+            }
+
+            int qntPeoes = tabuleiro[ondeVolta].peoes.Count;
+
+            if (qntPeoes == 1)
+            {
+                if (numeroJogada <= 1)
+                {
+                    return deveVoltar(posicaoPeao);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (qntPeoes == 2)
+            {
+                return true;
+            }
+            
 
             return false;
         }
