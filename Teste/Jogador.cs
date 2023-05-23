@@ -143,7 +143,7 @@ namespace Teste
 
             cartas[cartaEscolhida]--;
 
-            Peao peaoMover = tabuleiro[posicao].peoes.Find(peao => peao.jogador == this);
+            Peao peaoMover = peoes.Find(peao => peao.posicao == posicao);
 
             Casa casa = null;
 
@@ -177,7 +177,7 @@ namespace Teste
                 return;
             }
 
-            Peao peaoMover = tabuleiro[posicao].peoes.Find(peao => peao.jogador == this);
+            Peao peaoMover = peoes.Find(peao => peao.posicao == posicao);
 
             Casa casa = null;
 

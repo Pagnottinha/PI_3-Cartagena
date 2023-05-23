@@ -46,6 +46,73 @@ namespace Teste
                 }
             }
 
+            Jogador.peoes.Sort((Peao peao1, Peao peao2) => peao1.posicao < peao2.posicao ? 1 : -1);
+
+            for (int i = 3 - numeroJogada; i > 0 && numeroJogada < 3; i--)
+            {
+                foreach (Peao peao in Jogador.peoes)
+                {
+                    int pos = peao.posicao;
+
+                    for (int j = i; j > 0 && pos > 0; j--)
+                    {
+                        pos = voltaPraOnde(pos);
+                    }
+
+                    if (pos > 0 && tabuleiro[pos].peoes.Count == 2)
+                    {
+                        for (int j = 0; j < i; j++)
+                        {
+                            Jogador.Jogar(peao.posicao, tabuleiro);
+                            numeroJogada++;
+                        }
+
+                        i = 3 - numeroJogada;
+                    }
+                }
+            }
+
+            Jogador.peoes.Sort((Peao peao1, Peao peao2) => peao1.posicao < peao2.posicao ? 1 : -1);
+
+            for (int i = 1; i < Jogador.peoes.Count && numeroJogada < 2; i++)
+            {
+                Peao peao = Jogador.peoes[i];
+
+                Peao proximo = peaoProximo(peao.posicao);
+
+                int ondeVolta = voltaPraOnde(peao.posicao);
+
+                if (proximo != null && tabuleiro[ondeVolta].peoes.Count == 1 && tabuleiro[peao.posicao].peoes.Count < 3)
+                {
+                    switch (numeroJogada)
+                    {
+                        case 0:
+                            Jogador.Jogar(proximo.posicao, tabuleiro);
+                            Jogador.Jogar(proximo.posicao, tabuleiro);
+                            Jogador.Jogar(peao.posicao, tabuleiro);
+                            numeroJogada += 3;
+                            break;
+                        case 1:
+                            Jogador.Jogar(peao.posicao, tabuleiro);
+                            Jogador.Jogar(proximo.posicao, tabuleiro);
+                            numeroJogada += 2;
+                            break;
+                    }
+                }
+                else if (tabuleiro[peao.posicao].peoes.FindAll(p => p.jogador == Jogador).Count >= 2)
+                {
+
+                    if (tabuleiro[ondeVolta].peoes.Count == 1)
+                    {
+                        int pos = peao.posicao;
+                        Jogador.Jogar(pos, tabuleiro);
+                        Jogador.Jogar(pos, tabuleiro);
+                        numeroJogada += 2;
+                    }
+                }
+            }
+
+            /*
             for (int i = 0; i < Jogador.peoes.Count && numeroJogada <= 1; i++)
             {
                 Peao peao = Jogador.peoes[i];
@@ -100,8 +167,8 @@ namespace Teste
                     }
                 }
             }
-
-            if (numeroCartas() > 15)
+            */
+            if (numeroCartas() > 15 || numeroJogada == 0)
             {
                 estrategia = new EstrategiaAgressiva(tabuleiro, Jogador, numeroJogada);
                 estrategia.jogadaAutomatica();
@@ -144,7 +211,7 @@ namespace Teste
 
             int qntPeoes = tabuleiro[ondeVolta].peoes.Count;
 
-            if(ondeVolta == peao.posicao)
+            if (ondeVolta == peao.posicao)
             {
                 qntPeoes--;
             }
@@ -169,5 +236,4 @@ namespace Teste
             return false;
         }
     }
-
 }
