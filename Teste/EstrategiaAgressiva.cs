@@ -16,14 +16,6 @@ namespace Teste
 
         public override void jogadaAutomatica()
         {
-            int qntCartas = numeroCartas();
-
-            if (qntCartas <= 3)
-            {
-                estrategia = new EstrategiaDefensiva(tabuleiro, Jogador, numeroJogada);
-                estrategia.jogadaAutomatica();
-                return;
-            }
 
             int qntVezes = 3 - numeroJogada;
 
@@ -39,6 +31,9 @@ namespace Teste
 
                 List<KeyValuePair<Cartas, int>> movimentacaoList = movimentacao.ToList();
 
+                if (peao.posicao == 37)
+                    continua = false;
+
                 for (int j = movimentacao.Count - 1; j >= 0 && continua; j--)
                 {
                     Cartas carta = movimentacaoList[j].Key;
@@ -52,7 +47,18 @@ namespace Teste
                 }
             }
 
-            pularTurnos();
+            int qntCartas = numeroCartas();
+
+            if (qntCartas == 0)
+            {
+                estrategia = new EstrategiaDefensiva(tabuleiro, Jogador, numeroJogada);
+                estrategia.jogadaAutomatica();
+                return;
+            }
+            else
+            {
+                pularTurnos();
+            }
 
             numeroJogada = 0;
         }
