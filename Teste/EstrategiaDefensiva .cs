@@ -177,7 +177,10 @@ namespace Teste
                 }
             }
             */
-            if (numeroCartas() > 15 || numeroJogada == 0)
+
+            int numCartas = numeroCartas();
+
+            if (numCartas > 15 || (numeroJogada == 0 && numCartas != 0))
             {
                 estrategia = new EstrategiaAgressiva(tabuleiro, Jogador, numeroJogada);
                 estrategia.jogadaAutomatica();
