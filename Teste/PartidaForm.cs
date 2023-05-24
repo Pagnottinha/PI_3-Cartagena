@@ -170,13 +170,8 @@ namespace Teste
                 btnJogadaAutomatica.Enabled = true;
                 lblVez.Text = $"Vez de {partida.stringVez()} - SUA VEZ";
 
-                /*
-                partida.pegarHistorico();
-                estrategia = Estrategia.comecarEstrategia(partida.tabuleiro, partida.jogador);
-                estrategia.jogadaAutomatica();
-                consultarMao();
-                tabuleiro.atualizarPeoes();
-                */
+                JogadaAutomatica();
+                
             }
             else
             {
@@ -279,13 +274,18 @@ namespace Teste
             outraCartaClicada = false;
         }
 
-        private void btnJogadaAutomatica_Click(object sender, EventArgs e)
+        void JogadaAutomatica()
         {
             partida.pegarHistorico();
             estrategia = Estrategia.comecarEstrategia(partida.tabuleiro, partida.jogador);
             estrategia.jogadaAutomatica();
             consultarMao();
             tabuleiro.atualizarPeoes();
+        }
+
+        private void btnJogadaAutomatica_Click(object sender, EventArgs e)
+        {
+            JogadaAutomatica();
         }
     }
 }

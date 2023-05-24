@@ -82,21 +82,30 @@ namespace Teste
 
                 int ondeVolta = voltaPraOnde(peao.posicao);
 
-                if (proximo != null && tabuleiro[ondeVolta].peoes.Count == 1 && tabuleiro[peao.posicao].peoes.Count < 3)
+                if (proximo != null && tabuleiro[ondeVolta].peoes.Count == 1)
                 {
-                    switch (numeroJogada)
+                    if (numeroJogada == 1)
                     {
-                        case 0:
+                        Jogador.Jogar(peao.posicao, tabuleiro);
+                        Jogador.Jogar(proximo.posicao, tabuleiro);
+                        numeroJogada += 2;
+                    }
+                    else if (numeroJogada == 0)
+                    {
+                        if (tabuleiro[peao.posicao].peoes.Count < 3)
+                        {
                             Jogador.Jogar(proximo.posicao, tabuleiro);
                             Jogador.Jogar(proximo.posicao, tabuleiro);
                             Jogador.Jogar(peao.posicao, tabuleiro);
                             numeroJogada += 3;
-                            break;
-                        case 1:
+                        }
+                        else
+                        {
                             Jogador.Jogar(peao.posicao, tabuleiro);
                             Jogador.Jogar(proximo.posicao, tabuleiro);
-                            numeroJogada += 2;
-                            break;
+                            Jogador.Jogar(proximo.posicao, tabuleiro);
+                            numeroJogada += 3;
+                        }
                     }
                 }
                 else if (tabuleiro[peao.posicao].peoes.FindAll(p => p.jogador == Jogador).Count >= 2)

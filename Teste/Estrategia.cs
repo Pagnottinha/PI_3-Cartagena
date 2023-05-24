@@ -143,6 +143,10 @@ namespace Teste
                 {
                     return peaoProximo;
                 }
+                else if (casa.peoes.Count > 0)
+                {
+                    return null;
+                }
             }
 
             return null;
