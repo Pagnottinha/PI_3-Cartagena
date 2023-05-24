@@ -110,7 +110,7 @@ namespace Teste
             }
             else
             {
-                partida.pegarHistorico();
+                atualizarHistorico();
                 int posicao = Convert.ToInt32(txtPosicaoPirata.Text);
                 partida.jogador.Jogar(posicao, partida.tabuleiro);
                 consultarMao();
@@ -121,10 +121,15 @@ namespace Teste
 
         private void btn_Historico_Click(object sender, EventArgs e)
         {
+            atualizarHistorico();
+            tabuleiro.atualizarPeoes();
+        }
+
+        void atualizarHistorico()
+        {
             partida.pegarHistorico();
             ltb_HistoricoPartida.DataSource = partida.historicos.ToList();
-
-            tabuleiro.atualizarPeoes();
+            ltb_HistoricoPartida.TopIndex = ltb_HistoricoPartida.Items.Count - 1;
         }
 
         private void cbo_Jogar_SelectedIndexChanged(object sender, EventArgs e)
@@ -149,7 +154,7 @@ namespace Teste
 
             if (partida.status == Status.Encerrada)
             {
-                partida.pegarHistorico();
+                atualizarHistorico();
                 tabuleiro.atualizarPeoes();
 
                 int idVencedor = partida.historicos[partida.historicos.Count - 1].idJogador;
@@ -162,8 +167,6 @@ namespace Teste
                 return;
             }
 
-            lblVez.Text = $"Vez de {partida.stringVez()}";
-
             if (partida.vez.idJogador == partida.jogador.id)
             {
                 btn_JogarPirata.Enabled = true;
@@ -171,12 +174,13 @@ namespace Teste
                 lblVez.Text = $"Vez de {partida.stringVez()} - SUA VEZ";
 
                 JogadaAutomatica();
-                
             }
             else
             {
                 btn_JogarPirata.Enabled = false;
                 btnJogadaAutomatica.Enabled = false;
+
+                lblVez.Text = $"Vez de {partida.stringVez()}";
             }
         }
 
@@ -276,7 +280,7 @@ namespace Teste
 
         void JogadaAutomatica()
         {
-            partida.pegarHistorico();
+            atualizarHistorico();
             estrategia = Estrategia.comecarEstrategia(partida.tabuleiro, partida.jogador);
             estrategia.jogadaAutomatica();
             consultarMao();

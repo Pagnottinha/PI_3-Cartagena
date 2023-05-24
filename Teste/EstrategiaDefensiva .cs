@@ -247,5 +247,25 @@ namespace Teste
 
             return false;
         }
+
+        protected override Peao peaoProximo(int posicaoPeao)
+        {
+            for (int i = posicaoPeao + 1; i < 37; i++)
+            {
+                Casa casa = tabuleiro[i];
+                Peao peaoProximo = casa.peoes.Find(p => p.jogador == Jogador);
+
+                if (peaoProximo != null)
+                {
+                    return peaoProximo;
+                }
+                else if (casa.peoes.Count > 0)
+                {
+                    return null;
+                }
+            }
+
+            return null;
+        }
     }
 }

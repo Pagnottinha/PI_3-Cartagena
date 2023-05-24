@@ -150,7 +150,7 @@ namespace Teste
             return false;
         }
 
-        protected Peao peaoProximo(int posicaoPeao)
+        protected virtual Peao peaoProximo(int posicaoPeao)
         {
             for (int i = posicaoPeao + 1; i < 37; i++)
             {
@@ -161,10 +161,7 @@ namespace Teste
                 {
                     return peaoProximo;
                 }
-                else if (casa.peoes.Count > 0)
-                {
-                    return null;
-                }
+                
             }
 
             return null;
