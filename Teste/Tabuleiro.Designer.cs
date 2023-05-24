@@ -58,6 +58,7 @@
             // 
             // pnlInicio
             // 
+            this.pnlInicio.BackColor = System.Drawing.Color.Gray;
             this.pnlInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlInicio.Location = new System.Drawing.Point(0, 601);
             this.pnlInicio.Name = "pnlInicio";

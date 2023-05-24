@@ -48,6 +48,18 @@ namespace Teste
             return qntCartas;
         }
 
+        protected int peaoMaisLonge()
+        {
+            int maisLonge = 0;
+            foreach(Peao i in Jogador.peoes)
+            {
+                if(i.posicao > maisLonge)
+                    maisLonge = i.posicao;
+            }
+
+            return maisLonge;
+        }
+
         protected Dictionary<Cartas, int> paraOndeVai(int posicaoPeao)
         {
             Dictionary<Cartas, int> posicoes = new Dictionary<Cartas, int>();
@@ -99,6 +111,12 @@ namespace Teste
             }
 
             return 0;
+        }
+
+        protected void voltando(List<int> posicoes)
+        {
+            foreach (int i in posicoes)
+                Jogador.Jogar(i, tabuleiro);
         }
 
         protected bool voltarComprarDuas(int posicaoPeao)
