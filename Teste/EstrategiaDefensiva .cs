@@ -53,7 +53,7 @@ namespace Teste
 
                 int ondeVolta = voltaPraOnde(peao.posicao);
 
-                if (proximo != null && tabuleiro[ondeVolta].peoes.Count == 1)
+                if (proximo != null && tabuleiro[ondeVolta].peoes.Count == 1 && ondeVolta != 0)
                 {
                     if (numeroJogada == 1)
                     {
