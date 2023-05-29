@@ -17,35 +17,6 @@ namespace Teste
         public override void jogadaAutomatica()
         {
 
-            Jogador.peoes.Sort((Peao peao1, Peao peao2) => peao1.posicao > peao2.posicao ? 1 : -1);
-
-            Dictionary<Cartas, int> movimentacaoUltimo = paraOndeVai(Jogador.peoes[0].posicao);
-
-            foreach (KeyValuePair<Cartas, int> valuePair in movimentacaoUltimo)
-            {
-                if (valuePair.Value > 30)
-                {
-                    int peoesAntes = 0;
-
-                    foreach (Peao p in Jogador.peoes)
-                    {
-                        if (valuePair.Value > p.posicao)
-                        {
-                            peoesAntes++;
-                        }
-                    }
-
-                    int qntCartas = Jogador.cartas[valuePair.Key];
-
-                    if (qntCartas >= peoesAntes)
-                    {
-                        estrategia = new EstrategiaAgressiva(tabuleiro, Jogador, numeroJogada);
-                        estrategia.jogadaAutomatica();
-                        return;
-                    }
-                }
-            }
-
             Jogador.peoes.Sort((Peao peao1, Peao peao2) => peao1.posicao < peao2.posicao ? 1 : -1);
 
             for (int i = 3 - numeroJogada; i > 0 && numeroJogada < 3; i--)
@@ -180,7 +151,7 @@ namespace Teste
 
             int numCartas = numeroCartas();
 
-            if (numCartas > 15 || (numeroJogada == 0 && numCartas != 0))
+            if ((numCartas > 15 && numeroJogada != 3) || (numeroJogada == 0 && numCartas != 0))
             {
                 estrategia = new EstrategiaAgressiva(tabuleiro, Jogador, numeroJogada);
                 estrategia.jogadaAutomatica();

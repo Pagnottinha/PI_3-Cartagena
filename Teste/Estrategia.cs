@@ -223,5 +223,67 @@ namespace Teste
                 numeroJogada++;
             }
         }
+
+        protected List<Cartas> cartasParaJogar()
+        {
+            List<Cartas> mao = new List<Cartas>();
+
+            foreach(KeyValuePair<Cartas, int> keyValue in Jogador.cartas) 
+            {
+                if (keyValue.Value > 0)
+                {
+                    mao.Add(keyValue.Key);
+                }
+            }
+
+            return mao;
+        }
+
+        protected bool finalizaJogo()
+        {
+            List<int> posicaoPeoes = new List<int>();
+
+            foreach(Peao peao in Jogador.peoes)
+            {
+                posicaoPeoes.Add(peao.posicao);
+            }
+
+            Dictionary<Cartas, int> cartas = new Dictionary<Cartas, int>(Jogador.cartas);
+
+            while(true)
+            {
+                posicaoPeoes.Sort();
+
+                int maisLonge = posicaoPeoes[0];
+
+                if (maisLonge == 37)
+                {
+                    return true;
+                }
+
+                Dictionary<Cartas, int> movimentacao = paraOndeVai(maisLonge);
+
+                List<KeyValuePair<Cartas, int>> movimentacaoList = movimentacao.ToList();
+
+                bool continua = true;
+
+                for (int i = movimentacao.Count - 1; i >= 0 && continua; i--)
+                {
+                    Cartas carta = movimentacaoList[i].Key;
+
+                    if (cartas[carta] > 0)
+                    {
+                        cartas[carta]--;
+                        posicaoPeoes[0] = movimentacao[carta];
+                        continua = false;
+                    }
+                }
+
+                if (continua)
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

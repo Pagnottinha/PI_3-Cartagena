@@ -148,15 +148,7 @@ namespace Teste
 
             Dictionary<Cartas, int> movimentacao = paraOndeVai(0);
 
-            List<Cartas> simbolosDisponiveis = new List<Cartas>();
-
-            foreach(Cartas carta in movimentacao.Keys)
-            {
-                if (Jogador.cartas[carta] > 0)
-                {
-                    simbolosDisponiveis.Add(carta);
-                }
-            }
+            List<Cartas> simbolosDisponiveis = cartasParaJogar();
 
             if (simbolosDisponiveis.Count == 0)
             {
