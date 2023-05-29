@@ -56,9 +56,14 @@ namespace Teste
 
         public void listarJogadores()
         {
+            if (this.Jogadores == null)
+            {
+                this.Jogadores = new List<Jogador>();
+            }
+
             JogoService service = new JogoService();
 
-            (List<Jogador> Jogadores, string msgErro) = service.pegarJogadores(this.id);
+            (List<Jogador> Jogadores, string msgErro) = service.pegarJogadores(this.id, this.Jogadores.Count);
 
             if (msgErro != null)
             {
@@ -66,7 +71,10 @@ namespace Teste
                 return;
             }
 
-            this.Jogadores = Jogadores;
+            foreach(Jogador jogador in Jogadores)
+            {
+                this.Jogadores.Add(jogador);
+            }
         }
 
         public bool comecarPartida()
@@ -91,14 +99,6 @@ namespace Teste
             else
             {
                 this.vez = new Vez(status, idJogadorVez, 1);
-            }
-            
-            for (int i = 0; i < Jogadores.Count; i++)
-            {
-                if (Jogadores[i].id == jogador.id)
-                {
-                    Jogadores[i] = jogador;
-                }
             }
 
             this.historicos = new List<Historico>();

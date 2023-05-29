@@ -52,7 +52,11 @@ namespace Teste
 
         public bool entrarPartida(Partida partida, string senha)
         {
+
+
             JogoService service = new JogoService();
+
+            partida.listarJogadores();
 
             (Jogador retorno, string msgErro) = service.entrarPartida(partida.id, this.nome, senha);
 
@@ -68,6 +72,8 @@ namespace Teste
 
             partida.jogador = this;
             partida.senha = senha;
+
+            partida.Jogadores.Add(this);
             return true;
         }
 

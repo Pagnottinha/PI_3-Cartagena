@@ -101,6 +101,33 @@ namespace Teste
             return (partida, null);
         }
 
+        public (List<Jogador>, string) pegarJogadores(int idPartida, int numJogadores)
+        {
+            (string[] pegarJogadores, bool erro) = separar(Jogo.ListarJogadores(idPartida), false);
+
+            if (erro)
+            {
+                return (null, pegarJogadores[0]);
+            }
+
+            List<Jogador> partida = new List<Jogador>();
+
+            for (int i = numJogadores; i < pegarJogadores.Length; i++)
+            {
+                string jogadores = pegarJogadores[i];
+
+                string[] args = jogadores.Split(',');
+
+                int id = Convert.ToInt32(args[0]);
+                string nome = args[1];
+                string cor = args[2];
+
+                partida.Add(new Jogador(id, nome, tratarCor(cor)));
+            }
+
+            return (partida, null);
+        }
+
         public (Jogador, string) entrarPartida(int partidaId, string nomePlayer, string senhaPartida)
         {
             (string[] retorno, bool erro) = separar(Jogo.EntrarPartida(partidaId, nomePlayer, senhaPartida), true);
