@@ -174,47 +174,13 @@ namespace Teste
 
             jogadasFaltando = peoesNoComeco < jogadasFaltando ? peoesNoComeco : jogadasFaltando;
 
-            if (jogadasFaltando == 1)
+            if (jogadasFaltando != 0)
             {
-                int maisLonge = 0;
-
-                foreach(Cartas carta in simbolosDisponiveis)
-                {
-                    if (movimentacao[carta] > maisLonge)
-                    {
-                        maisLonge = movimentacao[carta];
-                    }
-                }
-
-                posicaoParaJogar.Add((0, tabuleiro[maisLonge].carta));
-            }
-            else if (jogadasFaltando == 2)
-            {
-                int posicaoAnterior = movimentacao[simbolosDisponiveis[0]];
-
-                for (int i = 1; i < simbolosDisponiveis.Count && posicaoParaJogar.Count == 0; i++)
-                {
-                    Cartas carta = simbolosDisponiveis[i];
-
-                    if (posicaoAnterior + 1 == movimentacao[carta])
-                    {
-                        posicaoParaJogar.Add((0, tabuleiro[movimentacao[carta]].carta));
-                    }
-                    else
-                    {
-                        posicaoAnterior = movimentacao[carta];
-                    }
-                }
-
-                posicaoParaJogar.Add((0, tabuleiro[posicaoAnterior].carta));
-            }
-            else if (jogadasFaltando == 3)
-            {
-                List<int> maximo = new List<int>();
+                List<int> maximo = new List<int>() { movimentacao[simbolosDisponiveis[0]] };
 
                 List<int> aux = new List<int>() { movimentacao[simbolosDisponiveis[0]] };
 
-                for (int i = 1; i < simbolosDisponiveis.Count && maximo.Count < 3; i++)
+                for (int i = 1; i < simbolosDisponiveis.Count; i++)
                 {
                     Cartas carta = simbolosDisponiveis[i];
 
@@ -222,17 +188,22 @@ namespace Teste
                     {
                         aux.Clear();
                     }
-                        
+
                     aux.Add(movimentacao[carta]);
 
-                    if (maximo.Count < aux.Count)
+                    if (aux.Count >= jogadasFaltando + 1)
+                    {
+                        aux.RemoveAt(0);
+                    }
+
+                    if (maximo.Count <= aux.Count)
                     {
                         maximo.Clear();
                         maximo.AddRange(aux);
                     }
                 }
 
-                foreach(int i in maximo)
+                foreach (int i in maximo)
                 {
                     posicaoParaJogar.Add((0, tabuleiro[i].carta));
                 }
