@@ -151,7 +151,7 @@ namespace Teste
 
             int numCartas = numeroCartas();
 
-            if ((numCartas > 15 && numeroJogada != 3) || (numeroJogada == 0 && numCartas != 0))
+            if ((finalizaJogo() && numeroJogada != 3) || (numeroJogada == 0 && numCartas != 0))
             {
                 estrategia = new EstrategiaAgressiva(tabuleiro, Jogador, numeroJogada);
                 estrategia.jogadaAutomatica();
