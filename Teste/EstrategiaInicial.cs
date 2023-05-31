@@ -22,24 +22,26 @@ namespace Teste
                 {
                     Peao peao = Jogador.peoes[i];
 
-                    if (voltarComprarDuas(peao.posicao)
-                        && tabuleiro[peao.posicao].peoes.Select(p => p.jogador == Jogador).Count(cor => cor == true) == 2
-                        && tabuleiro[peao.posicao].peoes.Count == 3)
-                    {
-                        numeroJogada += 2;
+                    //if (voltarComprarDuas(peao.posicao)
+                    //    && tabuleiro[peao.posicao].peoes.Select(p => p.jogador == Jogador).Count(cor => cor == true) == 2
+                    //    && tabuleiro[peao.posicao].peoes.Count == 3)
+                    //{
 
-                        Jogador.Jogar(peao.posicao, tabuleiro);
+                    //    numeroJogada += 2;
 
-                        Peao proximo = peaoProximo(peao.posicao);
+                    //    Jogador.Jogar(peao.posicao, tabuleiro);
 
-                        List<(int, Cartas)> teste = pegarJogadas();
+                    //    Peao proximo = peaoProximo(peao.posicao);
 
-                        Jogador.Jogar(proximo.posicao, cartaPraString(teste[0].Item2),tabuleiro);    
-                    }
-                    else
-                    {
+                    //    List<(int, Cartas)> teste = pegarJogadas();
+
+                    //    Jogador.Jogar(proximo.posicao, cartaPraString(teste[0].Item2),tabuleiro);    
+                    //}
+                    //else
+                    //{
                         if (voltarComprarDuas(peao.posicao))
                         {
+
                             Jogador.Jogar(peao.posicao, tabuleiro);
                             numeroJogada++;
 
@@ -98,7 +100,7 @@ namespace Teste
                         //        }
                         //    }
                         //}
-                    }    
+                    //}    
                 }
 
                 List<(int, Cartas)> jogadas = pegarJogadas();

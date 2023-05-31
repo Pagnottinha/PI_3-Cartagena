@@ -239,6 +239,49 @@ namespace Teste
             return mao;
         }
 
+        protected Dictionary<Cartas, int> paraOndeVai(int posicaoPeao, List<int> posicaoPeoesTeste)
+        {
+            Dictionary<Cartas, int> posicoes = new Dictionary<Cartas, int>();
+
+            for (int i = posicaoPeao + 1; i < 37 && posicoes.Count < 6; i++)
+            {
+                Casa casa = tabuleiro[i];
+
+                List<Peao> peoesCasa = casa.peoes.FindAll(p => p.jogador == Jogador);
+                List<int> peoesCasaSimulacao = posicaoPeoesTeste.FindAll(pos => pos == i);
+
+                int numeroPeoes = casa.peoes.Count + peoesCasaSimulacao.Count - peoesCasa.Count;
+
+                if (numeroPeoes == 0 && !posicoes.ContainsKey(casa.carta))
+                {
+                    posicoes.Add(casa.carta, i);
+                }
+            }
+
+            if (posicoes.Count < 6)
+            {
+                List<Cartas> cartas = new List<Cartas>()
+                {
+                    Cartas.Esqueleto,
+                    Cartas.Faca,
+                    Cartas.Garrafa,
+                    Cartas.Tricornio,
+                    Cartas.Pistola,
+                    Cartas.Chave
+                };
+
+                foreach (Cartas carta in cartas)
+                {
+                    if (!posicoes.ContainsKey(carta))
+                    {
+                        posicoes.Add(carta, 37);
+                    }
+                }
+            }
+
+            return posicoes;
+        }
+
         protected bool finalizaJogo()
         {
             List<int> posicaoPeoes = new List<int>();
@@ -261,7 +304,7 @@ namespace Teste
                     return true;
                 }
 
-                Dictionary<Cartas, int> movimentacao = paraOndeVai(maisLonge);
+                Dictionary<Cartas, int> movimentacao = paraOndeVai(maisLonge, posicaoPeoes);
 
                 List<KeyValuePair<Cartas, int>> movimentacaoList = movimentacao.ToList();
 
