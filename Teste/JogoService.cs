@@ -199,7 +199,7 @@ namespace Teste
                 case "Marrom":
                     return Color.Brown;
                 default:
-                    return Color.Black
+                    return Color.Black;
             }
         }
 
