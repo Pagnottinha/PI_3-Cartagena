@@ -35,6 +35,10 @@ namespace Teste
             this.id = id;
             this.nome = nome;
             this.cor = cor;
+            this.cartas = new Dictionary<Cartas, int>()
+            {
+                {Cartas.Esqueleto, 6}
+            };
         }
 
         public Jogador(string nome)
@@ -52,8 +56,6 @@ namespace Teste
 
         public bool entrarPartida(Partida partida, string senha)
         {
-
-
             JogoService service = new JogoService();
 
             partida.listarJogadores();

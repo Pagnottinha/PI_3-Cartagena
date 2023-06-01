@@ -134,14 +134,28 @@ namespace Teste
 
             foreach(Historico historico in novoHistorico)
             {
+                historico.pegarJogador(Jogadores);
 
                 if (historico.tipo != TiposHistorico.Pular && historico.idJogador != jogador.id)
                 {
-                    Jogador jogadorHistorico = Jogadores.Find(jogador => jogador.id == historico.idJogador);
-
-                    Peao peaoMover = tabuleiro[historico.origem].peoes.Find(peao => peao.jogador == jogadorHistorico);
+                    Peao peaoMover = tabuleiro[historico.origem].peoes.Find(peao => peao.jogador == historico.Jogador);
 
                     peaoMover.posicao = historico.destino;
+
+                    int peoesDestino = tabuleiro[historico.destino].peoes.Count;
+
+                    if (peoesDestino == 0)
+                    {
+                        historico.Jogador.cartas[Cartas.Esqueleto]--;
+                    }
+                    else if (peoesDestino == 1)
+                    {
+                        historico.Jogador.cartas[Cartas.Esqueleto]++;
+                    }
+                    else if (peoesDestino == 2)
+                    {
+                        historico.Jogador.cartas[Cartas.Esqueleto] += 2;
+                    }
 
                     tabuleiro[historico.origem].peoes.Remove(peaoMover);
                     tabuleiro[historico.destino].peoes.Add(peaoMover);
@@ -167,18 +181,8 @@ namespace Teste
             }
 
             this.vez = retornoVez;
-        }
 
-        public string stringVez()
-        {
-            string vez = this.vez.ToString();
-            string strIdJogadorVez = vez.Substring(0, vez.IndexOf(" "));
-
-            int idJogadorVez = Convert.ToInt32(strIdJogadorVez);
-
-            Jogador jogador = Jogadores.Find(j => j.id == idJogadorVez);
-
-            return vez.Replace(strIdJogadorVez, jogador.ToString());
+            vez.pegarJogador(Jogadores);
         }
     }
 }

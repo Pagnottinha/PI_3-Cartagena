@@ -35,7 +35,7 @@ namespace Teste
                 qtdCartas(c, partida.jogador.cartas[c]);
             }
 
-            lblVez.Text = $"Vez de {partida.stringVez()}";
+            lblVez.Text = $"Vez de {partida.vez}";
  
             tmrVerificarVez.Enabled = true;
         }
@@ -171,7 +171,7 @@ namespace Teste
             {
                 btn_JogarPirata.Enabled = true;
                 btnJogadaAutomatica.Enabled = true;
-                lblVez.Text = $"Vez de {partida.stringVez()} - SUA VEZ";
+                lblVez.Text = $"Vez de {partida.vez} - SUA VEZ";
 
                 JogadaAutomatica();
             }
@@ -180,7 +180,7 @@ namespace Teste
                 btn_JogarPirata.Enabled = false;
                 btnJogadaAutomatica.Enabled = false;
 
-                lblVez.Text = $"Vez de {partida.stringVez()}";
+                lblVez.Text = $"Vez de {partida.vez}";
             }
         }
 
