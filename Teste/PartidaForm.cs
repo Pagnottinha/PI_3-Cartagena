@@ -212,7 +212,8 @@ namespace Teste
                     imageHover = Image.FromFile("../../sprites/Cartas/CartaTricornioSelecionada.png");
                     break;
                 default:
-                    throw new Exception($"Panel {namePanel} desconhecido!");
+                    MessageBox.Show($"Panel {namePanel} desconhecido");
+                    return;
             }
 
             panel.BackgroundImage = imageHover;
@@ -245,7 +246,8 @@ namespace Teste
                     imageHigh = Image.FromFile("../../sprites/Cartas/CartaTricornio.png");
                     break;
                 default:
-                    throw new Exception($"Panel {namePanel} desconhecido!");
+                    MessageBox.Show($"Panel {namePanel} desconhecido");
+                    return;
             }
 
             if(namePanel != this.nameCartaSelecionado || outraCartaClicada)

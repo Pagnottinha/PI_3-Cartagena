@@ -139,9 +139,6 @@ namespace Teste
                 {
                     Jogador jogadorHistorico = Jogadores.Find(jogador => jogador.id == historico.idJogador);
 
-                    if (jogadorHistorico == null)
-                        throw new Exception("Ocorreu um erro ao tentar pegar o jogador através do histórico.");
-
                     Peao peaoMover = tabuleiro[historico.origem].peoes.Find(peao => peao.jogador == jogadorHistorico);
 
                     peaoMover.posicao = historico.destino;

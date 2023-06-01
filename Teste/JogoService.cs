@@ -65,20 +65,15 @@ namespace Teste
                 string nome = args[1];
                 string data = args[2];
 
-                Status status;
+                Status status = Status.Aberta;
                 switch (args[3])
                 {
-                    case "A":
-                        status = Status.Aberta;
-                        break;
                     case "J":
                         status = Status.Jogando;
                         break;
                     case "E":
                         status = Status.Encerrada;
                         break;
-                    default:
-                        throw new Exception("Status inválido");
                 }
 
                 partidas.Add(new Partida(id, nome, data, status));
@@ -204,7 +199,7 @@ namespace Teste
                 case "Marrom":
                     return Color.Brown;
                 default:
-                    throw new Exception($"Cor {cor} desconhecida!");
+                    return Color.Black
             }
         }
 
