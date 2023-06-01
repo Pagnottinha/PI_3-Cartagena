@@ -49,7 +49,7 @@ namespace Teste
 
             int qntCartas = numeroCartas();
 
-            if (qntCartas == 0 || !finalizaJogo())
+            if ((qntCartas == 0 && Jogador.peoes[0].posicao != 37)|| !finalizaJogo())
             {
                 estrategia = new EstrategiaDefensiva(tabuleiro, Jogador, numeroJogada);
                 estrategia.jogadaAutomatica();
