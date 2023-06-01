@@ -37,7 +37,18 @@ namespace Teste
 
         public (List<Partida>, string) pegarPartidas(string s)
         {
-            (string[] retorno, bool erro) = separar(Jogo.ListarPartidas(s), false);
+
+            string[] retorno;
+            bool erro;
+
+            try
+            {
+                (retorno, erro) = separar(Jogo.ListarPartidas(s), false);
+            }
+            catch (Exception ex)
+            {
+                return (null, ex.Message);
+            }
 
             if (erro)
             {
@@ -78,7 +89,17 @@ namespace Teste
 
         public (List<Jogador>, string) pegarJogadores(int idPartida)
         {
-            (string[] pegarJogadores, bool erro) = separar(Jogo.ListarJogadores(idPartida), false);
+            string[] pegarJogadores;
+            bool erro;
+
+            try
+            {
+                (pegarJogadores, erro) = separar(Jogo.ListarJogadores(idPartida), false);
+            }
+            catch (Exception ex)
+            {
+                return (null, ex.Message);
+            }
 
             if (erro)
             {
@@ -103,7 +124,17 @@ namespace Teste
 
         public (List<Jogador>, string) pegarJogadores(int idPartida, int numJogadores)
         {
-            (string[] pegarJogadores, bool erro) = separar(Jogo.ListarJogadores(idPartida), false);
+            string[] pegarJogadores;
+            bool erro;
+
+            try
+            {
+                (pegarJogadores, erro) = separar(Jogo.ListarJogadores(idPartida), false);
+            }
+            catch (Exception ex)
+            {
+                return (null, ex.Message);
+            }
 
             if (erro)
             {
@@ -130,7 +161,17 @@ namespace Teste
 
         public (Jogador, string) entrarPartida(int partidaId, string nomePlayer, string senhaPartida)
         {
-            (string[] retorno, bool erro) = separar(Jogo.EntrarPartida(partidaId, nomePlayer, senhaPartida), true);
+            string[] retorno;
+            bool erro;
+
+            try
+            {
+                (retorno, erro) = separar(Jogo.EntrarPartida(partidaId, nomePlayer, senhaPartida), true);
+            }
+            catch (Exception ex)
+            {
+                return (null, ex.Message);
+            }
 
             if (erro)
             {
@@ -169,7 +210,17 @@ namespace Teste
 
         public (Dictionary<Cartas, int>, string) consultarMao(int idJogador, string senhaJogador)
         {
-            (string[] ret, bool erro) = separar(Jogo.ConsultarMao(idJogador, senhaJogador), false);
+            string[] ret;
+            bool erro;
+
+            try
+            {
+                (ret, erro) = separar(Jogo.ConsultarMao(idJogador, senhaJogador), false);
+            }
+            catch (Exception ex)
+            {
+                return (null, ex.Message);
+            }
 
             if (erro)
             {
@@ -231,7 +282,17 @@ namespace Teste
         }
         public (int, string) iniciarPartida(int idJogador, string senhaJogador)
         {
-            (string[] retorno, bool erro) = separar(Jogo.IniciarPartida(idJogador, senhaJogador), false);
+            string[] retorno;
+            bool erro;
+
+            try
+            {
+                (retorno, erro) = separar(Jogo.IniciarPartida(idJogador, senhaJogador), false);
+            }
+            catch (Exception ex)
+            {
+                return (-1, ex.Message);
+            }
 
             if (erro)
             {
@@ -243,7 +304,17 @@ namespace Teste
 
         public (Dictionary<int, Casa>, string) pegarTabuleiro(int idPartida, Panel pnlTabuleiro)
         {
-            (string[] retorno, bool erro) = separar(Jogo.ExibirTabuleiro(idPartida), false);
+            string[] retorno;
+            bool erro;
+            try
+            {
+                (retorno, erro) = separar(Jogo.ExibirTabuleiro(idPartida), false);
+            }
+            catch (Exception ex)
+            {
+                return (null, ex.Message);
+            }
+            
 
             if (erro)
             {
@@ -311,16 +382,26 @@ namespace Teste
 
         public (List<Historico>, string) pegarHistorico(int idPartida, int inicio)
         {
-            List<Historico> historicos = new List<Historico> ();
+            string[] retorno;
+            bool erro;
 
-            (string[] retorno, bool erro) = separar(Jogo.ExibirHistorico(idPartida), false);
+            try
+            {
+                (retorno, erro) = separar(Jogo.ExibirHistorico(idPartida), false);
+            }
+            catch (Exception ex)
+            {
+                return (null, ex.Message);
+            }
 
             if (erro)
             {
                 return (null, retorno[0]);
             }
 
-            for(int i = inicio; i < retorno.Length; i++)
+            List<Historico> historicos = new List<Historico>();
+
+            for (int i = inicio; i < retorno.Length; i++)
             {
                 string stringHistorico = retorno[i];
 
@@ -359,7 +440,17 @@ namespace Teste
 
         public (Vez, string) verificarVez(int idPartida)
         {
-            (string[] retorno, bool erro) = separar(Jogo.VerificarVez(idPartida), false);
+            string[] retorno;
+            bool erro;
+
+            try
+            {
+                (retorno, erro) = separar(Jogo.VerificarVez(idPartida), false);
+            }
+            catch (Exception ex)
+            {
+                return (null, ex.Message);
+            }
 
             if (erro)
             {
