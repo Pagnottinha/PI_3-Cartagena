@@ -99,6 +99,7 @@ namespace Teste
             else
             {
                 this.vez = new Vez(status, idJogadorVez, 1);
+                vez.pegarJogador(Jogadores);
             }
 
             this.historicos = new List<Historico>();
