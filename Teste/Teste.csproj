@@ -58,6 +58,7 @@
     <Compile Include="EstrategiaDefensiva .cs" />
     <Compile Include="EstrategiaAgressiva.cs" />
     <Compile Include="EstrategiaInicial.cs" />
+    <Compile Include="EstrategiaInicial2.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
