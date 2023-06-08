@@ -28,7 +28,7 @@ namespace Teste
         {
             if (estrategia == null)
             {
-                estrategia = new EstrategiaInicial(tabuleiro, Jogador);
+                estrategia = new EstrategiaInicial2(tabuleiro, Jogador);
             }
 
             return estrategia;

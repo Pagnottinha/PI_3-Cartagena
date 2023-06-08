@@ -16,7 +16,7 @@ namespace Teste
         {
             while(numeroJogada < 3)
             {
-                Dictionary<Peao, KeyValuePair<List<int>, int>> posicoesPossiveis = new Dictionary<Peao, KeyValuePair<List<int>, int>>();
+                //Dictionary<Peao, KeyValuePair<List<int>, int>> posicoesPossiveis = new Dictionary<Peao, KeyValuePair<List<int>, int>>();
                 
                 for (int i = 0; i < Jogador.peoes.Count && numeroJogada < 3; i++)
                 {
