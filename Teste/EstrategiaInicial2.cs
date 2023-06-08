@@ -59,8 +59,7 @@ namespace Teste
                 estrategiaRealizada = true;
             }  
             else
-                estrategia = new EstrategiaInicial(tabuleiro, Jogador);
-            
+                estrategia = new EstrategiaInicial(tabuleiro, Jogador);    
         }
 
 
