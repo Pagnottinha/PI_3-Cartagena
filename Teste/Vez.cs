@@ -40,7 +40,7 @@ namespace Teste
             }
             else
             {
-                return $"{Jogador.nome} - {idJogador} ({numeroJogada})";
+                return $"{Jogador.nome} - {idJogador} ({numeroJogada}) - {Jogador.cor}";
             }
         }
     }
