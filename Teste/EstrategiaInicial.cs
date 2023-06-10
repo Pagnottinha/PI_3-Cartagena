@@ -109,9 +109,8 @@ namespace Teste
                 {
                     if (tabuleiro[0].peoes.Find(peao => peao.jogador == Jogador) == null)
                     {
-                        int qntCartas = numeroCartas();
 
-                        if (qntCartas > 12)
+                        if (Jogador.qntCartas > 12)
                         {
                             estrategia = new EstrategiaAgressiva(tabuleiro, Jogador, numeroJogada);
                         }

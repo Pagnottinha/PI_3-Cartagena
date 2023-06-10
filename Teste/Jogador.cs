@@ -27,31 +27,25 @@ namespace Teste
         public Color cor { get; private set; }
 
         public Dictionary<Cartas, int> cartas { get; private set; }
+        public int qntCartas { get; set; }
 
         public List<Peao> peoes { get; private set; }
 
-        public Jogador(int id, string nome, Color cor)
+        public Jogador(int id, string nome, Color cor) : this(nome)
         {
             this.id = id;
-            this.nome = nome;
             this.cor = cor;
-            this.cartas = new Dictionary<Cartas, int>()
-            {
-                {Cartas.Esqueleto, 6}
-            };
         }
 
         public Jogador(string nome)
         {
             this.nome = nome;
+            qntCartas = 6;
         }
 
-        public Jogador(int id, string senha, string nome, Color cor)
+        public Jogador(int id, string senha, string nome, Color cor) : this(id, nome, cor)
         {
-            this.id = id;
             this.senha = senha;
-            this.nome = nome;
-            this.cor = cor;
         }
 
         public bool entrarPartida(Partida partida, string senha)
@@ -109,7 +103,13 @@ namespace Teste
         // Pular vez
         public void Jogar()
         {
-            Jogo.Jogar(this.id, this.senha);
+            string retorno = Jogo.Jogar(this.id, this.senha);
+
+            if (retorno.StartsWith("ERRO"))
+            {
+                MessageBox.Show(retorno);
+                return;
+            }
         }
 
         // Mover para frente
@@ -150,6 +150,7 @@ namespace Teste
             }
 
             cartas[cartaEscolhida]--;
+            qntCartas--;
 
             Peao peaoMover = peoes.Find(peao => peao.posicao == posicao);
 
@@ -169,7 +170,7 @@ namespace Teste
                 casa = tabuleiro[tabuleiro.Count - 1];
                 peaoMover.posicao = tabuleiro.Count - 1;
             }
-
+         
             tabuleiro[posicao].peoes.Remove(peaoMover);
             casa.peoes.Add(peaoMover);
         }
@@ -195,6 +196,16 @@ namespace Teste
                 {
                     casa = tabuleiro[i];
                     peaoMover.posicao = i;
+
+                    switch(casa.peoes.Count)
+                    {
+                        case 1:
+                            qntCartas++;
+                            break;
+                        case 2:
+                            qntCartas += 2;
+                            break;
+                    }
                 }
             }
 

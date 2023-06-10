@@ -137,7 +137,7 @@ namespace Teste
             {
                 historico.pegarJogador(Jogadores);
 
-                if (historico.tipo != TiposHistorico.Pular && historico.idJogador != jogador.id)
+                if (historico.tipo != TiposHistorico.Pular && historico.Jogador != jogador)
                 {
                     Peao peaoMover = tabuleiro[historico.origem].peoes.Find(peao => peao.jogador == historico.Jogador);
 
@@ -147,15 +147,15 @@ namespace Teste
 
                     if (peoesDestino == 0)
                     {
-                        historico.Jogador.cartas[Cartas.Esqueleto]--;
+                        historico.Jogador.qntCartas--;
                     }
                     else if (peoesDestino == 1)
                     {
-                        historico.Jogador.cartas[Cartas.Esqueleto]++;
+                        historico.Jogador.qntCartas++;
                     }
                     else if (peoesDestino == 2)
                     {
-                        historico.Jogador.cartas[Cartas.Esqueleto] += 2;
+                        historico.Jogador.qntCartas += 2;
                     }
 
                     tabuleiro[historico.origem].peoes.Remove(peaoMover);

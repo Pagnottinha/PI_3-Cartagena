@@ -43,7 +43,8 @@ namespace Teste
                 }
             }
 
-            Jogador.peoes.Sort((Peao peao1, Peao peao2) => peao1.posicao < peao2.posicao ? 1 : -1);
+            if (numeroJogada != 0)
+                Jogador.peoes.Sort((Peao peao1, Peao peao2) => peao1.posicao < peao2.posicao ? 1 : -1);
 
             for (int i = 1; i < Jogador.peoes.Count && numeroJogada < 2; i++)
             {
@@ -82,7 +83,7 @@ namespace Teste
                 else if (tabuleiro[peao.posicao].peoes.FindAll(p => p.jogador == Jogador).Count >= 2)
                 {
 
-                    if (tabuleiro[ondeVolta].peoes.Count == 1)
+                    if (tabuleiro[ondeVolta].peoes.Count == 1 && ondeVolta != 0)
                     {
                         int pos = peao.posicao;
                         Jogador.Jogar(pos, tabuleiro);
@@ -149,9 +150,7 @@ namespace Teste
             }
             */
 
-            int numCartas = numeroCartas();
-
-            if ((finalizaJogo() && numeroJogada != 3) || (numeroJogada == 0 && numCartas != 0))
+            if ((finalizaJogo() && numeroJogada != 3) || (numeroJogada == 0 && Jogador.qntCartas != 0))
             {
                 estrategia = new EstrategiaAgressiva(tabuleiro, Jogador, numeroJogada);
                 estrategia.jogadaAutomatica();

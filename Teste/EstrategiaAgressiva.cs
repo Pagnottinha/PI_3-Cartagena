@@ -25,39 +25,17 @@ namespace Teste
 
                 Peao peao = Jogador.peoes[0];
 
-                Dictionary<Cartas, int> movimentacao = paraOndeVai(peao.posicao);
-
-                bool continua = true;
-
-                List<KeyValuePair<Cartas, int>> movimentacaoList = movimentacao.ToList();
-
                 if (peao.posicao == 37)
-                    continua = false;
+                    return;
 
-                for (int j = movimentacao.Count - 1; j >= 0 && continua; j--)
-                {
-                    Cartas carta = movimentacaoList[j].Key;
-
-                    if (Jogador.cartas[carta] > 0)
-                    {
-                        Jogador.Jogar(peao.posicao, cartaPraString(carta), tabuleiro);
-                        numeroJogada++;
-                        continua = false;
-                    }
-                }
+                jogarPeaoLonge(peao.posicao);
             }
 
-            int qntCartas = numeroCartas();
-
-            if ((qntCartas == 0 && Jogador.peoes[0].posicao != 37)|| !finalizaJogo())
+            if (Jogador.qntCartas == 0 || !finalizaJogo())
             {
                 estrategia = new EstrategiaDefensiva(tabuleiro, Jogador, numeroJogada);
                 estrategia.jogadaAutomatica();
                 return;
-            }
-            else
-            {
-                pularTurnos();
             }
 
             numeroJogada = 0;

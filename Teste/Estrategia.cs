@@ -36,28 +36,23 @@ namespace Teste
 
         public abstract void jogadaAutomatica();
 
-        protected int numeroCartas()
+        protected void jogarPeaoLonge(int pos)
         {
-            int qntCartas = 0;
+            Dictionary<Cartas, int> movimentacao = paraOndeVai(pos);
 
-            foreach (int qnt in Jogador.cartas.Values)
+            List<KeyValuePair<Cartas, int>> movimentacaoList = movimentacao.ToList();
+
+            for (int j = movimentacao.Count - 1; j >= 0; j--)
             {
-                qntCartas += qnt;
+                Cartas carta = movimentacaoList[j].Key;
+
+                if (Jogador.cartas[carta] > 0)
+                {
+                    Jogador.Jogar(pos, cartaPraString(carta), tabuleiro);
+                    numeroJogada++;
+                    return;
+                }
             }
-
-            return qntCartas;
-        }
-
-        protected int peaoMaisLonge()
-        {
-            int maisLonge = 0;
-            foreach(Peao i in Jogador.peoes)
-            {
-                if(i.posicao > maisLonge)
-                    maisLonge = i.posicao;
-            }
-
-            return maisLonge;
         }
 
         protected Dictionary<Cartas, int> paraOndeVai(int posicaoPeao)
@@ -96,6 +91,23 @@ namespace Teste
             }
 
             return posicoes;
+        }
+
+        protected int paraOndeVai(int posicaoPeao, Cartas carta)
+        {
+            int i;
+
+            for (i = posicaoPeao + 1; i < 37; i++)
+            {
+                Casa casa = tabuleiro[i];
+
+                if (casa.peoes.Count == 0 && casa.carta == carta)
+                {
+                    return i;
+                }
+            }
+
+            return i;
         }
 
         protected int voltaPraOnde(int posicaoPeao)
