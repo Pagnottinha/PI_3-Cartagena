@@ -256,7 +256,6 @@
             this.dgvListaPartidas.AllowUserToDeleteRows = false;
             this.dgvListaPartidas.AllowUserToResizeColumns = false;
             this.dgvListaPartidas.AllowUserToResizeRows = false;
-            this.dgvListaPartidas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvListaPartidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaPartidas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvListaPartidas.BackgroundColor = System.Drawing.Color.DarkGray;
@@ -268,13 +267,13 @@
             this.data,
             this.status});
             this.dgvListaPartidas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvListaPartidas.Location = new System.Drawing.Point(100, 78);
+            this.dgvListaPartidas.Location = new System.Drawing.Point(109, 78);
             this.dgvListaPartidas.MultiSelect = false;
             this.dgvListaPartidas.Name = "dgvListaPartidas";
             this.dgvListaPartidas.ReadOnly = true;
             this.dgvListaPartidas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvListaPartidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaPartidas.Size = new System.Drawing.Size(329, 388);
+            this.dgvListaPartidas.Size = new System.Drawing.Size(320, 388);
             this.dgvListaPartidas.TabIndex = 22;
             this.dgvListaPartidas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListaPartidas_CellFormatting);
             this.dgvListaPartidas.Click += new System.EventHandler(this.dgvListaPartidas_Click);
