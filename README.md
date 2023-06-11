@@ -2,7 +2,7 @@
 
 <h2> O que é o projeto? </h2>
 
-<p> O projeto consiste no desenvolvimento de um sistema autônomo. Esse sistema teve como base, uma competição entre grupos dos alunos de Ciência da Computação do Centro Universitário Senac do terceiro semestre. O objetivo era criar um sistema autônomo que era baseado em um jogo de tabuleiro chamado Cartagena.</p>
+<p> O projeto consiste no desenvolvimento de um sistema autônomo. Esse sistema teve como base, uma competição entre grupos dos alunos de Ciência da Computação do Centro Universitário Senac do terceiro semestre. O objetivo era criar um sistema autônomo baseado em um jogo de tabuleiro chamado Cartagena, ou seja, cada grupo deveria criar uma estratégia para jogar um contra o outro no final do semestre.</p>
 
 <h3> O que seria esse jogo? </h3>
 
