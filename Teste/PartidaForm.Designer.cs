@@ -31,13 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PartidaForm));
             this.lblVez = new System.Windows.Forms.Label();
-            this.lblPosicaoPirata = new System.Windows.Forms.Label();
-            this.txtPosicaoPirata = new System.Windows.Forms.TextBox();
-            this.btn_JogarPirata = new System.Windows.Forms.Button();
-            this.btn_Historico = new System.Windows.Forms.Button();
-            this.ltb_HistoricoPartida = new System.Windows.Forms.ListBox();
-            this.lbl_Jogo = new System.Windows.Forms.Label();
-            this.cbo_Jogar = new System.Windows.Forms.ComboBox();
             this.tmrVerificarVez = new System.Windows.Forms.Timer(this.components);
             this.lblQtdTricornio = new System.Windows.Forms.Label();
             this.lblQtdChave = new System.Windows.Forms.Label();
@@ -52,8 +45,17 @@
             this.pnlPistola = new System.Windows.Forms.Panel();
             this.pnlTricornio = new System.Windows.Forms.Panel();
             this.pnlEstanteCartas = new System.Windows.Forms.Panel();
-            this.btnJogadaAutomatica = new System.Windows.Forms.Button();
+            this.btnVoltaLobby = new System.Windows.Forms.Button();
             this.tabuleiro = new Teste.Tabuleiro();
+            this.cbo_Jogar = new System.Windows.Forms.ComboBox();
+            this.lbl_Jogo = new System.Windows.Forms.Label();
+            this.ltb_HistoricoPartida = new System.Windows.Forms.ListBox();
+            this.btn_Historico = new System.Windows.Forms.Button();
+            this.btn_JogarPirata = new System.Windows.Forms.Button();
+            this.txtPosicaoPirata = new System.Windows.Forms.TextBox();
+            this.lblPosicaoPirata = new System.Windows.Forms.Label();
+            this.btnJogadaAutomatica = new System.Windows.Forms.Button();
+            this.grbJogadas = new System.Windows.Forms.GroupBox();
             this.pnlChave.SuspendLayout();
             this.pnlFaca.SuspendLayout();
             this.pnlEsqueleto.SuspendLayout();
@@ -61,6 +63,7 @@
             this.pnlPistola.SuspendLayout();
             this.pnlTricornio.SuspendLayout();
             this.pnlEstanteCartas.SuspendLayout();
+            this.grbJogadas.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblVez
@@ -72,80 +75,6 @@
             this.lblVez.Name = "lblVez";
             this.lblVez.Size = new System.Drawing.Size(0, 25);
             this.lblVez.TabIndex = 29;
-            // 
-            // lblPosicaoPirata
-            // 
-            this.lblPosicaoPirata.AutoSize = true;
-            this.lblPosicaoPirata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosicaoPirata.Location = new System.Drawing.Point(256, 191);
-            this.lblPosicaoPirata.Name = "lblPosicaoPirata";
-            this.lblPosicaoPirata.Size = new System.Drawing.Size(105, 15);
-            this.lblPosicaoPirata.TabIndex = 24;
-            this.lblPosicaoPirata.Text = "Posição do pirata:";
-            // 
-            // txtPosicaoPirata
-            // 
-            this.txtPosicaoPirata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPosicaoPirata.Location = new System.Drawing.Point(258, 218);
-            this.txtPosicaoPirata.Name = "txtPosicaoPirata";
-            this.txtPosicaoPirata.Size = new System.Drawing.Size(201, 22);
-            this.txtPosicaoPirata.TabIndex = 23;
-            // 
-            // btn_JogarPirata
-            // 
-            this.btn_JogarPirata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_JogarPirata.Location = new System.Drawing.Point(291, 259);
-            this.btn_JogarPirata.Name = "btn_JogarPirata";
-            this.btn_JogarPirata.Size = new System.Drawing.Size(131, 37);
-            this.btn_JogarPirata.TabIndex = 22;
-            this.btn_JogarPirata.Text = "Jogar";
-            this.btn_JogarPirata.UseVisualStyleBackColor = true;
-            this.btn_JogarPirata.Click += new System.EventHandler(this.btn_JogarPirata_Click);
-            // 
-            // btn_Historico
-            // 
-            this.btn_Historico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Historico.Location = new System.Drawing.Point(44, 317);
-            this.btn_Historico.Name = "btn_Historico";
-            this.btn_Historico.Size = new System.Drawing.Size(139, 35);
-            this.btn_Historico.TabIndex = 21;
-            this.btn_Historico.Text = "Histórico da partida";
-            this.btn_Historico.UseVisualStyleBackColor = true;
-            this.btn_Historico.Click += new System.EventHandler(this.btn_Historico_Click);
-            // 
-            // ltb_HistoricoPartida
-            // 
-            this.ltb_HistoricoPartida.FormattingEnabled = true;
-            this.ltb_HistoricoPartida.HorizontalScrollbar = true;
-            this.ltb_HistoricoPartida.Location = new System.Drawing.Point(24, 73);
-            this.ltb_HistoricoPartida.Name = "ltb_HistoricoPartida";
-            this.ltb_HistoricoPartida.Size = new System.Drawing.Size(185, 238);
-            this.ltb_HistoricoPartida.TabIndex = 20;
-            // 
-            // lbl_Jogo
-            // 
-            this.lbl_Jogo.AutoSize = true;
-            this.lbl_Jogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Jogo.Location = new System.Drawing.Point(255, 119);
-            this.lbl_Jogo.Name = "lbl_Jogo";
-            this.lbl_Jogo.Size = new System.Drawing.Size(204, 20);
-            this.lbl_Jogo.TabIndex = 19;
-            this.lbl_Jogo.Text = "Escolha o que deseja jogar:";
-            // 
-            // cbo_Jogar
-            // 
-            this.cbo_Jogar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_Jogar.FormattingEnabled = true;
-            this.cbo_Jogar.ItemHeight = 20;
-            this.cbo_Jogar.Items.AddRange(new object[] {
-            "Mover para frente",
-            "Mover para trás",
-            "Pular vez"});
-            this.cbo_Jogar.Location = new System.Drawing.Point(259, 152);
-            this.cbo_Jogar.Name = "cbo_Jogar";
-            this.cbo_Jogar.Size = new System.Drawing.Size(201, 28);
-            this.cbo_Jogar.TabIndex = 18;
-            this.cbo_Jogar.SelectedIndexChanged += new System.EventHandler(this.cbo_Jogar_SelectedIndexChanged);
             // 
             // tmrVerificarVez
             // 
@@ -318,15 +247,16 @@
             this.pnlEstanteCartas.Size = new System.Drawing.Size(514, 357);
             this.pnlEstanteCartas.TabIndex = 43;
             // 
-            // btnJogadaAutomatica
+            // btnVoltaLobby
             // 
-            this.btnJogadaAutomatica.Location = new System.Drawing.Point(291, 302);
-            this.btnJogadaAutomatica.Name = "btnJogadaAutomatica";
-            this.btnJogadaAutomatica.Size = new System.Drawing.Size(131, 43);
-            this.btnJogadaAutomatica.TabIndex = 44;
-            this.btnJogadaAutomatica.Text = "Jogar Automatico";
-            this.btnJogadaAutomatica.UseVisualStyleBackColor = true;
-            this.btnJogadaAutomatica.Click += new System.EventHandler(this.btnJogadaAutomatica_Click);
+            this.btnVoltaLobby.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltaLobby.Location = new System.Drawing.Point(297, 317);
+            this.btnVoltaLobby.Name = "btnVoltaLobby";
+            this.btnVoltaLobby.Size = new System.Drawing.Size(131, 40);
+            this.btnVoltaLobby.TabIndex = 45;
+            this.btnVoltaLobby.Text = "Voltar pro Lobby";
+            this.btnVoltaLobby.UseVisualStyleBackColor = true;
+            this.btnVoltaLobby.Click += new System.EventHandler(this.btnVoltaLobby_Click);
             // 
             // tabuleiro
             // 
@@ -338,22 +268,119 @@
             this.tabuleiro.Size = new System.Drawing.Size(720, 722);
             this.tabuleiro.TabIndex = 27;
             // 
+            // cbo_Jogar
+            // 
+            this.cbo_Jogar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_Jogar.FormattingEnabled = true;
+            this.cbo_Jogar.ItemHeight = 20;
+            this.cbo_Jogar.Items.AddRange(new object[] {
+            "Mover para frente",
+            "Mover para trás",
+            "Pular vez"});
+            this.cbo_Jogar.Location = new System.Drawing.Point(18, 51);
+            this.cbo_Jogar.Name = "cbo_Jogar";
+            this.cbo_Jogar.Size = new System.Drawing.Size(201, 28);
+            this.cbo_Jogar.TabIndex = 18;
+            this.cbo_Jogar.SelectedIndexChanged += new System.EventHandler(this.cbo_Jogar_SelectedIndexChanged);
+            // 
+            // lbl_Jogo
+            // 
+            this.lbl_Jogo.AutoSize = true;
+            this.lbl_Jogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Jogo.Location = new System.Drawing.Point(15, 16);
+            this.lbl_Jogo.Name = "lbl_Jogo";
+            this.lbl_Jogo.Size = new System.Drawing.Size(204, 20);
+            this.lbl_Jogo.TabIndex = 19;
+            this.lbl_Jogo.Text = "Escolha o que deseja jogar:";
+            // 
+            // ltb_HistoricoPartida
+            // 
+            this.ltb_HistoricoPartida.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ltb_HistoricoPartida.FormattingEnabled = true;
+            this.ltb_HistoricoPartida.HorizontalScrollbar = true;
+            this.ltb_HistoricoPartida.Location = new System.Drawing.Point(24, 73);
+            this.ltb_HistoricoPartida.Name = "ltb_HistoricoPartida";
+            this.ltb_HistoricoPartida.Size = new System.Drawing.Size(185, 238);
+            this.ltb_HistoricoPartida.TabIndex = 20;
+            this.ltb_HistoricoPartida.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ltb_HistoricoPartida_DrawItem);
+            // 
+            // btn_Historico
+            // 
+            this.btn_Historico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Historico.Location = new System.Drawing.Point(44, 317);
+            this.btn_Historico.Name = "btn_Historico";
+            this.btn_Historico.Size = new System.Drawing.Size(139, 35);
+            this.btn_Historico.TabIndex = 21;
+            this.btn_Historico.Text = "Histórico da partida";
+            this.btn_Historico.UseVisualStyleBackColor = true;
+            this.btn_Historico.Click += new System.EventHandler(this.btn_Historico_Click);
+            // 
+            // btn_JogarPirata
+            // 
+            this.btn_JogarPirata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_JogarPirata.Location = new System.Drawing.Point(44, 143);
+            this.btn_JogarPirata.Name = "btn_JogarPirata";
+            this.btn_JogarPirata.Size = new System.Drawing.Size(131, 37);
+            this.btn_JogarPirata.TabIndex = 22;
+            this.btn_JogarPirata.Text = "Jogar";
+            this.btn_JogarPirata.UseVisualStyleBackColor = true;
+            this.btn_JogarPirata.Click += new System.EventHandler(this.btn_JogarPirata_Click);
+            // 
+            // txtPosicaoPirata
+            // 
+            this.txtPosicaoPirata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosicaoPirata.Location = new System.Drawing.Point(17, 109);
+            this.txtPosicaoPirata.Name = "txtPosicaoPirata";
+            this.txtPosicaoPirata.Size = new System.Drawing.Size(201, 22);
+            this.txtPosicaoPirata.TabIndex = 23;
+            // 
+            // lblPosicaoPirata
+            // 
+            this.lblPosicaoPirata.AutoSize = true;
+            this.lblPosicaoPirata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosicaoPirata.Location = new System.Drawing.Point(15, 82);
+            this.lblPosicaoPirata.Name = "lblPosicaoPirata";
+            this.lblPosicaoPirata.Size = new System.Drawing.Size(105, 15);
+            this.lblPosicaoPirata.TabIndex = 24;
+            this.lblPosicaoPirata.Text = "Posição do pirata:";
+            // 
+            // btnJogadaAutomatica
+            // 
+            this.btnJogadaAutomatica.Location = new System.Drawing.Point(44, 186);
+            this.btnJogadaAutomatica.Name = "btnJogadaAutomatica";
+            this.btnJogadaAutomatica.Size = new System.Drawing.Size(131, 43);
+            this.btnJogadaAutomatica.TabIndex = 44;
+            this.btnJogadaAutomatica.Text = "Jogar Automatico";
+            this.btnJogadaAutomatica.UseVisualStyleBackColor = true;
+            this.btnJogadaAutomatica.Click += new System.EventHandler(this.btnJogadaAutomatica_Click);
+            // 
+            // grbJogadas
+            // 
+            this.grbJogadas.Controls.Add(this.btnJogadaAutomatica);
+            this.grbJogadas.Controls.Add(this.lblPosicaoPirata);
+            this.grbJogadas.Controls.Add(this.txtPosicaoPirata);
+            this.grbJogadas.Controls.Add(this.btn_JogarPirata);
+            this.grbJogadas.Controls.Add(this.lbl_Jogo);
+            this.grbJogadas.Controls.Add(this.cbo_Jogar);
+            this.grbJogadas.Location = new System.Drawing.Point(253, 73);
+            this.grbJogadas.Name = "grbJogadas";
+            this.grbJogadas.Size = new System.Drawing.Size(236, 238);
+            this.grbJogadas.TabIndex = 46;
+            this.grbJogadas.TabStop = false;
+            this.grbJogadas.Text = "Jogadas";
+            // 
             // PartidaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.btnJogadaAutomatica);
+            this.Controls.Add(this.grbJogadas);
+            this.Controls.Add(this.btnVoltaLobby);
             this.Controls.Add(this.pnlEstanteCartas);
             this.Controls.Add(this.lblVez);
             this.Controls.Add(this.tabuleiro);
-            this.Controls.Add(this.lblPosicaoPirata);
-            this.Controls.Add(this.txtPosicaoPirata);
-            this.Controls.Add(this.btn_JogarPirata);
             this.Controls.Add(this.btn_Historico);
             this.Controls.Add(this.ltb_HistoricoPartida);
-            this.Controls.Add(this.lbl_Jogo);
-            this.Controls.Add(this.cbo_Jogar);
             this.Name = "PartidaForm";
             this.Size = new System.Drawing.Size(1289, 784);
             this.pnlChave.ResumeLayout(false);
@@ -369,6 +396,8 @@
             this.pnlTricornio.ResumeLayout(false);
             this.pnlTricornio.PerformLayout();
             this.pnlEstanteCartas.ResumeLayout(false);
+            this.grbJogadas.ResumeLayout(false);
+            this.grbJogadas.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,13 +407,6 @@
 
         private System.Windows.Forms.Label lblVez;
         private Tabuleiro tabuleiro;
-        private System.Windows.Forms.Label lblPosicaoPirata;
-        private System.Windows.Forms.TextBox txtPosicaoPirata;
-        private System.Windows.Forms.Button btn_JogarPirata;
-        private System.Windows.Forms.Button btn_Historico;
-        private System.Windows.Forms.ListBox ltb_HistoricoPartida;
-        private System.Windows.Forms.Label lbl_Jogo;
-        private System.Windows.Forms.ComboBox cbo_Jogar;
         private System.Windows.Forms.Timer tmrVerificarVez;
         private System.Windows.Forms.Label lblQtdTricornio;
         private System.Windows.Forms.Label lblQtdChave;
@@ -399,6 +421,15 @@
         private System.Windows.Forms.Panel pnlPistola;
         private System.Windows.Forms.Panel pnlTricornio;
         private System.Windows.Forms.Panel pnlEstanteCartas;
+        private System.Windows.Forms.Button btnVoltaLobby;
+        private System.Windows.Forms.ComboBox cbo_Jogar;
+        private System.Windows.Forms.Label lbl_Jogo;
+        private System.Windows.Forms.ListBox ltb_HistoricoPartida;
+        private System.Windows.Forms.Button btn_Historico;
+        private System.Windows.Forms.Button btn_JogarPirata;
+        private System.Windows.Forms.TextBox txtPosicaoPirata;
+        private System.Windows.Forms.Label lblPosicaoPirata;
         private System.Windows.Forms.Button btnJogadaAutomatica;
+        private System.Windows.Forms.GroupBox grbJogadas;
     }
 }

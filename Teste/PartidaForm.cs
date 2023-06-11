@@ -21,19 +21,33 @@ namespace Teste
         {
             InitializeComponent();
 
-            //BackColor = Color.FromArgb(167, 149, 94);
-
+            ltb_HistoricoPartida.DrawItem += ltb_HistoricoPartida_DrawItem;
             this.partida = partida;
-            cbo_Jogar.SelectedIndex = 0;
-            nameCartaSelecionado = null;
-            outraCartaClicada = false;
+            btnVoltaLobby.Show();
+            partida.listarJogadores();
+            tabuleiro.mostrarCasas(partida);
 
-            tabuleiro.mostrarCasas(partida);      
 
-            foreach (Cartas c in partida.jogador.cartas.Keys)
+            if (partida.jogador == null)
             {
-                qtdCartas(c, partida.jogador.cartas[c]);
+                grbJogadas.Hide();
+                pnlEstanteCartas.Hide();
+                partida.verificarVez();
             }
+            else
+            {
+                cbo_Jogar.SelectedIndex = 0;
+                nameCartaSelecionado = null;
+                outraCartaClicada = false;
+
+                foreach (Cartas c in partida.jogador.cartas.Keys)
+                {
+                    qtdCartas(c, partida.jogador.cartas[c]);
+                }
+            }
+
+            //BackColor = Color.FromArgb(167, 149, 94);
+           
 
             lblVez.Text = $"Vez de {partida.vez}";
  
@@ -122,7 +136,6 @@ namespace Teste
         private void btn_Historico_Click(object sender, EventArgs e)
         {
             atualizarHistorico();
-            tabuleiro.atualizarPeoes();
         }
 
         void atualizarHistorico()
@@ -130,6 +143,7 @@ namespace Teste
             partida.pegarHistorico();
             ltb_HistoricoPartida.DataSource = partida.historicos.ToList();
             ltb_HistoricoPartida.TopIndex = ltb_HistoricoPartida.Items.Count - 1;
+            tabuleiro.atualizarPeoes();
         }
 
         private void cbo_Jogar_SelectedIndexChanged(object sender, EventArgs e)
@@ -157,6 +171,8 @@ namespace Teste
                 atualizarHistorico();
                 tabuleiro.atualizarPeoes();
 
+                btnVoltaLobby.Show();
+
                 int idVencedor = partida.historicos[partida.historicos.Count - 1].idJogador;
 
                 Jogador vencedor = partida.Jogadores.Find(j => j.id == idVencedor);
@@ -167,13 +183,19 @@ namespace Teste
                 return;
             }
 
-            if (partida.vez.idJogador == partida.jogador.id)
+            if (partida.vez.Jogador == partida.jogador)
             {
                 btn_JogarPirata.Enabled = true;
                 btnJogadaAutomatica.Enabled = true;
                 lblVez.Text = $"Vez de {partida.vez} - SUA VEZ";
 
                 JogadaAutomatica();
+            }
+            else if(partida.jogador == null)
+            {
+                lblVez.Text = $"Vez de {partida.vez}";
+
+                atualizarHistorico();
             }
             else
             {
@@ -183,7 +205,6 @@ namespace Teste
                 lblVez.Text = $"Vez de {partida.vez}";
             }
         }
-
 
         public void onMouseEnter(object sender, EventArgs e)
         {
@@ -292,6 +313,28 @@ namespace Teste
         private void btnJogadaAutomatica_Click(object sender, EventArgs e)
         {
             JogadaAutomatica();
+        }
+
+        private void btnVoltaLobby_Click(object sender, EventArgs e)
+        {
+            Parent.Controls.Add(new TelaInicial());
+            Parent.Controls.Remove(this);
+        }
+
+        private void ltb_HistoricoPartida_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+
+            if(e.Index >= 0)
+            {
+                string item = ltb_HistoricoPartida.Items[e.Index].ToString();
+
+                Historico h = (Historico)ltb_HistoricoPartida.Items[e.Index];
+
+                Brush brush = new SolidBrush(h.Jogador.cor);
+
+                e.Graphics.DrawString(item, e.Font ,brush, e.Bounds);      
+            }
         }
     }
 }

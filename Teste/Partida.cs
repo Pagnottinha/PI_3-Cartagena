@@ -124,6 +124,10 @@ namespace Teste
 
         public void pegarHistorico()
         {
+            if(historicos == null)
+            {
+                this.historicos = new List<Historico>();
+            }
 
             (List<Historico> novoHistorico, string msgErro) = new JogoService().pegarHistorico(this.id, this.historicos.Count);
 

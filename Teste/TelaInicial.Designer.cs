@@ -52,6 +52,7 @@
             this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnListarPartidas = new System.Windows.Forms.Button();
+            this.btnAssistirPartida = new System.Windows.Forms.Button();
             this.grbCriarPartida.SuspendLayout();
             this.grbEntrarPartida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPartidas)).BeginInit();
@@ -192,7 +193,7 @@
             this.grbEntrarPartida.Controls.Add(this.txtSenhaEntrar);
             this.grbEntrarPartida.Controls.Add(this.txtNomeJogadorEntrar);
             this.grbEntrarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.grbEntrarPartida.Location = new System.Drawing.Point(680, 188);
+            this.grbEntrarPartida.Location = new System.Drawing.Point(691, 169);
             this.grbEntrarPartida.Name = "grbEntrarPartida";
             this.grbEntrarPartida.Size = new System.Drawing.Size(192, 188);
             this.grbEntrarPartida.TabIndex = 23;
@@ -274,6 +275,7 @@
             this.dgvListaPartidas.Size = new System.Drawing.Size(329, 388);
             this.dgvListaPartidas.TabIndex = 22;
             this.dgvListaPartidas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListaPartidas_CellFormatting);
+            this.dgvListaPartidas.Click += new System.EventHandler(this.dgvListaPartidas_Click);
             // 
             // id
             // 
@@ -318,6 +320,18 @@
             this.btnListarPartidas.UseVisualStyleBackColor = true;
             this.btnListarPartidas.Click += new System.EventHandler(this.btnListGames_Click);
             // 
+            // btnAssistirPartida
+            // 
+            this.btnAssistirPartida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAssistirPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssistirPartida.Location = new System.Drawing.Point(468, 427);
+            this.btnAssistirPartida.Name = "btnAssistirPartida";
+            this.btnAssistirPartida.Size = new System.Drawing.Size(179, 54);
+            this.btnAssistirPartida.TabIndex = 27;
+            this.btnAssistirPartida.Text = "Assistir Partida";
+            this.btnAssistirPartida.UseVisualStyleBackColor = true;
+            this.btnAssistirPartida.Click += new System.EventHandler(this.btnAssistirPartida_Click);
+            // 
             // TelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,6 +340,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.btnAssistirPartida);
             this.Controls.Add(this.lblFiltros);
             this.Controls.Add(this.cboFiltros);
             this.Controls.Add(this.grbCriarPartida);
@@ -370,5 +385,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn data;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.Button btnListarPartidas;
+        private System.Windows.Forms.Button btnAssistirPartida;
     }
 }

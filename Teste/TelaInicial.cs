@@ -45,7 +45,6 @@ namespace Teste
             string senha = txtSenhaCriar.Text;
             string nomeJogador = txtNomeJogadorCriar.Text;
 
-
             if (nomePartida == "" || senha == "" || (chkEntrar.Checked && nomeJogador == ""))
             {
                 MessageBox.Show("Campos vazios!", "Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -116,7 +115,33 @@ namespace Teste
                 }
 
             }
+        }
 
+        private void dgvListaPartidas_Click(object sender, EventArgs e)
+        {
+            if (dgvListaPartidas.SelectedCells[3].Value.ToString() == "Jogando")
+            {
+                grbEntrarPartida.Hide();
+                btnAssistirPartida.Show();
+            }
+            else if(dgvListaPartidas.SelectedCells[3].Value.ToString() == "Encerrado")
+            {
+                grbEntrarPartida.Hide();
+                btnAssistirPartida.Show();
+            }
+            else
+            {
+                grbEntrarPartida.Show();
+                btnAssistirPartida.Hide();
+            }
+        }
+
+        private void btnAssistirPartida_Click(object sender, EventArgs e)
+        {
+            int indexPartida = dgvListaPartidas.SelectedRows[0].Index;
+
+            Parent.Controls.Add(new PartidaForm(partidas[indexPartida]));
+            Parent.Controls.Remove(this);
         }
     }
 }
