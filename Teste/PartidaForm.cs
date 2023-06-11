@@ -416,18 +416,23 @@ namespace Teste
 
         private void ltb_HistoricoPartida_DrawItem(object sender, DrawItemEventArgs e)
         {
+            if (e.Index < 0)
+                return;
+
             e.DrawBackground();
 
-            if(e.Index >= 0)
-            {
-                string item = ltb_HistoricoPartida.Items[e.Index].ToString();
+            string item = ltb_HistoricoPartida.Items[e.Index].ToString();
 
-                Historico h = (Historico)ltb_HistoricoPartida.Items[e.Index];
+            StringFormat stringFormat = new StringFormat();
+            stringFormat.Alignment = StringAlignment.Center;
+            stringFormat.LineAlignment = StringAlignment.Center;
 
-                Brush brush = new SolidBrush(h.Jogador.cor);
+            Historico h = (Historico)ltb_HistoricoPartida.Items[e.Index];
 
-                e.Graphics.DrawString(item, e.Font ,brush, e.Bounds);      
-            }
+            Brush brush = new SolidBrush(h.Jogador.cor);
+
+            e.Graphics.DrawString(item, e.Font ,brush, e.Bounds, stringFormat);      
+            
         }
     }
 }
