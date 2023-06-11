@@ -1,6 +1,6 @@
 ﻿namespace Teste
 {
-    partial class frmEntrarNaPartida
+    partial class frmMain
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntrarNaPartida));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.SuspendLayout();
             // 
-            // frmEntrarNaPartida
+            // frmMain
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(177)))), ((int)(((byte)(112)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmEntrarNaPartida";
+            this.BackColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "frmMain";
+            this.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.frmMain_ControlAdded);
             this.ResumeLayout(false);
 
         }

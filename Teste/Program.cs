@@ -16,7 +16,7 @@ namespace Teste
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEntrarNaPartida());
+            Application.Run(new frmMain());
         }
     }
 }

@@ -12,12 +12,17 @@ using System.Windows.Forms;
 
 namespace Teste
 {
-    public partial class frmEntrarNaPartida : Form
+    public partial class frmMain : Form
     {
-        public frmEntrarNaPartida()
+        public frmMain()
         {
             InitializeComponent();
             Controls.Add(new TelaJogarInicio());
+        }
+
+        private void frmMain_ControlAdded(object sender, ControlEventArgs e)
+        {
+            this.Size = (sender as Control).Size;
         }
     }
 }
