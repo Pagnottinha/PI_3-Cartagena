@@ -24,5 +24,5 @@
   <li> Pular a vez. </li>
 </ul>
 
-<h4>
+<h5> Jogar uma carta e avançar um pirata </h5>
 
