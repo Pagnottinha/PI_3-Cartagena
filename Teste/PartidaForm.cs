@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace Teste
     public partial class PartidaForm : UserControl
     {
         Partida partida;
-        Estrategia estrategia;
+        Dictionary<Jogador, Panel> panelJogadores;
         string nameCartaSelecionado;
         bool outraCartaClicada;
         public PartidaForm(Partida partida)
@@ -27,7 +28,7 @@ namespace Teste
             partida.listarJogadores();
             tabuleiro.mostrarCasas(partida);
 
-            ltb_HistoricoPartida.BackColor = Color.FromArgb(80, Color.Black);
+            //ltb_HistoricoPartida.BackColor = Color.FromArgb(80, Color.Black);
 
             if (partida.jogador == null)
             {
@@ -48,11 +49,108 @@ namespace Teste
             }
 
             //BackColor = Color.FromArgb(167, 149, 94);
-           
 
-            lblVez.Text = $"Vez de {partida.vez}";
+            iniciarLabels();
  
             tmrVerificarVez.Enabled = true;
+        }
+
+        void iniciarLabels()
+        {
+            panelJogadores = new Dictionary<Jogador, Panel>();
+
+            foreach(Jogador jogador in partida.Jogadores)
+            {
+                Panel panel = new Panel
+                {
+                    BackColor = Color.FromArgb(80, Color.Black),
+                    ForeColor = jogador.cor,
+                };
+
+                panelJogadores.Add(jogador, panel);
+
+                Label lblNome = new Label
+                {
+                    Text = jogador.nome,
+                    ForeColor = Color.White,
+                    Font = lblHistorico.Font,
+                    BackColor = Color.Transparent
+                };
+
+                Label lblCartas = new Label
+                {
+                    Text = $"{jogador.qntCartas} Cartas",
+                    ForeColor = Color.White,
+                    Font = lblHistorico.Font,
+                    BackColor = Color.Transparent,
+                };
+
+                if (lblNome.Width > lblCartas.Width)
+                {
+                    panel.Width = lblNome.Width + 100;
+                }
+                else
+                {
+                    panel.Width = lblCartas.Width + 100;
+                }
+
+                panel.Height = lblNome.Height + lblCartas.Height + 50;
+
+                panel.Region = criarBorda(panel.Size, 35);
+
+                panel.Controls.Add(lblNome);
+                panel.Controls.Add(lblCartas);
+                Controls.Add(panel);
+
+                lblNome.AutoSize = true;
+                lblCartas.AutoSize = true;
+
+                panel.Top = (panel.Height + 25) * (panelJogadores.Count - 1) + tabuleiro.Top;
+                panel.Left = 60;
+
+                int espaco = (panel.Height - lblNome.Height - lblCartas.Height) / 3;
+
+                lblNome.Left = (panel.Width - lblNome.Width) / 2;
+                lblNome.Top = espaco;
+
+                lblCartas.Left = (panel.Width - lblCartas.Width) / 2;
+                lblCartas.Top = lblNome.Top + lblNome.Height + espaco;
+            }
+        }
+
+        void atualizarLabels()
+        {
+            foreach(Jogador jogador in partida.Jogadores)
+            {
+                Panel panel = panelJogadores[jogador];
+
+                panel.Controls[1].Text = $"{jogador.qntCartas} Cartas";
+
+                if (partida.vez.Jogador == jogador)
+                {
+                    panel.BackColor = Color.FromArgb(80, jogador.cor);
+                }
+                else
+                {
+                    panel.BackColor = Color.FromArgb(80, Color.Black);
+                }
+            }
+        }
+
+        Region criarBorda(Size size, int curva)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(new Rectangle(0, 0, curva, curva), 180, 90);
+            path.AddLine(20, 0, size.Width - curva, 0);
+            path.AddArc(new Rectangle(size.Width - curva, 0, curva, curva), -90, 90);
+            path.AddLine(size.Width, curva, size.Width, size.Height - curva);
+            path.AddArc(new Rectangle(size.Width - curva, size.Height - curva, curva, curva), 0, 90);
+            path.AddLine(size.Width - curva, size.Height, curva, size.Height);
+            path.AddArc(new Rectangle(0, size.Height - curva, curva, curva), 90, 90);
+            path.AddLine(0, size.Height - curva, 0, curva);
+            path.CloseFigure();
+            return new Region(path);
         }
 
         private void consultarMao()
@@ -145,6 +243,7 @@ namespace Teste
             ltb_HistoricoPartida.DataSource = partida.historicos.ToList();
             ltb_HistoricoPartida.TopIndex = ltb_HistoricoPartida.Items.Count - 1;
             tabuleiro.atualizarPeoes();
+            atualizarLabels();
         }
 
         private void cbo_Jogar_SelectedIndexChanged(object sender, EventArgs e)
@@ -166,6 +265,7 @@ namespace Teste
         private void tmrVerificarVez_Tick(object sender, EventArgs e)
         {
             partida.verificarVez();
+            atualizarLabels();
 
             if (partida.status == Status.Encerrada)
             {
@@ -178,8 +278,6 @@ namespace Teste
 
                 Jogador vencedor = partida.Jogadores.Find(j => j.id == idVencedor);
 
-                lblVez.Text = $"Partida Finalizada - {vencedor}";
-
                 tmrVerificarVez.Enabled = false;
                 return;
             }
@@ -188,22 +286,17 @@ namespace Teste
             {
                 btn_JogarPirata.Enabled = true;
                 btnJogadaAutomatica.Enabled = true;
-                lblVez.Text = $"Vez de {partida.vez} - SUA VEZ";
 
                 JogadaAutomatica();
             }
             else if(partida.jogador == null)
             {
-                lblVez.Text = $"Vez de {partida.vez}";
-
                 atualizarHistorico();
             }
             else
             {
                 btn_JogarPirata.Enabled = false;
                 btnJogadaAutomatica.Enabled = false;
-
-                lblVez.Text = $"Vez de {partida.vez}";
             }
         }
 
@@ -305,8 +398,7 @@ namespace Teste
         void JogadaAutomatica()
         {
             atualizarHistorico();
-            estrategia = Estrategia.comecarEstrategia(partida.tabuleiro, partida.jogador);
-            estrategia.jogadaAutomatica();
+            Estrategia.comecarEstrategia(partida.tabuleiro, partida.jogador).jogadaAutomatica();
             consultarMao();
             tabuleiro.atualizarPeoes();
         }
