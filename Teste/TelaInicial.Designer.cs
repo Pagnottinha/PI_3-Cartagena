@@ -71,6 +71,7 @@
             // 
             // cboFiltros
             // 
+            this.cboFiltros.BackColor = System.Drawing.SystemColors.Window;
             this.cboFiltros.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboFiltros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFiltros.DropDownWidth = 130;
@@ -150,10 +151,11 @@
             // lblNomePartida
             // 
             this.lblNomePartida.AutoSize = true;
+            this.lblNomePartida.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomePartida.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblNomePartida.Location = new System.Drawing.Point(13, 19);
             this.lblNomePartida.Name = "lblNomePartida";
-            this.lblNomePartida.Size = new System.Drawing.Size(71, 13);
+            this.lblNomePartida.Size = new System.Drawing.Size(76, 13);
             this.lblNomePartida.TabIndex = 11;
             this.lblNomePartida.Text = "Nome Partida";
             // 
