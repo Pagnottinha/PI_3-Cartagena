@@ -25,7 +25,7 @@
 </ul>
 
 <h4> 1. Jogar uma carta e avançar um pirata </h4>
-<p> Para avançar um pirata, é necessário escolher um dos seus piratas e escolher uma das cartas que você tiver na mão naquele momento. Tendo isso escolhido, o pirata vai avançar para a primeira casa vazia em que aquele símbolo se encontra. </p>
+<p> Para avançar um pirata, é necessário selecionar um dos seus piratas e escolher uma das cartas que você tiver na mão naquele momento. Tendo isso escolhido, o pirata vai avançar para a primeira casa vazia em que aquele símbolo se encontra. </p>
 
 <h4> 2. Voltar um pirata e comprar até duas cartas </h4>
 <p> Voltando um pirata ele vai parar na primeira casa que contenha um peão (pirata). Caso a casa que o peão for voltar tenha mais de 2 peões, ele irá voltar para a próxima casa que contenha um peão. Se todas as possibilidades do peão voltar estiverem comprometidas e ele tentar voltar para antes do início do jogo (para a prisão), essa jogada não poderá ser efetuada. Cada peão pode comprar até duas cartas por rodada. Se a casa que o pirata voltar tiver apenas um peão, ele receberá uma carta. Caso contenha dois peões, o pirata receberá 2 cartas. </p> 
