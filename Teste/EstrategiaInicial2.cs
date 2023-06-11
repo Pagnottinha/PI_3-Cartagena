@@ -47,8 +47,6 @@ namespace Teste
                 return;
             }
 
-            int qntPeoesNoInicio = qntPeoesInicio();
-
             Dictionary<Cartas, int> movimentacaoPrimeiro = paraOndeVai(0);
 
             List<KeyValuePair<Cartas, int>> list = movimentacaoPrimeiro.ToList();
@@ -69,19 +67,33 @@ namespace Teste
                         return;
                     }
 
-                    Peao p1 = peaoProximo(keyValuePair.Value);
+                    Peao proximo = peaoProximo(keyValuePair.Value);
 
-                    if (p1 != null && qntPeoesOndeVolta == 1 && posOndeVolta != 0)
+                    if (proximo != null && posOndeVolta != 0)
                     {
                         Jogador.Jogar(0, cartaPraString(keyValuePair.Key), tabuleiro);
                         numeroJogada++;
                         return;
                     }
+
+                    Peao anterior = peaoAnterior(keyValuePair.Value);
+
+                    if (anterior != null)
+                    {
+                        int anteriorVoltaPraOnde = voltaPraOnde(anterior.posicao);
+
+                        if (anteriorVoltaPraOnde != 0 && tabuleiro[anteriorVoltaPraOnde].peoes.Count == 1)
+                        {
+                            Jogador.Jogar(0, cartaPraString(keyValuePair.Key), tabuleiro);
+                            numeroJogada++;
+                            return;
+                        }
+                    }
                 }
                 
             }
 
-            if (numeroJogada == 0 && qntPeoesNoInicio >= 2)
+            if (numeroJogada == 0 && qntPeoesInicio() >= 2)
             {
                 List<Cartas> cartasJogaveis = new List<Cartas>();
 
@@ -188,7 +200,7 @@ namespace Teste
         {
             Jogador.peoes.Sort((Peao peao1, Peao peao2) => peao1.posicao < peao2.posicao ? 1 : -1);
 
-            for (int i = 5; i > 0 && numeroJogada < 3; i--)
+            for (int i = 0; i < Jogador.peoes.Count && numeroJogada < 3; i++)
             {
                 Peao peao = Jogador.peoes[i];
                 
