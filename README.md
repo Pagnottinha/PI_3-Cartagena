@@ -12,7 +12,7 @@
 
 <h4> Preparação </h4>
 
-<p> O jogo é composto com 2 até 4 jogadores. Existem duas versões, a Tortuga e a Jamaica. A versão Tortuga tem como base o raciocínio, pois os jogadores deixam suas cartas à mostra na mesa, sabendo quais são os próximos passos de seus adversários. Porém, a versão que estamos usando é a Jamaica, que tem como base a sorte. Cada jogador recebe 6 cartas aleatórias, sem que o adversário saiba, podendo ser elas um esqueleto, um tricórnio, uma faca, uma pistola, uma chave ou uma garrafa. O tabuleiro é gerado aleatoriamente, com um total de 38 casas (a primeira sem símbolo, pois é o ponto inicial e a última sendo o barco ou melhor dizendo, a linha de chegada) tendo em cada casa um desses 6 símbolos. A cada 6 casas obrigatoriamente todos os símbolos devem ter aparecido. </p>
+<p> O jogo é composto com 2 até 4 jogadores, cada um com sua respectiva cor (amarelo, azul, vermelho e verde). Existem duas versões, a Tortuga e a Jamaica. A versão Tortuga tem como base o raciocínio, pois os jogadores deixam suas cartas à mostra na mesa, sabendo quais são os próximos passos de seus adversários. Porém, a versão que estamos usando é a Jamaica, que tem como base a sorte. Cada jogador recebe 6 cartas aleatórias, sem que o adversário saiba, podendo ser elas um esqueleto, um tricórnio, uma faca, uma pistola, uma chave ou uma garrafa. O tabuleiro é gerado aleatoriamente, com um total de 38 casas (a primeira sem símbolo, pois é o ponto inicial e a última sendo o barco ou melhor dizendo, a linha de chegada) tendo em cada casa um desses 6 símbolos. A cada 6 casas obrigatoriamente todos os símbolos devem ter aparecido. </p>
 
 <h4> Como jogar </h4>
 
@@ -24,5 +24,11 @@
   <li> Pular a vez. </li>
 </ul>
 
-<h5> Jogar uma carta e avançar um pirata </h5>
+<h4> 1. Jogar uma carta e avançar um pirata </h4>
+<p> Para avançar um pirata, é necessário escolher um dos seus piratas e escolher uma das cartas que você tiver na mão naquele momento. Tendo isso escolhido, o pirata vai avançar para a primeira casa vazia em que aquele símbolo se encontra. </p>
 
+<h4> 2. Voltar um pirata e comprar até duas cartas </h4>
+<p> Voltando um pirata ele vai parar na primeira casa que contenha um peão (pirata). Caso a casa que o peão for voltar tenha mais de 2 peões, ele irá voltar para a próxima casa que contenha um peão. Se todas as possibilidades do peão voltar estiverem comprometidas e ele tentar voltar para antes do início do jogo (para a prisão), essa jogada não poderá ser efetuada. Cada peão pode comprar até duas cartas por rodada. Se a casa que o pirata voltar tiver apenas um peão, ele receberá uma carta. Caso contenha dois peões, o pirata receberá 2 cartas. </p> 
+
+<h4> Fim do Jogo </h4>
+<p> O jogo é finalizado quando o primeiro jogador colocar todos seus piratas no barco, fugindo assim da prisão de Cartagena.</p>
