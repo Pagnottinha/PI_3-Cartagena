@@ -28,13 +28,6 @@ namespace Teste
 
             partida.listarTabuleiro(pnlTabuleiro);
 
-            for (int i = 1; i < partida.tabuleiro.Count - 1; i++)
-            {
-                Casa casa = partida.tabuleiro[i];
-                this.Controls.Add(casa.panel);
-                casa.panel.BringToFront();
-            }
-
             iniciarPeoes();
 
             pnlTabuleiro.SendToBack();
@@ -85,11 +78,11 @@ namespace Teste
 
                     if (casa.linha % 2 == 0)
                     {
-                        peao.panel.Left = casa.panel.Left - peao.panel.Width - 5;
+                        peao.panel.Left = casa.panel.Left - peao.panel.Width + 15;
                     }
                     else
                     {
-                        peao.panel.Left = casa.panel.Left + casa.panel.Width + 5;
+                        peao.panel.Left = casa.panel.Left + casa.panel.Width - 15;
                     }
 
                     peao.panel.Top = casa.panel.Top + peao.panel.Height * j;

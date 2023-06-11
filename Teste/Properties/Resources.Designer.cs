@@ -93,6 +93,16 @@ namespace Teste.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fundo_de_tudo {
+            get {
+                object obj = ResourceManager.GetObject("fundo_de_tudo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Garrafa {
             get {
                 object obj = ResourceManager.GetObject("Garrafa", resourceCulture);

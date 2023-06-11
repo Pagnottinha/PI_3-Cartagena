@@ -127,6 +127,9 @@
   <data name="Faca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sprites\Faca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fundo_de_tudo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\fundo_de_tudo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Garrafa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sprites\Garrafa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

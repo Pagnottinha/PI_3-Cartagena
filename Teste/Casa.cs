@@ -25,7 +25,6 @@ namespace Teste
         public Cartas carta { get; }
         public List<Peao> peoes { get; set; }
         public int linha { get; private set; }
-        int parede = 35;
         public Casa(Cartas carta, int linha, int coluna, Panel tabuleiro)
         {
             this.carta = carta;
@@ -36,11 +35,21 @@ namespace Teste
             panel.Anchor = AnchorStyles.None;
 
             panel.BackgroundImage = imagens[carta];
+            panel.BackgroundImageLayout = ImageLayout.Stretch;
 
+            panel.BackColor = Color.Transparent;
             panel.Size = panel.BackgroundImage.Size;
 
-            panel.Left = tabuleiro.Left + coluna * 87 + 95 - panel.Width / 2;
+            int parede = 14;
+
+            int regiaoSimbolos = tabuleiro.Width - 2 * (panel.Width / 2 + parede);
+
+            int espaco = (regiaoSimbolos - 7 * panel.Width) / 6;
+
+            panel.Left = tabuleiro.Left + parede + coluna * (panel.Width + espaco) - panel.Width / 2 + 50;
             panel.Top = tabuleiro.Height + tabuleiro.Top - linha * panel.Height - parede * (2 * linha - 1);
+
+            tabuleiro.Controls.Add(panel);
         }
 
         public Casa(int linha)

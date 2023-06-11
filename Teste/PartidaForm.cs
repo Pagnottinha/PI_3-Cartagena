@@ -27,11 +27,12 @@ namespace Teste
             partida.listarJogadores();
             tabuleiro.mostrarCasas(partida);
 
+            ltb_HistoricoPartida.BackColor = Color.FromArgb(80, Color.Black);
 
             if (partida.jogador == null)
             {
                 grbJogadas.Hide();
-                pnlEstanteCartas.Hide();
+                pnlMao.Hide();
                 partida.verificarVez();
             }
             else

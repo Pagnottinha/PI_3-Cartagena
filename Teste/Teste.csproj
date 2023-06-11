@@ -186,6 +186,7 @@
     <Content Include="sprites\Cartas\CartasCartagena.png" />
     <Content Include="sprites\Cartas\CartaTricornio.png" />
     <Content Include="sprites\Cartas\CartaTricornioSelecionada.png" />
+    <None Include="sprites\fundo_de_tudo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

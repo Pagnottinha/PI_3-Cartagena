@@ -119,12 +119,7 @@ namespace Teste
 
         private void dgvListaPartidas_Click(object sender, EventArgs e)
         {
-            if (dgvListaPartidas.SelectedCells[3].Value.ToString() == "Jogando")
-            {
-                grbEntrarPartida.Hide();
-                btnAssistirPartida.Show();
-            }
-            else if(dgvListaPartidas.SelectedCells[3].Value.ToString() == "Encerrado")
+            if (dgvListaPartidas.SelectedCells[3].Value.ToString() != "Aberta")
             {
                 grbEntrarPartida.Hide();
                 btnAssistirPartida.Show();

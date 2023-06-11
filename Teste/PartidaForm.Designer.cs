@@ -32,21 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PartidaForm));
             this.lblVez = new System.Windows.Forms.Label();
             this.tmrVerificarVez = new System.Windows.Forms.Timer(this.components);
-            this.lblQtdTricornio = new System.Windows.Forms.Label();
-            this.lblQtdChave = new System.Windows.Forms.Label();
-            this.lblQtdFaca = new System.Windows.Forms.Label();
-            this.lblQtdEsqueleto = new System.Windows.Forms.Label();
-            this.lblQtdGarrafa = new System.Windows.Forms.Label();
-            this.lblQtdPistola = new System.Windows.Forms.Label();
-            this.pnlChave = new System.Windows.Forms.Panel();
-            this.pnlFaca = new System.Windows.Forms.Panel();
-            this.pnlEsqueleto = new System.Windows.Forms.Panel();
-            this.pnlGarrafa = new System.Windows.Forms.Panel();
-            this.pnlPistola = new System.Windows.Forms.Panel();
-            this.pnlTricornio = new System.Windows.Forms.Panel();
-            this.pnlEstanteCartas = new System.Windows.Forms.Panel();
             this.btnVoltaLobby = new System.Windows.Forms.Button();
-            this.tabuleiro = new Teste.Tabuleiro();
             this.cbo_Jogar = new System.Windows.Forms.ComboBox();
             this.lbl_Jogo = new System.Windows.Forms.Label();
             this.ltb_HistoricoPartida = new System.Windows.Forms.ListBox();
@@ -56,14 +42,28 @@
             this.lblPosicaoPirata = new System.Windows.Forms.Label();
             this.btnJogadaAutomatica = new System.Windows.Forms.Button();
             this.grbJogadas = new System.Windows.Forms.GroupBox();
+            this.pnlChave = new System.Windows.Forms.Panel();
+            this.lblQtdChave = new System.Windows.Forms.Label();
+            this.pnlTricornio = new System.Windows.Forms.Panel();
+            this.lblQtdTricornio = new System.Windows.Forms.Label();
+            this.pnlEsqueleto = new System.Windows.Forms.Panel();
+            this.lblQtdEsqueleto = new System.Windows.Forms.Label();
+            this.pnlGarrafa = new System.Windows.Forms.Panel();
+            this.lblQtdGarrafa = new System.Windows.Forms.Label();
+            this.pnlPistola = new System.Windows.Forms.Panel();
+            this.lblQtdPistola = new System.Windows.Forms.Label();
+            this.pnlFaca = new System.Windows.Forms.Panel();
+            this.lblQtdFaca = new System.Windows.Forms.Label();
+            this.pnlMao = new System.Windows.Forms.Panel();
+            this.tabuleiro = new Teste.Tabuleiro();
+            this.grbJogadas.SuspendLayout();
             this.pnlChave.SuspendLayout();
-            this.pnlFaca.SuspendLayout();
+            this.pnlTricornio.SuspendLayout();
             this.pnlEsqueleto.SuspendLayout();
             this.pnlGarrafa.SuspendLayout();
             this.pnlPistola.SuspendLayout();
-            this.pnlTricornio.SuspendLayout();
-            this.pnlEstanteCartas.SuspendLayout();
-            this.grbJogadas.SuspendLayout();
+            this.pnlFaca.SuspendLayout();
+            this.pnlMao.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblVez
@@ -81,192 +81,16 @@
             this.tmrVerificarVez.Interval = 7000;
             this.tmrVerificarVez.Tick += new System.EventHandler(this.tmrVerificarVez_Tick);
             // 
-            // lblQtdTricornio
-            // 
-            this.lblQtdTricornio.AutoSize = true;
-            this.lblQtdTricornio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQtdTricornio.Location = new System.Drawing.Point(64, 9);
-            this.lblQtdTricornio.Name = "lblQtdTricornio";
-            this.lblQtdTricornio.Size = new System.Drawing.Size(18, 20);
-            this.lblQtdTricornio.TabIndex = 36;
-            this.lblQtdTricornio.Text = "0";
-            this.lblQtdTricornio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblQtdChave
-            // 
-            this.lblQtdChave.AutoSize = true;
-            this.lblQtdChave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQtdChave.Location = new System.Drawing.Point(64, 9);
-            this.lblQtdChave.Name = "lblQtdChave";
-            this.lblQtdChave.Size = new System.Drawing.Size(18, 20);
-            this.lblQtdChave.TabIndex = 31;
-            this.lblQtdChave.Text = "0";
-            this.lblQtdChave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblQtdFaca
-            // 
-            this.lblQtdFaca.AutoSize = true;
-            this.lblQtdFaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQtdFaca.Location = new System.Drawing.Point(64, 9);
-            this.lblQtdFaca.Name = "lblQtdFaca";
-            this.lblQtdFaca.Size = new System.Drawing.Size(18, 20);
-            this.lblQtdFaca.TabIndex = 32;
-            this.lblQtdFaca.Text = "0";
-            this.lblQtdFaca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblQtdEsqueleto
-            // 
-            this.lblQtdEsqueleto.AutoSize = true;
-            this.lblQtdEsqueleto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQtdEsqueleto.Location = new System.Drawing.Point(64, 9);
-            this.lblQtdEsqueleto.Name = "lblQtdEsqueleto";
-            this.lblQtdEsqueleto.Size = new System.Drawing.Size(18, 20);
-            this.lblQtdEsqueleto.TabIndex = 33;
-            this.lblQtdEsqueleto.Text = "0";
-            this.lblQtdEsqueleto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblQtdGarrafa
-            // 
-            this.lblQtdGarrafa.AutoSize = true;
-            this.lblQtdGarrafa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQtdGarrafa.Location = new System.Drawing.Point(64, 9);
-            this.lblQtdGarrafa.Name = "lblQtdGarrafa";
-            this.lblQtdGarrafa.Size = new System.Drawing.Size(18, 20);
-            this.lblQtdGarrafa.TabIndex = 34;
-            this.lblQtdGarrafa.Text = "0";
-            this.lblQtdGarrafa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblQtdPistola
-            // 
-            this.lblQtdPistola.AutoSize = true;
-            this.lblQtdPistola.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQtdPistola.Location = new System.Drawing.Point(64, 9);
-            this.lblQtdPistola.Name = "lblQtdPistola";
-            this.lblQtdPistola.Size = new System.Drawing.Size(18, 20);
-            this.lblQtdPistola.TabIndex = 35;
-            this.lblQtdPistola.Text = "0";
-            this.lblQtdPistola.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlChave
-            // 
-            this.pnlChave.BackColor = System.Drawing.Color.Transparent;
-            this.pnlChave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlChave.BackgroundImage")));
-            this.pnlChave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlChave.Controls.Add(this.lblQtdChave);
-            this.pnlChave.Location = new System.Drawing.Point(50, 19);
-            this.pnlChave.Name = "pnlChave";
-            this.pnlChave.Size = new System.Drawing.Size(94, 147);
-            this.pnlChave.TabIndex = 37;
-            this.pnlChave.Click += new System.EventHandler(this.onClick);
-            this.pnlChave.MouseEnter += new System.EventHandler(this.onMouseEnter);
-            this.pnlChave.MouseLeave += new System.EventHandler(this.onMouseExit);
-            // 
-            // pnlFaca
-            // 
-            this.pnlFaca.BackColor = System.Drawing.Color.Transparent;
-            this.pnlFaca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlFaca.BackgroundImage")));
-            this.pnlFaca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlFaca.Controls.Add(this.lblQtdFaca);
-            this.pnlFaca.Location = new System.Drawing.Point(50, 196);
-            this.pnlFaca.Name = "pnlFaca";
-            this.pnlFaca.Size = new System.Drawing.Size(94, 142);
-            this.pnlFaca.TabIndex = 38;
-            this.pnlFaca.Click += new System.EventHandler(this.onClick);
-            this.pnlFaca.MouseEnter += new System.EventHandler(this.onMouseEnter);
-            this.pnlFaca.MouseLeave += new System.EventHandler(this.onMouseExit);
-            // 
-            // pnlEsqueleto
-            // 
-            this.pnlEsqueleto.BackColor = System.Drawing.Color.Transparent;
-            this.pnlEsqueleto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlEsqueleto.BackgroundImage")));
-            this.pnlEsqueleto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlEsqueleto.Controls.Add(this.lblQtdEsqueleto);
-            this.pnlEsqueleto.Location = new System.Drawing.Point(203, 19);
-            this.pnlEsqueleto.Name = "pnlEsqueleto";
-            this.pnlEsqueleto.Size = new System.Drawing.Size(94, 147);
-            this.pnlEsqueleto.TabIndex = 39;
-            this.pnlEsqueleto.Click += new System.EventHandler(this.onClick);
-            this.pnlEsqueleto.MouseEnter += new System.EventHandler(this.onMouseEnter);
-            this.pnlEsqueleto.MouseLeave += new System.EventHandler(this.onMouseExit);
-            // 
-            // pnlGarrafa
-            // 
-            this.pnlGarrafa.BackColor = System.Drawing.Color.Transparent;
-            this.pnlGarrafa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGarrafa.BackgroundImage")));
-            this.pnlGarrafa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlGarrafa.Controls.Add(this.lblQtdGarrafa);
-            this.pnlGarrafa.Location = new System.Drawing.Point(203, 196);
-            this.pnlGarrafa.Name = "pnlGarrafa";
-            this.pnlGarrafa.Size = new System.Drawing.Size(94, 142);
-            this.pnlGarrafa.TabIndex = 40;
-            this.pnlGarrafa.Click += new System.EventHandler(this.onClick);
-            this.pnlGarrafa.MouseEnter += new System.EventHandler(this.onMouseEnter);
-            this.pnlGarrafa.MouseLeave += new System.EventHandler(this.onMouseExit);
-            // 
-            // pnlPistola
-            // 
-            this.pnlPistola.BackColor = System.Drawing.Color.Transparent;
-            this.pnlPistola.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlPistola.BackgroundImage")));
-            this.pnlPistola.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlPistola.Controls.Add(this.lblQtdPistola);
-            this.pnlPistola.Location = new System.Drawing.Point(345, 19);
-            this.pnlPistola.Name = "pnlPistola";
-            this.pnlPistola.Size = new System.Drawing.Size(94, 147);
-            this.pnlPistola.TabIndex = 41;
-            this.pnlPistola.Click += new System.EventHandler(this.onClick);
-            this.pnlPistola.MouseEnter += new System.EventHandler(this.onMouseEnter);
-            this.pnlPistola.MouseLeave += new System.EventHandler(this.onMouseExit);
-            // 
-            // pnlTricornio
-            // 
-            this.pnlTricornio.BackColor = System.Drawing.Color.Transparent;
-            this.pnlTricornio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlTricornio.BackgroundImage")));
-            this.pnlTricornio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlTricornio.Controls.Add(this.lblQtdTricornio);
-            this.pnlTricornio.Location = new System.Drawing.Point(345, 196);
-            this.pnlTricornio.Name = "pnlTricornio";
-            this.pnlTricornio.Size = new System.Drawing.Size(94, 142);
-            this.pnlTricornio.TabIndex = 42;
-            this.pnlTricornio.Click += new System.EventHandler(this.onClick);
-            this.pnlTricornio.MouseEnter += new System.EventHandler(this.onMouseEnter);
-            this.pnlTricornio.MouseLeave += new System.EventHandler(this.onMouseExit);
-            // 
-            // pnlEstanteCartas
-            // 
-            this.pnlEstanteCartas.BackColor = System.Drawing.Color.Transparent;
-            this.pnlEstanteCartas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlEstanteCartas.BackgroundImage")));
-            this.pnlEstanteCartas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlEstanteCartas.Controls.Add(this.pnlChave);
-            this.pnlEstanteCartas.Controls.Add(this.pnlTricornio);
-            this.pnlEstanteCartas.Controls.Add(this.pnlEsqueleto);
-            this.pnlEstanteCartas.Controls.Add(this.pnlGarrafa);
-            this.pnlEstanteCartas.Controls.Add(this.pnlPistola);
-            this.pnlEstanteCartas.Controls.Add(this.pnlFaca);
-            this.pnlEstanteCartas.Location = new System.Drawing.Point(11, 374);
-            this.pnlEstanteCartas.Name = "pnlEstanteCartas";
-            this.pnlEstanteCartas.Size = new System.Drawing.Size(514, 357);
-            this.pnlEstanteCartas.TabIndex = 43;
-            // 
             // btnVoltaLobby
             // 
             this.btnVoltaLobby.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltaLobby.Location = new System.Drawing.Point(297, 317);
+            this.btnVoltaLobby.Location = new System.Drawing.Point(24, 719);
             this.btnVoltaLobby.Name = "btnVoltaLobby";
             this.btnVoltaLobby.Size = new System.Drawing.Size(131, 40);
             this.btnVoltaLobby.TabIndex = 45;
             this.btnVoltaLobby.Text = "Voltar pro Lobby";
             this.btnVoltaLobby.UseVisualStyleBackColor = true;
             this.btnVoltaLobby.Click += new System.EventHandler(this.btnVoltaLobby_Click);
-            // 
-            // tabuleiro
-            // 
-            this.tabuleiro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabuleiro.BackColor = System.Drawing.Color.Transparent;
-            this.tabuleiro.Location = new System.Drawing.Point(557, 46);
-            this.tabuleiro.Name = "tabuleiro";
-            this.tabuleiro.Size = new System.Drawing.Size(720, 722);
-            this.tabuleiro.TabIndex = 27;
             // 
             // cbo_Jogar
             // 
@@ -295,19 +119,21 @@
             // 
             // ltb_HistoricoPartida
             // 
+            this.ltb_HistoricoPartida.BackColor = System.Drawing.Color.White;
+            this.ltb_HistoricoPartida.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ltb_HistoricoPartida.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.ltb_HistoricoPartida.FormattingEnabled = true;
             this.ltb_HistoricoPartida.HorizontalScrollbar = true;
-            this.ltb_HistoricoPartida.Location = new System.Drawing.Point(24, 73);
+            this.ltb_HistoricoPartida.Location = new System.Drawing.Point(1032, 32);
             this.ltb_HistoricoPartida.Name = "ltb_HistoricoPartida";
-            this.ltb_HistoricoPartida.Size = new System.Drawing.Size(185, 238);
+            this.ltb_HistoricoPartida.Size = new System.Drawing.Size(185, 429);
             this.ltb_HistoricoPartida.TabIndex = 20;
             this.ltb_HistoricoPartida.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ltb_HistoricoPartida_DrawItem);
             // 
             // btn_Historico
             // 
             this.btn_Historico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Historico.Location = new System.Drawing.Point(44, 317);
+            this.btn_Historico.Location = new System.Drawing.Point(1053, 484);
             this.btn_Historico.Name = "btn_Historico";
             this.btn_Historico.Size = new System.Drawing.Size(139, 35);
             this.btn_Historico.TabIndex = 21;
@@ -356,48 +182,222 @@
             // 
             // grbJogadas
             // 
+            this.grbJogadas.BackColor = System.Drawing.Color.Transparent;
             this.grbJogadas.Controls.Add(this.btnJogadaAutomatica);
             this.grbJogadas.Controls.Add(this.lblPosicaoPirata);
             this.grbJogadas.Controls.Add(this.txtPosicaoPirata);
             this.grbJogadas.Controls.Add(this.btn_JogarPirata);
             this.grbJogadas.Controls.Add(this.lbl_Jogo);
             this.grbJogadas.Controls.Add(this.cbo_Jogar);
-            this.grbJogadas.Location = new System.Drawing.Point(253, 73);
+            this.grbJogadas.Location = new System.Drawing.Point(1003, 540);
             this.grbJogadas.Name = "grbJogadas";
             this.grbJogadas.Size = new System.Drawing.Size(236, 238);
             this.grbJogadas.TabIndex = 46;
             this.grbJogadas.TabStop = false;
             this.grbJogadas.Text = "Jogadas";
             // 
+            // pnlChave
+            // 
+            this.pnlChave.BackColor = System.Drawing.Color.Transparent;
+            this.pnlChave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlChave.BackgroundImage")));
+            this.pnlChave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlChave.Controls.Add(this.lblQtdChave);
+            this.pnlChave.Location = new System.Drawing.Point(78, 26);
+            this.pnlChave.Name = "pnlChave";
+            this.pnlChave.Size = new System.Drawing.Size(94, 147);
+            this.pnlChave.TabIndex = 37;
+            this.pnlChave.Click += new System.EventHandler(this.onClick);
+            this.pnlChave.MouseEnter += new System.EventHandler(this.onMouseEnter);
+            this.pnlChave.MouseLeave += new System.EventHandler(this.onMouseExit);
+            // 
+            // lblQtdChave
+            // 
+            this.lblQtdChave.AutoSize = true;
+            this.lblQtdChave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdChave.Location = new System.Drawing.Point(64, 9);
+            this.lblQtdChave.Name = "lblQtdChave";
+            this.lblQtdChave.Size = new System.Drawing.Size(18, 20);
+            this.lblQtdChave.TabIndex = 31;
+            this.lblQtdChave.Text = "0";
+            this.lblQtdChave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlTricornio
+            // 
+            this.pnlTricornio.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTricornio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlTricornio.BackgroundImage")));
+            this.pnlTricornio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlTricornio.Controls.Add(this.lblQtdTricornio);
+            this.pnlTricornio.Location = new System.Drawing.Point(314, 87);
+            this.pnlTricornio.Name = "pnlTricornio";
+            this.pnlTricornio.Size = new System.Drawing.Size(94, 142);
+            this.pnlTricornio.TabIndex = 42;
+            this.pnlTricornio.Click += new System.EventHandler(this.onClick);
+            this.pnlTricornio.MouseEnter += new System.EventHandler(this.onMouseEnter);
+            this.pnlTricornio.MouseLeave += new System.EventHandler(this.onMouseExit);
+            // 
+            // lblQtdTricornio
+            // 
+            this.lblQtdTricornio.AutoSize = true;
+            this.lblQtdTricornio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdTricornio.Location = new System.Drawing.Point(64, 9);
+            this.lblQtdTricornio.Name = "lblQtdTricornio";
+            this.lblQtdTricornio.Size = new System.Drawing.Size(18, 20);
+            this.lblQtdTricornio.TabIndex = 36;
+            this.lblQtdTricornio.Text = "0";
+            this.lblQtdTricornio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlEsqueleto
+            // 
+            this.pnlEsqueleto.BackColor = System.Drawing.Color.Transparent;
+            this.pnlEsqueleto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlEsqueleto.BackgroundImage")));
+            this.pnlEsqueleto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlEsqueleto.Controls.Add(this.lblQtdEsqueleto);
+            this.pnlEsqueleto.Location = new System.Drawing.Point(230, 26);
+            this.pnlEsqueleto.Name = "pnlEsqueleto";
+            this.pnlEsqueleto.Size = new System.Drawing.Size(94, 147);
+            this.pnlEsqueleto.TabIndex = 39;
+            this.pnlEsqueleto.Click += new System.EventHandler(this.onClick);
+            this.pnlEsqueleto.MouseEnter += new System.EventHandler(this.onMouseEnter);
+            this.pnlEsqueleto.MouseLeave += new System.EventHandler(this.onMouseExit);
+            // 
+            // lblQtdEsqueleto
+            // 
+            this.lblQtdEsqueleto.AutoSize = true;
+            this.lblQtdEsqueleto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdEsqueleto.Location = new System.Drawing.Point(64, 9);
+            this.lblQtdEsqueleto.Name = "lblQtdEsqueleto";
+            this.lblQtdEsqueleto.Size = new System.Drawing.Size(18, 20);
+            this.lblQtdEsqueleto.TabIndex = 33;
+            this.lblQtdEsqueleto.Text = "0";
+            this.lblQtdEsqueleto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlGarrafa
+            // 
+            this.pnlGarrafa.BackColor = System.Drawing.Color.Transparent;
+            this.pnlGarrafa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlGarrafa.BackgroundImage")));
+            this.pnlGarrafa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlGarrafa.Controls.Add(this.lblQtdGarrafa);
+            this.pnlGarrafa.Location = new System.Drawing.Point(10, 87);
+            this.pnlGarrafa.Name = "pnlGarrafa";
+            this.pnlGarrafa.Size = new System.Drawing.Size(94, 142);
+            this.pnlGarrafa.TabIndex = 40;
+            this.pnlGarrafa.Click += new System.EventHandler(this.onClick);
+            this.pnlGarrafa.MouseEnter += new System.EventHandler(this.onMouseEnter);
+            this.pnlGarrafa.MouseLeave += new System.EventHandler(this.onMouseExit);
+            // 
+            // lblQtdGarrafa
+            // 
+            this.lblQtdGarrafa.AutoSize = true;
+            this.lblQtdGarrafa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdGarrafa.Location = new System.Drawing.Point(64, 9);
+            this.lblQtdGarrafa.Name = "lblQtdGarrafa";
+            this.lblQtdGarrafa.Size = new System.Drawing.Size(18, 20);
+            this.lblQtdGarrafa.TabIndex = 34;
+            this.lblQtdGarrafa.Text = "0";
+            this.lblQtdGarrafa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlPistola
+            // 
+            this.pnlPistola.BackColor = System.Drawing.Color.Transparent;
+            this.pnlPistola.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlPistola.BackgroundImage")));
+            this.pnlPistola.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlPistola.Controls.Add(this.lblQtdPistola);
+            this.pnlPistola.Location = new System.Drawing.Point(392, 26);
+            this.pnlPistola.Name = "pnlPistola";
+            this.pnlPistola.Size = new System.Drawing.Size(94, 147);
+            this.pnlPistola.TabIndex = 41;
+            this.pnlPistola.Click += new System.EventHandler(this.onClick);
+            this.pnlPistola.MouseEnter += new System.EventHandler(this.onMouseEnter);
+            this.pnlPistola.MouseLeave += new System.EventHandler(this.onMouseExit);
+            // 
+            // lblQtdPistola
+            // 
+            this.lblQtdPistola.AutoSize = true;
+            this.lblQtdPistola.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdPistola.Location = new System.Drawing.Point(64, 9);
+            this.lblQtdPistola.Name = "lblQtdPistola";
+            this.lblQtdPistola.Size = new System.Drawing.Size(18, 20);
+            this.lblQtdPistola.TabIndex = 35;
+            this.lblQtdPistola.Text = "0";
+            this.lblQtdPistola.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlFaca
+            // 
+            this.pnlFaca.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFaca.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlFaca.BackgroundImage")));
+            this.pnlFaca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlFaca.Controls.Add(this.lblQtdFaca);
+            this.pnlFaca.Location = new System.Drawing.Point(155, 87);
+            this.pnlFaca.Name = "pnlFaca";
+            this.pnlFaca.Size = new System.Drawing.Size(94, 142);
+            this.pnlFaca.TabIndex = 38;
+            this.pnlFaca.Click += new System.EventHandler(this.onClick);
+            this.pnlFaca.MouseEnter += new System.EventHandler(this.onMouseEnter);
+            this.pnlFaca.MouseLeave += new System.EventHandler(this.onMouseExit);
+            // 
+            // lblQtdFaca
+            // 
+            this.lblQtdFaca.AutoSize = true;
+            this.lblQtdFaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdFaca.Location = new System.Drawing.Point(64, 9);
+            this.lblQtdFaca.Name = "lblQtdFaca";
+            this.lblQtdFaca.Size = new System.Drawing.Size(18, 20);
+            this.lblQtdFaca.TabIndex = 32;
+            this.lblQtdFaca.Text = "0";
+            this.lblQtdFaca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlMao
+            // 
+            this.pnlMao.BackColor = System.Drawing.Color.Transparent;
+            this.pnlMao.Controls.Add(this.pnlTricornio);
+            this.pnlMao.Controls.Add(this.pnlFaca);
+            this.pnlMao.Controls.Add(this.pnlGarrafa);
+            this.pnlMao.Controls.Add(this.pnlChave);
+            this.pnlMao.Controls.Add(this.pnlEsqueleto);
+            this.pnlMao.Controls.Add(this.pnlPistola);
+            this.pnlMao.Location = new System.Drawing.Point(395, 540);
+            this.pnlMao.Name = "pnlMao";
+            this.pnlMao.Size = new System.Drawing.Size(499, 236);
+            this.pnlMao.TabIndex = 48;
+            // 
+            // tabuleiro
+            // 
+            this.tabuleiro.BackColor = System.Drawing.Color.Transparent;
+            this.tabuleiro.Location = new System.Drawing.Point(395, 26);
+            this.tabuleiro.Name = "tabuleiro";
+            this.tabuleiro.Size = new System.Drawing.Size(480, 480);
+            this.tabuleiro.TabIndex = 47;
+            // 
             // PartidaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::Teste.Properties.Resources.fundo_de_tudo;
+            this.Controls.Add(this.pnlMao);
+            this.Controls.Add(this.tabuleiro);
             this.Controls.Add(this.grbJogadas);
             this.Controls.Add(this.btnVoltaLobby);
-            this.Controls.Add(this.pnlEstanteCartas);
             this.Controls.Add(this.lblVez);
-            this.Controls.Add(this.tabuleiro);
             this.Controls.Add(this.btn_Historico);
             this.Controls.Add(this.ltb_HistoricoPartida);
             this.Name = "PartidaForm";
             this.Size = new System.Drawing.Size(1289, 784);
+            this.grbJogadas.ResumeLayout(false);
+            this.grbJogadas.PerformLayout();
             this.pnlChave.ResumeLayout(false);
             this.pnlChave.PerformLayout();
-            this.pnlFaca.ResumeLayout(false);
-            this.pnlFaca.PerformLayout();
+            this.pnlTricornio.ResumeLayout(false);
+            this.pnlTricornio.PerformLayout();
             this.pnlEsqueleto.ResumeLayout(false);
             this.pnlEsqueleto.PerformLayout();
             this.pnlGarrafa.ResumeLayout(false);
             this.pnlGarrafa.PerformLayout();
             this.pnlPistola.ResumeLayout(false);
             this.pnlPistola.PerformLayout();
-            this.pnlTricornio.ResumeLayout(false);
-            this.pnlTricornio.PerformLayout();
-            this.pnlEstanteCartas.ResumeLayout(false);
-            this.grbJogadas.ResumeLayout(false);
-            this.grbJogadas.PerformLayout();
+            this.pnlFaca.ResumeLayout(false);
+            this.pnlFaca.PerformLayout();
+            this.pnlMao.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,7 +406,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblVez;
-        private Tabuleiro tabuleiro;
         private System.Windows.Forms.Timer tmrVerificarVez;
         private System.Windows.Forms.Label lblQtdTricornio;
         private System.Windows.Forms.Label lblQtdChave;
@@ -420,7 +419,6 @@
         private System.Windows.Forms.Panel pnlGarrafa;
         private System.Windows.Forms.Panel pnlPistola;
         private System.Windows.Forms.Panel pnlTricornio;
-        private System.Windows.Forms.Panel pnlEstanteCartas;
         private System.Windows.Forms.Button btnVoltaLobby;
         private System.Windows.Forms.ComboBox cbo_Jogar;
         private System.Windows.Forms.Label lbl_Jogo;
@@ -431,5 +429,7 @@
         private System.Windows.Forms.Label lblPosicaoPirata;
         private System.Windows.Forms.Button btnJogadaAutomatica;
         private System.Windows.Forms.GroupBox grbJogadas;
+        private Tabuleiro tabuleiro;
+        private System.Windows.Forms.Panel pnlMao;
     }
 }
