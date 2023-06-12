@@ -37,7 +37,7 @@
             // 
             this.picBotaoJogar.BackColor = System.Drawing.Color.Transparent;
             this.picBotaoJogar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBotaoJogar.Location = new System.Drawing.Point(366, 406);
+            this.picBotaoJogar.Location = new System.Drawing.Point(371, 535);
             this.picBotaoJogar.Name = "picBotaoJogar";
             this.picBotaoJogar.Size = new System.Drawing.Size(307, 53);
             this.picBotaoJogar.TabIndex = 0;
@@ -53,6 +53,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.picBotaoJogar);
+            this.DoubleBuffered = true;
             this.Name = "TelaJogarInicio";
             this.Size = new System.Drawing.Size(1019, 639);
             this.Load += new System.EventHandler(this.TelaJogarInicio_Load);
