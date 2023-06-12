@@ -65,6 +65,7 @@
             this.dgvListarJogadores.ReadOnly = true;
             this.dgvListarJogadores.Size = new System.Drawing.Size(345, 248);
             this.dgvListarJogadores.TabIndex = 6;
+            this.dgvListarJogadores.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListarJogadores_CellFormatting);
             // 
             // ID
             // 
