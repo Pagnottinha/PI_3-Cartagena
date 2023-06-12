@@ -16,6 +16,7 @@ namespace Teste
     {
         public TiposHistorico tipo { get; }
         public int idJogador { get; }
+        public Jogador Jogador { get; private set; }
         public int numJogada { get; }
         public Cartas carta { get; }
         public int origem { get; }
@@ -47,24 +48,54 @@ namespace Teste
             this.destino = destino;
         }
 
+        public void pegarJogador(List<Jogador> jogadores)
+        {
+            foreach (Jogador jogador in jogadores)
+            {
+                if (jogador.id == idJogador)
+                {
+                    Jogador = jogador;
+                    return;
+                }
+            }
+        }
+
         public override string ToString()
         {
-            string retorno;
+            string retorno = "";
 
-            if (tipo == TiposHistorico.Mover)
+            if (Jogador == null)
             {
-                retorno = $"{idJogador} ({numJogada}) -> {carta} | {origem} -> {destino}";
-            }
-            else if (tipo == TiposHistorico.Voltar)
-            {
-                retorno = $"{idJogador} ({numJogada}) voltou | {origem} -> {destino}";
+                switch(tipo)
+                {
+                    case TiposHistorico.Pular:
+                        retorno = $"{idJogador} ({numJogada}) pulou";
+                        break;
+                    case TiposHistorico.Mover:
+                        retorno = $"{idJogador} ({numJogada}) → {carta} | {origem} → {destino}";
+                        break;
+                    case TiposHistorico.Voltar:
+                        retorno = $"{idJogador} ({numJogada}) voltou | {origem} → {destino}";
+                        break;
+                }
             }
             else
             {
-                retorno = $"{idJogador} ({numJogada}) pulou";
+                switch (tipo)
+                {
+                    case TiposHistorico.Pular:
+                        retorno = $"{Jogador.nome} - {Jogador.id} ({numJogada}) pulou";
+                        break;
+                    case TiposHistorico.Mover:
+                        retorno = $"{Jogador.nome} - {Jogador.id} ({numJogada}) → {carta} | {origem} → {destino}";
+                        break;
+                    case TiposHistorico.Voltar:
+                        retorno = $"{Jogador.nome} - {Jogador.id} ({numJogada}) voltou | {origem} → {destino}";
+                        break;
+                }
             }
 
-            return retorno;
+            return retorno.ToUpper();
         }
     }
 }

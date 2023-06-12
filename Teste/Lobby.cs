@@ -17,13 +17,15 @@ namespace Teste
         {
             InitializeComponent();
             this.partida = partida;
+            dgvListarJogadores.ClearSelection();
             dgvListarJogadores.AutoGenerateColumns = false;
+            dgvListarJogadores.DataSource = partida.Jogadores.ToList();
         }
 
         private void btnListarJogadores_Click(object sender, EventArgs e)
         {
             partida.listarJogadores();
-            dgvListarJogadores.DataSource = partida.Jogadores;
+            dgvListarJogadores.DataSource = partida.Jogadores.ToList();
         }
 
         private void btnIniciarPartida_Click(object sender, EventArgs e)

@@ -28,15 +28,6 @@ namespace Teste
 
             partida.listarTabuleiro(pnlTabuleiro);
 
-            /*
-            for (int i = 1; i < partida.tabuleiro.Count - 1; i++)
-            {
-                Casa casa = partida.tabuleiro[i];
-                this.Controls.Add(casa.panel);
-                casa.panel.BringToFront();
-            }
-            */
-
             iniciarPeoes();
 
             pnlTabuleiro.SendToBack();
@@ -54,7 +45,7 @@ namespace Teste
 
             foreach(Peao peao in partida.tabuleiro[0].peoes)
             {
-                pnlTabuleiro.Controls.Add(peao.panel);
+                this.Controls.Add(peao.panel);
 
                 int distanciaHeight = (pnlInicio.Height - peao.panel.Height * partida.Jogadores.Count) / (partida.Jogadores.Count + 1);
                 peao.panel.Top = pnlInicio.Top + distanciaHeight * linha + peao.panel.Height * (linha - 1);
@@ -87,11 +78,11 @@ namespace Teste
 
                     if (casa.linha % 2 == 0)
                     {
-                        peao.panel.Left = casa.panel.Left - peao.panel.Width - 5;
+                        peao.panel.Left = casa.panel.Left - peao.panel.Width + 15;
                     }
                     else
                     {
-                        peao.panel.Left = casa.panel.Left + casa.panel.Width + 5;
+                        peao.panel.Left = casa.panel.Left + casa.panel.Width - 15;
                     }
 
                     peao.panel.Top = casa.panel.Top + peao.panel.Height * j;

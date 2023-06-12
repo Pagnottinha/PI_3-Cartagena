@@ -56,9 +56,14 @@ namespace Teste
 
         public void listarJogadores()
         {
+            if (this.Jogadores == null)
+            {
+                this.Jogadores = new List<Jogador>();
+            }
+
             JogoService service = new JogoService();
 
-            (List<Jogador> Jogadores, string msgErro) = service.pegarJogadores(this.id);
+            (List<Jogador> Jogadores, string msgErro) = service.pegarJogadores(this.id, this.Jogadores.Count);
 
             if (msgErro != null)
             {
@@ -66,7 +71,10 @@ namespace Teste
                 return;
             }
 
-            this.Jogadores = Jogadores;
+            foreach(Jogador jogador in Jogadores)
+            {
+                this.Jogadores.Add(jogador);
+            }
         }
 
         public bool comecarPartida()
@@ -91,14 +99,7 @@ namespace Teste
             else
             {
                 this.vez = new Vez(status, idJogadorVez, 1);
-            }
-            
-            for (int i = 0; i < Jogadores.Count; i++)
-            {
-                if (Jogadores[i].id == jogador.id)
-                {
-                    Jogadores[i] = jogador;
-                }
+                vez.pegarJogador(Jogadores);
             }
 
             this.historicos = new List<Historico>();
@@ -123,6 +124,10 @@ namespace Teste
 
         public void pegarHistorico()
         {
+            if(historicos == null)
+            {
+                this.historicos = new List<Historico>();
+            }
 
             (List<Historico> novoHistorico, string msgErro) = new JogoService().pegarHistorico(this.id, this.historicos.Count);
 
@@ -134,20 +139,30 @@ namespace Teste
 
             foreach(Historico historico in novoHistorico)
             {
+                historico.pegarJogador(Jogadores);
 
-                if (historico.tipo != TiposHistorico.Pular && historico.idJogador != jogador.id)
+                if (historico.tipo != TiposHistorico.Pular && historico.Jogador != jogador)
                 {
-                    Jogador jogadorHistorico = Jogadores.Find(jogador => jogador.id == historico.idJogador);
-
-                    if (jogadorHistorico == null)
-                        throw new Exception("Ocorreu um erro ao tentar pegar o jogador através do histórico.");
-
-                    Peao peaoMover = tabuleiro[historico.origem].peoes.Find(peao => peao.jogador == jogadorHistorico);
+                    Peao peaoMover = tabuleiro[historico.origem].peoes.Find(peao => peao.jogador == historico.Jogador);
 
                     peaoMover.posicao = historico.destino;
 
-                    tabuleiro[historico.origem].peoes.Remove(peaoMover);
+                    int peoesDestino = tabuleiro[historico.destino].peoes.Count;
 
+                    if (peoesDestino == 0)
+                    {
+                        historico.Jogador.qntCartas--;
+                    }
+                    else if (peoesDestino == 1)
+                    {
+                        historico.Jogador.qntCartas++;
+                    }
+                    else if (peoesDestino == 2)
+                    {
+                        historico.Jogador.qntCartas += 2;
+                    }
+
+                    tabuleiro[historico.origem].peoes.Remove(peaoMover);
                     tabuleiro[historico.destino].peoes.Add(peaoMover);
                 }
 
@@ -171,18 +186,8 @@ namespace Teste
             }
 
             this.vez = retornoVez;
-        }
 
-        public string stringVez()
-        {
-            string vez = this.vez.ToString();
-            string strIdJogadorVez = vez.Substring(0, vez.IndexOf(" "));
-
-            int idJogadorVez = Convert.ToInt32(strIdJogadorVez);
-
-            Jogador jogador = Jogadores.Find(j => j.id == idJogadorVez);
-
-            return vez.Replace(strIdJogadorVez, jogador.ToString());
+            vez.pegarJogador(Jogadores);
         }
     }
 }

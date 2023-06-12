@@ -54,6 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Casa.cs" />
+    <Compile Include="Estrategia.cs" />
+    <Compile Include="EstrategiaDefensiva .cs" />
+    <Compile Include="EstrategiaAgressiva.cs" />
+    <Compile Include="EstrategiaInicial.cs" />
+    <Compile Include="EstrategiaInicial2.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,10 +169,24 @@
     <None Include="sprites\Tricornio.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="sprites\fundo.png" />
+    <None Include="sprites\partidas.png" />
+    <None Include="sprites\Entrar em uma partida.png" />
+    <None Include="sprites\criarPartida.png" />
+    <None Include="sprites\painel-jogadores.png" />
+    <None Include="sprites\bg-lobby.png" />
     <Content Include="sprites\Botao.png" />
     <Content Include="sprites\BotaoHover.png" />
     <Content Include="sprites\BotaoJogar.png" />
     <Content Include="sprites\BotaoJogarHover.png" />
+    <None Include="sprites\Buttons\btn-jogadores.png" />
+    <None Include="sprites\Buttons\btn-partida.png" />
+    <None Include="sprites\Buttons\btn-assistirPartida.png" />
+    <None Include="sprites\Buttons\btn-criarPartida.png" />
+    <None Include="sprites\Buttons\btn-entrar.png" />
+    <None Include="sprites\Buttons\btn-listar.png" />
+    <None Include="sprites\Buttons\btnObterHistorico.png" />
+    <None Include="sprites\Buttons\btnVoltarProLobby.png" />
     <Content Include="sprites\Cartas\CartaChave.png" />
     <Content Include="sprites\Cartas\CartaChaveSelecionada.png" />
     <Content Include="sprites\Cartas\CartaEsqueleto.png" />
@@ -181,6 +200,7 @@
     <Content Include="sprites\Cartas\CartasCartagena.png" />
     <Content Include="sprites\Cartas\CartaTricornio.png" />
     <Content Include="sprites\Cartas\CartaTricornioSelecionada.png" />
+    <None Include="sprites\fundo_de_tudo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

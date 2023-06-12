@@ -27,32 +27,32 @@ namespace Teste
         public Color cor { get; private set; }
 
         public Dictionary<Cartas, int> cartas { get; private set; }
+        public int qntCartas { get; set; }
 
         public List<Peao> peoes { get; private set; }
 
-        public Jogador(int id, string nome, Color cor)
+        public Jogador(int id, string nome, Color cor) : this(nome)
         {
             this.id = id;
-            this.nome = nome;
             this.cor = cor;
         }
 
         public Jogador(string nome)
         {
             this.nome = nome;
+            qntCartas = 6;
         }
 
-        public Jogador(int id, string senha, string nome, Color cor)
+        public Jogador(int id, string senha, string nome, Color cor) : this(id, nome, cor)
         {
-            this.id = id;
             this.senha = senha;
-            this.nome = nome;
-            this.cor = cor;
         }
 
         public bool entrarPartida(Partida partida, string senha)
         {
             JogoService service = new JogoService();
+
+            partida.listarJogadores();
 
             (Jogador retorno, string msgErro) = service.entrarPartida(partida.id, this.nome, senha);
 
@@ -68,6 +68,8 @@ namespace Teste
 
             partida.jogador = this;
             partida.senha = senha;
+
+            partida.Jogadores.Add(this);
             return true;
         }
 
@@ -101,14 +103,18 @@ namespace Teste
         // Pular vez
         public void Jogar()
         {
-            Jogo.Jogar(this.id, this.senha);
+            string retorno = Jogo.Jogar(this.id, this.senha);
+
+            if (retorno.StartsWith("ERRO"))
+            {
+                MessageBox.Show(retorno);
+                return;
+            }
         }
 
         // Mover para frente
         public void Jogar(int posicao, string carta, Dictionary<int, Casa> tabuleiro)
         {
-            consultarMao();
-
             string retorno = Jogo.Jogar(this.id, this.senha, posicao, carta);
 
             if (retorno.StartsWith("ERRO"))
@@ -143,21 +149,10 @@ namespace Teste
                     return;
             }
 
-            if (cartas[cartaEscolhida] == 0)
-            {
-                MessageBox.Show("Não tem a carta!");
-                return;
-            }
-
             cartas[cartaEscolhida]--;
+            qntCartas--;
 
-            Peao peaoMover = tabuleiro[posicao].peoes.Find(peao => peao.jogador == this);
-
-            if (peaoMover == null)
-            {
-                MessageBox.Show("Não tem peão seu na casa");
-                return;
-            }
+            Peao peaoMover = peoes.Find(peao => peao.posicao == posicao);
 
             Casa casa = null;
 
@@ -175,7 +170,7 @@ namespace Teste
                 casa = tabuleiro[tabuleiro.Count - 1];
                 peaoMover.posicao = tabuleiro.Count - 1;
             }
-
+         
             tabuleiro[posicao].peoes.Remove(peaoMover);
             casa.peoes.Add(peaoMover);
         }
@@ -191,13 +186,7 @@ namespace Teste
                 return;
             }
 
-            Peao peaoMover = tabuleiro[posicao].peoes.Find(peao => peao.jogador == this);
-
-            if (peaoMover == null)
-            {
-                MessageBox.Show("Não tem peão seu na casa");
-                return;
-            }
+            Peao peaoMover = peoes.Find(peao => peao.posicao == posicao);
 
             Casa casa = null;
 
@@ -207,13 +196,17 @@ namespace Teste
                 {
                     casa = tabuleiro[i];
                     peaoMover.posicao = i;
-                }
-            }
 
-            if (casa == null)
-            {
-                MessageBox.Show("Não tem para onde o peão voltar");
-                return;
+                    switch(casa.peoes.Count)
+                    {
+                        case 1:
+                            qntCartas++;
+                            break;
+                        case 2:
+                            qntCartas += 2;
+                            break;
+                    }
+                }
             }
 
             tabuleiro[posicao].peoes.Remove(peaoMover);
