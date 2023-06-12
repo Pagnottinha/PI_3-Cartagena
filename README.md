@@ -20,7 +20,7 @@
 
 <figure>
     <img src="https://tablegames.com.br/wp-content/uploads/2017/10/20171128_230947.jpg"
-         alt="Tabuleiro Cartagena" height=288 width=512 allign="middle">
+         alt="Tabuleiro Cartagena" height=288 width=512 align="middle">
     <figcaption> Tabuleiro Cartagena </figcaption>
 </figure>
 
