@@ -67,6 +67,7 @@ namespace Teste
                 {
                     BackColor = Color.FromArgb(80, Color.Black),
                     ForeColor = jogador.cor,
+                    MaximumSize = new Size(tabuleiro.Left, 200),
                 };
 
                 panelJogadores.Add(jogador, panel);
@@ -75,17 +76,22 @@ namespace Teste
                 {
                     Text = jogador.nome,
                     ForeColor = Color.White,
-                    Font = lblHistorico.Font,
-                    BackColor = Color.Transparent
+                    Font = new Font(lblHistorico.Font.FontFamily, 14, FontStyle.Bold),
+                    BackColor = Color.Transparent,
+                    AutoSize = true,
                 };
 
                 Label lblCartas = new Label
                 {
                     Text = $"{jogador.qntCartas} Cartas",
                     ForeColor = Color.White,
-                    Font = lblHistorico.Font,
+                    Font = new Font(lblHistorico.Font.FontFamily, 12),
                     BackColor = Color.Transparent,
+                    AutoSize = true,
                 };
+
+                panel.Controls.Add(lblNome);
+                panel.Controls.Add(lblCartas);
 
                 if (lblNome.Width > lblCartas.Width)
                 {
@@ -100,15 +106,13 @@ namespace Teste
 
                 panel.Region = criarBorda(panel.Size, 35);
 
-                panel.Controls.Add(lblNome);
-                panel.Controls.Add(lblCartas);
                 Controls.Add(panel);
 
                 lblNome.AutoSize = true;
                 lblCartas.AutoSize = true;
 
                 panel.Top = (panel.Height + 25) * (panelJogadores.Count - 1) + tabuleiro.Top;
-                panel.Left = 60;
+                panel.Left = (tabuleiro.Left - panel.Width) / 2;
 
                 int espaco = (panel.Height - lblNome.Height - lblCartas.Height) / 3;
 

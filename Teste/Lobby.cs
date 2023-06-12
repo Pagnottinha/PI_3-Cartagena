@@ -45,7 +45,7 @@ namespace Teste
             {
                 if (e.Value == null) { return; }
 
-                e.CellStyle.ForeColor = (Color)e.Value;
+                e.CellStyle.ForeColor = (Color) e.Value;
             }
         }
     }
