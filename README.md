@@ -19,8 +19,8 @@
 
 <figure>
     <img src="https://tablegames.com.br/wp-content/uploads/2017/10/20171128_230947.jpg"
-         alt="Tabuleiro Cartagena">
-    <figcaption>An elephant at sunset</figcaption>
+         alt="Tabuleiro Cartagena" height=144 width=256>
+    <figcaption> Tabuleiro Cartagena </figcaption>
 </figure>
 
 <h4> Como jogar </h4>
