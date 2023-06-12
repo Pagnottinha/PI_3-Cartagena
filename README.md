@@ -1,7 +1,7 @@
 # Projeto Integrador 3 - Cartagena
 
 ### Grupo: Bello
-### Participantes:
+### Participantes: Erick Reimberg, Felipe Macena, Gustavo Pagnotta, Gustavo Silva e Murilo Oliveira
 
 <h2> O que é o projeto? </h2>
 
