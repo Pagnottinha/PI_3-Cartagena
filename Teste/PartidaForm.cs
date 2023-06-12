@@ -327,6 +327,7 @@ namespace Teste
         private void tmrVerificarVez_Tick(object sender, EventArgs e)
         {
             partida.verificarVez();
+            atualizarLabels();
 
             if (partida.status == Status.Encerrada)
             {
