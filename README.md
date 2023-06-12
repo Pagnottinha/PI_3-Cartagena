@@ -65,5 +65,5 @@
 
 <h2> Considerações Finais </h2>
 
-<p> Contudo, concluímos que é importante destacar o aprendizado de programação orientada a objetos e a utilização do Windows Forms ao longo do semestre para a implementação do projeto. As estratégias que adotamos praticam uma abordagem equilibrada, alternando entre a busca por recursos (cartas) e a movimentação eficiente dos piratas em direção ao objetivo final. Com isso finalizamos este artigo, foi uma experiência única e gratificante em poder desenvolver este projeto com todos do grupo, discutindo diversas estratégias de como vencer o jogo. Agradecimento especial ao professor orientador e coordenador do projeto Thiago Claro.
+<p> Contudo, concluímos que é importante destacar o aprendizado de programação orientada a objetos e a utilização do Windows Forms ao longo do semestre para a implementação do projeto. As estratégias que adotamos praticam uma abordagem equilibrada, alternando entre a busca por recursos (cartas) e a movimentação eficiente dos piratas em direção ao objetivo final. Com isso finalizamos este artigo, foi uma experiência única e gratificante em poder desenvolver este projeto com todos do grupo, discutindo diversas estratégias de como vencer o jogo. Agradecimento especial ao orientador do projeto e coordenador do curso, Thiago Claro.
  </p>
