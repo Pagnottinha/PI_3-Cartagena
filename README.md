@@ -39,7 +39,7 @@
 <h2> Mas como foi feita a nossa estratégia? </h2>
 <p> Para começar, durante todo o semestre tivemos aulas de POO (Programção Orientada a Objeto) e queríamos usar os conceitos de POO no nosso projeto. Portanto, para início criamos uma classe chamada Estratégia, onde ela seria a base para a nossa estratégia e além disso ela é abstract, ou seja, não pode ser estanciada. Fizemos isso com o objetivo de essa classe ser pai das nossas outras classes que teriam efetivamente a estratégia que queríamos que fosse executada. Essa classe contém o tabuleiro, o jogador e em qual jogada nós estamos, além de contar com métodos que iriam ser usados na implementação das nossas outras classe. </p>
 
-<p> Tendo a classe Estratégia criada, pensamos em como poderíamos diversificar a nossa estratégia. Pensamos em seguir em duas linhas de raciocínio, tendo uma estratégia defensiva e um estratégia ofensiva, além de ter uma estratégia apenas para o início do jogo.</p>
+<p> Tendo a classe Estratégia criada, pensamos em como poderíamos diversificar a nossa estratégia. Pensamos em seguir em duas linhas de raciocínio, tendo uma estratégia defensiva e um estratégia ofensiva, além de ter uma estratégia apenas para o início do jogo, criando uma classe para cada uma das estratégias, herdando sempre da classe Estratégia inicialmente criada.</p>
 
 <h3> Estratégia Inicial </h3>
 
@@ -55,6 +55,9 @@
 <p>Em resumo, nossa estratégia defensiva se concentra exclusivamente em voltar para comprar cartas, sem visar outros objetivos além disso. Essa abordagem nos permite manter nossos piratas em posições mais seguras, acumular recursos e adaptar-nos às mudanças no jogo, para que no futuro, possamos avançar com uma postura ofensiva, visando o avanço dos piratas. 
 É importante ressaltar que o nosso sistema troca de estratégia, quando validamos que todos os piratas conseguem chegar no barco e quando a compra de cartas não é mais possível</p>
 
+<h3> Estratégia Ofensiva </h3>
+<p> Enfim chegamos na estratégia ofensiva, que foi desenvolvida no seguinte pensamento: como poderíamos vencer o jogo da forma mais eficiente?  Pensamos em diversas maneiras, e a mais interessante delas foi a de acumular uma quantidade suficiente de cartas para que todos os nossos piratas cheguem ao barco. Ou seja, a medida que cada rodada avança, nós ordenamos os nossos peões de maneira crescente, o que quer dizer que o peão mais longe do barco fica na primeira posição do nosso vetor. Com esse primeiro peão em destaque, nós tentamos jogá-lo o mais longe possível, ficando o mais próximo do barco ou até mesmo dentro do barco. Caso nós não tenhamos mais cartas para serem jogadas e nem todos os peões chegado no barco, nós voltamos para a estratégia defensiva.</p>
 
+<p> Essa foi a nossa estratégia. Focamos em deixá-la o mais coesa e objetiva possível, para que pudéssemos aumentar as nossas chances de vencer a competição ao final do semestre, tendo a melhor estratégia em prática. </p>
 
 
