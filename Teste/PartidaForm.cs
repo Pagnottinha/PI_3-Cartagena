@@ -27,6 +27,7 @@ namespace Teste
             btnVoltaLobby.Show();
             partida.listarJogadores();
             tabuleiro.mostrarCasas(partida);
+            grbJogadas.Hide();
             
             //ltb_HistoricoPartida.BackColor = Color.FromArgb(80, Color.Black);
 
