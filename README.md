@@ -50,7 +50,7 @@
 <h3> Estratégia Defensiva </h3>
 
 <p> A estratégia defensiva escolhida pelo nosso sistema autônomo é extremamente simples, focamos em aproveitar ao máximo as oportunidades de compra de cartas. </p>
-<p> Para execução, nossos piratas executam a ação de voltar sempre que possível, preferencialmente para aquelas casas que dão oportunidade para comprarmos 2 cartas. Caso não seja possível voltarmos para comprar 2 cartas em apenas uma jogada, verificamos se podemos voltar 2 peões,  e se conseguimos colocar o máximo de peões na mesma casa, para comprar o máximo de cartas possíveis em apenas duas jogadas </p>
+<p> Para isso, nossos piratas executam a ação de voltar sempre que possível, preferencialmente para aquelas casas que dão oportunidade para comprarmos 2 cartas. Caso não seja possível voltarmos para comprar 2 cartas em apenas uma jogada, verificamos se podemos voltar 2 peões,  e se conseguimos colocar o máximo de peões na mesma casa, para comprar o máximo de cartas possíveis em apenas duas jogadas </p>
 <p>Esta escolha mais defensiva nos permite manter uma postura conservadora e minimizar os riscos de escassez de cartas durante o jogo, permitindo que acumulemos a maior quantidade de cartas para vencermos o jogo</p>
 <p>Em resumo, nossa estratégia defensiva se concentra exclusivamente em voltar para comprar cartas, sem visar outros objetivos além disso. Essa abordagem nos permite manter nossos piratas em posições mais seguras, acumular recursos e adaptar-nos às mudanças no jogo, para que no futuro, possamos avançar com uma postura ofensiva, visando o avanço dos piratas. 
 É importante ressaltar que o nosso sistema troca de estratégia, quando validamos que todos os piratas conseguem chegar no barco e quando a compra de cartas não é mais possível</p>
