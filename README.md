@@ -16,7 +16,7 @@
 <h4> Preparação </h4>
 
 <p> O jogo é composto com 2 até 4 jogadores, cada um com sua respectiva cor (amarelo, azul, vermelho e verde). Existem duas versões, a Tortuga e a Jamaica. A versão Tortuga tem como base o raciocínio, pois os jogadores deixam suas cartas à mostra na mesa, sabendo quais são os próximos passos de seus adversários. Porém, a versão que estamos usando é a Jamaica, que tem como base a sorte. Cada jogador recebe 6 cartas aleatórias, sem que o adversário saiba, podendo ser elas um esqueleto, um tricórnio, uma faca, uma pistola, uma chave ou uma garrafa. O tabuleiro é gerado aleatoriamente, com um total de 38 casas (a primeira sem símbolo (prisão), pois é o ponto inicial e a última sendo o barco ou melhor dizendo, a linha de chegada) tendo em cada casa um desses 6 símbolos. A cada 6 casas obrigatoriamente todos os símbolos devem ter aparecido. </p>
-
+<br>
 <div align="center">
     <figure>
         <img src="https://tablegames.com.br/wp-content/uploads/2017/10/20171128_230947.jpg"
@@ -24,7 +24,7 @@
         <figcaption><br> Tabuleiro Cartagena </figcaption>
     </figure>
 </div>
-
+<br>
 
 <h4> Como jogar </h4>
 
@@ -58,6 +58,15 @@
 <p> Como estratégia inicial, primeiro verificamos se conseguimos comprar alguma carta, se conseguimos, voltamos para comprar a quantidade de cartas que nós podemos. Caso o tabuleiro esteja vazio (ou seja, nós fomos sorteados como o primeiro jogador a jogar) ou não conseguimos voltar para comprar cartas ultizamos a seguinte estratégia que visualizamos em diversas partidas no <a href="http://youplay.it/">You Play It</a>, lá contém diversos jogos de tabuleiro que podem ser jogados contra outras pessoas ao redor do mundo, incluindo o Cartagena.</p>
 <p> Lá vimos que em diversas partidas a estratégia inicial era a mesma, verificar se temos duas cartas de algum símbolo. Caso tivéssemos, nós usamos as duas primeiras jodadas para mover os dois peões para os símbolos correspondentes. Na terceira jogada, verificamos se o peão que ficou mais para trás consegue ir para frente e ficar na posição ao lado do peão que jogamos, tanto em uma posição à frente ou uma posição atrás como no exemplo a seguir: Temos duas cartas com o símbolo de tricórnio. Eles estão distribuidos no tabuleiro respectivamente nas posições 5 e 10. Jogamos o primeiro peão para a posição 5 e usamos a segunda jogada para mover outro peão do início para a posição 10. Tendo isso, verificamos os símbolos que estão ao lado do peão que esta na casa de número 10. Se tivermos alguma das cartas e pudermos jogar (não tenha nenhum peão nas casas ao lado), jogamos o símbolo que temos, a prioridade sempre vai ser jogar o peão mais longe, portanto tentamos jogar ele a frente do peão na casa 10.</p>
 <p> Caso não seja possível atingir nenhuma dessas possibilidades, jogamos o peão da casa 5 para a posição mais longe possível. Essa estratégia acaba quando todos os peões saiem da posição inicial, onde iniciamos a estratégia defensiva.</p>
+<br>
+<div align="center">
+    <figure>
+        <img src="Prints Cartagena/inicioJogoCartagena.png"
+             alt="Início da nossa estratégia" height=288 width=512>
+        <figcaption><br> Início da nossa estratégia </figcaption>
+    </figure>
+</div>
+<br>
 
 <h3> Estratégia Defensiva </h3>
 
@@ -66,10 +75,26 @@
 <p>Esta escolha mais defensiva nos permite manter uma postura conservadora e minimizar os riscos de escassez de cartas durante o jogo, permitindo que acumulemos a maior quantidade de cartas para vencermos o jogo</p>
 <p>Em resumo, nossa estratégia defensiva se concentra exclusivamente em voltar para comprar cartas, sem visar outros objetivos além disso. Essa abordagem nos permite manter nossos piratas em posições mais seguras, acumular recursos e adaptar-nos às mudanças no jogo, para que no futuro, possamos avançar com uma postura ofensiva, visando o avanço dos piratas. 
 É importante ressaltar que o nosso sistema troca de estratégia, quando validamos que todos os piratas conseguem chegar no barco e quando a compra de cartas não é mais possível</p>
-
+<br>
+<div align="center">
+    <figure>
+        <img src="Prints Cartagena/andamentoJogoCartagena.png"
+             alt="Jogo em andamento" height=288 width=512>
+        <figcaption><br> Jogo em andamento </figcaption>
+    </figure>
+</div>
+<br>
 <h3> Estratégia Ofensiva </h3>
 <p> Enfim chegamos na estratégia ofensiva, que foi desenvolvida no seguinte pensamento: como poderíamos vencer o jogo da forma mais eficiente?  Pensamos em diversas maneiras, e a mais interessante delas foi a de acumular uma quantidade suficiente de cartas para que todos os nossos piratas cheguem ao barco. Ou seja, a medida que cada rodada avança, nós ordenamos os nossos peões de maneira crescente, o que quer dizer que o peão mais longe do barco fica na primeira posição do nosso vetor. Com esse primeiro peão em destaque, nós tentamos jogá-lo o mais longe possível, ficando o mais próximo do barco ou até mesmo dentro do barco. Caso nós não tenhamos mais cartas para serem jogadas e nem todos os peões chegado no barco, nós voltamos para a estratégia defensiva.</p>
-
+<br>
+<div align="center">
+    <figure>
+        <img src="Prints Cartagena/finalizadoJogoCartagena.png"
+             alt="Jogo finalizado" height=288 width=512>
+        <figcaption><br> Jogo finalizado utilizando essa estratégia </figcaption>
+    </figure>
+</div>
+<br>
 <p> Essa foi a nossa estratégia. Focamos em deixá-la o mais coesa e objetiva possível, para que pudéssemos aumentar as nossas chances de vencer a competição ao final do semestre, tendo a melhor estratégia em prática. </p>
 
 <h2> Considerações Finais </h2>
