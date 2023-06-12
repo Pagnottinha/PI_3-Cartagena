@@ -58,6 +58,61 @@ namespace Teste
             tmrVerificarVez.Enabled = true;
         }
 
+        void labelPartidaFinalizada(Jogador vencedor)
+        {
+            Panel panelFinalizar = new Panel()
+            {
+                BackColor = Color.FromArgb(80, Color.Black),
+                ForeColor = vencedor.cor,
+                MaximumSize = new Size(tabuleiro.Left, 200),
+            };
+
+            Label lblFinalizada = new Label
+            {
+                Text = "Partida Finalizada",
+                ForeColor = Color.White,
+                Font = new Font(lblHistorico.Font.FontFamily, 14, FontStyle.Bold),
+                BackColor = Color.Transparent,
+                AutoSize = true,
+            };
+
+            Label lblVenceu = new Label
+            {
+                Text = $"{vencedor.nome} venceu esta partida",
+                ForeColor = Color.White,
+                Font = new Font(lblHistorico.Font.FontFamily, 14),
+                BackColor = Color.Transparent,
+                AutoSize = true,
+            };
+
+            panelFinalizar.Controls.Add(lblFinalizada);
+            panelFinalizar.Controls.Add (lblVenceu);
+
+            panelFinalizar.Height = lblFinalizada.Height + lblVenceu.Height + 50;
+
+            panelFinalizar.Width = lblVenceu.Width + 20;
+            panelFinalizar.Region = criarBorda(panelFinalizar.Size, 35);
+
+            Controls.Add(panelFinalizar);
+
+            lblFinalizada.AutoSize = true;
+            lblVenceu.AutoSize = true;
+
+            //(panelFinalizar.Height + 25) * (panelJogadores.Count) + tabuleiro.Top
+            panelFinalizar.Top = 550;
+            panelFinalizar.Left = (tabuleiro.Left - panelFinalizar.Width) / 2;
+
+            int espaco = (panelFinalizar.Height - lblFinalizada.Height - lblVenceu.Height) / 3;
+
+            lblFinalizada.Left = (panelFinalizar.Width - lblFinalizada.Width) / 2;
+            lblFinalizada.Top = espaco;
+
+            lblVenceu.Left = (panelFinalizar.Width - lblVenceu.Width) / 2;
+            lblVenceu.Top = lblFinalizada.Top + lblFinalizada.Height + espaco;
+
+            panelFinalizar.BackColor = Color.FromArgb(80, vencedor.cor);
+        }
+
         void iniciarLabels()
         {
             panelJogadores = new Dictionary<Jogador, Panel>();
@@ -133,7 +188,7 @@ namespace Teste
 
                 panel.Controls[1].Text = $"{jogador.qntCartas} Cartas";
 
-                if (partida.vez.Jogador == jogador)
+                if (partida.vez.Jogador == jogador && partida.status != Status.Encerrada)
                 {
                     panel.BackColor = Color.FromArgb(80, jogador.cor);
                 }
@@ -282,6 +337,7 @@ namespace Teste
                 int idVencedor = partida.historicos[partida.historicos.Count - 1].idJogador;
 
                 Jogador vencedor = partida.Jogadores.Find(j => j.id == idVencedor);
+                labelPartidaFinalizada(vencedor);
 
                 tmrVerificarVez.Enabled = false;
                 return;
