@@ -118,8 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="bg_lobby" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\sprites\bg-lobby.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bgLobby" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Backgrounds\bgLobby.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bgPartida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Backgrounds\bgPartida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bgTelaPrincipal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Backgrounds\bgTelaPrincipal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Botao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Buttons\Botao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotaoHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Buttons\BotaoHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotaoJogar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Buttons\BotaoJogar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotaoJogarHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Buttons\BotaoJogarHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnObterHistorico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sprites\Buttons\btnObterHistorico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -146,42 +164,36 @@
     <value>..\sprites\Buttons\btn-partida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Chave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\sprites\Chave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="criarPartida" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\sprites\criarPartida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Entrar_em_uma_partida" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\sprites\Entrar em uma partida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\sprites\simbolos\Chave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Esqueleto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\sprites\Esqueleto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\sprites\simbolos\Esqueleto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Faca" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\sprites\Faca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\sprites\fundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fundo_de_tudo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\sprites\fundo_de_tudo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\sprites\simbolos\Faca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Garrafa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\sprites\Garrafa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\sprites\simbolos\Garrafa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="painel_jogadores" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\sprites\painel-jogadores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="panelCriarPartida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Painel\panelCriarPartida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="partidas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\sprites\partidas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="panelEntrarPartida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Painel\panelEntrarPartida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="panelJogadores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Painel\panelJogadores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="panelPartidas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Painel\panelPartidas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pistola" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\sprites\Pistola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\sprites\simbolos\Pistola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tabuleiro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sprites\Tabuleiro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tricornio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\sprites\Tricornio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\sprites\simbolos\Tricornio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

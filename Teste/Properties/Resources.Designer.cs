@@ -63,9 +63,69 @@ namespace Teste.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bg_lobby {
+        internal static System.Drawing.Bitmap bgLobby {
             get {
-                object obj = ResourceManager.GetObject("bg_lobby", resourceCulture);
+                object obj = ResourceManager.GetObject("bgLobby", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bgPartida {
+            get {
+                object obj = ResourceManager.GetObject("bgPartida", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bgTelaPrincipal {
+            get {
+                object obj = ResourceManager.GetObject("bgTelaPrincipal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Botao {
+            get {
+                object obj = ResourceManager.GetObject("Botao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BotaoHover {
+            get {
+                object obj = ResourceManager.GetObject("BotaoHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BotaoJogar {
+            get {
+                object obj = ResourceManager.GetObject("BotaoJogar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BotaoJogarHover {
+            get {
+                object obj = ResourceManager.GetObject("BotaoJogarHover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,26 +223,6 @@ namespace Teste.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap criarPartida {
-            get {
-                object obj = ResourceManager.GetObject("criarPartida", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Entrar_em_uma_partida {
-            get {
-                object obj = ResourceManager.GetObject("Entrar_em_uma_partida", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Esqueleto {
             get {
                 object obj = ResourceManager.GetObject("Esqueleto", resourceCulture);
@@ -203,26 +243,6 @@ namespace Teste.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fundo {
-            get {
-                object obj = ResourceManager.GetObject("fundo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fundo_de_tudo {
-            get {
-                object obj = ResourceManager.GetObject("fundo_de_tudo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Garrafa {
             get {
                 object obj = ResourceManager.GetObject("Garrafa", resourceCulture);
@@ -233,9 +253,9 @@ namespace Teste.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap painel_jogadores {
+        internal static System.Drawing.Bitmap panelCriarPartida {
             get {
-                object obj = ResourceManager.GetObject("painel_jogadores", resourceCulture);
+                object obj = ResourceManager.GetObject("panelCriarPartida", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +263,29 @@ namespace Teste.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap partidas {
+        internal static System.Drawing.Bitmap panelEntrarPartida {
             get {
-                object obj = ResourceManager.GetObject("partidas", resourceCulture);
+                object obj = ResourceManager.GetObject("panelEntrarPartida", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap panelJogadores {
+            get {
+                object obj = ResourceManager.GetObject("panelJogadores", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap panelPartidas {
+            get {
+                object obj = ResourceManager.GetObject("panelPartidas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

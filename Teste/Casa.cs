@@ -13,12 +13,12 @@ namespace Teste
 
         static Dictionary<Cartas, Image> imagens = new Dictionary<Cartas, Image>()
         {
-            { Cartas.Garrafa, Image.FromFile("../../sprites/Garrafa.png")},
-            { Cartas.Faca, Image.FromFile("../../sprites/Faca.png")},
-            { Cartas.Esqueleto, Image.FromFile("../../sprites/Esqueleto.png")},
-            { Cartas.Pistola, Image.FromFile("../../sprites/Pistola.png")},
-            { Cartas.Chave, Image.FromFile("../../sprites/Chave.png")},
-            { Cartas.Tricornio, Image.FromFile("../../sprites/Tricornio.png")}
+            { Cartas.Garrafa, Image.FromFile("../../sprites/Simbolos/Garrafa.png")},
+            { Cartas.Faca, Image.FromFile("../../sprites/Simbolos/Faca.png")},
+            { Cartas.Esqueleto, Image.FromFile("../../sprites/Simbolos/Esqueleto.png")},
+            { Cartas.Pistola, Image.FromFile("../../sprites/Simbolos/Pistola.png")},
+            { Cartas.Chave, Image.FromFile("../../sprites/Simbolos/Chave.png")},
+            { Cartas.Tricornio, Image.FromFile("../../sprites/Simbolos/Tricornio.png")}
         };
 
         public Panel panel { get; }

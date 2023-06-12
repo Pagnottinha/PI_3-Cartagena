@@ -54,11 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Casa.cs" />
-    <Compile Include="Estrategia.cs" />
-    <Compile Include="EstrategiaDefensiva .cs" />
-    <Compile Include="EstrategiaAgressiva.cs" />
-    <Compile Include="EstrategiaInicial.cs" />
-    <Compile Include="EstrategiaInicial2.cs" />
+    <Compile Include="Estrategia\Estrategia.cs" />
+    <Compile Include="Estrategia\EstrategiaAgressiva.cs" />
+    <Compile Include="Estrategia\EstrategiaDefensiva .cs" />
+    <Compile Include="Estrategia\EstrategiaInicial.cs" />
+    <Compile Include="Estrategia\EstrategiaInicial2.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +84,11 @@
     <Compile Include="Peao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Tabuleiro.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,14 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Tabuleiro.resx">
       <DependentUpon>Tabuleiro.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,34 +152,16 @@
     <None Include="sprites\Tabuleiro.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="sprites\Chave.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sprites\Esqueleto.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sprites\Faca.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sprites\Garrafa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sprites\Pistola.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sprites\Tricornio.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="sprites\fundo.png" />
-    <None Include="sprites\partidas.png" />
-    <None Include="sprites\Entrar em uma partida.png" />
-    <None Include="sprites\criarPartida.png" />
-    <None Include="sprites\painel-jogadores.png" />
-    <None Include="sprites\bg-lobby.png" />
-    <Content Include="sprites\Botao.png" />
-    <Content Include="sprites\BotaoHover.png" />
-    <Content Include="sprites\BotaoJogar.png" />
-    <Content Include="sprites\BotaoJogarHover.png" />
+    <None Include="sprites\simbolos\Tricornio.png" />
+    <None Include="sprites\simbolos\Pistola.png" />
+    <None Include="sprites\simbolos\Garrafa.png" />
+    <None Include="sprites\simbolos\Faca.png" />
+    <None Include="sprites\simbolos\Esqueleto.png" />
+    <None Include="sprites\simbolos\Chave.png" />
+    <None Include="sprites\Painel\panelPartidas.png" />
+    <None Include="sprites\Painel\panelJogadores.png" />
+    <None Include="sprites\Painel\panelEntrarPartida.png" />
+    <None Include="sprites\Painel\panelCriarPartida.png" />
     <None Include="sprites\Buttons\btn-jogadores.png" />
     <None Include="sprites\Buttons\btn-partida.png" />
     <None Include="sprites\Buttons\btn-assistirPartida.png" />
@@ -188,6 +170,13 @@
     <None Include="sprites\Buttons\btn-listar.png" />
     <None Include="sprites\Buttons\btnObterHistorico.png" />
     <None Include="sprites\Buttons\btnVoltarProLobby.png" />
+    <None Include="sprites\Backgrounds\bgLobby.png" />
+    <None Include="sprites\Backgrounds\bgPartida.png" />
+    <None Include="sprites\Backgrounds\bgTelaPrincipal.png" />
+    <None Include="sprites\Buttons\Botao.png" />
+    <None Include="sprites\Buttons\BotaoHover.png" />
+    <None Include="sprites\Buttons\BotaoJogar.png" />
+    <None Include="sprites\Buttons\BotaoJogarHover.png" />
     <Content Include="sprites\Cartas\CartaChave.png" />
     <Content Include="sprites\Cartas\CartaChaveSelecionada.png" />
     <Content Include="sprites\Cartas\CartaEsqueleto.png" />
@@ -201,7 +190,6 @@
     <Content Include="sprites\Cartas\CartasCartagena.png" />
     <Content Include="sprites\Cartas\CartaTricornio.png" />
     <Content Include="sprites\Cartas\CartaTricornioSelecionada.png" />
-    <None Include="sprites\fundo_de_tudo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

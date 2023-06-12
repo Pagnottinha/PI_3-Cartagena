@@ -404,7 +404,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = global::Teste.Properties.Resources.fundo_de_tudo;
+            this.BackgroundImage = global::Teste.Properties.Resources.bgPartida;
             this.Controls.Add(this.pnlHistorico);
             this.Controls.Add(this.pnlMao);
             this.Controls.Add(this.tabuleiro);

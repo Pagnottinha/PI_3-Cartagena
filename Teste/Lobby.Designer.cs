@@ -155,7 +155,7 @@
             // 
             // pnlJogadores
             // 
-            this.pnlJogadores.BackgroundImage = global::Teste.Properties.Resources.painel_jogadores;
+            this.pnlJogadores.BackgroundImage = global::Teste.Properties.Resources.panelJogadores;
             this.pnlJogadores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlJogadores.Controls.Add(this.dgvListarJogadores);
             this.pnlJogadores.Location = new System.Drawing.Point(544, 27);
@@ -169,7 +169,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.BackgroundImage = global::Teste.Properties.Resources.bg_lobby;
+            this.BackgroundImage = global::Teste.Properties.Resources.bgLobby;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.pnlJogadores);
             this.Controls.Add(this.btnIniciarPartida);

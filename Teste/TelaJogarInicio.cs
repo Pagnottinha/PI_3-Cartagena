@@ -19,8 +19,8 @@ namespace Teste
         {
             InitializeComponent();
             
-            botao = Image.FromFile("../../sprites/BotaoJogar.png");
-            botaoHover = Image.FromFile("../../sprites/BotaoJogarHover.png");
+            botao = Image.FromFile("../../sprites/Buttons/BotaoJogar.png");
+            botaoHover = Image.FromFile("../../sprites/Buttons/BotaoJogarHover.png");
         }
 
         private void TelaJogarInicio_Load(object sender, EventArgs e)

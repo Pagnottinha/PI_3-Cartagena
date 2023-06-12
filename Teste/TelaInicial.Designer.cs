@@ -315,7 +315,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Teste.Properties.Resources.partidas;
+            this.panel1.BackgroundImage = global::Teste.Properties.Resources.panelPartidas;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.dgvListaPartidas);
             this.panel1.Location = new System.Drawing.Point(42, 35);
@@ -325,7 +325,7 @@
             // 
             // pnlCriarPartida
             // 
-            this.pnlCriarPartida.BackgroundImage = global::Teste.Properties.Resources.criarPartida;
+            this.pnlCriarPartida.BackgroundImage = global::Teste.Properties.Resources.panelCriarPartida;
             this.pnlCriarPartida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlCriarPartida.Controls.Add(this.lblNomeJogadorCriar);
             this.pnlCriarPartida.Controls.Add(this.btnCriarPartida);
@@ -354,7 +354,7 @@
             // 
             // pnlEntrarPartida
             // 
-            this.pnlEntrarPartida.BackgroundImage = global::Teste.Properties.Resources.Entrar_em_uma_partida;
+            this.pnlEntrarPartida.BackgroundImage = global::Teste.Properties.Resources.panelEntrarPartida;
             this.pnlEntrarPartida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlEntrarPartida.Controls.Add(this.btnEntrarPartida);
             this.pnlEntrarPartida.Controls.Add(this.lblSenhaEntrar);
@@ -401,7 +401,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.BackgroundImage = global::Teste.Properties.Resources.fundo;
+            this.BackgroundImage = global::Teste.Properties.Resources.bgTelaPrincipal;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.pnlEntrarPartida);
             this.Controls.Add(this.pnlCriarPartida);
