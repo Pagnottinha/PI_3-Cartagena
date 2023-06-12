@@ -60,4 +60,6 @@
 
 <p> Essa foi a nossa estratégia. Focamos em deixá-la o mais coesa e objetiva possível, para que pudéssemos aumentar as nossas chances de vencer a competição ao final do semestre, tendo a melhor estratégia em prática. </p>
 
+<h2> Considerações Finais </h2>
 
+<p>  </p>
