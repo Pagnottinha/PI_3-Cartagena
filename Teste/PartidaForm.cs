@@ -267,12 +267,10 @@ namespace Teste
         private void tmrVerificarVez_Tick(object sender, EventArgs e)
         {
             partida.verificarVez();
-            atualizarLabels();
 
             if (partida.status == Status.Encerrada)
             {
                 atualizarHistorico();
-                tabuleiro.atualizarPeoes();
 
                 btnVoltaLobby.Show();
 
@@ -290,6 +288,7 @@ namespace Teste
                 btnJogadaAutomatica.Enabled = true;
 
                 JogadaAutomatica();
+                atualizarLabels();
             }
             else if(partida.jogador == null)
             {
