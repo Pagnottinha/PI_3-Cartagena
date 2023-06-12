@@ -36,5 +36,17 @@ namespace Teste
                 Parent.Controls.Remove(this);
             }
         }
+
+        private void dgvListarJogadores_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+
+            if (dgv.Columns[e.ColumnIndex].Name.Equals("Cor"))
+            {
+                if (e.Value == null) { return; }
+
+                e.CellStyle.ForeColor = (Color)e.Value;
+            }
+        }
     }
 }

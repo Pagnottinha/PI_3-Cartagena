@@ -115,6 +115,7 @@
             this.dgvListarJogadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListarJogadores.Size = new System.Drawing.Size(341, 300);
             this.dgvListarJogadores.TabIndex = 6;
+            this.dgvListarJogadores.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListarJogadores_CellFormatting);
             // 
             // ID
             // 
