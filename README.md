@@ -17,13 +17,13 @@
 
 <p> O jogo é composto com 2 até 4 jogadores, cada um com sua respectiva cor (amarelo, azul, vermelho e verde). Existem duas versões, a Tortuga e a Jamaica. A versão Tortuga tem como base o raciocínio, pois os jogadores deixam suas cartas à mostra na mesa, sabendo quais são os próximos passos de seus adversários. Porém, a versão que estamos usando é a Jamaica, que tem como base a sorte. Cada jogador recebe 6 cartas aleatórias, sem que o adversário saiba, podendo ser elas um esqueleto, um tricórnio, uma faca, uma pistola, uma chave ou uma garrafa. O tabuleiro é gerado aleatoriamente, com um total de 38 casas (a primeira sem símbolo (prisão), pois é o ponto inicial e a última sendo o barco ou melhor dizendo, a linha de chegada) tendo em cada casa um desses 6 símbolos. A cada 6 casas obrigatoriamente todos os símbolos devem ter aparecido. </p>
 
-<p align="middle">
+<p >
     <figure>
         <img src="https://tablegames.com.br/wp-content/uploads/2017/10/20171128_230947.jpg"
              alt="Tabuleiro Cartagena" height=288 width=512>
         <figcaption> Tabuleiro Cartagena </figcaption>
     </figure>
-</p>
+</p align="middle">
 
 <h4> Como jogar </h4>
 
