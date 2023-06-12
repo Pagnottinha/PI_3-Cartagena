@@ -121,14 +121,14 @@
             this.ltb_HistoricoPartida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(192)))), ((int)(((byte)(177)))));
             this.ltb_HistoricoPartida.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ltb_HistoricoPartida.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ltb_HistoricoPartida.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ltb_HistoricoPartida.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ltb_HistoricoPartida.FormattingEnabled = true;
             this.ltb_HistoricoPartida.HorizontalScrollbar = true;
-            this.ltb_HistoricoPartida.ItemHeight = 25;
+            this.ltb_HistoricoPartida.ItemHeight = 30;
             this.ltb_HistoricoPartida.Location = new System.Drawing.Point(21, 50);
             this.ltb_HistoricoPartida.Name = "ltb_HistoricoPartida";
             this.ltb_HistoricoPartida.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.ltb_HistoricoPartida.Size = new System.Drawing.Size(301, 400);
+            this.ltb_HistoricoPartida.Size = new System.Drawing.Size(301, 390);
             this.ltb_HistoricoPartida.TabIndex = 20;
             this.ltb_HistoricoPartida.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ltb_HistoricoPartida_DrawItem);
             // 

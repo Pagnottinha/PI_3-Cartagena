@@ -149,7 +149,7 @@ namespace Teste
 
                     int peoesDestino = tabuleiro[historico.destino].peoes.Count;
 
-                    if (peoesDestino == 0)
+                    if (historico.tipo == TiposHistorico.Mover)
                     {
                         historico.Jogador.qntCartas--;
                     }
