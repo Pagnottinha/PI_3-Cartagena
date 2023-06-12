@@ -22,7 +22,7 @@ namespace Teste
             this.jogador = jogador;
             this.panel = new Panel();
             panel.BackColor = jogador.cor;
-            panel.Size = new Size(14, 14);
+            panel.Size = new Size(12, 12);
             panel.Region = criarBorda(panel.Size);
             posicao = 0;
         }
