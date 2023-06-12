@@ -51,6 +51,7 @@ namespace Teste
 
             //BackColor = Color.FromArgb(167, 149, 94);
 
+            pnlHistorico.Region = criarBorda(pnlHistorico.Size, 35);
             iniciarLabels();
  
             tmrVerificarVez.Enabled = true;

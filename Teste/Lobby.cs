@@ -17,6 +17,7 @@ namespace Teste
         {
             InitializeComponent();
             this.partida = partida;
+            dgvListarJogadores.ClearSelection();
             dgvListarJogadores.AutoGenerateColumns = false;
             dgvListarJogadores.DataSource = partida.Jogadores.ToList();
         }

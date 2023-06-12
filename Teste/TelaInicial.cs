@@ -101,16 +101,18 @@ namespace Teste
             {
                 if (e.Value == null) { return; }
 
-                switch ((Status)e.Value)
+                e.CellStyle.Font = new Font(e.CellStyle.Font, FontStyle.Bold);
+
+                switch ((Status) e.Value)
                 {
                     case Status.Aberta:
-                        e.CellStyle.BackColor = Color.LightGreen;
+                        e.CellStyle.ForeColor = Color.LightGreen;
                         break;
                     case Status.Jogando:
-                        e.CellStyle.BackColor = Color.LightGoldenrodYellow;
+                        e.CellStyle.ForeColor = Color.LightGoldenrodYellow;
                         break;
                     case Status.Encerrada:
-                        e.CellStyle.BackColor = Color.Red;
+                        e.CellStyle.ForeColor = Color.Red;
                         break;
                 }
 
@@ -119,16 +121,9 @@ namespace Teste
 
         private void dgvListaPartidas_Click(object sender, EventArgs e)
         {
-            if (dgvListaPartidas.SelectedCells[3].Value.ToString() != "Aberta")
-            {
-                grbEntrarPartida.Hide();
-                btnAssistirPartida.Show();
-            }
-            else
-            {
-                grbEntrarPartida.Show();
-                btnAssistirPartida.Hide();
-            }
+            bool isAberta = dgvListaPartidas.SelectedCells[3].Value.ToString() == "Aberta";
+            pnlEntrarPartida.Visible = isAberta;
+            btnAssistirPartida.Visible = !isAberta;
         }
 
         private void btnAssistirPartida_Click(object sender, EventArgs e)
@@ -137,6 +132,11 @@ namespace Teste
 
             Parent.Controls.Add(new PartidaForm(partidas[indexPartida]));
             Parent.Controls.Remove(this);
+        }
+
+        private void Control_VisibleChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

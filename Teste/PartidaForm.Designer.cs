@@ -56,6 +56,7 @@
             this.pnlMao = new System.Windows.Forms.Panel();
             this.tabuleiro = new Teste.Tabuleiro();
             this.lblHistorico = new System.Windows.Forms.Label();
+            this.pnlHistorico = new System.Windows.Forms.Panel();
             this.grbJogadas.SuspendLayout();
             this.pnlChave.SuspendLayout();
             this.pnlTricornio.SuspendLayout();
@@ -64,6 +65,7 @@
             this.pnlPistola.SuspendLayout();
             this.pnlFaca.SuspendLayout();
             this.pnlMao.SuspendLayout();
+            this.pnlHistorico.SuspendLayout();
             this.SuspendLayout();
             // 
             // tmrVerificarVez
@@ -73,13 +75,20 @@
             // 
             // btnVoltaLobby
             // 
+            this.btnVoltaLobby.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltaLobby.BackgroundImage = global::Teste.Properties.Resources.btnVoltarProLobby;
+            this.btnVoltaLobby.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVoltaLobby.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVoltaLobby.FlatAppearance.BorderSize = 0;
+            this.btnVoltaLobby.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnVoltaLobby.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnVoltaLobby.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltaLobby.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltaLobby.Location = new System.Drawing.Point(24, 719);
+            this.btnVoltaLobby.Location = new System.Drawing.Point(28, 701);
             this.btnVoltaLobby.Name = "btnVoltaLobby";
-            this.btnVoltaLobby.Size = new System.Drawing.Size(131, 40);
+            this.btnVoltaLobby.Size = new System.Drawing.Size(262, 68);
             this.btnVoltaLobby.TabIndex = 45;
-            this.btnVoltaLobby.Text = "Voltar pro Lobby";
-            this.btnVoltaLobby.UseVisualStyleBackColor = true;
+            this.btnVoltaLobby.UseVisualStyleBackColor = false;
             this.btnVoltaLobby.Click += new System.EventHandler(this.btnVoltaLobby_Click);
             // 
             // cbo_Jogar
@@ -91,7 +100,7 @@
             "Mover para frente",
             "Mover para trás",
             "Pular vez"});
-            this.cbo_Jogar.Location = new System.Drawing.Point(18, 51);
+            this.cbo_Jogar.Location = new System.Drawing.Point(82, 51);
             this.cbo_Jogar.Name = "cbo_Jogar";
             this.cbo_Jogar.Size = new System.Drawing.Size(201, 28);
             this.cbo_Jogar.TabIndex = 18;
@@ -101,7 +110,7 @@
             // 
             this.lbl_Jogo.AutoSize = true;
             this.lbl_Jogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Jogo.Location = new System.Drawing.Point(15, 16);
+            this.lbl_Jogo.Location = new System.Drawing.Point(79, 16);
             this.lbl_Jogo.Name = "lbl_Jogo";
             this.lbl_Jogo.Size = new System.Drawing.Size(204, 20);
             this.lbl_Jogo.TabIndex = 19;
@@ -109,14 +118,14 @@
             // 
             // ltb_HistoricoPartida
             // 
-            this.ltb_HistoricoPartida.BackColor = System.Drawing.Color.White;
+            this.ltb_HistoricoPartida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(192)))), ((int)(((byte)(177)))));
             this.ltb_HistoricoPartida.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ltb_HistoricoPartida.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ltb_HistoricoPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ltb_HistoricoPartida.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ltb_HistoricoPartida.FormattingEnabled = true;
             this.ltb_HistoricoPartida.HorizontalScrollbar = true;
             this.ltb_HistoricoPartida.ItemHeight = 25;
-            this.ltb_HistoricoPartida.Location = new System.Drawing.Point(944, 58);
+            this.ltb_HistoricoPartida.Location = new System.Drawing.Point(21, 50);
             this.ltb_HistoricoPartida.Name = "ltb_HistoricoPartida";
             this.ltb_HistoricoPartida.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.ltb_HistoricoPartida.Size = new System.Drawing.Size(301, 400);
@@ -125,13 +134,20 @@
             // 
             // btn_Historico
             // 
-            this.btn_Historico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Historico.Location = new System.Drawing.Point(1020, 499);
+            this.btn_Historico.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Historico.BackgroundImage = global::Teste.Properties.Resources.btnObterHistorico;
+            this.btn_Historico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Historico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Historico.FlatAppearance.BorderSize = 0;
+            this.btn_Historico.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_Historico.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Historico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Historico.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Historico.Location = new System.Drawing.Point(1003, 495);
             this.btn_Historico.Name = "btn_Historico";
-            this.btn_Historico.Size = new System.Drawing.Size(139, 35);
+            this.btn_Historico.Size = new System.Drawing.Size(174, 45);
             this.btn_Historico.TabIndex = 21;
-            this.btn_Historico.Text = "Histórico da partida";
-            this.btn_Historico.UseVisualStyleBackColor = true;
+            this.btn_Historico.UseVisualStyleBackColor = false;
             this.btn_Historico.Click += new System.EventHandler(this.btn_Historico_Click);
             // 
             // btn_JogarPirata
@@ -148,7 +164,7 @@
             // txtPosicaoPirata
             // 
             this.txtPosicaoPirata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPosicaoPirata.Location = new System.Drawing.Point(17, 109);
+            this.txtPosicaoPirata.Location = new System.Drawing.Point(81, 109);
             this.txtPosicaoPirata.Name = "txtPosicaoPirata";
             this.txtPosicaoPirata.Size = new System.Drawing.Size(201, 22);
             this.txtPosicaoPirata.TabIndex = 23;
@@ -157,7 +173,7 @@
             // 
             this.lblPosicaoPirata.AutoSize = true;
             this.lblPosicaoPirata.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosicaoPirata.Location = new System.Drawing.Point(15, 82);
+            this.lblPosicaoPirata.Location = new System.Drawing.Point(79, 82);
             this.lblPosicaoPirata.Name = "lblPosicaoPirata";
             this.lblPosicaoPirata.Size = new System.Drawing.Size(105, 15);
             this.lblPosicaoPirata.TabIndex = 24;
@@ -165,9 +181,9 @@
             // 
             // btnJogadaAutomatica
             // 
-            this.btnJogadaAutomatica.Location = new System.Drawing.Point(44, 186);
+            this.btnJogadaAutomatica.Location = new System.Drawing.Point(200, 143);
             this.btnJogadaAutomatica.Name = "btnJogadaAutomatica";
-            this.btnJogadaAutomatica.Size = new System.Drawing.Size(131, 43);
+            this.btnJogadaAutomatica.Size = new System.Drawing.Size(129, 37);
             this.btnJogadaAutomatica.TabIndex = 44;
             this.btnJogadaAutomatica.Text = "Jogar Automatico";
             this.btnJogadaAutomatica.UseVisualStyleBackColor = true;
@@ -182,9 +198,9 @@
             this.grbJogadas.Controls.Add(this.btn_JogarPirata);
             this.grbJogadas.Controls.Add(this.lbl_Jogo);
             this.grbJogadas.Controls.Add(this.cbo_Jogar);
-            this.grbJogadas.Location = new System.Drawing.Point(981, 540);
+            this.grbJogadas.Location = new System.Drawing.Point(910, 573);
             this.grbJogadas.Name = "grbJogadas";
-            this.grbJogadas.Size = new System.Drawing.Size(236, 238);
+            this.grbJogadas.Size = new System.Drawing.Size(366, 196);
             this.grbJogadas.TabIndex = 46;
             this.grbJogadas.TabStop = false;
             this.grbJogadas.Text = "Jogadas";
@@ -365,12 +381,23 @@
             // 
             this.lblHistorico.AutoSize = true;
             this.lblHistorico.BackColor = System.Drawing.Color.Transparent;
-            this.lblHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistorico.Location = new System.Drawing.Point(1027, 22);
+            this.lblHistorico.Font = new System.Drawing.Font("Bahnschrift", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(192)))), ((int)(((byte)(177)))));
+            this.lblHistorico.Location = new System.Drawing.Point(108, 8);
             this.lblHistorico.Name = "lblHistorico";
-            this.lblHistorico.Size = new System.Drawing.Size(117, 29);
+            this.lblHistorico.Size = new System.Drawing.Size(131, 35);
             this.lblHistorico.TabIndex = 49;
             this.lblHistorico.Text = "Histórico";
+            // 
+            // pnlHistorico
+            // 
+            this.pnlHistorico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(122)))), ((int)(((byte)(90)))));
+            this.pnlHistorico.Controls.Add(this.lblHistorico);
+            this.pnlHistorico.Controls.Add(this.ltb_HistoricoPartida);
+            this.pnlHistorico.Location = new System.Drawing.Point(925, 18);
+            this.pnlHistorico.Name = "pnlHistorico";
+            this.pnlHistorico.Size = new System.Drawing.Size(341, 471);
+            this.pnlHistorico.TabIndex = 50;
             // 
             // PartidaForm
             // 
@@ -378,13 +405,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::Teste.Properties.Resources.fundo_de_tudo;
-            this.Controls.Add(this.lblHistorico);
+            this.Controls.Add(this.pnlHistorico);
             this.Controls.Add(this.pnlMao);
             this.Controls.Add(this.tabuleiro);
             this.Controls.Add(this.grbJogadas);
             this.Controls.Add(this.btnVoltaLobby);
             this.Controls.Add(this.btn_Historico);
-            this.Controls.Add(this.ltb_HistoricoPartida);
             this.Name = "PartidaForm";
             this.Size = new System.Drawing.Size(1289, 784);
             this.grbJogadas.ResumeLayout(false);
@@ -402,8 +428,9 @@
             this.pnlFaca.ResumeLayout(false);
             this.pnlFaca.PerformLayout();
             this.pnlMao.ResumeLayout(false);
+            this.pnlHistorico.ResumeLayout(false);
+            this.pnlHistorico.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -434,5 +461,6 @@
         private Tabuleiro tabuleiro;
         private System.Windows.Forms.Panel pnlMao;
         private System.Windows.Forms.Label lblHistorico;
+        private System.Windows.Forms.Panel pnlHistorico;
     }
 }
