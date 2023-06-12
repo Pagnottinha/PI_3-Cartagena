@@ -17,15 +17,16 @@ namespace Teste
         {
             InitializeComponent();
             this.partida = partida;
-            dgvListarJogadores.ClearSelection();
             dgvListarJogadores.AutoGenerateColumns = false;
             dgvListarJogadores.DataSource = partida.Jogadores.ToList();
+            dgvListarJogadores.ClearSelection();
         }
 
         private void btnListarJogadores_Click(object sender, EventArgs e)
         {
             partida.listarJogadores();
             dgvListarJogadores.DataSource = partida.Jogadores.ToList();
+            dgvListarJogadores.ClearSelection();
         }
 
         private void btnIniciarPartida_Click(object sender, EventArgs e)
@@ -46,6 +47,7 @@ namespace Teste
                 if (e.Value == null) { return; }
 
                 e.CellStyle.ForeColor = (Color) e.Value;
+                e.CellStyle.Font = new Font(e.CellStyle.Font, FontStyle.Bold);
             }
         }
     }

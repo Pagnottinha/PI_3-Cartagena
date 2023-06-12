@@ -19,6 +19,8 @@ namespace Teste
             InitializeComponent();
             cboFiltros.SelectedIndex = 0;
             dgvListaPartidas.AutoGenerateColumns = false;
+            pnlEntrarPartida.Visible = false;
+            btnAssistirPartida.Visible = false;
         }
 
         private void btnListGames_Click(object sender, EventArgs e)
@@ -37,6 +39,7 @@ namespace Teste
 
             dgvListaPartidas.DataSource = partidasRetorno;
             partidas = partidasRetorno;
+            dgvListaPartidas.ClearSelection();
         }
 
         private void btnCriarPartida_Click(object sender, EventArgs e)
