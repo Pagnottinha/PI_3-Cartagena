@@ -133,6 +133,26 @@ namespace Teste.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnObterHistorico {
+            get {
+                object obj = ResourceManager.GetObject("btnObterHistorico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnVoltarProLobby {
+            get {
+                object obj = ResourceManager.GetObject("btnVoltarProLobby", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Chave {
             get {
                 object obj = ResourceManager.GetObject("Chave", resourceCulture);

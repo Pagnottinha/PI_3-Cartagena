@@ -72,10 +72,10 @@ namespace Teste
                         retorno = $"{idJogador} ({numJogada}) pulou";
                         break;
                     case TiposHistorico.Mover:
-                        retorno = $"{idJogador} ({numJogada}) -> {carta} | {origem} -> {destino}";
+                        retorno = $"{idJogador} ({numJogada}) → {carta} | {origem} → {destino}";
                         break;
                     case TiposHistorico.Voltar:
-                        retorno = $"{idJogador} ({numJogada}) voltou | {origem} -> {destino}";
+                        retorno = $"{idJogador} ({numJogada}) voltou | {origem} → {destino}";
                         break;
                 }
             }
@@ -87,15 +87,15 @@ namespace Teste
                         retorno = $"{Jogador.nome} - {Jogador.id} ({numJogada}) pulou";
                         break;
                     case TiposHistorico.Mover:
-                        retorno = $"{Jogador.nome} - {Jogador.id} ({numJogada}) -> {carta} | {origem} -> {destino}";
+                        retorno = $"{Jogador.nome} - {Jogador.id} ({numJogada}) → {carta} | {origem} → {destino}";
                         break;
                     case TiposHistorico.Voltar:
-                        retorno = $"{Jogador.nome} - {Jogador.id} ({numJogada}) voltou | {origem} -> {destino}";
+                        retorno = $"{Jogador.nome} - {Jogador.id} ({numJogada}) voltou | {origem} → {destino}";
                         break;
                 }
             }
 
-            return retorno;
+            return retorno.ToUpper();
         }
     }
 }

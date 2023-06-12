@@ -103,7 +103,7 @@ namespace Teste
 
                 e.CellStyle.Font = new Font(e.CellStyle.Font, FontStyle.Bold);
 
-                switch ((Status)e.Value)
+                switch ((Status) e.Value)
                 {
                     case Status.Aberta:
                         e.CellStyle.ForeColor = Color.LightGreen;
@@ -121,16 +121,9 @@ namespace Teste
 
         private void dgvListaPartidas_Click(object sender, EventArgs e)
         {
-            if (dgvListaPartidas.SelectedCells[3].Value.ToString() != "Aberta")
-            {
-                pnlEntrarPartida.Hide();
-                btnAssistirPartida.Show();
-            }
-            else
-            {
-                pnlEntrarPartida.Show();
-                btnAssistirPartida.Hide();
-            }
+            bool isAberta = dgvListaPartidas.SelectedCells[3].Value.ToString() == "Aberta";
+            pnlEntrarPartida.Visible = isAberta;
+            btnAssistirPartida.Visible = !isAberta;
         }
 
         private void btnAssistirPartida_Click(object sender, EventArgs e)
@@ -139,6 +132,11 @@ namespace Teste
 
             Parent.Controls.Add(new PartidaForm(partidas[indexPartida]));
             Parent.Controls.Remove(this);
+        }
+
+        private void Control_VisibleChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

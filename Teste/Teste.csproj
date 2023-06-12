@@ -185,6 +185,8 @@
     <None Include="sprites\Buttons\btn-criarPartida.png" />
     <None Include="sprites\Buttons\btn-entrar.png" />
     <None Include="sprites\Buttons\btn-listar.png" />
+    <None Include="sprites\Buttons\btnObterHistorico.png" />
+    <None Include="sprites\Buttons\btnVoltarProLobby.png" />
     <Content Include="sprites\Cartas\CartaChave.png" />
     <Content Include="sprites\Cartas\CartaChaveSelecionada.png" />
     <Content Include="sprites\Cartas\CartaEsqueleto.png" />

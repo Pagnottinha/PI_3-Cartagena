@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblFiltros = new System.Windows.Forms.Label();
             this.cboFiltros = new System.Windows.Forms.ComboBox();
             this.txtNomeJogadorCriar = new System.Windows.Forms.TextBox();
@@ -45,16 +45,16 @@
             this.txtSenhaEntrar = new System.Windows.Forms.TextBox();
             this.txtNomeJogadorEntrar = new System.Windows.Forms.TextBox();
             this.dgvListaPartidas = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnListarPartidas = new System.Windows.Forms.Button();
             this.btnAssistirPartida = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlCriarPartida = new System.Windows.Forms.Panel();
-            this.pnlEntrarPartida = new System.Windows.Forms.Panel();
             this.lblNomeJogadorCriar = new System.Windows.Forms.Label();
+            this.pnlEntrarPartida = new System.Windows.Forms.Panel();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPartidas)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlCriarPartida.SuspendLayout();
@@ -96,7 +96,7 @@
             this.txtNomeJogadorCriar.BackColor = System.Drawing.SystemColors.Window;
             this.txtNomeJogadorCriar.Enabled = false;
             this.txtNomeJogadorCriar.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeJogadorCriar.Location = new System.Drawing.Point(38, 251);
+            this.txtNomeJogadorCriar.Location = new System.Drawing.Point(38, 241);
             this.txtNomeJogadorCriar.Name = "txtNomeJogadorCriar";
             this.txtNomeJogadorCriar.Size = new System.Drawing.Size(176, 27);
             this.txtNomeJogadorCriar.TabIndex = 18;
@@ -113,6 +113,7 @@
             this.chkEntrar.TabIndex = 13;
             this.chkEntrar.Text = "Deseja entrar automaticamente?";
             this.chkEntrar.UseVisualStyleBackColor = true;
+            this.chkEntrar.CheckedChanged += new System.EventHandler(this.chkEntrar_CheckedChanged);
             // 
             // lblSenhaCriar
             // 
@@ -147,7 +148,7 @@
             this.btnCriarPartida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCriarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnCriarPartida.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCriarPartida.Location = new System.Drawing.Point(34, 284);
+            this.btnCriarPartida.Location = new System.Drawing.Point(34, 278);
             this.btnCriarPartida.Name = "btnCriarPartida";
             this.btnCriarPartida.Size = new System.Drawing.Size(180, 57);
             this.btnCriarPartida.TabIndex = 10;
@@ -233,34 +234,34 @@
             this.dgvListaPartidas.AllowUserToResizeColumns = false;
             this.dgvListaPartidas.AllowUserToResizeRows = false;
             this.dgvListaPartidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvListaPartidas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvListaPartidas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListaPartidas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(192)))), ((int)(((byte)(177)))));
             this.dgvListaPartidas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListaPartidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvListaPartidas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgvListaPartidas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(152)))), ((int)(((byte)(140)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(152)))), ((int)(((byte)(140)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaPartidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(152)))), ((int)(((byte)(140)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(152)))), ((int)(((byte)(140)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaPartidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvListaPartidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaPartidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.nome,
             this.data,
             this.status});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(192)))), ((int)(((byte)(177)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(176)))), ((int)(((byte)(143)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaPartidas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(192)))), ((int)(((byte)(177)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(176)))), ((int)(((byte)(143)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaPartidas.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvListaPartidas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaPartidas.EnableHeadersVisualStyles = false;
             this.dgvListaPartidas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(192)))), ((int)(((byte)(177)))));
@@ -270,42 +271,12 @@
             this.dgvListaPartidas.ReadOnly = true;
             this.dgvListaPartidas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvListaPartidas.RowHeadersVisible = false;
-            this.dgvListaPartidas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvListaPartidas.RowTemplate.Height = 30;
             this.dgvListaPartidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaPartidas.Size = new System.Drawing.Size(280, 378);
             this.dgvListaPartidas.TabIndex = 22;
             this.dgvListaPartidas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListaPartidas_CellFormatting);
             this.dgvListaPartidas.Click += new System.EventHandler(this.dgvListaPartidas_Click);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // nome
-            // 
-            this.nome.DataPropertyName = "nome";
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            // 
-            // data
-            // 
-            this.data.DataPropertyName = "data";
-            this.data.HeaderText = "Data";
-            this.data.Name = "data";
-            this.data.ReadOnly = true;
-            this.data.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "status";
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
             // 
             // btnListarPartidas
             // 
@@ -369,6 +340,18 @@
             this.pnlCriarPartida.Size = new System.Drawing.Size(254, 356);
             this.pnlCriarPartida.TabIndex = 29;
             // 
+            // lblNomeJogadorCriar
+            // 
+            this.lblNomeJogadorCriar.AutoSize = true;
+            this.lblNomeJogadorCriar.Enabled = false;
+            this.lblNomeJogadorCriar.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeJogadorCriar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblNomeJogadorCriar.Location = new System.Drawing.Point(33, 213);
+            this.lblNomeJogadorCriar.Name = "lblNomeJogadorCriar";
+            this.lblNomeJogadorCriar.Size = new System.Drawing.Size(148, 25);
+            this.lblNomeJogadorCriar.TabIndex = 19;
+            this.lblNomeJogadorCriar.Text = "Nome Jogador";
+            // 
             // pnlEntrarPartida
             // 
             this.pnlEntrarPartida.BackgroundImage = global::Teste.Properties.Resources.Entrar_em_uma_partida;
@@ -383,16 +366,34 @@
             this.pnlEntrarPartida.Size = new System.Drawing.Size(257, 275);
             this.pnlEntrarPartida.TabIndex = 30;
             // 
-            // lblNomeJogadorCriar
+            // id
             // 
-            this.lblNomeJogadorCriar.AutoSize = true;
-            this.lblNomeJogadorCriar.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeJogadorCriar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblNomeJogadorCriar.Location = new System.Drawing.Point(33, 223);
-            this.lblNomeJogadorCriar.Name = "lblNomeJogadorCriar";
-            this.lblNomeJogadorCriar.Size = new System.Drawing.Size(148, 25);
-            this.lblNomeJogadorCriar.TabIndex = 19;
-            this.lblNomeJogadorCriar.Text = "Nome Jogador";
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            // 
+            // data
+            // 
+            this.data.DataPropertyName = "data";
+            this.data.HeaderText = "Data";
+            this.data.Name = "data";
+            this.data.ReadOnly = true;
+            this.data.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
             // 
             // TelaInicial
             // 
@@ -410,6 +411,7 @@
             this.Controls.Add(this.cboFiltros);
             this.Controls.Add(this.btnListarPartidas);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DoubleBuffered = true;
             this.Name = "TelaInicial";
             this.Size = new System.Drawing.Size(985, 573);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPartidas)).EndInit();
@@ -440,15 +442,15 @@
         private System.Windows.Forms.TextBox txtSenhaEntrar;
         private System.Windows.Forms.TextBox txtNomeJogadorEntrar;
         private System.Windows.Forms.DataGridView dgvListaPartidas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.Button btnListarPartidas;
         private System.Windows.Forms.Button btnAssistirPartida;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlCriarPartida;
         private System.Windows.Forms.Panel pnlEntrarPartida;
         private System.Windows.Forms.Label lblNomeJogadorCriar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }
