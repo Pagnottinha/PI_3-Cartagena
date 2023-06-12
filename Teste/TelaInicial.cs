@@ -101,16 +101,18 @@ namespace Teste
             {
                 if (e.Value == null) { return; }
 
+                e.CellStyle.Font = new Font(e.CellStyle.Font, FontStyle.Bold);
+
                 switch ((Status)e.Value)
                 {
                     case Status.Aberta:
-                        e.CellStyle.BackColor = Color.LightGreen;
+                        e.CellStyle.ForeColor = Color.LightGreen;
                         break;
                     case Status.Jogando:
-                        e.CellStyle.BackColor = Color.LightGoldenrodYellow;
+                        e.CellStyle.ForeColor = Color.LightGoldenrodYellow;
                         break;
                     case Status.Encerrada:
-                        e.CellStyle.BackColor = Color.Red;
+                        e.CellStyle.ForeColor = Color.Red;
                         break;
                 }
 
@@ -121,12 +123,12 @@ namespace Teste
         {
             if (dgvListaPartidas.SelectedCells[3].Value.ToString() != "Aberta")
             {
-                grbEntrarPartida.Hide();
+                pnlEntrarPartida.Hide();
                 btnAssistirPartida.Show();
             }
             else
             {
-                grbEntrarPartida.Show();
+                pnlEntrarPartida.Show();
                 btnAssistirPartida.Hide();
             }
         }

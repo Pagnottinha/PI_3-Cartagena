@@ -118,8 +118,35 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="bg_lobby" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\bg-lobby.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_assistirPartida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Buttons\btn-assistirPartida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_criarPartida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Buttons\btn-criarPartida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_entrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Buttons\btn-entrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_jogadores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Buttons\btn-jogadores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_listar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Buttons\btn-listar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_partida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Buttons\btn-partida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Chave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sprites\Chave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="criarPartida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\criarPartida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Entrar_em_uma_partida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\Entrar em uma partida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Esqueleto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sprites\Esqueleto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,11 +154,20 @@
   <data name="Faca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sprites\Faca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\fundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fundo_de_tudo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sprites\fundo_de_tudo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Garrafa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sprites\Garrafa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="painel_jogadores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\painel-jogadores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="partidas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\sprites\partidas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pistola" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sprites\Pistola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
